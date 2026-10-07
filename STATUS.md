@@ -2,6 +2,13 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-07 · Expo packages updated to the SDK 54 versions (Claude Code)
+- `npx expo install --fix`, okayed by Vlad: `expo` ~54.0.33 → ~54.0.37, `expo-constants` ~18.0.13 → ~18.0.14, `expo-file-system` ~19.0.22 → ~19.0.24, `expo-font` ~14.0.11 → ~14.0.12. Patch updates inside SDK 54, no new dependency.
+- Expo added `"expo-font"` (no options) to `plugins` in `app.json`. Kept: the Sora fonts are still loaded at runtime with `useFonts`, so nothing changes in behaviour.
+- `npm audit` reports advisories in transitive dev/build packages. Not touched: `npm audit fix --force` would move packages off the SDK 54 versions.
+- Files: `package.json`, `package-lock.json`, `app.json`.
+- Verified: `npx expo install --check` reports up to date; `npx tsc --noEmit` clean; `npx expo export --platform ios` bundles.
+
 ## 2026-10-07 · 1.2 task 1 — tokens and shared primitives (Claude Code)
 - **Tokens** (README → Design tokens), no screen changed yet:
   - `src/theme/colors.ts`: light + dark for the 1.1 tokens the app had not named (`border`, `textMuted`, `brand`, `onBrand`, `scrim`, `headerGradient`, `headerSubtitle`, `mint50`, `mint500`) and the 1.2 ones (`tipPanel`, `toastBg`, `toastText`, `floatButton`, `tabbarBg`, `sheetBg`, `coachDim`, `coachRing`). Also `onGradient` (white on the gradient/error), `onGradientFill` (the translucent "…" button) and `shadow`, so no hex is left for screens to type. The old 1.1 names stay until each screen is rebuilt (tasks 5–8).

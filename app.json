@@ -40,7 +40,8 @@
           "cameraPermission": "Mocktail Finder uses the camera only to take a picture for a recipe you create. Photos stay on your device.",
           "microphonePermission": false
         }
-      ]
+      ],
+      "expo-font"
     ],
     "extra": {
       "eas": {
