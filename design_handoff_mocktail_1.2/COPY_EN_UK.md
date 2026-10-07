@@ -263,6 +263,18 @@ Every visible string. Prices are not here: they always come from StoreKit. `{n}`
 | collection: tropical-escape | Tropical Escape | Тропічні канікули |
 | collection: party-brunch | Party & Brunch | Свято та бранч |
 
+## Accessibility
+
+VoiceOver labels. Added by Cowork on 7 Oct 2026, outside the Claude Design handoff.
+
+| Key | EN | UA |
+|---|---|---|
+| a11yRemove | Remove {name} | Прибрати {name} |
+| a11yFewer | Fewer servings | Менше порцій |
+| a11yMore | More servings | Більше порцій |
+| a11yClose | Close | Закрити |
+| a11yDelete | Delete | Видалити |
+
 ## DEV (debug builds only)
 
 | Key | EN | UA |

@@ -2,6 +2,23 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-07 · 1.2 task 1 — tokens and shared primitives (Claude Code)
+- **Tokens** (README → Design tokens), no screen changed yet:
+  - `src/theme/colors.ts`: light + dark for the 1.1 tokens the app had not named (`border`, `textMuted`, `brand`, `onBrand`, `scrim`, `headerGradient`, `headerSubtitle`, `mint50`, `mint500`) and the 1.2 ones (`tipPanel`, `toastBg`, `toastText`, `floatButton`, `tabbarBg`, `sheetBg`, `coachDim`, `coachRing`). Also `onGradient` (white on the gradient/error), `onGradientFill` (the translucent "…" button) and `shadow`, so no hex is left for screens to type. The old 1.1 names stay until each screen is rebuilt (tasks 5–8).
+  - `typography.ts`: `type.titleL/M/S, body, bodyS, label, caption, button, pill, wordmark, cardTitle`.
+  - `spacing.ts`: scale now 4·8·12·16·20·24·32·48 (`sm` 12 and `ml` 20 added, `screen` 24), `radius`, `sizes` (control sizes, icon sizes, stroke weights), `opacity`, `shadows`.
+  - New `motion.ts`: durations (push 340, sheet 360, paywall 400, scrim 300, toast 200 + 2000, pulse 1600, logo 3400, tip wave 6000, DEV long-press 800, price skeleton 600), `easing` = bezier(.2,.8,.2,1), `useReduceMotion()`.
+- **Components** (`src/components/`): `Toast` (+ `ToastProvider`, `useToast()`, `ToastOutlet`), `BottomSheet`, `OptionSheet`, `SegmentedControl`, `Stepper` (enabled / locked), `CheckRow` (default / ticked / swiping), `Chip` (+ removable), `LockedCard`, `FeatureRow` (+ highlighted), `SectionTitle` (+ pill, link, detail). Also, okayed by Vlad: `Button` (filled / outline / text, disabled, busy, compact) and `Pill` ("New" / "Pro"). Icons: `LockIcon`, `CheckIcon`, `PlusIcon`, `MinusIcon`.
+- `App.tsx`: `ToastProvider` inside the theme, root `ToastOutlet` above navigation.
+- Decisions without asking:
+  - Sheets use the native `Modal`, so VoiceOver cannot reach the screen behind them and they cover the tab bar. A toast fired from a sheet (Restore on the collection sheet) would sit under the modal, so each open sheet mounts its own `ToastOutlet` and the toast draws in the topmost one.
+  - Swipe to delete uses gesture-handler's `Swipeable` (plain `Animated`), so no `react-native-reanimated`.
+  - With Reduce Motion, sheets and toasts fade instead of sliding. None of this task's components loop.
+  - VoiceOver: the sheet grabber is a "Close" button; `CheckRow` offers "Delete" as a VoiceOver action because VoiceOver cannot swipe.
+- **Copy added outside the handoff:** Cowork added a `## Accessibility` section to `design_handoff_mocktail_1.2/COPY_EN_UK.md` (7 Oct): `a11yRemove` "Remove {name}" / «Прибрати {name}», `a11yFewer` "Fewer servings" / «Менше порцій», `a11yMore` "More servings" / «Більше порцій», `a11yClose` "Close" / «Закрити», `a11yDelete` "Delete" / «Видалити». The components take them as props; they enter the dictionaries in task 2.
+- Verified: `npx tsc --noEmit` clean. A throwaway `DevPrimitivesScreen` was run in Expo Go on iPhone SE (3rd gen) and iPhone 17 Pro Max, light and dark: chips, segmented control, steppers (enabled / locked), check rows, buttons (incl. disabled and busy), feature rows, locked card, toast and the Theme option sheet all render as in the prototype. Screenshots are in `~/Desktop/dev-primitives/`, and Vlad reviewed them. The screen was deleted before this commit. Not seen on screen: the swiping state of `CheckRow` and the sheet's drag-to-close (both need a finger).
+- Simulator setup, so the next sessions can screenshot without a tap: on both simulators the `exp://` scheme is pre-approved for Expo Go (`com.apple.launchservices.schemeapproval.plist`), and Expo Go's first-run menu is marked as seen (`EXHomeIsNuxFinishedDefaultsKey`).
+
 ## 2026-10-07 · 1.2 task 0 — branch, version, spec in the repo (Claude Code)
 - Branch `release/1.2` created from `main` at `54056b7` (1.1.0 build 5, tag `v1.1.0`); `main` and `release/1.1` untouched.
 - `app.json`: `expo.version` → `1.2.0`. Build number not touched (EAS, `appVersionSource: remote`).

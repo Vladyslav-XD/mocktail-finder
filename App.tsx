@@ -16,6 +16,7 @@ import { ThemeProvider, ThemeMode, loadThemeMode } from './src/context/ThemeCont
 import { store, hydrateStore } from './src/store/store';
 import { loadDetailsCache } from './src/api/detailsCache';
 import { SplashScreen } from './src/screens/SplashScreen';
+import { ToastOutlet, ToastProvider } from './src/components/Toast';
 
 export default function App() {
   const [splashVisible, setSplashVisible] = useState(true);
@@ -53,11 +54,14 @@ export default function App() {
         ) : (
           <Provider store={store}>
             <ThemeProvider initialMode={themeMode}>
-              <FavoritesProvider>
-                <NavigationContainer>
-                  <TabNavigator />
-                </NavigationContainer>
-              </FavoritesProvider>
+              <ToastProvider>
+                <FavoritesProvider>
+                  <NavigationContainer>
+                    <TabNavigator />
+                  </NavigationContainer>
+                </FavoritesProvider>
+                <ToastOutlet />
+              </ToastProvider>
             </ThemeProvider>
           </Provider>
         )}
