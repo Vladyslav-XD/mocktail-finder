@@ -9,6 +9,8 @@ export const STORAGE_KEYS = {
   theme: '@mocktail-finder/theme',
   /** Language choice: 'system' | 'en' | 'uk'. */
   language: '@mocktail-finder/language',
+  /** Owned product ids from StoreKit, so the first frame after launch is already right. */
+  entitlements: '@mocktail-finder/entitlements',
 } as const;
 
 export async function loadJson<T>(key: string, fallback: T): Promise<T> {

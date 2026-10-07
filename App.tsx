@@ -19,12 +19,15 @@ import { SplashScreen } from './src/screens/SplashScreen';
 import { ToastOutlet, ToastProvider } from './src/components/Toast';
 import { LanguageProvider, loadLanguageSetting } from './src/context/LanguageContext';
 import type { LanguageSetting } from './src/i18n';
+import { PurchasesProvider, loadCachedOwned } from './src/purchases/PurchasesContext';
+import { setOwned } from './src/store/entitlementsSlice';
 
 export default function App() {
   const [splashVisible, setSplashVisible] = useState(true);
   const [storeReady, setStoreReady] = useState(false);
   const [themeMode, setThemeMode] = useState<ThemeMode>('system');
   const [language, setLanguage] = useState<LanguageSetting>('system');
+  const [cachedOwned, setCachedOwned] = useState<string[]>([]);
   // Brand font for the wordmark. If loading fails we still start (system font fallback)
   // rather than leaving the user on the splash forever.
   const [fontsLoaded, fontError] = useFonts({ Sora_600SemiBold, Sora_700Bold });
@@ -34,11 +37,14 @@ export default function App() {
     let cancelled = false;
     // Favourites, user recipes, the drink-details cache, the saved theme and the
     // language are all read while the splash plays, so the app opens in its final state.
-    Promise.all([hydrateStore(), loadDetailsCache(), loadThemeMode(), loadLanguageSetting()])
-      .then(([, , savedMode, savedLanguage]) => {
+    // Purchases are cached too; StoreKit is asked later, without holding up the UI.
+    Promise.all([hydrateStore(), loadDetailsCache(), loadThemeMode(), loadLanguageSetting(), loadCachedOwned()])
+      .then(([, , savedMode, savedLanguage, owned]) => {
         if (cancelled) return;
         setThemeMode(savedMode);
         setLanguage(savedLanguage);
+        store.dispatch(setOwned(owned));
+        setCachedOwned(owned);
       })
       .finally(() => {
         if (!cancelled) setStoreReady(true);
@@ -61,11 +67,13 @@ export default function App() {
             <LanguageProvider initialSetting={language}>
               <ThemeProvider initialMode={themeMode}>
                 <ToastProvider>
-                  <FavoritesProvider>
-                    <NavigationContainer>
-                      <TabNavigator />
-                    </NavigationContainer>
-                  </FavoritesProvider>
+                  <PurchasesProvider initialOwned={cachedOwned}>
+                    <FavoritesProvider>
+                      <NavigationContainer>
+                        <TabNavigator />
+                      </NavigationContainer>
+                    </FavoritesProvider>
+                  </PurchasesProvider>
                   <ToastOutlet />
                 </ToastProvider>
               </ThemeProvider>

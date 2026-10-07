@@ -247,6 +247,13 @@ Every visible string. Prices are not here: they always come from StoreKit. `{n}`
 | obSwipeT | Tick or remove | Відмітити чи прибрати |
 | obSwipeS | Tap an item to tick it off. Swipe left to delete it. | Торкніться позиції, щоб відмітити. Проведіть ліворуч, щоб видалити. |
 
+## Purchases: pending and failed (README → Open questions 1, confirmed by Vlad 7 Oct)
+
+| Key | EN | UA |
+|---|---|---|
+| pendingToast | Waiting for approval. It unlocks as soon as it's approved. | Очікує схвалення. Відкриється, щойно покупку схвалять. |
+| failedToast | The purchase didn't go through. Please try again. | Покупка не вдалася. Спробуйте ще раз. |
+
 ## App Store Connect: purchase display names
 
 | Key | EN | UA |

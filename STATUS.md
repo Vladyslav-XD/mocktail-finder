@@ -2,6 +2,30 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-07 · 1.2 task 4 — B. purchases, StoreKit 2 (Claude Code)
+- `expo-iap` 5.8.2 (pre-approved, author hyochan / hyodotdev, South Korea; its config plugin added to `app.json`). Its docs support Expo SDK 53+ (iOS 15.1+ on SDK 53–54); we are on SDK 54. The Android-only Kotlin setting from its docs is not needed (iPhone-only app), so no `expo-build-properties`.
+- `src/purchases/storeKit.ts` is the only file that talks to StoreKit. `isStoreSupported()` is false in Expo Go and off iOS, so every call there answers "unavailable" instead of crashing; the library is `require`d only where it can work.
+- `src/purchases/PurchasesContext.tsx` → `usePurchases()`: `{ available, loading, price(id), isPro, ownsEverything, unlockedPacks, purchasing, thankedTips, buy, restore, tip, dev }`. `price(id)` is StoreKit's `displayPrice` or null; null means "Not available right now" (unreachable store, or the product not in App Store Connect yet).
+  - On launch (non-blocking): cached owned ids from `@mocktail-finder/entitlements` (`STORAGE_KEYS.entitlements`) are put in the store during the splash, so the first frame is right. Then connect, load products, read current entitlements, save them, and listen for transaction updates.
+  - Ask to Buy: toast "Waiting for approval…", stays locked, unlocks when the approved transaction arrives. Refund or revocation (`revocationDateIOS`): locks again silently. Family Sharing: nothing special, shared transactions count.
+  - Success: unlock everywhere (Redux `entitlements` → `selectVisibleDrinks`), finish the transaction, toast "Welcome to Pro" (Pro, Everything) or "<collection> unlocked" (in the language on screen). Toasts only for purchases started in this session; replays on launch are silent.
+  - Cancelled: silent. Failed: "The purchase didn't go through. Please try again."
+  - Restore: `restorePurchases()` (AppStore.sync), then "Purchases restored" or "Nothing to restore". With the store unreachable it says "Not available right now".
+  - Tips: consumable, finished at once, the card's "Thanks!" (`thankedTips`) + "Thank you! Cheers from Dublin", can tip again, never an entitlement.
+  - DEV switches (`__DEV__` only, `dev` is null otherwise): Pro, Everything, any collection, store down. They add to real ownership and never remove a real purchase. Their UI comes with About (task 8).
+- `src/purchases/ownership.ts`: `ownedFromTransactions` (purchased, unrevoked non-consumables; pending and tips excluded), `withDevOverrides`.
+- Copy: the pending and failed strings (README → Open questions 1, confirmed 7 Oct) were added to `COPY_EN_UK.md` (`## Purchases: pending and failed`) and to both dictionaries as `pendingToast` and `failedToast`.
+- Tests: `ownership.test.ts` (pending, refund, tips, duplicates, DEV overrides, error kinds, Expo Go = store off, dev or App Store build = on). 70/70 green.
+- Verified:
+  - `npx tsc --noEmit` clean; `npm test` 70/70; `npx expo export --platform ios` bundles.
+  - **Expo Go**: no crash; temporary on-screen readout showed `available=false`, prices null; with DEV Everything → `pro=true`, 6 collections, **118 visible drinks**.
+  - **Native build**: `npx expo run:ios` (local Debug build for the iPhone 17 Pro Max simulator; `ios/` is git-ignored) compiled `ExpoIap 5.8.2` + `openiap 3.6.1` with **0 errors, 0 warnings**. The app launches, and the device log shows StoreKit 2 at work (`TransactionUpdateStart`, `Products_SK2`, `TransactionQuery`), with no crash. Products are not in App Store Connect yet, so no prices load. Real purchases are for TestFlight + sandbox (TESTING.md § 3).
+  - Prebuild rewrote the `ios` / `android` npm scripts to `expo run:*`; restored. It did not change `app.json`.
+- The temporary readout on Home was removed before this commit.
+
+### Open question (task 4)
+- `eas.json` already has a `development` profile with `developmentClient: true`, which needs the `expo-dev-client` package. That package is not installed and not pre-approved. Options: (a) add `expo-dev-client`; (b) drop `developmentClient` from the profile (a plain Debug simulator build that loads JS from Metro); (c) keep building locally with `npx expo run:ios`, which works now without anything new. Until Vlad picks, nothing changes in `eas.json`.
+
 ## 2026-10-07 · Removed the unused TabBar (Claude Code)
 - `src/components/TabBar.tsx` deleted with Vlad's ok (task 2 → Open question 3). It was a 1.0 leftover that nothing imported; the tab bar is `src/navigation/TabNavigator.tsx`. Verified: no import anywhere, `npx tsc --noEmit` clean.
 

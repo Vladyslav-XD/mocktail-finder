@@ -162,6 +162,9 @@ export const uk: Dictionary = {
   welcomePro: "Вітаємо в Pro",
   added: { one: "Додано {n} інгредієнт", few: "Додано {n} інгредієнти", many: "Додано {n} інгредієнтів" },
   unlockedToast: "{x} відкрито",
+  // Purchases: pending and failed (confirmed by Vlad 7 Oct)
+  pendingToast: "Очікує схвалення. Відкриється, щойно покупку схвалять.",
+  failedToast: "Покупка не вдалася. Спробуйте ще раз.",
   // Tour and hints
   obSkip: "Пропустити",
   obNext: "Далі",

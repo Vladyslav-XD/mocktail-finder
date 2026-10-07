@@ -160,6 +160,9 @@ export const en = {
   welcomePro: "Welcome to Pro",
   added: { one: "Added {n} ingredient", other: "Added {n} ingredients" },
   unlockedToast: "{x} unlocked",
+  // Purchases: pending and failed (confirmed by Vlad 7 Oct)
+  pendingToast: "Waiting for approval. It unlocks as soon as it's approved.",
+  failedToast: "The purchase didn't go through. Please try again.",
   // Tour and hints
   obSkip: "Skip",
   obNext: "Next",
