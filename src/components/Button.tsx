@@ -11,6 +11,12 @@ interface ButtonProps {
   variant?: 'filled' | 'outline' | 'text';
   /** Drawn left of the label in the label's colour. */
   icon?: (color: string) => React.ReactNode;
+  /** Drawn right of the label (the small lock on a Pro button). */
+  trailing?: (color: string) => React.ReactNode;
+  /** danger = error colour for an outline button (Delete). */
+  tone?: 'brand' | 'danger';
+  /** Free user on a Pro button: 50 %, still tappable (it opens the paywall). */
+  locked?: boolean;
   disabled?: boolean;
   /** Purchasing: spinner instead of the label, presses ignored. */
   busy?: boolean;
@@ -25,13 +31,17 @@ export const Button = ({
   onPress,
   variant = 'filled',
   icon,
+  trailing,
+  tone = 'brand',
+  locked = false,
   disabled = false,
   busy = false,
   compact = false,
   style,
 }: ButtonProps) => {
   const { colors } = useTheme();
-  const fg = variant === 'filled' ? colors.onBrand : variant === 'outline' ? colors.brand : colors.subtitle;
+  const accent = tone === 'danger' ? colors.error : colors.brand;
+  const fg = variant === 'filled' ? colors.onBrand : variant === 'outline' ? accent : colors.subtitle;
 
   return (
     <TouchableOpacity
@@ -44,9 +54,9 @@ export const Button = ({
       style={[
         styles.base,
         { height: compact ? sizes.buttonCompact : sizes.button },
-        variant === 'filled' && { backgroundColor: colors.brand },
-        variant === 'outline' && [styles.outline, { borderColor: colors.brand }],
-        disabled && styles.disabled,
+        variant === 'filled' && { backgroundColor: accent },
+        variant === 'outline' && [styles.outline, { borderColor: accent }],
+        (disabled || locked) && styles.disabled,
         style,
       ]}
     >
@@ -58,6 +68,7 @@ export const Button = ({
           <Text numberOfLines={1} style={[type.button, { color: fg }]}>
             {label}
           </Text>
+          {trailing?.(fg)}
         </>
       )}
     </TouchableOpacity>

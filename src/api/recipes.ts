@@ -14,6 +14,7 @@ export function withDetails(recipe: Recipe, details?: RecipeDetails): Recipe {
   return {
     ...recipe,
     ingredients: d.ingredients,
+    parts: d.parts,
     instructions: d.instructions,
     tags: d.tags,
     // User recipes keep their own description; database drinks get the tag line.

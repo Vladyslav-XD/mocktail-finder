@@ -1,6 +1,7 @@
 import { Recipe } from '../data/mockData';
 import { COCKTAILDB_BASE_URL } from './config';
 import { deriveTags, DrinkTag } from '../utils/drinkTags';
+import type { IngredientPart } from '../data/mockData';
 
 export const API_URL = `${COCKTAILDB_BASE_URL}/filter.php?a=Non_Alcoholic`;
 export const API_DETAILS_URL = `${COCKTAILDB_BASE_URL}/lookup.php?i=`;
@@ -10,6 +11,8 @@ const REQUEST_TIMEOUT_MS = 15000;
 /** What one lookup.php call gives us, in the shape the screens use. */
 export interface RecipeDetails {
   ingredients: string[];
+  /** The same ingredients with measure and name apart (servings, shopping list, line formats). */
+  parts: IngredientPart[];
   instructions: string;
   tags: DrinkTag[];
   category?: string;
@@ -68,6 +71,7 @@ export const fetchMocktailDetails = async (id: string): Promise<RecipeDetails> =
 
   return {
     ingredients,
+    parts: facts.map(f => ({ amount: f.measure, name: f.name })),
     instructions: drink.strInstructions || '',
     tags: deriveTags({
       name: drink.strDrink,

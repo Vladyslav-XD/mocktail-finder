@@ -6,6 +6,7 @@
  * are done once, kept in memory and persisted to AsyncStorage, so the second
  * launch shows subtitles instantly and the recipe screen never waits.
  */
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { loadJson, saveJson, STORAGE_KEYS } from '../storage/storage';
 import { fetchMocktailDetails, RecipeDetails } from './api';
 
@@ -26,6 +27,8 @@ let persistTimer: ReturnType<typeof setTimeout> | null = null;
 /** Reads the persisted cache into memory. Safe to call more than once. */
 export async function loadDetailsCache(): Promise<void> {
   if (hydrated) return;
+  // 1.1 kept details without the measure/name split; they are fetched again once.
+  AsyncStorage.removeItem(STORAGE_KEYS.detailsV1).catch(() => {});
   const saved = await loadJson<Record<string, CacheEntry>>(STORAGE_KEYS.details, {});
   if (saved && typeof saved === 'object') {
     for (const [id, entry] of Object.entries(saved)) {

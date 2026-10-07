@@ -40,6 +40,8 @@ export const sizes = {
   pill: 20,
   pillLock: 24,
   packCard: 160,
+  recipePhoto: 300,
+  stepNumber: 20,
   packCover: 130,
   /** Header logo (the martini glass), drawn 24 × 48. */
   logo: 24,

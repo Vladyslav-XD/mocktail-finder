@@ -1,5 +1,12 @@
 import type { DrinkTag } from '../utils/drinkTags';
 
+/** One ingredient with its measure apart from its name: "50 ml" + "Lime juice". */
+export interface IngredientPart {
+  /** As written; may be empty ("Soda water") or text ("a handful"). */
+  amount: string;
+  name: string;
+}
+
 export interface Recipe {
   id: string;
   title: string;
@@ -10,6 +17,12 @@ export interface Recipe {
   isFavorite: boolean;
   /** "measure ingredient" lines in recipe order. */
   ingredients?: string[];
+  /**
+   * The same ingredients, measure and name apart. Catalogue drinks get them from the
+   * details cache, user recipes from the form (saved since 1.2). Older recipes have
+   * only `ingredients`.
+   */
+  parts?: IngredientPart[];
   instructions?: string;
   duration?: string;
   /** Legacy single category of user recipes created before tags existed. */

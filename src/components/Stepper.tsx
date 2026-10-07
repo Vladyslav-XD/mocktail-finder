@@ -21,6 +21,8 @@ interface StepperProps {
    */
   locked?: boolean;
   onLockedPress?: () => void;
+  /** Set false when the row around it is already drawn at 50 % (Recipe → Servings). */
+  dimWhenLocked?: boolean;
 }
 
 /** − value + with round 36 px buttons. */
@@ -34,6 +36,7 @@ export const Stepper = ({
   incrementLabel,
   locked = false,
   onLockedPress,
+  dimWhenLocked = true,
 }: StepperProps) => {
   const { colors } = useTheme();
 
@@ -66,7 +69,7 @@ export const Stepper = ({
   };
 
   return (
-    <View style={[styles.row, locked && styles.locked]}>
+    <View style={[styles.row, locked && dimWhenLocked && styles.locked]}>
       {button(-1)}
       <Text
         accessibilityLabel={`${accessibilityLabel}, ${value}`}

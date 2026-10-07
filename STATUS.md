@@ -2,6 +2,34 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-07 · 1.2 task 6 — D. Recipe (Claude Code)
+- **`RecipeDetailsScreen` rewritten** per README → Screens → Recipe:
+  - The photo is 300 high and scrolls with the page (the 1.1 sticky header is gone, as in the prototype). Round back and heart buttons (36, float-button colour). Title card: Title L, tag badges, description (collection drinks; a user recipe's own short text).
+  - Ingredients card with the Servings row + `Stepper` 1–12 (starts at the written servings), then the lines in the handoff formats. Steps card with numbered brand circles.
+  - Buttons: Add to Favourites ↔ Saved to Favourites (filled ↔ outline, filled heart), **Share Recipe (free)**, Add to shopping list (Pro), Share as card (Pro); own recipe: Edit / Delete as in 1.1.
+  - Free: the Servings row and the two Pro buttons at 50 % with a small lock; any tap → `usePaywall().openPaywall('serv' | 'shop' | 'card')`, still the task-5 stub until task 8.
+- **Measure and name apart**:
+  - `RecipeDetails.parts` from the API. The details cache moves to `@mocktail-finder/details/v2`; v1 is removed on launch and the 58 drinks are fetched again once. A favourite opened before that happens shows at once and upgrades quietly.
+  - `Recipe.parts`; Add / Edit Recipe now saves parts and Edit puts amount and name back in their own fields (1.1 recipes keep the old behaviour).
+- `src/utils/recipeParts.ts`:
+  - `bilingualParts`: [English, Ukrainian] per ingredient — collections from their data, catalogue from the API + Cowork's file, own recipes as typed. A 1.1 line without a split scales only its leading measure ("1 can 7-Up" → "2 cans 7-Up").
+  - `ingredientLines`, `cardIngredientLine`, `baseServings`.
+- **Shopping list**: `src/utils/shoppingList.ts` (`addToShoppingList`: current servings, ice and water skipped, the same ingredient again → "100 ml + 60 ml" and un-ticked; `itemAmount`, `shoppingListText`), `shoppingList` slice persisted in `@mocktail-finder/shopping-list` (`STORAGE_KEYS.shoppingList`, hydrated with the user recipes). Toast "Added N ingredients" with the plural. The list screen comes with My Bar (task 7).
+- **Share as card**: `react-native-view-shot` 4.0.3 (pre-approved; author Gaëtan Renaudeau, France).
+  - `ShareCard` draws the 1080 × 1350 design at any scale; `ShareCardSheet` shows the dark preview (title, ×, card, "1080 × 1350", Share) and captures an off-screen copy drawn at 1 / PixelRatio, so the PNG is exactly 1080 × 1350 on every iPhone. Then the native share sheet.
+  - Card: photo 1080 × 820 (bundled photo, the user's own, or the no-photo gradient), title Sora Bold 76/90, tags in brand (collection drinks add "· 0.0%"), one ingredient line at the current servings (2 lines max), footer logo + "Mocktail Finder · apps.apple.com/app/id6811610325". Card colours and metrics live in `src/theme/shareCard.ts`.
+  - Decision without asking: the card shows at most three tags, like the list cards. Five catalogue tags ran off the line.
+- Components: `Button` gained `trailing`, `tone="danger"`, `locked`; `Stepper` gained `dimWhenLocked` (the Servings row dims itself, the stepper must not dim again). New `ShareCard`, `ShareCardSheet`. Logo path exported as `LOGO_GLASS_PATH`.
+- Tests: `recipeParts.test.ts` (both languages, × 3 with the ice "a + b", plural units, 1.1 lines, card line, shopping list add / merge / un-tick / share text). 81/81 green.
+- Verified:
+  - `npx tsc --noEmit` clean; `npm test` 81/81; `npx expo export --platform ios` bundles.
+  - In Expo Go (temporary start screen and DEV switches, all removed before the commit):
+    - Afterglow as Free on SE (Ukrainian) and Pro Max (English): locked Servings + lock, lines "1 part  Grenadine".
+    - As Pro at 3 servings: "3 parts / 12 parts".
+    - The card preview in Ukrainian.
+    - The captured PNG measured **1080 × 1350 px on both** the @2x SE and the @3x Pro Max.
+  - Not done on screen: the native share sheet itself, Photos / WhatsApp (needs a tap / real phone → TESTING.md), adding to the list (logic covered by tests).
+
 ## 2026-10-07 · 1.2 task 5 — C. Home and header (Claude Code)
 - **Home** (`MocktailFinderScreen`, rewritten), in the handoff order Search → Collections → Category → Filter by Ingredients → Featured Recipes:
   - Collections: a horizontal row of the new `PackCard` (160 wide, cover 160 × 130 radius 16; pill with lock + StoreKit price, a lock alone when the store is unreachable, or ✓ "Unlocked"). "Everything · {price}" right of the title, hidden when owned or when there is no price. The row hides while a search, a category or an ingredient filter is on.

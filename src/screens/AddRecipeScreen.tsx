@@ -47,12 +47,15 @@ export const AddRecipeScreen = () => {
   const [title, setTitle] = useState(editing?.title ?? '');
   const [subtitle, setSubtitle] = useState(editing?.subtitle ?? '');
   const [tags, setTags] = useState<DrinkTag[]>((editing?.tags as DrinkTag[]) ?? []);
-  // A saved ingredient is one line ("50 ml lime juice"); splitting it back into amount and
-  // name would only guess wrong, so the whole line goes into the name field.
+  // Since 1.2 a recipe keeps amount and name apart (`parts`), so they go back into their
+  // own fields. An older recipe has only lines ("50 ml lime juice"); splitting one would
+  // only guess wrong, so the whole line goes into the name field.
   const [ingredients, setIngredients] = useState<Ingredient[]>(
-    editing?.ingredients?.length
-      ? editing.ingredients.map(line => ({ name: line, amount: '' }))
-      : [{ name: '', amount: '' }]
+    editing?.parts?.length
+      ? editing.parts.map(p => ({ name: p.name, amount: p.amount }))
+      : editing?.ingredients?.length
+        ? editing.ingredients.map(line => ({ name: line, amount: '' }))
+        : [{ name: '', amount: '' }]
   );
   const [steps, setSteps] = useState<string[]>(() => {
     const saved = splitInstructions(editing?.instructions);
@@ -176,6 +179,7 @@ export const AddRecipeScreen = () => {
       imageUrl,
       isFavorite: editing?.isFavorite ?? false,
       ingredients: validIngredients.map(i => `${i.amount} ${i.name}`.trim()),
+      parts: validIngredients.map(i => ({ amount: i.amount.trim(), name: i.name.trim() })),
       // Each step ends with its own punctuation, so the recipe screen splits the text back into the same steps.
       instructions: validSteps.map(s => (/[.!?]$/.test(s.trim()) ? s.trim() : `${s.trim()}.`)).join(' '),
       duration: editing?.duration ?? '5 min',
