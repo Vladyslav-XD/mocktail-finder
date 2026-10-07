@@ -2,6 +2,9 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-07 · Removed the unused TabBar (Claude Code)
+- `src/components/TabBar.tsx` deleted with Vlad's ok (task 2 → Open question 3). It was a 1.0 leftover that nothing imported; the tab bar is `src/navigation/TabNavigator.tsx`. Verified: no import anywhere, `npx tsc --noEmit` clean.
+
 ## 2026-10-07 · Ukrainian for the 1.1 strings (Claude Code)
 - Cowork added `## Strings from 1.1 not in the handoff` to `COPY_EN_UK.md` (28 rows incl. `a11yBack`, `a11yShuffle`). They are now in `src/i18n/uk.ts`, and the English in the doc matches `en.ts` word for word. This answers task 2 → Open question 1.
 - Still English-only: the three VoiceOver labels of the header theme toggle (`a11yThemeToDark`, `a11yThemeToLight`, `a11yThemeHint`), which go away with the toggle in task 5.
