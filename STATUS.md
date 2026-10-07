@@ -2,6 +2,14 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-07 · Share card: names as in the app (Claude Code)
+- Vlad's review of task 6:
+  - (1) "Tags cut off on the Ukrainian card": the three-tag limit was already in `095646c`, but the PNGs in `~/Desktop/mocktail-1.2-tasks-5-6/` had been captured before it. Regenerated: three tags in both languages.
+  - (2) Ingredient names on the card are now written **as on the recipe screen**, capitals kept ("3 parts  Grenadine", "Ice — …"). Vlad's decision; the prototype lower-cased them.
+- Also: spaces inside each ingredient on the card are non-breaking, so the line wraps only between ingredients ("12 / parts" no longer splits).
+- `cardIngredientLine` = the recipe's `ingredientLines` joined with "  ·  ". Files: `src/utils/recipeParts.ts`, its test.
+- Verified: `npm test` 82/82, `tsc` clean. The cards were captured again on SE (Ukrainian) and Pro Max (English), both 1080 × 1350, and replaced in the Desktop folder (files 10–12).
+
 ## 2026-10-07 · 1.2 task 6 — D. Recipe (Claude Code)
 - **`RecipeDetailsScreen` rewritten** per README → Screens → Recipe:
   - The photo is 300 high and scrolls with the page (the 1.1 sticky header is gone, as in the prototype). Round back and heart buttons (36, float-button colour). Title card: Title L, tag badges, description (collection drinks; a user recipe's own short text).

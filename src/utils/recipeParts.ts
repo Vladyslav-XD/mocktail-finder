@@ -83,14 +83,13 @@ export function ingredientLines(parts: BiPart[], factor: number, lang: Language)
   });
 }
 
-/** One line for the share card: "50 ml lime juice  ·  ice — 120 g + 60 g  ·  …". */
+/**
+ * One line for the share card, written as on the recipe screen (Vlad, 7 Oct; the
+ * prototype lower-cased the names): "3 parts  Grenadine  ·  Ice — 120 g + 60 g  ·  …".
+ */
 export function cardIngredientLine(parts: BiPart[], factor: number, lang: Language): string {
-  return parts
-    .map(p => {
-      const name = partName(p, lang);
-      const lower = name.charAt(0).toLowerCase() + name.slice(1);
-      const amount = p.split ? scaledAmount(p.amount, factor, lang) : '';
-      return / \+ /.test(amount) ? `${lower} — ${amount}` : [amount, lower].filter(Boolean).join(' ');
-    })
+  // Non-breaking spaces inside each ingredient, so the card wraps only between them.
+  return ingredientLines(parts, factor, lang)
+    .map(line => line.replace(/ /g, '\u00a0'))
     .join('  ·  ');
 }

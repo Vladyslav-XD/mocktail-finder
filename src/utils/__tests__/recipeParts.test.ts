@@ -76,11 +76,22 @@ describe('ingredientLines', () => {
 });
 
 describe('cardIngredientLine', () => {
-  it('lower-case names, amounts first, ice as name — amount', () => {
-    expect(cardIngredientLine(bilingualParts(afterglow), 1, 'en')).toBe(
-      '1 part grenadine  ·  4 parts orange juice  ·  4 parts pineapple juice'
+  // Spaces inside an ingredient are non-breaking; only "  ·  " may wrap.
+  const plain = (s: string) => s.replace(/\u00a0/g, ' ');
+
+  it('the lines as on the recipe screen, capitals kept, joined with " · "', () => {
+    expect(plain(cardIngredientLine(bilingualParts(afterglow), 3, 'en'))).toBe(
+      '3 parts  Grenadine  ·  12 parts  Orange juice  ·  12 parts  Pineapple juice'
     );
-    expect(cardIngredientLine(bilingualParts(margarita), 1, 'en')).toContain('ice — 100 g for shaking + 80 g for serving');
+    expect(plain(cardIngredientLine(bilingualParts(afterglow), 3, 'uk'))).toBe(
+      '3 частини  Гренадин  ·  12 частин  Апельсиновий сік  ·  12 частин  Ананасовий сік'
+    );
+    expect(plain(cardIngredientLine(bilingualParts(margarita), 1, 'en'))).toContain('Ice — 100 g for shaking + 80 g for serving');
+  });
+
+  it('wraps only between ingredients', () => {
+    const line = cardIngredientLine(bilingualParts(afterglow), 3, 'en');
+    expect(line.split('  ·  ').every(item => !item.includes(' '))).toBe(true);
   });
 });
 
