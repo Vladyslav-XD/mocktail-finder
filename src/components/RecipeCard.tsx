@@ -9,13 +9,15 @@ import { resolveImageUri } from '../utils/recipePhotos';
 interface RecipeCardProps {
   title: string;
   subtitle: string;
+  /** My Bar "Missing: …" is drawn in the error colour. */
+  subtitleColor?: string;
   imageUrl: string | any;
   isFavorite: boolean;
   onFavoritePress: () => void;
   onPress?: () => void;
 }
 
-const RecipeCardComponent = ({ title, subtitle, imageUrl, isFavorite, onFavoritePress, onPress }: RecipeCardProps) => {
+const RecipeCardComponent = ({ title, subtitle, subtitleColor, imageUrl, isFavorite, onFavoritePress, onPress }: RecipeCardProps) => {
   const { colors } = useTheme();
 
   const opacity = useRef(new Animated.Value(0)).current;
@@ -73,7 +75,7 @@ const RecipeCardComponent = ({ title, subtitle, imageUrl, isFavorite, onFavorite
       </Animated.View>
       <View style={styles.content}>
         <Text style={[styles.title, { color: colors.title }]}>{title}</Text>
-        <Text style={[styles.subtitle, { color: colors.subtitle }]}>{subtitle}</Text>
+        <Text style={[styles.subtitle, { color: subtitleColor ?? colors.subtitle }]}>{subtitle}</Text>
       </View>
     </TouchableOpacity>
   );

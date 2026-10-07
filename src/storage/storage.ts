@@ -17,6 +17,8 @@ export const STORAGE_KEYS = {
   entitlements: '@mocktail-finder/entitlements',
   /** Shopping list items (Pro), see utils/shoppingList. */
   shoppingList: '@mocktail-finder/shopping-list',
+  /** My Bar: ticked ingredient keys. */
+  pantry: '@mocktail-finder/pantry',
 } as const;
 
 export async function loadJson<T>(key: string, fallback: T): Promise<T> {

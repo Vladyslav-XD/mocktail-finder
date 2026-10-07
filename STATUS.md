@@ -2,6 +2,29 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-07 · 1.2 task 7 — E. My Bar (Claude Code)
+- **New third tab "My Bar" / «Мій бар»** (glass icon); Add Recipe moves to fourth. The prototype tab bar is Home · Favourites · My Bar · Add; the task's "rename the third tab" came from Figma ("Kitchen"), and the handoff wins. Header subtitle "Mix with what you have".
+- `MyBarScreen` with `SegmentedControl` "What I have | Shopping list":
+  - **Free**: a `LockedCard` per segment (own title and text, "Get Pro · {price}", or "Not available right now" and disabled when there is no price) + the "Pro also adds…" line. Never an empty screen. The button goes to `usePaywall().openPaywall('mybar' | 'shop')` (task-8 stub).
+  - **Pro, What I have**: `BarSummaryCard` (count, ticked items as removable chips — first 8 then "+N", empty text, Add ingredients, Clear, "Ice, water, sugar and salt are always in."), then "You can make now (N)" and "Missing one ingredient (M)" with "Missing: <ingredient>" in the error colour (`RecipeCard.subtitleColor`). Cards open the recipe in the Home stack.
+  - **Pro, Shopping list**: "N items · M ticked" + "Clear ticked"; `CheckRow`s (tap ticks and dims, swipe left → red Delete, VoiceOver delete action), amounts in the current language ("8 частин + 4 частини"); "Share list" → native share sheet as text; empty state with the bag icon.
+- `AddIngredientsSheet` (full-height `BottomSheet`): "Your bar" + count + Clear; search "Find an ingredient…" (matches the name on screen and the English one); "Most used" (top 10 by drink count) and the 9 groups (`IngredientGroup`: icon, "a of b ticked" in brand, collapsible, tiles two per row with brand border + tip-panel fill when ticked); "Nothing found."; bottom button "Show N drinks" / "Done". Each opening starts with no search and only Most used open.
+- Logic `src/utils/myBar.ts`: `keysOf` (generated table for the 118, keyOf for own recipes), `keyFrequency`, `mostUsed`, `groupItems`, `barResults`, `shownTicks`. Only visible drinks count, so a collection that locks again drops its keys while the ticks stay saved. Ticks persist in `@mocktail-finder/pantry` (`pantry` slice, `STORAGE_KEYS.pantry`; `addKeys` is ready for the tour step).
+- My Bar loads the catalogue itself when Home has not yet: opened first, it showed an empty bar until this fix.
+- Ukrainian on the smallest iPhone: "Додати інгредієнти" plus "Очистити" do not fit one row, so Clear wraps under the button instead of cutting the label.
+- New components: `BarSummaryCard`, `IngredientGroup`, `AddIngredientsSheet`; icons `GlassIcon`, `ChevronDownIcon`, `BagIcon`, `GROUP_ICONS` (prototype outlines). Tokens `sizes.tickCircle`, `sizes.tile`, `sizes.emptyTextWidth`.
+- Tests: `myBar.test.ts` (keys, Most used order, groups and search, always-available, can make / missing one, **lime + mint + soda water finds catalogue drinks**, ticks of locked drinks hidden). 90/90 green.
+- Verified:
+  - `tsc` clean, `npm test` 90/90, `expo export` bundles.
+  - In Expo Go, SE (Ukrainian, light) and Pro Max (English, dark), with temporary start tab and DEV Pro (removed before this commit):
+    - Free locked card.
+    - Pro "Your bar" with 5 ticks → "You can make now (1)" Limeade, "Missing one ingredient (9)".
+    - The sheet ("Most used 2 of 10 ticked", "Fruit, veg & juice 3 of 21 ticked", "Show 1 drink").
+    - The list ("3 позиції · 1 відмічено", merged amounts).
+    - With 2 ticks: "2 інгредієнти" and Missing one (4).
+  - Not seen on screen: the red "Missing:" line (below the fold), swipe to delete, the share sheet, persistence across a restart (need taps). TESTING.md § 6 covers them.
+- Environment: during this task Xcode updated to 27.0 and blocked simctl and `python3` until its license was accepted. Vlad accepted it. While cleaning test data I uninstalled Expo Go from the SE simulator by mistake; it was reinstalled from the Expo cache and its setting restored. Simulator only.
+
 ## 2026-10-07 · Share card: names as in the app (Claude Code)
 - Vlad's review of task 6:
   - (1) "Tags cut off on the Ukrainian card": the three-tag limit was already in `095646c`, but the PNGs in `~/Desktop/mocktail-1.2-tasks-5-6/` had been captured before it. Regenerated: three tags in both languages.

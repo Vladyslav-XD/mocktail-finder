@@ -4,6 +4,7 @@ export const SCREENS = {
   SETTINGS: 'Settings',
   HOME_TAB: 'HomeTab',
   FAVOURITES_TAB: 'FavouritesTab',
+  MY_BAR_TAB: 'MyBarTab',
   RANDOM_TAB: 'RandomTab',
   ADD_RECIPE_TAB: 'AddRecipeTab',
   MOCKTAIL_FINDER: 'MocktailFinder',

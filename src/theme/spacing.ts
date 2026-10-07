@@ -42,6 +42,10 @@ export const sizes = {
   packCard: 160,
   recipePhoto: 300,
   stepNumber: 20,
+  /** Tick circle on an ingredient tile. */
+  tickCircle: 20,
+  /** Ingredient tile, bar search field. */
+  tile: 44,
   packCover: 130,
   /** Header logo (the martini glass), drawn 24 × 48. */
   logo: 24,
@@ -59,6 +63,8 @@ export const sizes = {
   featureIcon: 44,
   emptyIcon: 56,
   emptyIconLarge: 64,
+  /** Empty-state text column (prototype max-width). */
+  emptyTextWidth: 260,
   grabberWidth: 36,
   grabberHeight: 5,
   bullet: 6,

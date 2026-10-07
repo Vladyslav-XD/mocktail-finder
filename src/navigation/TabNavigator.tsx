@@ -5,6 +5,8 @@ import { StackNavigator } from './StackNavigator';
 import { FavouritesScreen } from '../screens/FavouritesScreen';
 import { RandomScreen } from '../screens/RandomScreen';
 import { AddRecipeScreen } from '../screens/AddRecipeScreen';
+import { MyBarScreen } from '../screens/MyBarScreen';
+import { GlassIcon } from '../components/icons/barIcons';
 import { SCREENS } from '../constants/screens';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -96,6 +98,15 @@ export const TabNavigator = () => {
         }}
       />
 
+      {/* 1.2: My Bar is the third tab, Add Recipe moves to fourth (prototype tab bar). */}
+      <Tab.Screen
+        name={SCREENS.MY_BAR_TAB}
+        component={MyBarScreen}
+        options={{
+          tabBarLabel: t('tabKitchen'),
+          tabBarIcon: ({ color }) => <GlassIcon size={24} color={color} />,
+        }}
+      />
       <Tab.Screen
         name={SCREENS.ADD_RECIPE_TAB}
         component={AddRecipeScreen}

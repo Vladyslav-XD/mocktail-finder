@@ -4,6 +4,7 @@ import catalogueReducer from './catalogueSlice';
 import packsReducer from './packsSlice';
 import entitlementsReducer from './entitlementsSlice';
 import shoppingListReducer, { hydrateShoppingList } from './shoppingListSlice';
+import pantryReducer, { hydratePantry } from './pantrySlice';
 import type { ShoppingItem } from '../utils/shoppingList';
 import { loadJson, saveJson, STORAGE_KEYS } from '../storage/storage';
 import { Recipe } from '../data/mockData';
@@ -16,6 +17,7 @@ export const store = configureStore({
     packs: packsReducer,
     entitlements: entitlementsReducer,
     shoppingList: shoppingListReducer,
+    pantry: pantryReducer,
   },
 });
 
@@ -39,22 +41,29 @@ export function migrateRecipe(recipe: Recipe): Recipe {
   return { ...recipe, tags, subtitle: recipe.subtitle || tagsToSubtitle(tags) };
 }
 
-/** Reads persisted user recipes and the shopping list into the store. Resolves when done (never rejects). */
+/** Reads persisted user recipes, the shopping list and My Bar into the store. Resolves when done (never rejects). */
 export async function hydrateStore(): Promise<void> {
-  const [saved, shopping] = await Promise.all([
+  const [saved, shopping, pantry] = await Promise.all([
     loadJson<Recipe[]>(STORAGE_KEYS.myRecipes, []),
     loadJson<ShoppingItem[]>(STORAGE_KEYS.shoppingList, []),
+    loadJson<string[]>(STORAGE_KEYS.pantry, []),
   ]);
   store.dispatch(hydrateRecipes(Array.isArray(saved) ? saved.map(migrateRecipe) : []));
   store.dispatch(hydrateShoppingList(Array.isArray(shopping) ? shopping : []));
+  store.dispatch(hydratePantry(Array.isArray(pantry) ? pantry.filter(k => typeof k === 'string') : []));
 }
 
 // Persist user recipes whenever they change (after hydration, so an empty
 // initial state never overwrites what is already on disk).
 let lastPersisted: Recipe[] | null = null;
 let lastShopping: ShoppingItem[] | null = null;
+let lastPantry: string[] | null = null;
 store.subscribe(() => {
-  const { myRecipes, shoppingList } = store.getState();
+  const { myRecipes, shoppingList, pantry } = store.getState();
+  if (pantry.hydrated && pantry.ticked !== lastPantry) {
+    lastPantry = pantry.ticked;
+    saveJson(STORAGE_KEYS.pantry, pantry.ticked);
+  }
   if (myRecipes.hydrated && myRecipes.recipes !== lastPersisted) {
     lastPersisted = myRecipes.recipes;
     saveJson(STORAGE_KEYS.myRecipes, myRecipes.recipes);
