@@ -17,11 +17,14 @@ import { store, hydrateStore } from './src/store/store';
 import { loadDetailsCache } from './src/api/detailsCache';
 import { SplashScreen } from './src/screens/SplashScreen';
 import { ToastOutlet, ToastProvider } from './src/components/Toast';
+import { LanguageProvider, loadLanguageSetting } from './src/context/LanguageContext';
+import type { LanguageSetting } from './src/i18n';
 
 export default function App() {
   const [splashVisible, setSplashVisible] = useState(true);
   const [storeReady, setStoreReady] = useState(false);
   const [themeMode, setThemeMode] = useState<ThemeMode>('system');
+  const [language, setLanguage] = useState<LanguageSetting>('system');
   // Brand font for the wordmark. If loading fails we still start (system font fallback)
   // rather than leaving the user on the splash forever.
   const [fontsLoaded, fontError] = useFonts({ Sora_600SemiBold, Sora_700Bold });
@@ -29,11 +32,13 @@ export default function App() {
 
   useEffect(() => {
     let cancelled = false;
-    // Favourites, user recipes, the drink-details cache and the saved theme are all
-    // read while the splash plays, so the app opens in its final state.
-    Promise.all([hydrateStore(), loadDetailsCache(), loadThemeMode()])
-      .then(([, , savedMode]) => {
-        if (!cancelled) setThemeMode(savedMode);
+    // Favourites, user recipes, the drink-details cache, the saved theme and the
+    // language are all read while the splash plays, so the app opens in its final state.
+    Promise.all([hydrateStore(), loadDetailsCache(), loadThemeMode(), loadLanguageSetting()])
+      .then(([, , savedMode, savedLanguage]) => {
+        if (cancelled) return;
+        setThemeMode(savedMode);
+        setLanguage(savedLanguage);
       })
       .finally(() => {
         if (!cancelled) setStoreReady(true);
@@ -53,16 +58,18 @@ export default function App() {
           <SplashScreen ready={storeReady && fontsReady} onFinish={handleSplashFinish} />
         ) : (
           <Provider store={store}>
-            <ThemeProvider initialMode={themeMode}>
-              <ToastProvider>
-                <FavoritesProvider>
-                  <NavigationContainer>
-                    <TabNavigator />
-                  </NavigationContainer>
-                </FavoritesProvider>
-                <ToastOutlet />
-              </ToastProvider>
-            </ThemeProvider>
+            <LanguageProvider initialSetting={language}>
+              <ThemeProvider initialMode={themeMode}>
+                <ToastProvider>
+                  <FavoritesProvider>
+                    <NavigationContainer>
+                      <TabNavigator />
+                    </NavigationContainer>
+                  </FavoritesProvider>
+                  <ToastOutlet />
+                </ToastProvider>
+              </ThemeProvider>
+            </LanguageProvider>
           </Provider>
         )}
       </GestureHandlerRootView>

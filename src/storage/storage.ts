@@ -7,6 +7,8 @@ export const STORAGE_KEYS = {
   details: '@mocktail-finder/details/v1',
   /** Appearance choice: 'system' | 'light' | 'dark'. */
   theme: '@mocktail-finder/theme',
+  /** Language choice: 'system' | 'en' | 'uk'. */
+  language: '@mocktail-finder/language',
 } as const;
 
 export async function loadJson<T>(key: string, fallback: T): Promise<T> {

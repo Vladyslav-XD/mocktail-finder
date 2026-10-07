@@ -15,6 +15,8 @@ import { recipeImageSource } from '../utils/recipeImage';
 import { useFavorites } from '../context/FavoritesContext';
 import { shareRecipe, splitInstructions } from '../utils/recipeText';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
+import { localizeRecipe, tagLabels } from '../i18n/localizeRecipe';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 
@@ -31,15 +33,16 @@ export const RandomScreen = () => {
   
   const { isFavorite, toggleFavorite } = useFavorites();
   const { colors } = useTheme();
+  const { lang, t } = useLanguage();
   const insets = useSafeAreaInsets();
   const customRecipes = useSelector((state: RootState) => state.myRecipes.recipes);
-  const [loadError, setLoadError] = useState<string | null>(null);
+  const [loadError, setLoadError] = useState(false);
   // Guards against a slow earlier lookup overwriting the details of a newer pick.
   const requestId = useRef(0);
 
   const loadInitialData = async () => {
     setLoading(true);
-    setLoadError(null);
+    setLoadError(false);
     try {
       const recipes = await fetchMocktails();
       const combined = [...recipes, ...customRecipes];
@@ -50,7 +53,7 @@ export const RandomScreen = () => {
         setLoading(false);
       }
     } catch {
-      setLoadError("Couldn't load recipes. Check your connection and try again.");
+      setLoadError(true);
       setLoading(false);
     }
   };
@@ -139,37 +142,46 @@ export const RandomScreen = () => {
   if (!currentRecipe) {
     return (
       <View style={[styles.container, styles.centerContainer, { backgroundColor: colors.background, paddingHorizontal: spacing.xl }]}>
-        <Text style={[styles.errorText, { color: colors.title }]}>{loadError ?? 'No recipes found.'}</Text>
+        <Text style={[styles.errorText, { color: colors.title }]}>{t(loadError ? 'loadError' : 'noRecipes')}</Text>
         <TouchableOpacity
           style={[styles.retryBtn, { backgroundColor: colors.activeBadgeBG }]}
           onPress={loadInitialData}
           activeOpacity={0.8}
           accessibilityRole="button"
         >
-          <Text style={styles.retryBtnText}>Try again</Text>
+          <Text style={styles.retryBtnText}>{t('tryAgain')}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.linkBtn} onPress={() => navigation.goBack()} accessibilityRole="button">
-          <Text style={[styles.linkBtnText, { color: colors.subtitle }]}>Back</Text>
+          <Text style={[styles.linkBtnText, { color: colors.subtitle }]}>{t('back')}</Text>
         </TouchableOpacity>
       </View>
     );
   }
 
   const isFav = isFavorite(currentRecipe.id);
-  const ingredientsToDisplay = details?.ingredients || [];
-  const stepsToDisplay = parseInstructions(details?.instructions || '');
   const tags = details?.tags || currentRecipe.tags || [];
+  // The pick with its details merged in, in the language on screen.
+  const shown = localizeRecipe(
+    { ...currentRecipe, ingredients: details?.ingredients, instructions: details?.instructions, tags },
+    lang,
+    t
+  );
+  const ingredientsToDisplay = shown.ingredients || [];
+  const stepsToDisplay = parseInstructions(shown.instructions || '');
   // A user recipe shows its own description; a database drink shows its tags as chips below.
   const description =
     currentRecipe.subtitle && currentRecipe.subtitle !== tagsToSubtitle(tags) ? currentRecipe.subtitle : '';
 
   const handleShare = () =>
-    shareRecipe({
-      title: currentRecipe.title,
-      ingredients: ingredientsToDisplay,
-      instructions: details?.instructions,
-      imageUrl: currentRecipe.imageUrl,
-    });
+    shareRecipe(
+      {
+        title: shown.title,
+        ingredients: ingredientsToDisplay,
+        instructions: shown.instructions,
+        imageUrl: currentRecipe.imageUrl,
+      },
+      t
+    );
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -186,22 +198,22 @@ export const RandomScreen = () => {
           />
           <PhotoScrim />
           <View style={{ position: 'absolute', top: insets.top + spacing.s, left: spacing.l, right: spacing.l, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-            <TouchableOpacity accessibilityRole="button" accessibilityLabel="Go back" style={[styles.shuffleButton, { backgroundColor: colors.surface }]} activeOpacity={0.8} onPress={handleBack}>
+            <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('a11yBack')} style={[styles.shuffleButton, { backgroundColor: colors.surface }]} activeOpacity={0.8} onPress={handleBack}>
               <ArrowLeftIcon size={24} color={colors.title} />
             </TouchableOpacity>
-            <TouchableOpacity accessibilityRole="button" accessibilityLabel="Another random recipe" style={[styles.shuffleButton, { backgroundColor: colors.activeBadgeBG }]} activeOpacity={0.8} onPress={() => pickRandomRecipe()}>
+            <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('a11yShuffle')} style={[styles.shuffleButton, { backgroundColor: colors.activeBadgeBG }]} activeOpacity={0.8} onPress={() => pickRandomRecipe()}>
               <ShuffleIcon size={24} color="#ffffff" />
             </TouchableOpacity>
           </View>
         </View>
         <View style={{ paddingHorizontal: 12 }}>
           <View style={[styles.card, styles.titleCard, { backgroundColor: colors.surface, marginTop: -40, marginBottom: 0, shadowColor: '#000', shadowOffset: { width: 0, height: 10 }, shadowOpacity: 0.1, shadowRadius: 15, elevation: 10 }]}>
-            <Text style={[styles.recipeTitle, { color: colors.title }]}>{currentRecipe.title}</Text>
+            <Text style={[styles.recipeTitle, { color: colors.title }]}>{shown.title}</Text>
             {!!description && (
               <Text style={[styles.recipeSubtitle, { color: colors.subtitle }]}>{description}</Text>
             )}
             <View style={styles.badgeWrapper}>
-              {(tags.length > 0 ? tags : ['Random pick']).map(tag => (
+              {(tags.length > 0 ? tagLabels(tags, t) : [t('randomPick')]).map(tag => (
                 <View key={tag} style={[{ backgroundColor: `${colors.activeBadgeBG}15`, paddingHorizontal: 12, paddingVertical: 6, borderRadius: 16 }]}>
                   <Text style={[{ color: colors.activeBadgeBG, fontWeight: '500' }]}>{tag}</Text>
                 </View>
@@ -224,7 +236,7 @@ export const RandomScreen = () => {
           ) : (
             <>
               <View style={[styles.card, { backgroundColor: colors.surface }]}>
-                <Text style={[styles.cardSectionTitle, { color: colors.title }]}>Ingredients</Text>
+                <Text style={[styles.cardSectionTitle, { color: colors.title }]}>{t('ingredients')}</Text>
                 {ingredientsToDisplay.map((item, index) => (
                   <View key={index} style={styles.listItem}>
                     <View style={[styles.bulletDot, { backgroundColor: colors.activeBadgeBG }]} />
@@ -232,13 +244,13 @@ export const RandomScreen = () => {
                   </View>
                 ))}
                 {ingredientsToDisplay.length === 0 && (
-                  <Text style={[styles.listText, { color: colors.subtitle }]}>No ingredients listed.</Text>
+                  <Text style={[styles.listText, { color: colors.subtitle }]}>{t('noIngredients')}</Text>
                 )}
               </View>
               <View style={[styles.card, { backgroundColor: colors.surface }]}>
-                <Text style={[styles.cardSectionTitle, { color: colors.title }]}>Preparation Steps</Text>
+                <Text style={[styles.cardSectionTitle, { color: colors.title }]}>{t('steps')}</Text>
                 {stepsToDisplay.length === 0 && (
-                  <Text style={[styles.listText, { color: colors.subtitle }]}>No steps written for this recipe.</Text>
+                  <Text style={[styles.listText, { color: colors.subtitle }]}>{t('noSteps')}</Text>
                 )}
                 {stepsToDisplay.map((step, index) => (
                   <View key={index} style={styles.stepItem}>
@@ -256,13 +268,13 @@ export const RandomScreen = () => {
             <TouchableOpacity style={[styles.primaryButton, { backgroundColor: colors.activeBadgeBG }]} activeOpacity={0.8} onPress={() => toggleFavorite(currentRecipe)}>
               <HeartIcon size={20} color="#ffffff" focused={isFav} />
               <Text style={styles.primaryButtonText}>
-                {isFav ? 'Remove from Favourites' : 'Add to Favourites'}
+                {isFav ? t('savedFav') : t('addFav')}
               </Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[styles.secondaryButton, { backgroundColor: colors.surface, borderColor: colors.badgeBorder }]} activeOpacity={0.8} onPress={handleShare}>
               <ShareIcon size={20} color={colors.title} />
-              <Text style={[styles.secondaryButtonText, { color: colors.title }]}>Share Recipe</Text>
+              <Text style={[styles.secondaryButtonText, { color: colors.title }]}>{t('shareRecipe')}</Text>
             </TouchableOpacity>
           </View>
         </View>

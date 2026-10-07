@@ -13,6 +13,9 @@ import { useFavorites } from '../context/FavoritesContext';
 import { RecipeDetails } from '../api/api';
 import { fetchDetailsCached } from '../api/detailsCache';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
+import { localizeRecipe, tagLabels } from '../i18n/localizeRecipe';
+import { useToast } from '../components/Toast';
 import { shareRecipe, splitInstructions } from '../utils/recipeText';
 import { tagsToSubtitle } from '../utils/drinkTags';
 import { resolveImageUri, deleteRecipePhoto } from '../utils/recipePhotos';
@@ -41,12 +44,14 @@ export const RecipeDetailsScreen = () => {
   const isFav = isFavorite(recipe.id);
 
   const { colors } = useTheme();
+  const { lang, t } = useLanguage();
+  const toast = useToast();
   const insets = useSafeAreaInsets();
 
   const [details, setDetails] = useState<RecipeDetails | null>(null);
   // A recipe that already carries ingredients renders at once, no spinner frame.
   const [loading, setLoading] = useState<boolean>(!recipe.ingredients);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(380);
 
   const imageOpacity = useRef(new Animated.Value(0)).current;
@@ -66,7 +71,7 @@ export const RecipeDetailsScreen = () => {
     // The screen instance can be reused for another recipe (e.g. opened from the
     // Favourites tab while this screen is already on top), so start from a clean slate.
     setDetails(null);
-    setError(null);
+    setError(false);
     // Anything that already carries ingredients (a user recipe, or a drink whose
     // details were merged from the cache) needs no request.
     if (recipe.ingredients) {
@@ -83,7 +88,7 @@ export const RecipeDetailsScreen = () => {
       })
       .catch(() => {
         if (cancelled) return;
-        setError("Couldn't load this recipe. Check your connection and try again.");
+        setError(true);
         setLoading(false);
       });
     return () => {
@@ -93,25 +98,39 @@ export const RecipeDetailsScreen = () => {
 
   useEffect(() => loadDetails(), [loadDetails]);
 
-  const ingredientsToDisplay = details?.ingredients || recipe.ingredients || [];
-  const stepsToDisplay = splitInstructions(details?.instructions || recipe.instructions);
   const tags = details?.tags || recipe.tags || [];
+  // The recipe with its details merged in, in the language on screen.
+  const shown = localizeRecipe(
+    {
+      ...recipe,
+      ingredients: details?.ingredients || recipe.ingredients,
+      instructions: details?.instructions || recipe.instructions,
+      tags,
+    },
+    lang,
+    t
+  );
+  const ingredientsToDisplay = shown.ingredients || [];
+  const stepsToDisplay = splitInstructions(shown.instructions);
   // Database drinks carry the tag line as their subtitle; showing it twice (text + chips) is noise.
   const description = recipe.subtitle && recipe.subtitle !== tagsToSubtitle(tags) ? recipe.subtitle : '';
 
   const handleShare = () =>
-    shareRecipe({
-      title: recipe.title,
-      ingredients: ingredientsToDisplay,
-      instructions: details?.instructions || recipe.instructions,
-      imageUrl: recipe.imageUrl,
-    });
+    shareRecipe(
+      {
+        title: shown.title,
+        ingredients: ingredientsToDisplay,
+        instructions: shown.instructions,
+        imageUrl: recipe.imageUrl,
+      },
+      t
+    );
 
   const handleDelete = () =>
-    Alert.alert('Delete this recipe?', `"${recipe.title}" and its photo will be removed from this device.`, [
-      { text: 'Cancel', style: 'cancel' },
+    Alert.alert(t('delQ'), t('delText'), [
+      { text: t('cancel'), style: 'cancel' },
       {
-        text: 'Delete',
+        text: t('del'),
         style: 'destructive',
         onPress: async () => {
           // Drop the photo file first: once the recipe is out of the store nothing
@@ -120,6 +139,7 @@ export const RecipeDetailsScreen = () => {
           if (isFav) toggleFavorite(recipe);
           dispatch(removeRecipe(recipe.id));
           navigation.goBack();
+          toast.show(t('recipeDeleted'));
         },
       },
     ]);
@@ -136,7 +156,7 @@ export const RecipeDetailsScreen = () => {
           <Animated.Image source={recipeImageSource(recipe.id, recipe.imageUrl)} style={[styles.image, { opacity: imageOpacity }]} />
           <PhotoScrim />
           <View style={{ position: 'absolute', top: insets.top + spacing.s, left: spacing.l, right: spacing.l, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-             <TouchableOpacity accessibilityRole="button" accessibilityLabel="Go back" style={{ width: 48, height: 48, borderRadius: 24, backgroundColor: colors.surface, justifyContent: 'center', alignItems: 'center' }} onPress={() => navigation.goBack()}>
+             <TouchableOpacity accessibilityRole="button" accessibilityLabel={t('a11yBack')} style={{ width: 48, height: 48, borderRadius: 24, backgroundColor: colors.surface, justifyContent: 'center', alignItems: 'center' }} onPress={() => navigation.goBack()}>
                <ArrowLeftIcon size={24} color={colors.title} />
              </TouchableOpacity>
           </View>
@@ -144,14 +164,14 @@ export const RecipeDetailsScreen = () => {
         <View style={{ paddingHorizontal: 12 }}>
           <View style={[{ backgroundColor: colors.surface, padding: spacing.l, borderRadius: 16, marginTop: -40, shadowColor: '#000', shadowOffset: { width: 0, height: 10 }, shadowOpacity: 0.1, shadowRadius: 15, elevation: 10 }]}>
             <View style={styles.titleContainer}>
-              <Text style={[styles.title, { color: colors.title }]}>{recipe.title}</Text>
+              <Text style={[styles.title, { color: colors.title }]}>{shown.title}</Text>
               {!!description && (
                 <Text style={[styles.subtitle, { color: colors.subtitle }]}>{description}</Text>
               )}
             </View>
             {tags.length > 0 && (
               <View style={styles.tagRow}>
-                {tags.map(tag => (
+                {tagLabels(tags, t).map(tag => (
                   <View key={tag} style={[styles.infoBadge, { backgroundColor: `${colors.activeBadgeBG}15` }]}>
                     <Text style={[styles.infoText, { color: colors.activeBadgeBG }]}>{tag}</Text>
                   </View>
@@ -172,24 +192,24 @@ export const RecipeDetailsScreen = () => {
         {loading ? (
           <View style={styles.loadingContainer}>
             <ActivityIndicator size="large" color={colors.activeBadgeBG} />
-            <Text style={[styles.loadingText, { color: colors.title }]}>Loading recipe…</Text>
+            <Text style={[styles.loadingText, { color: colors.title }]}>{t('loadingRecipe')}</Text>
           </View>
         ) : error ? (
           <View style={styles.loadingContainer}>
-            <Text style={[styles.errorText, { color: colors.title }]}>{error}</Text>
+            <Text style={[styles.errorText, { color: colors.title }]}>{t('recipeLoadError')}</Text>
             <TouchableOpacity
               style={[styles.retryBtn, { backgroundColor: colors.activeBadgeBG }]}
               onPress={() => loadDetails()}
               activeOpacity={0.8}
               accessibilityRole="button"
             >
-              <Text style={styles.retryBtnText}>Try again</Text>
+              <Text style={styles.retryBtnText}>{t('tryAgain')}</Text>
             </TouchableOpacity>
           </View>
         ) : (
           <>
             <View style={[styles.card, { backgroundColor: colors.surface }]}>
-              <Text style={[styles.cardTitle, { color: colors.title }]}>Ingredients</Text>
+              <Text style={[styles.cardTitle, { color: colors.title }]}>{t('ingredients')}</Text>
               <View style={styles.ingredientsList}>
                 {ingredientsToDisplay.map((ing, idx) => (
                   <View key={idx} style={styles.ingredientItem}>
@@ -200,16 +220,16 @@ export const RecipeDetailsScreen = () => {
                   </View>
                 ))}
                 {ingredientsToDisplay.length === 0 && (
-                  <Text style={[styles.instructionsText, { color: colors.subtitle }]}>No ingredients found.</Text>
+                  <Text style={[styles.instructionsText, { color: colors.subtitle }]}>{t('noIngredients')}</Text>
                 )}
               </View>
             </View>
 
             <View style={[styles.card, { backgroundColor: colors.surface }]}>
-              <Text style={[styles.cardTitle, { color: colors.title }]}>Preparation Steps</Text>
+              <Text style={[styles.cardTitle, { color: colors.title }]}>{t('steps')}</Text>
               <View style={styles.stepsList}>
                 {stepsToDisplay.length === 0 && (
-                  <Text style={[styles.instructionsText, { color: colors.subtitle }]}>No steps written for this recipe.</Text>
+                  <Text style={[styles.instructionsText, { color: colors.subtitle }]}>{t('noSteps')}</Text>
                 )}
                 {stepsToDisplay.map((step, idx) => (
                   <View key={idx} style={styles.stepItem}>
@@ -225,13 +245,13 @@ export const RecipeDetailsScreen = () => {
             <TouchableOpacity style={[styles.addFavoriteBtn, { backgroundColor: colors.activeBadgeBG }]} onPress={() => toggleFavorite(recipe)} activeOpacity={0.8}>
               <HeartIcon size={20} color={'#ffffff'} focused={isFav} />
               <Text style={styles.addFavoriteBtnText}>
-                {isFav ? 'Remove from Favourites' : 'Add to Favourites'}
+                {isFav ? t('savedFav') : t('addFav')}
               </Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[styles.shareBtn, { backgroundColor: colors.surface, borderColor: colors.badgeBorder }]} onPress={handleShare} activeOpacity={0.8}>
               <ShareIcon size={20} color={colors.title} />
-              <Text style={[styles.shareBtnText, { color: colors.title }]}>Share Recipe</Text>
+              <Text style={[styles.shareBtnText, { color: colors.title }]}>{t('shareRecipe')}</Text>
             </TouchableOpacity>
 
             {isOwnRecipe && (
@@ -241,20 +261,18 @@ export const RecipeDetailsScreen = () => {
                   onPress={() => navigation.navigate(SCREENS.EDIT_RECIPE, { recipe })}
                   activeOpacity={0.8}
                   accessibilityRole="button"
-                  accessibilityLabel="Edit this recipe"
                 >
                   <PencilIcon size={18} color={colors.title} />
-                  <Text style={[styles.ownerBtnText, { color: colors.title }]}>Edit</Text>
+                  <Text style={[styles.ownerBtnText, { color: colors.title }]}>{t('edit')}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={[styles.ownerBtn, { borderColor: colors.error }]}
                   onPress={handleDelete}
                   activeOpacity={0.8}
                   accessibilityRole="button"
-                  accessibilityLabel="Delete this recipe"
                 >
                   <TrashIcon size={18} color={colors.error} />
-                  <Text style={[styles.ownerBtnText, { color: colors.error }]}>Delete</Text>
+                  <Text style={[styles.ownerBtnText, { color: colors.error }]}>{t('del')}</Text>
                 </TouchableOpacity>
               </View>
             )}

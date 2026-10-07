@@ -50,6 +50,7 @@ export const sizes = {
   lockCircle: 48,
   featureIcon: 44,
   emptyIcon: 56,
+  emptyIconLarge: 64,
   grabberWidth: 36,
   grabberHeight: 5,
   bullet: 6,

@@ -10,6 +10,7 @@
 import * as FileSystem from 'expo-file-system/legacy';
 import * as ImagePicker from 'expo-image-picker';
 import { Alert, Linking } from 'react-native';
+import type { Translate } from '../i18n';
 
 const SCHEME = 'recipe-photo:';
 const DIR_NAME = 'recipe-photos/';
@@ -51,17 +52,13 @@ export async function pickRecipePhoto(): Promise<string | null> {
  * permission: iOS asks once, and after a refusal only Settings can undo it,
  * so that is what the alert points at.
  */
-export async function takeRecipePhoto(): Promise<string | null> {
+export async function takeRecipePhoto(t: Translate): Promise<string | null> {
   const permission = await ImagePicker.requestCameraPermissionsAsync();
   if (!permission.granted) {
-    Alert.alert(
-      'Camera access is off',
-      'To take a photo for your recipe, turn on Camera for Mocktail Finder in Settings.',
-      [
-        { text: 'Not now', style: 'cancel' },
-        { text: 'Open Settings', onPress: () => Linking.openSettings() },
-      ]
-    );
+    Alert.alert(t('cameraOffTitle'), t('cameraOffText'), [
+      { text: t('obNotNow'), style: 'cancel' },
+      { text: t('openSettings'), onPress: () => Linking.openSettings() },
+    ]);
     return null;
   }
   const result = await ImagePicker.launchCameraAsync({ quality: 0.7, exif: false });

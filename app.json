@@ -18,6 +18,13 @@
       "supportsTablet": false,
       "config": {
         "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "CFBundleLocalizations": [
+          "en",
+          "uk"
+        ],
+        "CFBundleDevelopmentRegion": "en"
       }
     },
     "android": {
@@ -41,7 +48,8 @@
           "microphonePermission": false
         }
       ],
-      "expo-font"
+      "expo-font",
+      "expo-localization"
     ],
     "extra": {
       "eas": {

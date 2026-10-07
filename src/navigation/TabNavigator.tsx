@@ -7,6 +7,7 @@ import { RandomScreen } from '../screens/RandomScreen';
 import { AddRecipeScreen } from '../screens/AddRecipeScreen';
 import { SCREENS } from '../constants/screens';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
 import { HomeIcon, HeartIcon, AddRecipeIcon } from '../components/icons';
 
 const Tab = createBottomTabNavigator();
@@ -50,6 +51,7 @@ const TabBarButton = (props: any) => {
 
 export const TabNavigator = () => {
   const { colors } = useTheme();
+  const { t } = useLanguage();
 
   return (
     <Tab.Navigator
@@ -77,7 +79,7 @@ export const TabNavigator = () => {
         name={SCREENS.HOME_TAB}
         component={StackNavigator}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: t('tabHome'),
           tabBarIcon: ({ color, focused }) => (
             <HomeIcon size={24} color={color} focused={focused} />
           )
@@ -87,7 +89,7 @@ export const TabNavigator = () => {
         name={SCREENS.FAVOURITES_TAB}
         component={FavouritesScreen}
         options={{
-          tabBarLabel: 'Favourites',
+          tabBarLabel: t('tabFav'),
           tabBarIcon: ({ color, focused }) => (
             <HeartIcon size={24} color={color} focused={focused} />
           )
@@ -98,7 +100,7 @@ export const TabNavigator = () => {
         name={SCREENS.ADD_RECIPE_TAB}
         component={AddRecipeScreen}
         options={{
-          tabBarLabel: 'Add Recipe',
+          tabBarLabel: t('tabAdd'),
           tabBarIcon: ({ color, focused }) => (
             <AddRecipeIcon size={24} color={color} focused={focused} />
           )

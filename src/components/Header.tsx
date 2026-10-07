@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
 import { spacing } from '../theme/spacing';
 import { fonts } from '../theme/typography';
 import { MoonIcon, SunIcon, ArrowLeftIcon } from './icons';
@@ -17,6 +18,7 @@ interface HeaderProps {
 
 export const Header = ({ title, subtitle, onBack }: HeaderProps) => {
   const { theme, mode, toggleTheme, useSystemTheme, colors } = useTheme();
+  const { t } = useLanguage();
 
   const gradientColors = theme === 'light'
     ? ['#00BBA7', '#0092B8'] as const
@@ -38,7 +40,7 @@ export const Header = ({ title, subtitle, onBack }: HeaderProps) => {
                   style={styles.backButton}
                   onPress={onBack}
                   accessibilityRole="button"
-                  accessibilityLabel="Go back"
+                  accessibilityLabel={t('a11yBack')}
                 >
                   <ArrowLeftIcon size={22} color="#FFFFFF" />
                 </TouchableOpacity>
@@ -58,8 +60,8 @@ export const Header = ({ title, subtitle, onBack }: HeaderProps) => {
             onPress={toggleTheme}
             onLongPress={useSystemTheme}
             accessibilityRole="button"
-            accessibilityLabel={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
-            accessibilityHint="Press and hold to follow the system appearance"
+            accessibilityLabel={t(theme === 'light' ? 'a11yThemeToDark' : 'a11yThemeToLight')}
+            accessibilityHint={t('a11yThemeHint')}
           >
             {theme === 'light' ? <MoonIcon size={20} color="#FFFFFF" /> : <SunIcon size={20} color="#FFFFFF" />}
             {/* A dot means "following the system"; it disappears once the user picks a theme. */}

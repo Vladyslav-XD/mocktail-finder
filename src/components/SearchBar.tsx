@@ -7,10 +7,10 @@ import { useTheme } from '../context/ThemeContext';
 interface SearchBarProps {
   value: string;
   onChangeText: (text: string) => void;
-  placeholder?: string;
+  placeholder: string;
 }
 
-export const SearchBar = ({ value, onChangeText, placeholder = 'Search mocktails...' }: SearchBarProps) => {
+export const SearchBar = ({ value, onChangeText, placeholder }: SearchBarProps) => {
   const { colors } = useTheme();
 
   return (

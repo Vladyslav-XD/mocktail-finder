@@ -6,6 +6,8 @@ import { addRecipe, updateRecipe } from '../store/myRecipesSlice';
 import { Badge } from '../components/Badge';
 import { Header } from '../components/Header';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
+import { useToast } from '../components/Toast';
 import { spacing } from '../theme/spacing';
 import { AddRecipeIcon, XIcon } from '../components/icons';
 import { SCREENS } from '../constants/screens';
@@ -33,6 +35,8 @@ type ParamList = {
 
 export const AddRecipeScreen = () => {
   const { colors } = useTheme();
+  const { t } = useLanguage();
+  const toast = useToast();
   const dispatch = useDispatch();
   const navigation = useNavigation<any>();
   const route = useRoute<RouteProp<ParamList, 'EditRecipe'>>();
@@ -104,7 +108,7 @@ export const AddRecipeScreen = () => {
       const uri = await open();
       if (uri) setPhoto({ kind: 'new', uri });
     } catch {
-      Alert.alert(failureTitle, 'Please try again.');
+      Alert.alert(failureTitle, t('pleaseTryAgain'));
     } finally {
       setPicking(false);
     }
@@ -114,14 +118,14 @@ export const AddRecipeScreen = () => {
     if (picking) return;
     if (Platform.OS !== 'ios') {
       // Android has no action sheet here; the library is the only path this build needs.
-      runPicker(pickRecipePhoto, "Couldn't open your photos");
+      runPicker(pickRecipePhoto, t('photoLibraryError'));
       return;
     }
     ActionSheetIOS.showActionSheetWithOptions(
-      { options: ['Take Photo', 'Choose from Library', 'Cancel'], cancelButtonIndex: 2 },
+      { options: [t('takePhoto'), t('library'), t('cancel')], cancelButtonIndex: 2 },
       index => {
-        if (index === 0) runPicker(takeRecipePhoto, "Couldn't open the camera");
-        if (index === 1) runPicker(pickRecipePhoto, "Couldn't open your photos");
+        if (index === 0) runPicker(() => takeRecipePhoto(t), t('cameraError'));
+        if (index === 1) runPicker(pickRecipePhoto, t('photoLibraryError'));
       }
     );
   };
@@ -136,17 +140,14 @@ export const AddRecipeScreen = () => {
   };
 
   const handleSaveRecipe = async () => {
-    if (!title.trim()) {
-      Alert.alert('Error', 'Please enter a Recipe Name.');
-      return;
-    }
     const validIngredients = ingredients.filter(i => i.name.trim() !== '');
-    if (validIngredients.length === 0) {
-      Alert.alert('Error', 'Please add at least one ingredient.');
+    const validSteps = steps.filter(s => s.trim() !== '');
+    // Handoff: a name, an ingredient and a step, told in one toast.
+    if (!title.trim() || validIngredients.length === 0 || validSteps.length === 0) {
+      toast.show(t('formError'));
       return;
     }
 
-    const validSteps = steps.filter(s => s.trim() !== '');
     // Editing keeps the id, so the photo file name stays the same too.
     const id = editing ? editing.id : Date.now().toString();
 
@@ -159,7 +160,7 @@ export const AddRecipeScreen = () => {
         imageUrl = await persistRecipePhoto(photo.uri, id);
       } catch {
         setSaving(false);
-        Alert.alert("Couldn't save the photo", 'The recipe was not saved. Please try again.');
+        Alert.alert(t('photoSaveErrorTitle'), t('photoSaveErrorText'));
         return;
       }
     } else if (editing && isRecipePhoto(editing.imageUrl)) {
@@ -192,16 +193,10 @@ export const AddRecipeScreen = () => {
 
     dispatch(addRecipe(newRecipe));
     setSaving(false);
-    Alert.alert('Success', 'Recipe saved successfully!', [
-      {
-        text: 'OK',
-        onPress: () => {
-          resetForm();
-          // Land on the list itself, not on whatever recipe was last open in the Home tab.
-          navigation.navigate(SCREENS.HOME_TAB, { screen: SCREENS.MOCKTAIL_FINDER });
-        }
-      }
-    ]);
+    resetForm();
+    // Land on the list itself, not on whatever recipe was last open in the Home tab.
+    navigation.navigate(SCREENS.HOME_TAB, { screen: SCREENS.MOCKTAIL_FINDER });
+    toast.show(t('recipeSaved'));
   };
 
   const fieldStyle = { color: colors.title, borderColor: colors.badgeBorder, backgroundColor: colors.surface };
@@ -209,7 +204,7 @@ export const AddRecipeScreen = () => {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <Header
-        title={editing ? 'Edit Recipe' : 'Add Recipe'}
+        title={editing ? t('editTitle') : t('addTitle')}
         onBack={editing ? () => navigation.goBack() : undefined}
       />
 
@@ -226,7 +221,7 @@ export const AddRecipeScreen = () => {
       >
 
         <View style={styles.inputGroup}>
-          <Text style={[styles.label, { color: colors.title }]}>Photo (Optional)</Text>
+          <Text style={[styles.label, { color: colors.title }]}>{t('photoOpt')}</Text>
           {photoPreviewUri ? (
             <View>
               <Image source={{ uri: photoPreviewUri }} style={[styles.photoPreview, { borderColor: colors.badgeBorder }]} />
@@ -236,14 +231,14 @@ export const AddRecipeScreen = () => {
                   onPress={handleAddPhoto}
                   accessibilityRole="button"
                 >
-                  <Text style={[styles.photoActionText, { color: colors.title }]}>Change photo</Text>
+                  <Text style={[styles.photoActionText, { color: colors.title }]}>{t('changePhoto')}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={[styles.photoActionBtn, { borderColor: colors.badgeBorder, backgroundColor: colors.surface }]}
                   onPress={() => setPhoto(null)}
                   accessibilityRole="button"
                 >
-                  <Text style={[styles.photoActionText, { color: colors.title }]}>Remove</Text>
+                  <Text style={[styles.photoActionText, { color: colors.title }]}>{t('removePhoto')}</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -252,19 +247,18 @@ export const AddRecipeScreen = () => {
               style={[styles.addButton, { borderColor: colors.badgeBorder, backgroundColor: colors.surface }]}
               onPress={handleAddPhoto}
               accessibilityRole="button"
-              accessibilityLabel="Add a photo: take one or choose from your library"
             >
               <AddRecipeIcon size={18} color={colors.title} />
-              <Text style={[styles.addButtonText, { color: colors.title }]}>Add Photo</Text>
+              <Text style={[styles.addButtonText, { color: colors.title }]}>{t('addPhoto')}</Text>
             </TouchableOpacity>
           )}
         </View>
 
         <View style={styles.inputGroup}>
-          <Text style={[styles.label, { color: colors.title }]}>Recipe Name *</Text>
+          <Text style={[styles.label, { color: colors.title }]}>{t('recipeName')} *</Text>
           <TextInput
             style={[styles.input, fieldStyle]}
-            placeholder="Tropical Sunrise"
+            placeholder={t('namePh')}
             placeholderTextColor={colors.subtitle}
             value={title}
             onChangeText={setTitle}
@@ -272,10 +266,10 @@ export const AddRecipeScreen = () => {
         </View>
 
         <View style={styles.inputGroup}>
-          <Text style={[styles.label, { color: colors.title }]}>Short Description</Text>
+          <Text style={[styles.label, { color: colors.title }]}>{t('shortDesc')}</Text>
           <TextInput
             style={[styles.input, fieldStyle]}
-            placeholder="e.g. A refreshing tropical drink"
+            placeholder={t('descPh')}
             placeholderTextColor={colors.subtitle}
             value={subtitle}
             onChangeText={setSubtitle}
@@ -283,15 +277,13 @@ export const AddRecipeScreen = () => {
         </View>
 
         <View style={styles.inputGroup}>
-          <Text style={[styles.label, { color: colors.title }]}>
-            Character <Text style={[styles.labelHint, { color: colors.subtitle }]}>(up to {MAX_TAGS})</Text>
-          </Text>
+          <Text style={[styles.label, { color: colors.title }]}>{t('character')}</Text>
           {/* Wrapped, not scrolled: every option visible, nothing clipped at the edge. */}
           <View style={styles.wrapList}>
             {ALL_TAGS.map(tag => (
               <Badge
                 key={tag}
-                label={tag}
+                label={t(`tag.${tag}`)}
                 active={tags.includes(tag)}
                 onPress={() => toggleTag(tag)}
               />
@@ -300,19 +292,19 @@ export const AddRecipeScreen = () => {
         </View>
 
         <View style={styles.inputGroup}>
-          <Text style={[styles.label, { color: colors.title }]}>Ingredients *</Text>
+          <Text style={[styles.label, { color: colors.title }]}>{t('ingredients')} *</Text>
           {ingredients.map((ing, index) => (
             <View key={index} style={styles.ingredientRow}>
               <TextInput
                 style={[styles.input, styles.ingredientNameInput, fieldStyle]}
-                placeholder="Ingredient"
+                placeholder={t('ingredient')}
                 placeholderTextColor={colors.subtitle}
                 value={ing.name}
                 onChangeText={(val) => handleIngredientChange(index, 'name', val)}
               />
               <TextInput
                 style={[styles.input, styles.ingredientAmountInput, fieldStyle]}
-                placeholder="Amount"
+                placeholder={t('amount')}
                 placeholderTextColor={colors.subtitle}
                 value={ing.amount}
                 onChangeText={(val) => handleIngredientChange(index, 'amount', val)}
@@ -320,6 +312,8 @@ export const AddRecipeScreen = () => {
               <TouchableOpacity
                 style={[styles.removeButton, { borderColor: colors.badgeBorder, backgroundColor: colors.surface }]}
                 onPress={() => handleRemoveIngredient(index)}
+                accessibilityRole="button"
+                accessibilityLabel={t('a11yRemove', { name: ing.name.trim() || t('ingredient') })}
               >
                 <XIcon size={16} color={colors.title} />
               </TouchableOpacity>
@@ -330,12 +324,12 @@ export const AddRecipeScreen = () => {
             onPress={handleAddIngredient}
           >
             <AddRecipeIcon size={18} color={colors.title} />
-            <Text style={[styles.addButtonText, { color: colors.title }]}>Add Ingredient</Text>
+            <Text style={[styles.addButtonText, { color: colors.title }]}>{t('addIng')}</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.inputGroup}>
-          <Text style={[styles.label, { color: colors.title }]}>Preparation Steps</Text>
+          <Text style={[styles.label, { color: colors.title }]}>{t('prepSteps')}</Text>
           {steps.map((step, index) => (
             <View key={index} style={styles.stepRow}>
               <View style={[styles.stepCircle, { backgroundColor: colors.activeBadgeBG }]}>
@@ -343,7 +337,7 @@ export const AddRecipeScreen = () => {
               </View>
               <TextInput
                 style={[styles.input, styles.stepInput, fieldStyle]}
-                placeholder={`Step ${index + 1}`}
+                placeholder={`${t('step')} ${index + 1}`}
                 placeholderTextColor={colors.subtitle}
                 value={step}
                 onChangeText={(val) => handleStepChange(index, val)}
@@ -352,6 +346,8 @@ export const AddRecipeScreen = () => {
               <TouchableOpacity
                 style={[styles.removeButton, { borderColor: colors.badgeBorder, backgroundColor: colors.surface, marginLeft: spacing.s, marginTop: 2 }]}
                 onPress={() => handleRemoveStep(index)}
+                accessibilityRole="button"
+                accessibilityLabel={t('a11yRemove', { name: `${t('step')} ${index + 1}` })}
               >
                 <XIcon size={16} color={colors.title} />
               </TouchableOpacity>
@@ -362,7 +358,7 @@ export const AddRecipeScreen = () => {
             onPress={handleAddStep}
           >
             <AddRecipeIcon size={18} color={colors.title} />
-            <Text style={[styles.addButtonText, { color: colors.title }]}>Add Step</Text>
+            <Text style={[styles.addButtonText, { color: colors.title }]}>{t('addStep')}</Text>
           </TouchableOpacity>
         </View>
 
@@ -373,7 +369,7 @@ export const AddRecipeScreen = () => {
           disabled={saving}
         >
           <Text style={styles.saveButtonText}>
-            {saving ? 'Saving…' : editing ? 'Save Changes' : 'Save Recipe'}
+            {saving ? t('saving') : editing ? t('saveChanges') : t('save')}
           </Text>
         </TouchableOpacity>
 
@@ -403,9 +399,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     marginBottom: spacing.s,
-  },
-  labelHint: {
-    fontWeight: '400',
   },
   input: {
     borderWidth: 1,

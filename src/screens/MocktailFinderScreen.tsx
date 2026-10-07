@@ -15,32 +15,36 @@ import { fetchMocktails, fillInDetails } from '../api/recipes';
 import { CHARACTER_FILTERS, INGREDIENT_FILTERS, recipeHasIngredient } from '../constants/filters';
 import { useFavorites } from '../context/FavoritesContext';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
+import { localizeRecipe, matchesSearch } from '../i18n/localizeRecipe';
+import { DrinkTag } from '../utils/drinkTags';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 
-// "All" and "My Recipes" are pseudo-categories; the rest are real drink tags.
-const CATEGORIES = ['All', 'My Recipes', ...CHARACTER_FILTERS];
-const INGREDIENTS = INGREDIENT_FILTERS.map(f => f.label);
+// "all" and "my" are pseudo-categories; the rest are real drink tags.
+type Category = 'all' | 'my' | DrinkTag;
+const CATEGORIES: Category[] = ['all', 'my', ...CHARACTER_FILTERS];
 
 export const MocktailFinderScreen = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState<Category>('all');
   const [activeIngredients, setActiveIngredients] = useState<string[]>([]);
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [fillingIn, setFillingIn] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(false);
   const [displayLimit, setDisplayLimit] = useState<number>(5);
 
   const navigation = useNavigation<StackNavigationProp<any>>();
   const { isFavorite, toggleFavorite } = useFavorites();
   const { colors } = useTheme();
+  const { lang, t } = useLanguage();
   const customRecipes = useSelector((state: RootState) => state.myRecipes.recipes);
 
   const loadRecipes = useCallback(() => {
     let cancelled = false;
     setLoading(true);
-    setError(null);
+    setError(false);
     fetchMocktails()
       .then(result => {
         if (cancelled) return;
@@ -59,7 +63,7 @@ export const MocktailFinderScreen = () => {
       })
       .catch(() => {
         if (cancelled) return;
-        setError("Couldn't load recipes. Check your internet connection and try again.");
+        setError(true);
         setLoading(false);
       });
     return () => {
@@ -88,21 +92,19 @@ export const MocktailFinderScreen = () => {
   );
 
   const filteredRecipes = useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
     return allAvailableRecipes.filter(recipe => {
-      // Search matches the name or any ingredient ("ginger" finds Masala Chai).
-      if (query) {
-        const inTitle = recipe.title.toLowerCase().includes(query);
-        const inIngredients = (recipe.ingredients || []).some(line => line.toLowerCase().includes(query));
-        if (!inTitle && !inIngredients) return false;
+      // Search matches the name or any ingredient ("ginger" finds Masala Chai), in the
+      // language on screen and in English.
+      if (searchQuery.trim() && !matchesSearch(recipe, localizeRecipe(recipe, lang, t), searchQuery)) {
+        return false;
       }
 
-      if (activeCategory === 'My Recipes') {
+      if (activeCategory === 'my') {
         if (!customRecipes.some(cr => cr.id === recipe.id)) return false;
-      } else if (activeCategory !== 'All') {
+      } else if (activeCategory !== 'all') {
         // Real tags only. A drink whose details have not arrived yet has no tags
         // and is simply not shown until they do.
-        if (!recipe.tags || !recipe.tags.includes(activeCategory as any)) return false;
+        if (!recipe.tags || !recipe.tags.includes(activeCategory)) return false;
       }
 
       if (activeIngredients.length > 0) {
@@ -111,7 +113,7 @@ export const MocktailFinderScreen = () => {
 
       return true;
     });
-  }, [allAvailableRecipes, searchQuery, activeCategory, activeIngredients, customRecipes]);
+  }, [allAvailableRecipes, searchQuery, activeCategory, activeIngredients, customRecipes, lang, t]);
 
   const handleClearIngredients = useCallback(() => setActiveIngredients([]), []);
   const handleNavigateRandom = useCallback(() => navigation.navigate(SCREENS.RANDOM_TAB), [navigation]);
@@ -123,10 +125,11 @@ export const MocktailFinderScreen = () => {
         <SearchBar
           value={searchQuery}
           onChangeText={setSearchQuery}
+          placeholder={t('search')}
         />
       </View>
       <View style={styles.section}>
-        <Text style={[styles.sectionTitle, { color: colors.categoryTitle }]}>Category</Text>
+        <Text style={[styles.sectionTitle, { color: colors.categoryTitle }]}>{t('category')}</Text>
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -135,7 +138,7 @@ export const MocktailFinderScreen = () => {
           {CATEGORIES.map((cat) => (
             <Badge
               key={cat}
-              label={cat}
+              label={cat === 'all' ? t('all') : cat === 'my' ? t('myRecipes') : t(`tagChip.${cat}`)}
               active={activeCategory === cat}
               onPress={() => setActiveCategory(cat)}
             />
@@ -143,44 +146,44 @@ export const MocktailFinderScreen = () => {
         </ScrollView>
       </View>
       <View style={styles.section}>
-        <Text style={[styles.sectionTitle, { color: colors.categoryTitle }]}>Filter by Ingredients</Text>
+        <Text style={[styles.sectionTitle, { color: colors.categoryTitle }]}>{t('filterIng')}</Text>
         <View style={styles.wrapList}>
           <Badge
-            label="All"
+            label={t('all')}
             active={activeIngredients.length === 0}
             onPress={handleClearIngredients}
           />
-          {INGREDIENTS.map((ing) => (
+          {INGREDIENT_FILTERS.map((ing) => (
             <Badge
-              key={ing}
-              label={ing}
-              active={activeIngredients.includes(ing)}
-              onPress={() => toggleIngredient(ing)}
+              key={ing.label}
+              label={t(`ing.${ing.key}`)}
+              active={activeIngredients.includes(ing.label)}
+              onPress={() => toggleIngredient(ing.label)}
             />
           ))}
         </View>
       </View>
       <View style={[styles.section, { paddingBottom: spacing.s }]}>
         <View style={styles.sectionHeaderRow}>
-          <Text style={[styles.sectionTitle, { color: colors.categoryTitle, marginBottom: 0, paddingHorizontal: 0 }]}>Featured Recipes</Text>
+          <Text style={[styles.sectionTitle, { color: colors.categoryTitle, marginBottom: 0, paddingHorizontal: 0 }]}>{t('featured')}</Text>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <TouchableOpacity
               style={{ flexDirection: 'row', backgroundColor: colors.activeBadgeBG, paddingHorizontal: 16, paddingVertical: 8, borderRadius: 20, justifyContent: 'center', alignItems: 'center' }}
               onPress={handleNavigateRandom}
             >
               <ShuffleIcon size={16} color="#FFFFFF" />
-              <Text style={{ color: '#FFFFFF', marginLeft: 8, fontWeight: '600', fontSize: 14 }}>Surprise recipe</Text>
+              <Text style={{ color: '#FFFFFF', marginLeft: 8, fontWeight: '600', fontSize: 14 }}>{t('surpriseBtn')}</Text>
             </TouchableOpacity>
           </View>
         </View>
         {filteredRecipes.length === 0 && !loading && !error && (
           <Text style={[styles.emptyText, { color: colors.subtitle }]}>
-            {fillingIn ? 'Loading drink details…' : 'No recipes match these filters.'}
+            {fillingIn ? t('loadingDetails') : t('noMatch')}
           </Text>
         )}
       </View>
     </>
-  ), [searchQuery, activeCategory, activeIngredients, filteredRecipes.length, loading, fillingIn, error, colors, toggleIngredient, handleClearIngredients, handleNavigateRandom]);
+  ), [searchQuery, activeCategory, activeIngredients, filteredRecipes.length, loading, fillingIn, error, colors, t, toggleIngredient, handleClearIngredients, handleNavigateRandom]);
 
   const renderFooter = useCallback(() => {
     if (filteredRecipes.length > displayLimit) {
@@ -191,26 +194,29 @@ export const MocktailFinderScreen = () => {
             activeOpacity={0.8}
             onPress={handleLoadMore}
           >
-            <Text style={[styles.browseMoreText, { color: colors.title }]}>Browse more</Text>
+            <Text style={[styles.browseMoreText, { color: colors.title }]}>{t('browseMore')}</Text>
           </TouchableOpacity>
         </View>
       );
     }
     return null;
-  }, [filteredRecipes.length, displayLimit, colors, handleLoadMore]);
+  }, [filteredRecipes.length, displayLimit, colors, t, handleLoadMore]);
 
-  const renderItem = useCallback(({ item }: { item: Recipe }) => (
+  const renderItem = useCallback(({ item }: { item: Recipe }) => {
+    const shown = localizeRecipe(item, lang, t);
+    return (
     <View style={styles.recipeListItem}>
       <RecipeCard
-        title={item.title}
-        subtitle={item.subtitle}
+        title={shown.title}
+        subtitle={shown.subtitle}
         imageUrl={recipeImageSource(item.id, item.imageUrl)}
         isFavorite={isFavorite(item.id)}
         onFavoritePress={() => toggleFavorite(item)}
         onPress={() => navigation.navigate(SCREENS.RECIPE_DETAILS, { recipe: item })}
       />
     </View>
-  ), [isFavorite, toggleFavorite, navigation]);
+    );
+  }, [isFavorite, toggleFavorite, navigation, lang, t]);
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -222,18 +228,18 @@ export const MocktailFinderScreen = () => {
       {loading ? (
         <View style={styles.centerContainer}>
           <ActivityIndicator size="large" color={colors.activeBadgeBG} />
-          <Text style={[styles.loadingText, { color: colors.title }]}>Loading recipes…</Text>
+          <Text style={[styles.loadingText, { color: colors.title }]}>{t('loadingRecipes')}</Text>
         </View>
       ) : error ? (
         <View style={styles.centerContainer}>
-          <Text style={[styles.errorText, { color: colors.title }]}>{error}</Text>
+          <Text style={[styles.errorText, { color: colors.title }]}>{t('loadError')}</Text>
           <TouchableOpacity
             style={[styles.retryBtn, { backgroundColor: colors.activeBadgeBG }]}
             onPress={() => loadRecipes()}
             activeOpacity={0.8}
             accessibilityRole="button"
           >
-            <Text style={styles.retryBtnText}>Try again</Text>
+            <Text style={styles.retryBtnText}>{t('tryAgain')}</Text>
           </TouchableOpacity>
         </View>
       ) : (

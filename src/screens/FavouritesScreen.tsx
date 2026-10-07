@@ -1,17 +1,20 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import { HeartPulseIcon } from '../components/icons';
+import { HeartIcon } from '../components/icons';
 import { RecipeCard } from '../components/RecipeCard';
 import { recipeImageSource } from '../utils/recipeImage';
-import { spacing } from '../theme/spacing';
+import { radius, sizes, spacing } from '../theme/spacing';
+import { type } from '../theme/typography';
 import { Header } from '../components/Header';
 import { SCREENS } from '../constants/screens';
 import { useFavorites } from '../context/FavoritesContext';
 import { useTheme } from '../context/ThemeContext';
 import { withDetails } from '../api/recipes';
+import { useLanguage } from '../context/LanguageContext';
+import { localizeRecipe } from '../i18n/localizeRecipe';
 
 export const FavouritesScreen = () => {
   const navigation = useNavigation<StackNavigationProp<any>>();
@@ -19,16 +22,12 @@ export const FavouritesScreen = () => {
   // Re-merge cached details so a favourite saved before its details arrived still gets a subtitle.
   const savedRecipes = favorites.map(recipe => withDetails(recipe));
   const { colors } = useTheme();
-
-  const onDiscoverPress = () => {
-    // The list itself, not whatever recipe was last open in the Home tab.
-    navigation.navigate(SCREENS.HOME_TAB, { screen: SCREENS.MOCKTAIL_FINDER });
-  };
+  const { lang, t, plural } = useLanguage();
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <Header
-        title="Favourites"
+        title={t('favTitle')}
       />
 
       {savedRecipes.length > 0 ? (
@@ -37,13 +36,15 @@ export const FavouritesScreen = () => {
           contentContainerStyle={styles.listContent}
         >
           <Text style={[styles.listCount, { color: colors.subtitle }]}>
-            {savedRecipes.length} {savedRecipes.length === 1 ? 'recipe' : 'recipes'} saved
+            {savedRecipes.length} {plural('saved', savedRecipes.length)}
           </Text>
-          {savedRecipes.map(recipe => (
+          {savedRecipes.map(recipe => {
+            const shown = localizeRecipe(recipe, lang, t);
+            return (
             <RecipeCard
               key={recipe.id}
-              title={recipe.title}
-              subtitle={recipe.subtitle}
+              title={shown.title}
+              subtitle={shown.subtitle}
               imageUrl={recipeImageSource(recipe.id, recipe.imageUrl)}
               isFavorite={true}
               onFavoritePress={() => toggleFavorite(recipe)}
@@ -52,21 +53,16 @@ export const FavouritesScreen = () => {
                 params: { recipe } 
               })}
             />
-          ))}
+            );
+          })}
         </ScrollView>
       ) : (
         <View style={styles.emptyContent}>
+          {/* Handoff: an icon and one line, no title and no button. */}
           <View style={[styles.iconContainer, { backgroundColor: colors.iconBG }]}>
-            <HeartPulseIcon size={32} color={colors.mainBtn} />
+            <HeartIcon size={sizes.icon.xxl} color={colors.favoriteHeart} />
           </View>
-          <Text style={[styles.title, { color: colors.title }]}>No favourites yet</Text>
-          <Text style={[styles.subtitle, { color: colors.subtitle }]}>
-            Start exploring and save your favorite{'\n'}mocktail recipes!
-          </Text>
-
-          <TouchableOpacity style={[styles.button, { backgroundColor: colors.activeBadgeBG, shadowColor: colors.activeBadgeBG }]} onPress={onDiscoverPress} activeOpacity={0.8}>
-            <Text style={[styles.buttonText, { color: colors.text }]}>Discover Recipes</Text>
-          </TouchableOpacity>
+          <Text style={[type.body, styles.emptyText, { color: colors.subtitle }]}>{t('favEmpty')}</Text>
         </View>
       )}
     </View>
@@ -95,37 +91,14 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   iconContainer: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
+    width: sizes.emptyIconLarge,
+    height: sizes.emptyIconLarge,
+    borderRadius: radius.pill,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: spacing.l,
+    marginBottom: spacing.sm,
   },
-  title: {
-    fontSize: 20,
-    fontWeight: '700',
-    marginBottom: spacing.s,
+  emptyText: {
     textAlign: 'center',
-  },
-  subtitle: {
-    fontSize: 15,
-    textAlign: 'center',
-    lineHeight: 22,
-    marginBottom: spacing.xl,
-  },
-  button: {
-    paddingVertical: 14,
-    paddingHorizontal: 28,
-    borderRadius: 12,
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    elevation: 4,
-  },
-  buttonText: {
-    fontSize: 16,
-    fontWeight: '600',
   },
 });
-
