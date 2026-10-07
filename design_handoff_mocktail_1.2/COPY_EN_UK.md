@@ -281,3 +281,58 @@ VoiceOver labels. Added by Cowork on 7 Oct 2026, outside the Claude Design hando
 |---|---|---|
 | simPro | Simulate Pro | Симулювати Pro |
 | simPack | Simulate Dry January | Симулювати «Січень без алкоголю» |
+
+## Strings from 1.1 not in the handoff (added by Cowork, 7 Oct)
+
+| Key | EN | UA |
+|---|---|---|
+| loadError | Couldn't load recipes. Check your internet connection and try again. | Не вдалося завантажити рецепти. Перевірте інтернет і спробуйте ще раз. |
+| recipeLoadError | Couldn't load this recipe. Check your connection and try again. | Не вдалося завантажити цей рецепт. Перевірте з'єднання і спробуйте ще раз. |
+| loadingRecipes | Loading recipes… | Завантажуємо рецепти… |
+| loadingRecipe | Loading recipe… | Завантажуємо рецепт… |
+| loadingDetails | Loading drink details… | Завантажуємо деталі напою… |
+| noRecipes | No recipes found. | Рецептів не знайдено. |
+| tryAgain | Try again | Спробувати ще раз |
+| back | Back | Назад |
+| browseMore | Browse more | Дивитися ще |
+| randomPick | Random pick | Випадковий вибір |
+| noIngredients | No ingredients listed. | Інгредієнти не вказані. |
+| noSteps | No steps written for this recipe. | Для цього рецепта не записано кроків. |
+| changePhoto | Change photo | Змінити фото |
+| removePhoto | Remove | Прибрати |
+| saving | Saving… | Зберігаємо… |
+| saveChanges | Save Changes | Зберегти зміни |
+| photoLibraryError | Couldn't open your photos | Не вдалося відкрити фото |
+| cameraError | Couldn't open the camera | Не вдалося відкрити камеру |
+| pleaseTryAgain | Please try again. | Спробуйте ще раз. |
+| photoSaveErrorTitle | Couldn't save the photo | Не вдалося зберегти фото |
+| photoSaveErrorText | The recipe was not saved. Please try again. | Рецепт не збережено. Спробуйте ще раз. |
+| cameraOffTitle | Camera access is off | Доступ до камери вимкнено |
+| cameraOffText | To take a photo for your recipe, turn on Camera for Mocktail Finder in Settings. | Щоб зробити фото для рецепта, увімкніть Камеру для Mocktail Finder у Налаштуваннях. |
+| openSettings | Open Settings | Відкрити Налаштування |
+| shareIntro | {name} — a non-alcoholic recipe from Mocktail Finder | {name} — безалкогольний рецепт із Mocktail Finder |
+| shareGet | Get Mocktail Finder: {url} | Завантажити Mocktail Finder: {url} |
+| a11yBack | Go back | Назад |
+| a11yShuffle | Another random recipe | Інший випадковий рецепт |
+
+## Category chips — Ukrainian chip form for all 15 tags (added by Cowork, 7 Oct)
+
+Decision: Home keeps all 15 Category chips from 1.1 (free feature, nothing removed); the prototype's six were a sample of the scrolling row. Chip form is plural; the card form (singular, from `reference/mf-data.js`) stays for badges and subtitles.
+
+| Tag | Chip EN | Chip UA |
+|---|---|---|
+| Iced | Iced | З льодом |
+| Frozen | Frozen | Заморожені |
+| Hot | Hot | Гарячі |
+| Citrus | Citrus | Цитрусові |
+| Tropical | Tropical | Тропічні |
+| Berry | Berry | Ягідні |
+| Fruity | Fruity | Фруктові |
+| Creamy | Creamy | Вершкові |
+| Sparkling | Sparkling | Ігристі |
+| Chocolate | Chocolate | Шоколадні |
+| Coffee | Coffee | Кавові |
+| Tea | Tea | Чайні |
+| Minty | Minty | М'ятні |
+| Spiced | Spiced | Пряні |
+| Savoury | Savoury | Солоні |

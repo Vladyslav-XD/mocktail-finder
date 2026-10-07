@@ -2,6 +2,13 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-07 · Ukrainian for the 1.1 strings (Claude Code)
+- Cowork added `## Strings from 1.1 not in the handoff` to `COPY_EN_UK.md` (28 rows incl. `a11yBack`, `a11yShuffle`). They are now in `src/i18n/uk.ts`, and the English in the doc matches `en.ts` word for word. This answers task 2 → Open question 1.
+- Still English-only: the three VoiceOver labels of the header theme toggle (`a11yThemeToDark`, `a11yThemeToLight`, `a11yThemeHint`), which go away with the toggle in task 5.
+- Cowork also added `## Category chips` (Ukrainian chip forms for all 15 tags; Home keeps all 15). Applied in task 5, as decided (task 2 → Open question 2).
+- Files: `design_handoff_mocktail_1.2/COPY_EN_UK.md` (Cowork's sections), `src/i18n/en.ts` (comments), `src/i18n/uk.ts`, `src/i18n/__tests__/i18n.test.ts`, `TESTING.md`.
+- Verified: `npx tsc --noEmit` clean; `npm test` 62/62 (the "every key in Ukrainian" test now allows only the three toggle labels).
+
 ## 2026-10-07 · 1.2 task 3 — A. data: collections, ingredient keys, photos, amounts (Claude Code)
 - **Collections**: `src/data/packs/<packId>.json` ×6, copied verbatim from `recipes.json` (byte-compared), both languages, ice lines as in the JSON. `src/data/packs/index.ts`: `PACKS`, `packToRecipe`, `findPackRecipe`, `ALL_PACK_RECIPES` (60). A collection drink is an ordinary `Recipe` with id `pack:<packId>:<recipeId>`, so favourites and share already work with it. `Recipe` gained three optional fields: `steps` (86 collection steps hold more than one sentence, so splitting `instructions` would break them), `packId`, `description`.
 - **Photos**: 60 files in `assets/packs/<packId>/` (700 px as delivered, 2.2 MB); `src/data/packPhotos.ts` (`packPhoto(id)`, `packCover(packId)`); `recipeImageSource` checks them after the catalogue photos.

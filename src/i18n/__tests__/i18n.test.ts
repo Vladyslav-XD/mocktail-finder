@@ -67,24 +67,22 @@ describe('translate', () => {
   });
 
   it('falls back to English for a key Ukrainian lacks', () => {
-    expect('tryAgain' in uk).toBe(false);
-    expect(translate('uk', 'tryAgain')).toBe('Try again');
+    expect('a11yThemeHint' in uk).toBe(false);
+    expect(translate('uk', 'a11yThemeHint')).toBe('Press and hold to follow the system appearance');
+  });
+
+  it('has the 1.1 strings Cowork added', () => {
+    expect(translate('uk', 'tryAgain')).toBe('Спробувати ще раз');
+    expect(translate('uk', 'shareIntro', { name: 'Фрапе' })).toBe('Фрапе — безалкогольний рецепт із Mocktail Finder');
   });
 });
 
 describe('dictionaries', () => {
-  // Every copy key the handoff gives must exist in Ukrainian too; only the 1.1
-  // leftovers (STATUS.md → Open questions) may be missing.
-  const LEGACY = [
-    'loadError', 'recipeLoadError', 'loadingRecipes', 'loadingRecipe', 'loadingDetails', 'noRecipes',
-    'tryAgain', 'back', 'browseMore', 'randomPick', 'noIngredients', 'noSteps', 'changePhoto',
-    'removePhoto', 'saving', 'saveChanges', 'photoLibraryError', 'cameraError', 'pleaseTryAgain',
-    'photoSaveErrorTitle', 'photoSaveErrorText', 'cameraOffTitle', 'cameraOffText', 'openSettings',
-    'shareIntro', 'shareGet', 'a11yBack', 'a11yShuffle', 'a11yThemeToDark', 'a11yThemeToLight',
-    'a11yThemeHint',
-  ];
+  // Every copy key must exist in Ukrainian too; only the header theme toggle's
+  // VoiceOver labels (removed in task 5) are English-only.
+  const LEGACY = ['a11yThemeToDark', 'a11yThemeToLight', 'a11yThemeHint'];
 
-  it('Ukrainian has every key but the 1.1 leftovers', () => {
+  it('Ukrainian has every key but the theme-toggle labels', () => {
     const missing = Object.keys(en).filter(k => !(k in uk));
     expect(missing.sort()).toEqual([...LEGACY].sort());
   });

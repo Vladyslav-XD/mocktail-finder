@@ -345,8 +345,7 @@ export const en = {
     tabasco: "Tabasco",
     horseradish: "Horseradish",
   },
-  // 1.1 strings with no entry in COPY_EN_UK.md yet: English in both languages
-  // until Cowork supplies the Ukrainian (STATUS.md → Open questions).
+  // Strings from 1.1 not in the handoff (COPY_EN_UK.md, added by Cowork 7 Oct)
   loadError: "Couldn't load recipes. Check your internet connection and try again.",
   recipeLoadError: "Couldn't load this recipe. Check your connection and try again.",
   loadingRecipes: "Loading recipes…",
@@ -375,6 +374,7 @@ export const en = {
   shareGet: "Get Mocktail Finder: {url}",
   a11yBack: "Go back",
   a11yShuffle: "Another random recipe",
+  // Header theme toggle; goes away in task 5 (the theme moves to About). English only.
   a11yThemeToDark: "Switch to dark theme",
   a11yThemeToLight: "Switch to light theme",
   a11yThemeHint: "Press and hold to follow the system appearance",
