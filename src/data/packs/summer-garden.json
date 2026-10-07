@@ -1,0 +1,854 @@
+{
+  "id": "summer-garden",
+  "title": "Summer Garden",
+  "title_uk": "Літній сад",
+  "subtitle": "10 drinks · herbs, berries & citrus",
+  "description": "Herbs, berries, citrus and refreshing drinks for warm days.",
+  "description_uk": "Трави, ягоди, цитруси та легкі напої для спекотних днів.",
+  "productId": "com.filonexperiencedesign.mocktailfinder.pack.summergarden",
+  "price": "€2.99",
+  "cover": "arnold-palmer.jpg",
+  "recipes": [
+    {
+      "id": "summer-garden-arnold-palmer",
+      "name": "Arnold Palmer",
+      "name_uk": "Арнольд Палмер",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Tea"
+      ],
+      "description": "Equal parts black tea and lemonade: tangy, citrusy, and moderately sweet.",
+      "description_uk": "Рівні частини чорного чаю та лимонаду: терпкий, цитрусовий і помірно солодкий.",
+      "time_min": 5,
+      "glass": "Highball",
+      "glass_uk": "Хайбол",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Chilled black tea",
+          "amount": "120 ml"
+        },
+        {
+          "name": "Water",
+          "amount": "90 ml"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Syrup 1:1 0.0%",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Ice for serving",
+          "amount": "100 g"
+        },
+        {
+          "name": "Lemon",
+          "amount": "1 wheel"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Охолоджений чорний чай",
+          "amount": "120 мл"
+        },
+        {
+          "name": "Вода",
+          "amount": "90 мл"
+        },
+        {
+          "name": "Лимонний сік",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Лід для подачі",
+          "amount": "100 г"
+        },
+        {
+          "name": "Лимон",
+          "amount": "1 кружальце"
+        }
+      ],
+      "steps": [
+        "For the tea, steep 2 g black tea in 150 ml hot water for 3 min; strain, chill, and measure 120 ml.",
+        "Mix 90 ml water, lemon juice, and syrup — that is 120 ml lemonade.",
+        "Pour tea and lemonade over ice. Stir and garnish with a lemon wheel."
+      ],
+      "steps_uk": [
+        "Для чаю заваріть 2 г чорного чаю у 150 мл гарячої води 3 хв; процідіть, остудіть і відміряйте 120 мл.",
+        "Змішайте 90 мл води, лимонний сік і сироп — це 120 мл лимонаду.",
+        "Налийте чай і лимонад на лід. Перемішайте, прикрасьте кружальцем лимона."
+      ],
+      "photo": "arnold-palmer.jpg"
+    },
+    {
+      "id": "summer-garden-virgin-hugo",
+      "name": "Virgin Hugo",
+      "name_uk": "Безалкогольний Гуґо",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "A floral elderflower spritz with mint, lime, and a 0.0% wine base.",
+      "description_uk": "Квітковий бузиновий spritz із м’ятою, лаймом та винною основою 0.0%.",
+      "time_min": 4,
+      "glass": "Wine glass",
+      "glass_uk": "Винний келих",
+      "glass_ml": 450,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Sparkling white wine 0.0%",
+          "amount": "120 ml"
+        },
+        {
+          "name": "Elderflower syrup 0.0%",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Soda water",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Mint",
+          "amount": "6 leaves"
+        },
+        {
+          "name": "Ice",
+          "amount": "120 g"
+        },
+        {
+          "name": "Lime",
+          "amount": "2 wheels"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Сухе біле ігристе вино 0.0%",
+          "amount": "120 мл"
+        },
+        {
+          "name": "Бузиновий сироп 0.0%",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Содова",
+          "amount": "50 мл"
+        },
+        {
+          "name": "М’ята",
+          "amount": "6 листків"
+        },
+        {
+          "name": "Лід",
+          "amount": "120 г"
+        },
+        {
+          "name": "Лайм",
+          "amount": "2 кружальця"
+        }
+      ],
+      "steps": [
+        "Gently slap the mint leaves with your palms without bruising them. Place them in the glass with ice and lime wedges.",
+        "Add elderflower syrup, 0.0% sparkling wine, and soda water.",
+        "Stir gently from bottom to top and serve."
+      ],
+      "steps_uk": [
+        "Легко поплескайте листки м’яти долонями, не розтираючи. Покладіть у келих із льодом та кружальцями лайма.",
+        "Додайте бузиновий сироп, ігристе 0.0% і содову.",
+        "Обережно перемішайте знизу вгору й подавайте."
+      ],
+      "photo": "virgin-hugo.jpg"
+    },
+    {
+      "id": "summer-garden-virgin-basil-smash",
+      "name": "Virgin Basil Smash",
+      "name_uk": "Безалкогольний Базил смеш",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Herbal"
+      ],
+      "description": "Fresh green basil, lemon, and 0.0% juniper base with a herbal finish.",
+      "description_uk": "Свіжий зелений базилік, лимон і ялівцева основа 0.0% з трав’яним післясмаком.",
+      "time_min": 6,
+      "glass": "Rocks glass",
+      "glass_uk": "Рокс",
+      "glass_ml": 250,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Gin substitute 0.0%",
+          "amount": "60 ml"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "Simple syrup 1:1 0.0%",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Basil",
+          "amount": "8 leaves"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g for shaking + 80 g for serving"
+        },
+        {
+          "name": "Basil for garnish",
+          "amount": "1 sprig"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ялівцевий замінник джину 0.0%",
+          "amount": "60 мл"
+        },
+        {
+          "name": "Лимонний сік",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Базилік",
+          "amount": "8 листків"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г для шейкера + 80 г для подачі"
+        },
+        {
+          "name": "Базилік для декору",
+          "amount": "1 гілочка"
+        }
+      ],
+      "steps": [
+        "In the shaker, gently press 8 basil leaves with syrup and lemon juice.",
+        "Add the 0.0% juniper base and 100 g of ice; shake for 12–15 seconds.",
+        "Double-strain into a rocks glass with fresh ice. Garnish with a basil sprig."
+      ],
+      "steps_uk": [
+        "У шейкері м’яко притисніть 8 листків базиліку з сиропом і лимонним соком.",
+        "Додайте ялівцеву базу 0.0% та 100 г льоду; струсіть 12–15 с.",
+        "Двічі процідіть у рокс зі свіжим льодом. Прикрасьте гілочкою базиліку."
+      ],
+      "photo": "virgin-basil-smash.jpg"
+    },
+    {
+      "id": "summer-garden-virgin-bramble",
+      "name": "Virgin Bramble",
+      "name_uk": "Безалкогольний Брамбл",
+      "tags": [
+        "Frozen",
+        "Citrus",
+        "Berry"
+      ],
+      "description": "Lemon juniper sour with a dark blackberry drizzle in crushed ice.",
+      "description_uk": "Лимонний ялівцевий sour із темною ожиновою доріжкою в подрібненому льоді.",
+      "time_min": 6,
+      "glass": "Rocks glass",
+      "glass_uk": "Рокс",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Gin substitute 0.0%",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "Simple syrup 1:1 0.0%",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Blackberry syrup 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g for shaking + 130 g crushed for serving"
+        },
+        {
+          "name": "Blackberries",
+          "amount": "2 berries"
+        },
+        {
+          "name": "Lemon",
+          "amount": "1 half-wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ялівцевий замінник джину 0.0%",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Лимонний сік",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Ожиновий сироп 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г для шейкера + 130 г подрібненого для подачі"
+        },
+        {
+          "name": "Ожина",
+          "amount": "2 ягоди"
+        },
+        {
+          "name": "Лимон",
+          "amount": "1 півкружальце"
+        }
+      ],
+      "steps": [
+        "Shake the 0.0% juniper base, juice, and simple syrup with 100 g of ice for 12 seconds.",
+        "Strain into a rocks glass filled with crushed ice.",
+        "Slowly pour in blackberry syrup without stirring. Add two berries and a lemon half-wedge."
+      ],
+      "steps_uk": [
+        "Струсіть ялівцеву базу 0.0%, сік і простий сироп зі 100 г льоду 12 с.",
+        "Процідіть у рокс, заповнений подрібненим льодом.",
+        "Повільно полийте ожиновим сиропом, не перемішуючи. Додайте дві ягоди та півкружальце лимона."
+      ],
+      "photo": "virgin-bramble.jpg"
+    },
+    {
+      "id": "summer-garden-virgin-southside",
+      "name": "Virgin Southside",
+      "name_uk": "Безалкогольний Саутсайд",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "A minty juniper sour without soda: short, strained, and not a mojito.",
+      "description_uk": "М’ятний ялівцевий sour без содової: коротка, проціджена подача, не мохіто.",
+      "time_min": 5,
+      "glass": "Coupe",
+      "glass_uk": "Купе",
+      "glass_ml": 180,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Juniper gin alternative 0.0%",
+          "amount": "60 ml"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "1:1 sugar syrup 0.0%",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Mint",
+          "amount": "6 leaves"
+        },
+        {
+          "name": "Ice for shaker",
+          "amount": "120 g"
+        },
+        {
+          "name": "Mint for garnish",
+          "amount": "1 leaf"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ялівцевий замінник джину 0.0%",
+          "amount": "60 мл"
+        },
+        {
+          "name": "Лимонний сік",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "20 мл"
+        },
+        {
+          "name": "М’ята",
+          "amount": "6 листків"
+        },
+        {
+          "name": "Лід для шейкера",
+          "amount": "120 г"
+        },
+        {
+          "name": "М’ята для декору",
+          "amount": "1 листок"
+        }
+      ],
+      "steps": [
+        "Gently press 6 mint leaves with syrup in the shaker; do not over-muddle.",
+        "Add juniper base 0.0%, lemon juice, and ice. Shake for 12 s.",
+        "Double strain into a coupe without ice and garnish with one mint leaf."
+      ],
+      "steps_uk": [
+        "М’яко притисніть 6 листків м’яти із сиропом у шейкері; не розтирайте до кашки.",
+        "Додайте ялівцеву базу 0.0%, лимонний сік та лід. Струсіть 12 с.",
+        "Двічі процідіть у купе без льоду й прикрасьте одним листком м’яти."
+      ],
+      "photo": "virgin-southside.jpg"
+    },
+    {
+      "id": "summer-garden-virgin-sea-breeze",
+      "name": "Virgin Sea Breeze",
+      "name_uk": "Безалкогольний Морський бриз",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Berry"
+      ],
+      "description": "Tart cranberry and bitter grapefruit in a light, non-creamy composition.",
+      "description_uk": "Терпка журавлина та гіркуватий грейпфрут у легкій, не вершковій композиції.",
+      "time_min": 3,
+      "glass": "Highball",
+      "glass_uk": "Хайбол",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Neutral vodka substitute 0.0%",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Cranberry juice",
+          "amount": "100 ml"
+        },
+        {
+          "name": "Grapefruit juice",
+          "amount": "60 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g"
+        },
+        {
+          "name": "Lime",
+          "amount": "1 wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Нейтральний замінник горілки 0.0%",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Журавлинний морс",
+          "amount": "100 мл"
+        },
+        {
+          "name": "Грейпфрутовий сік",
+          "amount": "60 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г"
+        },
+        {
+          "name": "Лайм",
+          "amount": "1 часточка"
+        }
+      ],
+      "steps": [
+        "Fill the glass with ice. Pour in the neutral base 0.0% and cranberry juice.",
+        "Add grapefruit juice and stir with a spoon.",
+        "Garnish with a lime wedge."
+      ],
+      "steps_uk": [
+        "Покладіть лід у келих. Влийте нейтральну базу 0.0% та журавлинний морс.",
+        "Додайте грейпфрутовий сік і перемішайте ложкою.",
+        "Прикрасьте часточкою лайма."
+      ],
+      "photo": "virgin-sea-breeze.jpg"
+    },
+    {
+      "id": "summer-garden-alcohol-free-sangria",
+      "name": "Alcohol-free Sangria",
+      "name_uk": "Сангрія без алкоголю",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "0.0% red wine with citrus and apple — fruity, slightly tart, and refreshing.",
+      "description_uk": "Червоне вино 0.0% із цитрусом та яблуком — фруктова, терпкувата й прохолодна.",
+      "time_min": 5,
+      "glass": "Wine glass",
+      "glass_uk": "Винний келих",
+      "glass_ml": 450,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Red wine 0.0%",
+          "amount": "150 ml"
+        },
+        {
+          "name": "Orange juice",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Soda water",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Orange",
+          "amount": "30 g"
+        },
+        {
+          "name": "Apple",
+          "amount": "30 g"
+        },
+        {
+          "name": "Lemon",
+          "amount": "1 wheel (10 g)"
+        },
+        {
+          "name": "Ice",
+          "amount": "80 g"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Червоне вино 0.0%",
+          "amount": "150 мл"
+        },
+        {
+          "name": "Апельсиновий сік",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Содова",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Апельсин",
+          "amount": "30 г"
+        },
+        {
+          "name": "Яблуко",
+          "amount": "30 г"
+        },
+        {
+          "name": "Лимон",
+          "amount": "1 кружальце (10 г)"
+        },
+        {
+          "name": "Лід",
+          "amount": "80 г"
+        }
+      ],
+      "steps": [
+        "Cut the orange and apple into pieces and the lemon into a wheel. Combine the fruit, 0.0% red wine, and orange juice.",
+        "Cover and refrigerate for 30 min so the flavors combine.",
+        "Pour together with the fruit into a glass with ice. Add soda and gently stir."
+      ],
+      "steps_uk": [
+        "Наріжте апельсин і яблуко шматочками, лимон — кружальцем. З’єднайте фрукти, червоне вино 0.0% та апельсиновий сік.",
+        "Накрийте й поставте в холодильник на 30 хв, щоб смаки поєдналися.",
+        "Перелийте разом із фруктами у келих із льодом. Додайте содову та легко перемішайте."
+      ],
+      "photo": "alcohol-free-sangria.jpg"
+    },
+    {
+      "id": "summer-garden-alcohol-free-tinto-de-verano",
+      "name": "Alcohol-free Tinto de Verano",
+      "name_uk": "Тінто де верано без алкоголю",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "Simpler than sangria: a summer mix of 0.0% red wine and lemon soda water.",
+      "description_uk": "Простіша за сангрію літня суміш червоного вина 0.0% та лимонної газованої води.",
+      "time_min": 2,
+      "glass": "Tall tumbler",
+      "glass_uk": "Високий тумблер",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Red wine 0.0%",
+          "amount": "100 ml"
+        },
+        {
+          "name": "Lemon soda water",
+          "amount": "100 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g"
+        },
+        {
+          "name": "Lemon",
+          "amount": "1 wheel"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Червоне вино 0.0%",
+          "amount": "100 мл"
+        },
+        {
+          "name": "Лимонна газована вода",
+          "amount": "100 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г"
+        },
+        {
+          "name": "Лимон",
+          "amount": "1 кружальце"
+        }
+      ],
+      "steps": [
+        "Fill a tumbler with ice and pour in chilled 0.0% red wine.",
+        "Top with lemon soda water in equal measure and gently stir.",
+        "Garnish with a lemon wheel. Do not infuse and do not add sliced fruit."
+      ],
+      "steps_uk": [
+        "Заповніть тумблер льодом та влийте холодне червоне вино 0.0%.",
+        "Долийте лимонну газовану воду в рівній кількості й ніжно перемішайте.",
+        "Прикрасьте кружальцем лимона. Не настоюйте й не додавайте нарізані фрукти."
+      ],
+      "photo": "alcohol-free-tinto-de-verano.jpg"
+    },
+    {
+      "id": "summer-garden-limonana",
+      "name": "Limonana",
+      "name_uk": "Лімонана",
+      "tags": [
+        "Frozen",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "A blended lemon-mint drink with crushed ice: no lime, no soda, and no rum base.",
+      "description_uk": "Збитий лимонно-м’ятний напій із дрібним льодом: без лайма, содової та ромової бази.",
+      "time_min": 5,
+      "glass": "Tall tumbler",
+      "glass_uk": "Високий тумблер",
+      "glass_ml": 400,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Lemon juice",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Cold water",
+          "amount": "120 ml"
+        },
+        {
+          "name": "Sugar",
+          "amount": "20 g"
+        },
+        {
+          "name": "Mint",
+          "amount": "10 leaves"
+        },
+        {
+          "name": "Ice for blender",
+          "amount": "100 g"
+        },
+        {
+          "name": "Mint for garnish",
+          "amount": "1 sprig"
+        },
+        {
+          "name": "Lemon",
+          "amount": "1 wheel"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Лимонний сік",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Холодна вода",
+          "amount": "120 мл"
+        },
+        {
+          "name": "Цукор",
+          "amount": "20 г"
+        },
+        {
+          "name": "М’ята",
+          "amount": "10 листків"
+        },
+        {
+          "name": "Лід для блендера",
+          "amount": "100 г"
+        },
+        {
+          "name": "М’ята для декору",
+          "amount": "1 гілочка"
+        },
+        {
+          "name": "Лимон",
+          "amount": "1 кружальце"
+        }
+      ],
+      "steps": [
+        "Dissolve sugar in lemon juice and water, stirring until crystals disappear.",
+        "Add 10 mint leaves and ice. Blend until you get a fine icy texture with green specks.",
+        "Pour into a tumbler, garnish with a mint sprig and a lemon wheel."
+      ],
+      "steps_uk": [
+        "Розчиніть цукор у лимонному соку та воді, перемішуючи до зникнення кристалів.",
+        "Додайте 10 листків м’яти й лід. Збийте в блендері до дрібної крижаної текстури із зеленими цятками.",
+        "Перелийте у тумблер, прикрасьте гілочкою м’яти та кружальцем лимона."
+      ],
+      "photo": "limonana.jpg"
+    },
+    {
+      "id": "summer-garden-jaljeera",
+      "name": "Jaljeera",
+      "name_uk": "Джалджіра",
+      "tags": [
+        "Frozen",
+        "Citrus",
+        "Minty"
+      ],
+      "description": "An Indian spicy cooler with cumin, mint, tamarind, and black salt.",
+      "description_uk": "Індійський пряний прохолодний напій із кумином, м’ятою, тамариндом і чорною сіллю.",
+      "time_min": 7,
+      "glass": "Tumbler",
+      "glass_uk": "Тумблер",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Cold water",
+          "amount": "200 ml"
+        },
+        {
+          "name": "Mint",
+          "amount": "8 leaves"
+        },
+        {
+          "name": "Cilantro",
+          "amount": "5 g"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Tamarind paste",
+          "amount": "5 g"
+        },
+        {
+          "name": "Roasted ground cumin",
+          "amount": "1 g"
+        },
+        {
+          "name": "Black salt kala namak",
+          "amount": "0.5 g"
+        },
+        {
+          "name": "Dried ground ginger",
+          "amount": "0.2 g"
+        },
+        {
+          "name": "Sugar",
+          "amount": "5 g"
+        },
+        {
+          "name": "Ice",
+          "amount": "80 g"
+        },
+        {
+          "name": "Mint for garnish",
+          "amount": "1 sprig"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Холодна вода",
+          "amount": "200 мл"
+        },
+        {
+          "name": "М’ята",
+          "amount": "8 листків"
+        },
+        {
+          "name": "Кінза",
+          "amount": "5 г"
+        },
+        {
+          "name": "Лимонний сік",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Паста тамаринду",
+          "amount": "5 г"
+        },
+        {
+          "name": "Обсмажений мелений кумин",
+          "amount": "1 г"
+        },
+        {
+          "name": "Чорна сіль kala namak",
+          "amount": "0,5 г"
+        },
+        {
+          "name": "Сухий мелений імбир",
+          "amount": "0,2 г"
+        },
+        {
+          "name": "Цукор",
+          "amount": "5 г"
+        },
+        {
+          "name": "Лід",
+          "amount": "80 г"
+        },
+        {
+          "name": "М’ята для декору",
+          "amount": "1 гілочка"
+        }
+      ],
+      "steps": [
+        "Blend 50 ml of measured water with mint, cilantro, tamarind, and lemon juice.",
+        "Add cumin, kala namak, ginger, sugar, and the remaining 150 ml of water. Stir and strain through a fine-mesh sieve.",
+        "Pour over ice and garnish with mint. The drink should be spicy-sour, not a sweet smoothie."
+      ],
+      "steps_uk": [
+        "Збийте 50 мл відміряної води з м’ятою, кінзою, тамариндом і лимонним соком.",
+        "Додайте кумин, kala namak, імбир, цукор та решту 150 мл води. Перемішайте й процідіть через дрібне сито.",
+        "Налийте на лід і прикрасьте м’ятою. Напій має бути пряно-кислим, а не солодким смузі."
+      ],
+      "photo": "jaljeera.jpg"
+    }
+  ],
+  "subtitle_uk": "10 напоїв · трави, ягоди й цитрус"
+}

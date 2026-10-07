@@ -1,0 +1,813 @@
+{
+  "id": "evening-classics",
+  "title": "Evening Classics",
+  "title_uk": "Вечірні класики",
+  "subtitle": "10 drinks · ginger, coffee & cream",
+  "description": "Ginger, coffee, creamy and foamy cocktails for a relaxed evening.",
+  "description_uk": "Імбирні, кавові, вершкові й пінні коктейлі для неспішного вечора.",
+  "productId": "com.filonexperiencedesign.mocktailfinder.pack.eveningclassics",
+  "price": "€2.99",
+  "cover": "virgin-moscow-mule.jpg",
+  "recipes": [
+    {
+      "id": "evening-classics-virgin-moscow-mule",
+      "name": "Virgin Moscow Mule",
+      "name_uk": "Безалкогольний Московський мул",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "Spicy ginger, lime, and neutral base 0.0% — dry, invigorating long drink.",
+      "description_uk": "Пекучий імбир, лайм і нейтральна база 0.0% — сухий, бадьорий long drink.",
+      "time_min": 3,
+      "glass": "Copper mug",
+      "glass_uk": "Скляний кухоль",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Neutral vodka substitute 0.0%",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Ginger ale 0.0%",
+          "amount": "150 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "120 g"
+        },
+        {
+          "name": "Lime",
+          "amount": "1 wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Нейтральний замінник горілки 0.0%",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Ginger beer 0.0%",
+          "amount": "150 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "120 г"
+        },
+        {
+          "name": "Лайм",
+          "amount": "1 часточка"
+        }
+      ],
+      "steps": [
+        "Fill the copper mug with ice. Pour in the neutral base 0.0% and lime juice.",
+        "Top with ginger ale 0.0% — only with a 0.0% label. Stir gently.",
+        "Add a lime wedge and serve immediately."
+      ],
+      "steps_uk": [
+        "Наповніть скляний кухоль льодом. Влийте нейтральну базу 0.0% та сік лайма.",
+        "Долийте ginger beer лише з етикеткою 0.0%. Обережно перемішайте.",
+        "Додайте часточку лайма та подавайте відразу."
+      ],
+      "photo": "virgin-moscow-mule.jpg"
+    },
+    {
+      "id": "evening-classics-virgin-dark-n-stormy",
+      "name": "Virgin Dark ’n’ Stormy",
+      "name_uk": "Безалкогольний Дарк енд Стормі",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "Dark spicy rum base 0.0% over spicy ginger with lime.",
+      "description_uk": "Темна пряна ромова база 0.0% поверх гострого імбиру з лаймом.",
+      "time_min": 3,
+      "glass": "Highball",
+      "glass_uk": "Хайбол",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Spicy dark rum substitute 0.0%",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Ginger ale 0.0%",
+          "amount": "150 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "120 g"
+        },
+        {
+          "name": "Lime",
+          "amount": "1 wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Пряний замінник темного рому 0.0%",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Ginger beer 0.0%",
+          "amount": "150 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "120 г"
+        },
+        {
+          "name": "Лайм",
+          "amount": "1 часточка"
+        }
+      ],
+      "steps": [
+        "Fill the highball with ice. Pour in lime juice and chilled ginger ale 0.0%.",
+        "Slowly pour the dark spicy rum base 0.0% down the back of a spoon to create a darker top layer.",
+        "Garnish with lime. Stir before drinking."
+      ],
+      "steps_uk": [
+        "Покладіть лід у хайбол. Влийте сік лайма й холодний ginger beer 0.0%.",
+        "Повільно налийте темну пряну ромову базу 0.0% по зворотному боку ложки, щоб утворився темніший верхній шар.",
+        "Прикрасьте лаймом. Перед питтям перемішайте."
+      ],
+      "photo": "virgin-dark-n-stormy.jpg"
+    },
+    {
+      "id": "evening-classics-virgin-clover-club",
+      "name": "Virgin Clover Club",
+      "name_uk": "Безалкогольний Кловер Клаб",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Berry"
+      ],
+      "description": "A raspberry juniper sour with soft, stable aquafaba foam.",
+      "description_uk": "Малиновий ялівцевий sour із м’якою, стійкою піною з аквафаби.",
+      "time_min": 6,
+      "glass": "Coupe",
+      "glass_uk": "Купе",
+      "glass_ml": 220,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Juniper gin alternative 0.0%",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "Raspberry syrup 0.0%",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Salt-free aquafaba",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Ice for shaker",
+          "amount": "120 g"
+        },
+        {
+          "name": "Raspberries",
+          "amount": "3 berries"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ялівцевий замінник джину 0.0%",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Лимонний сік",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Малиновий сироп 0.0%",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Аквафаба без солі",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Лід для шейкера",
+          "amount": "120 г"
+        },
+        {
+          "name": "Малина",
+          "amount": "3 ягоди"
+        }
+      ],
+      "steps": [
+        "Pour all liquid ingredients into the shaker. Shake without ice for 20 s to whip the aquafaba.",
+        "Add ice and shake for another 12 s. Double strain into a coupe without ice.",
+        "Wait 20 s for the foam to settle. Place three raspberries on a pick on top of the foam."
+      ],
+      "steps_uk": [
+        "Налийте всі рідкі інгредієнти в шейкер. Струсіть без льоду 20 с, щоб спінити аквафабу.",
+        "Додайте лід і струсіть ще 12 с. Двічі процідіть у купе без льоду.",
+        "Зачекайте 20 с, поки піна вирівняється. Покладіть три ягоди малини на шпажці поверх піни."
+      ],
+      "photo": "virgin-clover-club.jpg"
+    },
+    {
+      "id": "evening-classics-alcohol-free-whiskey-sour",
+      "name": "Alcohol-free Whiskey Sour",
+      "name_uk": "Віскі сауер без алкоголю",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Spiced"
+      ],
+      "description": "Oak and vanilla notes from the 0.0% base, lemon acidity, and silky foam.",
+      "description_uk": "Дубові й ванільні ноти бази 0.0%, лимонна кислинка та шовковиста піна.",
+      "time_min": 6,
+      "glass": "Rocks",
+      "glass_uk": "Рокс",
+      "glass_ml": 250,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Oak-spiced whiskey alternative 0.0%",
+          "amount": "60 ml"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "1:1 sugar syrup 0.0%",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Salt-free aquafaba",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g for shaking + 60 g for serving"
+        },
+        {
+          "name": "Orange",
+          "amount": "1 wheel"
+        },
+        {
+          "name": "Alcohol-free cherry",
+          "amount": "1 piece"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Дубово-пряний замінник віскі 0.0%",
+          "amount": "60 мл"
+        },
+        {
+          "name": "Лимонний сік",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Аквафаба без солі",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г для шейкера + 60 г для подачі"
+        },
+        {
+          "name": "Апельсин",
+          "amount": "1 півкружальце"
+        },
+        {
+          "name": "Вишня без алкоголю",
+          "amount": "1 шт"
+        }
+      ],
+      "steps": [
+        "Shake whiskey base 0.0%, juice, syrup, and aquafaba without ice for 20 s.",
+        "Add 100 g ice, shake for another 12 s, and strain into a rocks glass with a 60 g large cube.",
+        "Garnish with an orange wheel and a cherry. Do not use spirit-based bitters."
+      ],
+      "steps_uk": [
+        "Струсіть віскі-базу 0.0%, сік, сироп і аквафабу без льоду 20 с.",
+        "Додайте 100 г льоду, струсіть ще 12 с та процідіть у рокс із великим кубом 60 г.",
+        "Прикрасьте півкружальцем апельсина й вишнею. Алкогольні біттери не додавайте."
+      ],
+      "photo": "alcohol-free-whiskey-sour.jpg"
+    },
+    {
+      "id": "evening-classics-alcohol-free-amaretto-sour",
+      "name": "Alcohol-free Amaretto Sour",
+      "name_uk": "Амарето сауер без алкоголю",
+      "tags": [
+        "Iced",
+        "Citrus"
+      ],
+      "description": "Almond aroma, lemon, and airy foam; without traditional amaretto liqueur.",
+      "description_uk": "Мигдалевий аромат, лимон і повітряна піна; без звичайного лікеру амарето.",
+      "time_min": 6,
+      "glass": "Rocks",
+      "glass_uk": "Рокс",
+      "glass_ml": 250,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Almond amaretto alternative 0.0%",
+          "amount": "60 ml"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": "30 ml"
+        },
+        {
+          "name": "1:1 sugar syrup 0.0%",
+          "amount": "5 ml"
+        },
+        {
+          "name": "Salt-free aquafaba",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g for shaking + 60 g for serving"
+        },
+        {
+          "name": "Lemon",
+          "amount": "1 wheel"
+        },
+        {
+          "name": "Alcohol-free cherry",
+          "amount": "1 piece"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Мигдалевий замінник амарето 0.0%",
+          "amount": "60 мл"
+        },
+        {
+          "name": "Лимонний сік",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "5 мл"
+        },
+        {
+          "name": "Аквафаба без солі",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г для шейкера + 60 г для подачі"
+        },
+        {
+          "name": "Лимон",
+          "amount": "1 півкружальце"
+        },
+        {
+          "name": "Вишня без алкоголю",
+          "amount": "1 шт"
+        }
+      ],
+      "steps": [
+        "Shake almond base 0.0%, juice, syrup, and aquafaba without ice for 20 s.",
+        "Add 100 g ice and shake for another 12 s. Strain into a rocks glass with a 60 g ice cube.",
+        "Add lemon and cherry. Do not use spirit-based almond extract."
+      ],
+      "steps_uk": [
+        "Струсіть мигдалеву базу 0.0%, сік, сироп та аквафабу без льоду 20 с.",
+        "Додайте 100 г льоду та збивайте ще 12 с. Процідіть у рокс із кубом льоду 60 г.",
+        "Додайте лимон і вишню. Не використовуйте спиртовий мигдалевий екстракт."
+      ],
+      "photo": "alcohol-free-amaretto-sour.jpg"
+    },
+    {
+      "id": "evening-classics-virgin-espresso-martini",
+      "name": "Virgin Espresso Martini",
+      "name_uk": "Безалкогольний Еспресо мартіні",
+      "tags": [
+        "Iced",
+        "Creamy",
+        "Coffee"
+      ],
+      "description": "Rich coffee, light sweetness, and delicate coffee foam without milk.",
+      "description_uk": "Насичена кава, легка солодкість і тонка кавова піна без молока.",
+      "time_min": 6,
+      "glass": "Martini glass",
+      "glass_uk": "Келих мартіні",
+      "glass_ml": 180,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Neutral vodka alternative 0.0%",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Coffee liqueur alternative 0.0%",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Espresso, chilled",
+          "amount": "40 ml"
+        },
+        {
+          "name": "1:1 sugar syrup 0.0%",
+          "amount": "5 ml"
+        },
+        {
+          "name": "Ice for shaker",
+          "amount": "120 g"
+        },
+        {
+          "name": "Coffee beans",
+          "amount": "3 beans"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Нейтральний замінник горілки 0.0%",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Кавовий замінник лікеру 0.0%",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Еспресо, охолоджений",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "5 мл"
+        },
+        {
+          "name": "Лід для шейкера",
+          "amount": "120 г"
+        },
+        {
+          "name": "Кавові зерна",
+          "amount": "3 шт"
+        }
+      ],
+      "steps": [
+        "Prepare 40 ml espresso and chill it. Chill the glass as well.",
+        "Shake both 0.0% bases, espresso, and syrup with ice for 15–20 s to create coffee foam.",
+        "Double strain into a chilled glass without ice. Place three coffee beans on top of the foam."
+      ],
+      "steps_uk": [
+        "Приготуйте 40 мл еспресо й охолодіть. Келих теж охолодіть.",
+        "Струсіть обидві бази 0.0%, еспресо та сироп зі льодом 15–20 с для кавової піни.",
+        "Двічі процідіть у келих без льоду. Викладіть три кавові зерна поверх піни."
+      ],
+      "photo": "virgin-espresso-martini.jpg"
+    },
+    {
+      "id": "evening-classics-virgin-white-russian",
+      "name": "Virgin White Russian",
+      "name_uk": "Безалкогольний Білий росіянин",
+      "tags": [
+        "Iced",
+        "Creamy",
+        "Coffee"
+      ],
+      "description": "Coffee base 0.0% and chilled cream create delicate creamy swirls.",
+      "description_uk": "Кавова основа 0.0% і прохолодні вершки утворюють ніжні молочні завитки.",
+      "time_min": 3,
+      "glass": "Rocks",
+      "glass_uk": "Рокс",
+      "glass_ml": 250,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Neutral vodka alternative 0.0%",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Coffee liqueur alternative 0.0%",
+          "amount": "30 ml"
+        },
+        {
+          "name": "20% cream",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g"
+        },
+        {
+          "name": "Garnish",
+          "amount": "none"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Нейтральний замінник горілки 0.0%",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Кавовий замінник лікеру 0.0%",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Вершки 20%",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г"
+        },
+        {
+          "name": "Декор",
+          "amount": "немає"
+        }
+      ],
+      "steps": [
+        "Fill a rocks glass with ice. Add neutral and coffee bases 0.0% and stir.",
+        "Slowly pour cream over the back of a spoon, keeping the top layer light.",
+        "Serve without garnish. Gently stir before drinking."
+      ],
+      "steps_uk": [
+        "Покладіть лід у рокс. Додайте нейтральну й кавову бази 0.0%, перемішайте.",
+        "Повільно влийте вершки по зворотному боку ложки, залишаючи світлий верхній шар.",
+        "Подавайте без декору. Перед питтям легко перемішайте."
+      ],
+      "photo": "virgin-white-russian.jpg"
+    },
+    {
+      "id": "evening-classics-virgin-grasshopper",
+      "name": "Virgin Grasshopper",
+      "name_uk": "Безалкогольний Ґрасгопер",
+      "tags": [
+        "Iced",
+        "Sparkling",
+        "Creamy"
+      ],
+      "description": "Mint-chocolate creamy dessert cocktail in a soft green color.",
+      "description_uk": "М’ятно-шоколадний вершковий десертний коктейль ніжного зеленого кольору.",
+      "time_min": 5,
+      "glass": "Coupe",
+      "glass_uk": "Купе",
+      "glass_ml": 180,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Green mint syrup 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Clear cocoa syrup 0.0%",
+          "amount": "20 ml"
+        },
+        {
+          "name": "20% cream",
+          "amount": "60 ml"
+        },
+        {
+          "name": "Milk",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Ice for shaker",
+          "amount": "120 g"
+        },
+        {
+          "name": "Mint for garnish",
+          "amount": "1 leaf"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Зелений м’ятний сироп 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Прозорий какао-сироп 0.0%",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Вершки 20%",
+          "amount": "60 мл"
+        },
+        {
+          "name": "Молоко",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Лід для шейкера",
+          "amount": "120 г"
+        },
+        {
+          "name": "М’ята для декору",
+          "amount": "1 листок"
+        }
+      ],
+      "steps": [
+        "Pour mint and clear cocoa syrups 0.0%, cream, and milk into the shaker.",
+        "Add ice, shake for 15 s, and strain into a chilled coupe without ice.",
+        "Garnish with a mint leaf. Do not use traditional crème de menthe or crème de cacao."
+      ],
+      "steps_uk": [
+        "Налийте м’ятний і прозорий какао-сиропи 0.0%, вершки та молоко в шейкер.",
+        "Додайте лід, струсіть 15 с і процідіть в охолоджене купе без льоду.",
+        "Прикрасьте листком м’яти. Звичайні crème de menthe та crème de cacao не використовуйте."
+      ],
+      "photo": "virgin-grasshopper.jpg"
+    },
+    {
+      "id": "evening-classics-virgin-lychee-martini",
+      "name": "Virgin Lychee Martini",
+      "name_uk": "Безалкогольний Лічі мартіні",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Tropical"
+      ],
+      "description": "A delicate floral-fruity lychee and lime aroma in a clear short serve.",
+      "description_uk": "Ніжний квітково-фруктовий аромат лічі та лайм у прозорій короткій подачі.",
+      "time_min": 5,
+      "glass": "Martini glass",
+      "glass_uk": "Келих мартіні",
+      "glass_ml": 180,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Neutral vodka substitute 0.0%",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Lychee juice",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Canned lychee syrup 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Ice for shaker",
+          "amount": "120 g"
+        },
+        {
+          "name": "Peeled lychee",
+          "amount": "1 fruit"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Нейтральний замінник горілки 0.0%",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Сік лічі",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Сироп із консервованих лічі 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Лід для шейкера",
+          "amount": "120 г"
+        },
+        {
+          "name": "Очищений лічі",
+          "amount": "1 плід"
+        }
+      ],
+      "steps": [
+        "Combine the 0.0% neutral base, lychee juice, canned syrup, and lime juice.",
+        "Shake with ice for 12 s and double-strain into a chilled glass without ice.",
+        "Place one peeled lychee on a short pick on the rim of the glass."
+      ],
+      "steps_uk": [
+        "З’єднайте нейтральну базу 0.0%, сік лічі, консервний сироп 0.0% і сік лайма.",
+        "Струсіть зі льодом 12 с та двічі процідіть в охолоджений келих без льоду.",
+        "Покладіть один очищений лічі на короткій шпажці на край келиха."
+      ],
+      "photo": "virgin-lychee-martini.jpg"
+    },
+    {
+      "id": "evening-classics-virgin-pornstar-martini",
+      "name": "Virgin Pornstar Martini",
+      "name_uk": "Безалкогольний Порнстар мартіні",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Tropical"
+      ],
+      "description": "Bright passionfruit and vanilla. In this adaptation, 0.0% sparkling wine is poured directly into the glass.",
+      "description_uk": "Яскрава маракуя та ваніль. У цій адаптації ігристе 0.0% доливається в сам келих.",
+      "time_min": 6,
+      "glass": "Coupe",
+      "glass_uk": "Купе",
+      "glass_ml": 220,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Neutral vodka substitute 0.0%",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Passionfruit puree (seedless)",
+          "amount": "40 g"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Vanilla syrup 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Sparkling white wine 0.0%",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Ice for shaker",
+          "amount": "120 g"
+        },
+        {
+          "name": "Passionfruit",
+          "amount": "1 half"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Нейтральний замінник горілки 0.0%",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Пюре маракуї без насіння",
+          "amount": "40 г"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Ванільний сироп 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Сухе біле ігристе вино 0.0%",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Лід для шейкера",
+          "amount": "120 г"
+        },
+        {
+          "name": "Маракуя",
+          "amount": "1 половинка"
+        }
+      ],
+      "steps": [
+        "Shake the 0.0% neutral base, passionfruit puree, lime juice, and vanilla syrup with ice for 15 s.",
+        "Double-strain into a coupe without ice. Slowly pour in 30 ml of 0.0% sparkling wine — do not stir.",
+        "Place a passionfruit half cut-side up on the surface of the drink."
+      ],
+      "steps_uk": [
+        "Струсіть нейтральну базу 0.0%, пюре маракуї, сік лайма й ванільний сироп 0.0% зі льодом 15 с.",
+        "Двічі процідіть у купе без льоду. Повільно долийте 30 мл ігристого 0.0% — не збовтуйте.",
+        "Покладіть половинку маракуї зрізом угору на поверхню напою."
+      ],
+      "photo": "virgin-pornstar-martini.jpg"
+    }
+  ],
+  "subtitle_uk": "10 напоїв · імбир, кава й вершки"
+}

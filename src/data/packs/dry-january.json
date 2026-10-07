@@ -1,0 +1,780 @@
+{
+  "id": "dry-january",
+  "title": "Dry January",
+  "title_uk": "Січень без алкоголю",
+  "subtitle": "10 drinks · dry & bittersweet",
+  "description": "Dry, citrus-led and bittersweet classics in 0.0% versions.",
+  "description_uk": "Сухі, цитрусові й гіркуваті класики у версіях 0.0%.",
+  "productId": "com.filonexperiencedesign.mocktailfinder.pack.dryjanuary",
+  "price": "€2.99",
+  "cover": "virgin-margarita.jpg",
+  "recipes": [
+    {
+      "id": "dry-january-virgin-margarita",
+      "name": "Virgin Margarita",
+      "name_uk": "Безалкогольна Маргарита",
+      "tags": [
+        "Iced",
+        "Citrus"
+      ],
+      "description": "Dry agave base, lime, and orange notes; a salty rim emphasizes the acidity.",
+      "description_uk": "Сухувата агавова база, лайм і апельсинова нота; солоний край підкреслює кислинку.",
+      "time_min": 5,
+      "glass": "Rocks",
+      "glass_uk": "Рокс",
+      "glass_ml": 250,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Agave tequila substitute 0.0%",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Orange triple sec substitute 0.0%",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "Agave syrup 0.0%",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g for shaking + 80 g for serving"
+        },
+        {
+          "name": "Salt for rim",
+          "amount": "2 g"
+        },
+        {
+          "name": "Lime",
+          "amount": "1 wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Агавовий замінник текіли 0.0%",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Апельсиновий замінник triple sec 0.0%",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Агавовий сироп 0.0%",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г для шейкера + 80 г для подачі"
+        },
+        {
+          "name": "Сіль для краю",
+          "amount": "2 г"
+        },
+        {
+          "name": "Лайм",
+          "amount": "1 часточка"
+        }
+      ],
+      "steps": [
+        "Rub half the rim with a lime wedge and dip into salt. Add 80 g ice.",
+        "Shake both 0.0% substitutes, lime juice, and agave syrup with 100 g ice for 12 s.",
+        "Strain into the glass and anchor the used lime wedge on the rim."
+      ],
+      "steps_uk": [
+        "Змочіть половину краю келиха часточкою лайма й умочіть у сіль. Покладіть 80 г льоду.",
+        "Струсіть обидва замінники 0.0%, сік лайма та агавовий сироп зі 100 г льоду 12 с.",
+        "Процідіть у келих і закріпіть використану часточку лайма на краю."
+      ],
+      "photo": "virgin-margarita.jpg"
+    },
+    {
+      "id": "dry-january-virgin-daiquiri",
+      "name": "Virgin Daiquiri",
+      "name_uk": "Безалкогольний Дайкірі",
+      "tags": [
+        "Iced",
+        "Citrus"
+      ],
+      "description": "A crisp, sour-sweet cocktail with lime and a light cane note.",
+      "description_uk": "Лаконічний кисло-солодкий коктейль із лаймом і легкою тростинною нотою.",
+      "time_min": 4,
+      "glass": "Coupe",
+      "glass_uk": "Купе",
+      "glass_ml": 180,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "White rum substitute 0.0%",
+          "amount": "60 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "Syrup 1:1 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Ice for shaker",
+          "amount": "120 g"
+        },
+        {
+          "name": "Lime",
+          "amount": "1 wheel"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Замінник білого рому 0.0%",
+          "amount": "60 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Лід для шейкера",
+          "amount": "120 г"
+        },
+        {
+          "name": "Лайм",
+          "amount": "1 кружальце"
+        }
+      ],
+      "steps": [
+        "Chill a coupe. Pour rum base 0.0%, lime juice, and syrup into a shaker.",
+        "Add 120 g ice and shake vigorously for 12–15 s.",
+        "Double strain into a coupe without ice. Garnish with a lime wheel."
+      ],
+      "steps_uk": [
+        "Охолодіть купе. Налийте ромову базу 0.0%, лаймовий сік і сироп у шейкер.",
+        "Додайте 120 г льоду та енергійно струсіть 12–15 с.",
+        "Двічі процідіть у купе без льоду. Прикрасьте кружальцем лайма."
+      ],
+      "photo": "virgin-daiquiri.jpg"
+    },
+    {
+      "id": "dry-january-virgin-paloma",
+      "name": "Virgin Paloma",
+      "name_uk": "Безалкогольна Палома",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "Grapefruit bitterness, agave aroma, and dry sparkling freshness.",
+      "description_uk": "Грейпфрутова гірчинка, агавовий аромат і суха газована свіжість.",
+      "time_min": 4,
+      "glass": "Highball",
+      "glass_uk": "Хайбол",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Agave tequila substitute 0.0%",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Grapefruit juice",
+          "amount": "80 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Agave syrup 0.0%",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Soda water",
+          "amount": "60 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g"
+        },
+        {
+          "name": "Salt",
+          "amount": "2 g"
+        },
+        {
+          "name": "Grapefruit",
+          "amount": "1 wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Агавовий замінник текіли 0.0%",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Грейпфрутовий сік",
+          "amount": "80 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Агавовий сироп 0.0%",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Содова",
+          "amount": "60 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г"
+        },
+        {
+          "name": "Сіль",
+          "amount": "2 г"
+        },
+        {
+          "name": "Грейпфрут",
+          "amount": "1 часточка"
+        }
+      ],
+      "steps": [
+        "Rim the glass with a small amount of measured lime juice and dip it into salt. Add ice.",
+        "Pour in the agave base 0.0%, juices, and syrup. Stir.",
+        "Top with soda water, stir once, and garnish with a grapefruit wedge."
+      ],
+      "steps_uk": [
+        "Змочіть край келиха невеликою кількістю відміряного лаймового соку та умочіть у сіль. Додайте лід.",
+        "Влийте агавову базу 0.0%, соки й сироп. Перемішайте.",
+        "Долийте содову, перемішайте один раз. Прикрасьте часточкою грейпфрута."
+      ],
+      "photo": "virgin-paloma.jpg"
+    },
+    {
+      "id": "dry-january-alcohol-free-aperol-style-spritz",
+      "name": "Alcohol-free Aperol-style Spritz",
+      "name_uk": "Спріц у стилі Аперолю без алкоголю",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "Bright orange bitterness and bubbles; no traditional Aperol alcohol.",
+      "description_uk": "Яскрава апельсинова гірчинка та бульбашки; без звичайного алкогольного Аперолю.",
+      "time_min": 3,
+      "glass": "Wine glass",
+      "glass_uk": "Винний келих",
+      "glass_ml": 450,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Orange bitter aperitif 0.0%",
+          "amount": "60 ml"
+        },
+        {
+          "name": "Sparkling white wine 0.0%",
+          "amount": "90 ml"
+        },
+        {
+          "name": "Soda water",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "150 g"
+        },
+        {
+          "name": "Orange",
+          "amount": "1 wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Помаранчевий гірко-апельсиновий аперитив 0.0%",
+          "amount": "60 мл"
+        },
+        {
+          "name": "Сухе біле ігристе вино 0.0%",
+          "amount": "90 мл"
+        },
+        {
+          "name": "Содова",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "150 г"
+        },
+        {
+          "name": "Апельсин",
+          "amount": "1 кружальце"
+        }
+      ],
+      "steps": [
+        "Fill the wine glass with ice.",
+        "Pour in 0.0% sparkling wine, orange bitter aperitif 0.0%, and soda water.",
+        "Stir gently and add an orange wedge."
+      ],
+      "steps_uk": [
+        "Заповніть винний келих льодом.",
+        "Влийте ігристе 0.0%, гірко-апельсиновий аперитив 0.0% та содову.",
+        "Легко перемішайте й додайте кружальце апельсина."
+      ],
+      "photo": "alcohol-free-aperol-style-spritz.jpg"
+    },
+    {
+      "id": "dry-january-virgin-negroni",
+      "name": "Virgin Negroni",
+      "name_uk": "Безалкогольний Неґроні",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Bitter"
+      ],
+      "description": "Bitter, herbal, and intense: three specialized 0.0% bases in equal parts.",
+      "description_uk": "Гіркий, трав’яний і насичений: три спеціалізовані бази 0.0% у рівних частинах.",
+      "time_min": 4,
+      "glass": "Rocks glass",
+      "glass_uk": "Рокс",
+      "glass_ml": 250,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Gin substitute 0.0%",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Red bitter aperitif 0.0%",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Herbal sweet red vermouth substitute 0.0%",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "120 g for stirring + 60 g for serving"
+        },
+        {
+          "name": "Orange peel",
+          "amount": "1 strip"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ялівцевий замінник джину 0.0%",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Червоний гіркий аперитив 0.0%",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Трав’яний замінник солодкого червоного вермуту 0.0%",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "120 г для змішування + 60 г для подачі"
+        },
+        {
+          "name": "Апельсинова цедра",
+          "amount": "1 смужка"
+        }
+      ],
+      "steps": [
+        "Pour the three 0.0% bases into a mixing glass with 120 g of ice.",
+        "Stir for 20 seconds to chill. Strain into a rocks glass with a large 60 g ice cube.",
+        "Express the peel over the drink and place it in the glass."
+      ],
+      "steps_uk": [
+        "Влийте три бази 0.0% у змішувальну склянку зі 120 г льоду.",
+        "Перемішуйте 20 с для охолодження. Процідіть у рокс із великим кубом льоду масою 60 г.",
+        "Стисніть цедру над напоєм і покладіть у келих."
+      ],
+      "photo": "virgin-negroni.jpg"
+    },
+    {
+      "id": "dry-january-virgin-americano",
+      "name": "Virgin Americano",
+      "name_uk": "Безалкогольний Американо",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "Bitter aperitif and herbal vermouth 0.0% become lighter with soda water.",
+      "description_uk": "Гіркий аперитив і трав’яний вермут 0.0% стають легшими завдяки содовій.",
+      "time_min": 3,
+      "glass": "Highball glass",
+      "glass_uk": "Хайбол",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Red bitter aperitif 0.0%",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Herbal sweet red vermouth substitute 0.0%",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Soda water",
+          "amount": "90 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "120 g"
+        },
+        {
+          "name": "Orange",
+          "amount": "1 half-wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Червоний гіркий аперитив 0.0%",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Трав’яний замінник солодкого червоного вермуту 0.0%",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Содова",
+          "amount": "90 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "120 г"
+        },
+        {
+          "name": "Апельсин",
+          "amount": "1 півкружальце"
+        }
+      ],
+      "steps": [
+        "Fill the highball with ice. Pour in both 0.0% aperitif and vermouth base.",
+        "Top with soda water and stir gently.",
+        "Add an orange half-wedge."
+      ],
+      "steps_uk": [
+        "Покладіть лід у хайбол. Влийте аперитив і вермутову базу, обидва 0.0%.",
+        "Долийте содову та обережно перемішайте.",
+        "Додайте півкружальце апельсина."
+      ],
+      "photo": "virgin-americano.jpg"
+    },
+    {
+      "id": "dry-january-alcohol-free-gin-tonic",
+      "name": "Alcohol-free Gin & Tonic",
+      "name_uk": "Джин-тонік без алкоголю",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "Juniper and tonic bitterness — clean, dry flavor with lime.",
+      "description_uk": "Ялівець і хінінова гірчинка тоніка — чистий, сухуватий смак із лаймом.",
+      "time_min": 3,
+      "glass": "Balloon glass",
+      "glass_uk": "Келих балон",
+      "glass_ml": 450,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Gin substitute 0.0%",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Tonic water",
+          "amount": "150 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "150 g"
+        },
+        {
+          "name": "Lime",
+          "amount": "1 wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ялівцевий замінник джину 0.0%",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Тонік",
+          "amount": "150 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "150 г"
+        },
+        {
+          "name": "Лайм",
+          "amount": "1 кружальце"
+        }
+      ],
+      "steps": [
+        "Fill the chilled glass with ice and pour in the 0.0% juniper base.",
+        "Slowly pour cold tonic water down the side of the glass.",
+        "Stir once and add a lime wedge."
+      ],
+      "steps_uk": [
+        "Наповніть охолоджений келих льодом і влийте ялівцеву базу 0.0%.",
+        "Повільно долийте холодний тонік по стінці.",
+        "Перемішайте один раз і додайте кружальце лайма."
+      ],
+      "photo": "alcohol-free-gin-and-tonic.jpg"
+    },
+    {
+      "id": "dry-january-virgin-tom-collins",
+      "name": "Virgin Tom Collins",
+      "name_uk": "Безалкогольний Том Коллінз",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "Lemon acidity, 0.0% juniper base, and soda in a long refreshing serve.",
+      "description_uk": "Лимонна кислинка, ялівцева база 0.0% і содова в довгій освіжальній подачі.",
+      "time_min": 5,
+      "glass": "Collins glass",
+      "glass_uk": "Коллінз",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Gin substitute 0.0%",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "Simple syrup 1:1 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Soda water",
+          "amount": "100 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g for shaking + 100 g for serving"
+        },
+        {
+          "name": "Lemon",
+          "amount": "1 wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ялівцевий замінник джину 0.0%",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Лимонний сік",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Содова",
+          "amount": "100 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г для шейкера + 100 г для подачі"
+        },
+        {
+          "name": "Лимон",
+          "amount": "1 кружальце"
+        }
+      ],
+      "steps": [
+        "Shake the 0.0% juniper base, lemon juice, and syrup with 100 g of ice for 10 seconds.",
+        "Strain into a Collins glass with fresh 100 g of ice. Top with soda water.",
+        "Stir gently and garnish with a lemon wedge."
+      ],
+      "steps_uk": [
+        "Струсіть ялівцеву базу 0.0%, лимонний сік і сироп зі 100 г льоду 10 с.",
+        "Процідіть у коллінз зі свіжими 100 г льоду. Долийте содову.",
+        "Ніжно перемішайте й прикрасьте кружальцем лимона."
+      ],
+      "photo": "virgin-tom-collins.jpg"
+    },
+    {
+      "id": "dry-january-virgin-french-75",
+      "name": "Virgin French 75",
+      "name_uk": "Безалкогольний Френч 75",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Sparkling"
+      ],
+      "description": "Lemon and juniper in an elegant serve with dry 0.0% sparkling wine.",
+      "description_uk": "Лимон і ялівець у витонченій подачі з сухим ігристим вином 0.0%.",
+      "time_min": 5,
+      "glass": "Flute",
+      "glass_uk": "Флюте",
+      "glass_ml": 200,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Gin substitute 0.0%",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Simple syrup 1:1 0.0%",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Dry sparkling white wine 0.0%",
+          "amount": "80 ml"
+        },
+        {
+          "name": "Ice for shaker",
+          "amount": "100 g"
+        },
+        {
+          "name": "Lemon peel",
+          "amount": "1 strip"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ялівцевий замінник джину 0.0%",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Лимонний сік",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Сухе біле ігристе вино 0.0%",
+          "amount": "80 мл"
+        },
+        {
+          "name": "Лід для шейкера",
+          "amount": "100 г"
+        },
+        {
+          "name": "Лимонна цедра",
+          "amount": "1 смужка"
+        }
+      ],
+      "steps": [
+        "Chill the flute. Shake the 0.0% juniper base, juice, and syrup with ice for 10 seconds.",
+        "Double-strain into the flute without ice.",
+        "Slowly pour in 0.0% sparkling wine and garnish with a twisted lemon peel."
+      ],
+      "steps_uk": [
+        "Охолодіть флюте. Струсіть ялівцеву базу 0.0%, сік і сироп зі льодом 10 с.",
+        "Двічі процідіть у флюте без льоду.",
+        "Повільно долийте ігристе 0.0%, прикрасьте скрученою лимонною цедрою."
+      ],
+      "photo": "virgin-french-75.jpg"
+    },
+    {
+      "id": "dry-january-virgin-gimlet",
+      "name": "Virgin Gimlet",
+      "name_uk": "Безалкогольний Ґімлет",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Herbal"
+      ],
+      "description": "A short juniper cocktail with lime: distinctly sour, smooth, and restrained.",
+      "description_uk": "Короткий ялівцевий коктейль із лаймом: виразно кислий, гладкий і стриманий.",
+      "time_min": 4,
+      "glass": "Coupe",
+      "glass_uk": "Купе",
+      "glass_ml": 180,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Gin substitute 0.0%",
+          "amount": "60 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "Simple syrup 1:1 0.0%",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Ice for shaker",
+          "amount": "120 g"
+        },
+        {
+          "name": "Lime",
+          "amount": "1 wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ялівцевий замінник джину 0.0%",
+          "amount": "60 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Лід для шейкера",
+          "amount": "120 г"
+        },
+        {
+          "name": "Лайм",
+          "amount": "1 кружальце"
+        }
+      ],
+      "steps": [
+        "Pour the 0.0% juniper base, lime juice, and syrup into the shaker.",
+        "Add ice, shake for 12 seconds, and double-strain into a chilled coupe.",
+        "Serve without ice with a lime wedge."
+      ],
+      "steps_uk": [
+        "Налийте ялівцеву базу 0.0%, лаймовий сік і сироп у шейкер.",
+        "Додайте лід, струсіть 12 с та двічі процідіть в охолоджене купе.",
+        "Подавайте без льоду з кружальцем лайма."
+      ],
+      "photo": "virgin-gimlet.jpg"
+    }
+  ],
+  "subtitle_uk": "10 напоїв · сухі й гіркуваті"
+}

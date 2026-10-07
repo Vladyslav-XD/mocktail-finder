@@ -13,10 +13,17 @@ export const TEMPERATURE_TAGS = ['Hot', 'Iced', 'Frozen'] as const;
 export const STRONG_TAGS = ['Chocolate', 'Coffee', 'Tea', 'Citrus', 'Tropical', 'Berry', 'Minty', 'Spiced', 'Savoury'] as const;
 export const SOFT_TAGS = ['Creamy', 'Sparkling', 'Fruity', 'Sweet'] as const;
 
+/**
+ * Only collection drinks carry these (their tags are hand-written in recipes.json);
+ * deriveTags never produces them and they are not Category filters.
+ */
+export const COLLECTION_ONLY_TAGS = ['Bitter', 'Herbal'] as const;
+
 export type DrinkTag =
   | (typeof TEMPERATURE_TAGS)[number]
   | (typeof STRONG_TAGS)[number]
-  | (typeof SOFT_TAGS)[number];
+  | (typeof SOFT_TAGS)[number]
+  | (typeof COLLECTION_ONLY_TAGS)[number];
 
 /** Order used for filter chips on the home screen. */
 export const ALL_TAGS: DrinkTag[] = [

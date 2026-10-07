@@ -85,3 +85,31 @@ describe('matchesSearch', () => {
     expect(matchesSearch(afterglow, shown, 'кава')).toBe(false);
   });
 });
+
+describe('localizeRecipe, collection drinks', () => {
+  const { ALL_PACK_RECIPES } = require('../../data/packs');
+  const margarita: Recipe = ALL_PACK_RECIPES.find((r: Recipe) => r.id === 'pack:dry-january:dry-january-virgin-margarita');
+
+  it('is built from the pack in English, ice line in the a + b format', () => {
+    expect(margarita.title).toBe('Virgin Margarita');
+    expect(margarita.ingredients).toContain('Ice — 100 g for shaking + 80 g for serving');
+    expect(margarita.ingredients![0]).toBe('50 ml  Agave tequila substitute 0.0%');
+    expect(margarita.steps).toHaveLength(3);
+    expect(margarita.packId).toBe('dry-january');
+  });
+
+  it('switches to the pack’s own Ukrainian', () => {
+    const r = localizeRecipe(margarita, 'uk', tFor('uk'));
+    expect(r.title).toBe('Безалкогольна Маргарита');
+    expect(r.ingredients).toContain('Лід — 100 г для шейкера + 80 г для подачі');
+    expect(r.steps![0]).toMatch(/^Змочіть половину краю/);
+    expect(r.description).toMatch(/^Сухувата агавова база/);
+    expect(r.subtitle).toBe('З льодом · Цитрусовий');
+  });
+
+  it('has 60 drinks, none with a "0 g" ice line', () => {
+    expect(ALL_PACK_RECIPES).toHaveLength(60);
+    const zero = ALL_PACK_RECIPES.flatMap((r: Recipe) => r.ingredients || []).filter((l: string) => /\b0 g\b/.test(l));
+    expect(zero).toEqual([]);
+  });
+});

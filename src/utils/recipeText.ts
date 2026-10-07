@@ -26,6 +26,8 @@ interface ShareableRecipe {
   title: string;
   ingredients?: string[];
   instructions?: string | null;
+  /** Steps as written (collection drinks); preferred over splitting `instructions`. */
+  steps?: string[];
   imageUrl?: string;
 }
 
@@ -41,7 +43,7 @@ export function buildShareMessage(recipe: ShareableRecipe, t: Translate): string
     lines.push('', `${t('ingredients')}:`, ...ingredients.map(i => `• ${i}`));
   }
 
-  const steps = splitInstructions(recipe.instructions);
+  const steps = recipe.steps?.length ? recipe.steps : splitInstructions(recipe.instructions);
   if (steps.length) {
     lines.push('', `${t('steps')}:`, ...steps.map((s, i) => `${i + 1}. ${s}`));
   }

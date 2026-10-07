@@ -111,7 +111,7 @@ export const RecipeDetailsScreen = () => {
     t
   );
   const ingredientsToDisplay = shown.ingredients || [];
-  const stepsToDisplay = splitInstructions(shown.instructions);
+  const stepsToDisplay = shown.steps?.length ? shown.steps : splitInstructions(shown.instructions);
   // Database drinks carry the tag line as their subtitle; showing it twice (text + chips) is noise.
   const description = recipe.subtitle && recipe.subtitle !== tagsToSubtitle(tags) ? recipe.subtitle : '';
 
@@ -121,6 +121,7 @@ export const RecipeDetailsScreen = () => {
         title: shown.title,
         ingredients: ingredientsToDisplay,
         instructions: shown.instructions,
+        steps: shown.steps,
         imageUrl: recipe.imageUrl,
       },
       t

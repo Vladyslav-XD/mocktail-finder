@@ -226,6 +226,8 @@ export const en = {
     Spiced: "Spiced",
     Sweet: "Sweet",
     Savoury: "Savoury",
+    Bitter: "Bitter",
+    Herbal: "Herbal",
   },
   // Character tags: Category chip form
   tagChip: {
@@ -245,6 +247,8 @@ export const en = {
     Spiced: "Spiced",
     Sweet: "Sweet",
     Savoury: "Savoury",
+    Bitter: "Bitter",
+    Herbal: "Herbal",
   },
   // Ingredient keys (My Bar, ingredient chips)
   ing: {

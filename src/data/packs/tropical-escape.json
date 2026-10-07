@@ -1,0 +1,934 @@
+{
+  "id": "tropical-escape",
+  "title": "Tropical Escape",
+  "title_uk": "Тропічні канікули",
+  "subtitle": "10 drinks · pineapple, coconut & mango",
+  "description": "Pineapple, coconut, mango and vibrant tropical combinations.",
+  "description_uk": "Ананас, кокос, манґо та яскраві тропічні поєднання.",
+  "productId": "com.filonexperiencedesign.mocktailfinder.pack.tropicalescape",
+  "price": "€2.99",
+  "cover": "virgin-pina-colada.jpg",
+  "recipes": [
+    {
+      "id": "tropical-escape-virgin-pi-a-colada",
+      "name": "Virgin Piña Colada",
+      "name_uk": "Безалкогольна Пінья Колада",
+      "tags": [
+        "Frozen",
+        "Tropical",
+        "Creamy"
+      ],
+      "description": "Thick, creamy, and frothy pineapple-coconut classic without rum.",
+      "description_uk": "Густа, ніжна й вершкова ананасово-кокосова класика без рому.",
+      "time_min": 5,
+      "glass": "Hurricane",
+      "glass_uk": "Харікейн",
+      "glass_ml": 400,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Pineapple juice",
+          "amount": "120 ml"
+        },
+        {
+          "name": "Coconut cream",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Coconut syrup 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Crushed ice",
+          "amount": "120 g"
+        },
+        {
+          "name": "Pineapple",
+          "amount": "1 wedge (20 g)"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ананасовий сік",
+          "amount": "120 мл"
+        },
+        {
+          "name": "Кокосові вершки",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Кокосовий сироп 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Подрібнений лід",
+          "amount": "120 г"
+        },
+        {
+          "name": "Ананас",
+          "amount": "1 часточка (20 г)"
+        }
+      ],
+      "steps": [
+        "Blend pineapple juice, coconut cream, and syrup in a blender until smooth.",
+        "Add 120 g crushed ice and blend another 15–20 s until thick and icy.",
+        "Pour into a hurricane glass and garnish with a pineapple wedge."
+      ],
+      "steps_uk": [
+        "Збийте ананасовий сік, кокосові вершки та сироп у блендері до однорідності.",
+        "Додайте 120 г подрібненого льоду й збивайте ще 15–20 с до густої крижаної текстури.",
+        "Перелийте в харікейн і прикрасьте часточкою ананаса."
+      ],
+      "photo": "virgin-pina-colada.jpg"
+    },
+    {
+      "id": "tropical-escape-mango-virgin-margarita",
+      "name": "Mango Virgin Margarita",
+      "name_uk": "Манґова безалкогольна Маргарита",
+      "tags": [
+        "Frozen",
+        "Citrus",
+        "Tropical"
+      ],
+      "description": "Silky mango with bright lime, orange aroma, and a salty rim.",
+      "description_uk": "Шовковисте манґо з яскравим лаймом, апельсиновим ароматом та солоним краєм.",
+      "time_min": 6,
+      "glass": "Margarita",
+      "glass_uk": "Маргарита",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Mango puree",
+          "amount": "70 g"
+        },
+        {
+          "name": "Agave tequila substitute 0.0%",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Orange triple sec substitute 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "Agave syrup 0.0%",
+          "amount": "5 ml"
+        },
+        {
+          "name": "Ice for blender",
+          "amount": "100 g"
+        },
+        {
+          "name": "Salt",
+          "amount": "2 g"
+        },
+        {
+          "name": "Lime",
+          "amount": "1 wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Пюре стиглого манґо",
+          "amount": "70 г"
+        },
+        {
+          "name": "Агавовий замінник текіли 0.0%",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Апельсиновий замінник triple sec 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Агавовий сироп 0.0%",
+          "amount": "5 мл"
+        },
+        {
+          "name": "Лід для блендера",
+          "amount": "100 г"
+        },
+        {
+          "name": "Сіль",
+          "amount": "2 г"
+        },
+        {
+          "name": "Лайм",
+          "amount": "1 часточка"
+        }
+      ],
+      "steps": [
+        "Rub half the rim with lime and dip into salt.",
+        "Blend mango puree, both 0.0% substitutes, lime juice, syrup, and ice in a blender.",
+        "Pour the thick drink into the glass and garnish with a lime wedge."
+      ],
+      "steps_uk": [
+        "Змочіть половину краю келиха лаймом і умочіть у сіль.",
+        "Збийте манґове пюре, обидва замінники 0.0%, лаймовий сік, сироп та лід у блендері.",
+        "Перелийте густий напій у келих, прикрасьте часточкою лайма."
+      ],
+      "photo": "mango-virgin-margarita.jpg"
+    },
+    {
+      "id": "tropical-escape-strawberry-virgin-daiquiri",
+      "name": "Strawberry Virgin Daiquiri",
+      "name_uk": "Полуничний безалкогольний Дайкірі",
+      "tags": [
+        "Frozen",
+        "Citrus",
+        "Berry"
+      ],
+      "description": "Frozen strawberry and lime with rum base 0.0%. No banana, milk, or yogurt.",
+      "description_uk": "Крижана полуниця та лайм із ромовою базою 0.0%. Без банана, молока й йогурту.",
+      "time_min": 5,
+      "glass": "Coupe",
+      "glass_uk": "Купе",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Strawberries",
+          "amount": "80 g"
+        },
+        {
+          "name": "White rum substitute 0.0%",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "Syrup 1:1 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Ice for blender",
+          "amount": "100 g"
+        },
+        {
+          "name": "Strawberry for garnish",
+          "amount": "1"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Полуниця",
+          "amount": "80 г"
+        },
+        {
+          "name": "Замінник білого рому 0.0%",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Лід для блендера",
+          "amount": "100 г"
+        },
+        {
+          "name": "Полуниця для декору",
+          "amount": "1 шт"
+        }
+      ],
+      "steps": [
+        "Hull 80 g strawberries and place them in a blender.",
+        "Add rum base 0.0%, lime juice, syrup, and ice. Blend until fine and evenly icy.",
+        "Pour into a coupe and garnish with a whole strawberry."
+      ],
+      "steps_uk": [
+        "Очистіть 80 г полуниці від хвостиків і покладіть у блендер.",
+        "Додайте ромову базу 0.0%, сік лайма, сироп і лід. Збийте до дрібної рівномірної крижаної текстури.",
+        "Перелийте в купе та прикрасьте цілою полуницею."
+      ],
+      "photo": "strawberry-virgin-daiquiri.jpg"
+    },
+    {
+      "id": "tropical-escape-virgin-bay-breeze",
+      "name": "Virgin Bay Breeze",
+      "name_uk": "Безалкогольний Бриз затоки",
+      "tags": [
+        "Iced",
+        "Berry",
+        "Tropical"
+      ],
+      "description": "Pineapple softens cranberry tartness and adds tropical aroma.",
+      "description_uk": "Ананас пом’якшує журавлинну терпкість і додає тропічний аромат.",
+      "time_min": 3,
+      "glass": "Highball",
+      "glass_uk": "Хайбол",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Neutral vodka substitute 0.0%",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Cranberry juice",
+          "amount": "90 ml"
+        },
+        {
+          "name": "Pineapple juice",
+          "amount": "70 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g"
+        },
+        {
+          "name": "Pineapple",
+          "amount": "1 wedge (20 g)"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Нейтральний замінник горілки 0.0%",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Журавлинний морс",
+          "amount": "90 мл"
+        },
+        {
+          "name": "Ананасовий сік",
+          "amount": "70 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г"
+        },
+        {
+          "name": "Ананас",
+          "amount": "1 часточка (20 г)"
+        }
+      ],
+      "steps": [
+        "Fill the highball with ice and pour in the neutral base 0.0%.",
+        "Add cranberry juice and pineapple juice. Stir until the color is evenly pink-coral.",
+        "Garnish with a pineapple wedge."
+      ],
+      "steps_uk": [
+        "Покладіть лід у хайбол і влийте нейтральну базу 0.0%.",
+        "Додайте журавлинний морс та ананасовий сік. Перемішайте до однорідного рожево-коралового кольору.",
+        "Прикрасьте часточкою ананаса."
+      ],
+      "photo": "virgin-bay-breeze.jpg"
+    },
+    {
+      "id": "tropical-escape-virgin-mai-tai",
+      "name": "Virgin Mai Tai",
+      "name_uk": "Безалкогольний Май Тай",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Minty"
+      ],
+      "description": "Lime, almond, and orange on two rum bases 0.0% — a rich tiki adaptation.",
+      "description_uk": "Лайм, мигдаль і апельсин на двох ромових базах 0.0% — насичена tiki-адаптація.",
+      "time_min": 6,
+      "glass": "Rocks",
+      "glass_uk": "Рокс",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "White rum alternative 0.0%",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Spiced dark rum alternative 0.0%",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Orange triple sec alternative 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "25 ml"
+        },
+        {
+          "name": "Almond orgeat syrup 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g for shaking + 130 g crushed for serving"
+        },
+        {
+          "name": "Mint",
+          "amount": "1 sprig"
+        },
+        {
+          "name": "Lime",
+          "amount": "1 wedge"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Замінник білого рому 0.0%",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Пряний замінник темного рому 0.0%",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Апельсиновий замінник triple sec 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "25 мл"
+        },
+        {
+          "name": "Мигдалевий сироп оржат 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г для шейкера + 130 г подрібненого для подачі"
+        },
+        {
+          "name": "М’ята",
+          "amount": "1 гілочка"
+        },
+        {
+          "name": "Лайм",
+          "amount": "1 часточка"
+        }
+      ],
+      "steps": [
+        "Shake white rum and orange bases 0.0%, lime juice, and orgeat with 100 g ice for 12 s.",
+        "Strain into a rocks glass with crushed ice. Slowly float the dark rum base 0.0% on top.",
+        "Garnish with a mint sprig and a lime wedge."
+      ],
+      "steps_uk": [
+        "Струсіть білу ромову та апельсинову бази 0.0%, сік лайма й оржат зі 100 г льоду 12 с.",
+        "Процідіть у рокс із подрібненим льодом. Повільно влийте зверху темну ромову базу 0.0%.",
+        "Прикрасьте гілочкою м’яти й часточкою лайма."
+      ],
+      "photo": "virgin-mai-tai.jpg"
+    },
+    {
+      "id": "tropical-escape-virgin-blue-hawaiian",
+      "name": "Virgin Blue Hawaiian",
+      "name_uk": "Безалкогольний Блю Гаваян",
+      "tags": [
+        "Frozen",
+        "Citrus",
+        "Tropical"
+      ],
+      "description": "Coconut and pineapple with blue orange syrup; soft tropical texture.",
+      "description_uk": "Кокос і ананас із блакитним апельсиновим сиропом; м’яка тропічна текстура.",
+      "time_min": 5,
+      "glass": "Hurricane",
+      "glass_uk": "Харікейн",
+      "glass_ml": 400,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "White rum alternative 0.0%",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Pineapple juice",
+          "amount": "80 ml"
+        },
+        {
+          "name": "Coconut cream",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Blue curaçao syrup 0.0%",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Ice for blender",
+          "amount": "120 g"
+        },
+        {
+          "name": "Pineapple",
+          "amount": "1 wedge (20 g)"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Замінник білого рому 0.0%",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Ананасовий сік",
+          "amount": "80 мл"
+        },
+        {
+          "name": "Кокосові вершки",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Сироп blue curaçao 0.0%",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Лід для блендера",
+          "amount": "120 г"
+        },
+        {
+          "name": "Ананас",
+          "amount": "1 часточка (20 г)"
+        }
+      ],
+      "steps": [
+        "Blend rum base 0.0%, pineapple juice, coconut cream, blue curaçao 0.0%, and lime juice.",
+        "Add ice and blend for another 15 s until frosty and creamy.",
+        "Pour into a hurricane glass, garnish with pineapple. Blue curaçao here is only a non-alcoholic syrup, not liqueur."
+      ],
+      "steps_uk": [
+        "Збийте ромову базу 0.0%, ананасовий сік, кокосові вершки, blue curaçao 0.0% і лаймовий сік.",
+        "Додайте лід і збивайте ще 15 с до крижаної кремової текстури.",
+        "Перелийте в харікейн, прикрасьте ананасом. Blue curaçao тут лише безалкогольний сироп, не лікер."
+      ],
+      "photo": "virgin-blue-hawaiian.jpg"
+    },
+    {
+      "id": "tropical-escape-virgin-painkiller",
+      "name": "Virgin Painkiller",
+      "name_uk": "Безалкогольний Пейнкілер",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Tropical"
+      ],
+      "description": "Pineapple, orange, and coconut with a 0.0% rum base; nutmeg adds warmth.",
+      "description_uk": "Ананас, апельсин і кокос із ромовою базою 0.0%; мускатний горіх додає теплоти.",
+      "time_min": 5,
+      "glass": "Hurricane",
+      "glass_uk": "Харікейн",
+      "glass_ml": 400,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Spiced dark rum substitute 0.0%",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Pineapple juice",
+          "amount": "100 ml"
+        },
+        {
+          "name": "Orange juice",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Coconut cream",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Coconut syrup 0.0%",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g for shaking + 100 g for serving"
+        },
+        {
+          "name": "Nutmeg",
+          "amount": "0.1 g"
+        },
+        {
+          "name": "Orange",
+          "amount": "1 wheel"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Пряний замінник темного рому 0.0%",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Ананасовий сік",
+          "amount": "100 мл"
+        },
+        {
+          "name": "Апельсиновий сік",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Кокосові вершки",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Кокосовий сироп 0.0%",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г для шейкера + 100 г для подачі"
+        },
+        {
+          "name": "Мускатний горіх",
+          "amount": "0,1 г"
+        },
+        {
+          "name": "Апельсин",
+          "amount": "1 півкружальце"
+        }
+      ],
+      "steps": [
+        "Shake the 0.0% rum base, both juices, coconut cream, and syrup with 100 g of ice for 15 s.",
+        "Strain into a hurricane glass with fresh 100 g of ice.",
+        "Grate 0.1 g of nutmeg on top and add an orange wheel."
+      ],
+      "steps_uk": [
+        "Струсіть ромову базу 0.0%, обидва соки, кокосові вершки та сироп зі 100 г льоду 15 с.",
+        "Процідіть у харікейн зі свіжими 100 г льоду.",
+        "Натріть зверху 0,1 г мускатного горіха й додайте півкружальце апельсина."
+      ],
+      "photo": "virgin-painkiller.jpg"
+    },
+    {
+      "id": "tropical-escape-virgin-jungle-bird",
+      "name": "Virgin Jungle Bird",
+      "name_uk": "Безалкогольний Джангл Берд",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Tropical"
+      ],
+      "description": "Tropical pineapple meets bitter red aperitif and dark 0.0% rum base.",
+      "description_uk": "Тропічний ананас зустрічається з гірким червоним аперитивом і темною ромовою базою 0.0%.",
+      "time_min": 5,
+      "glass": "Rocks",
+      "glass_uk": "Рокс",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Spiced dark rum substitute 0.0%",
+          "amount": "45 ml"
+        },
+        {
+          "name": "Red bitter aperitif 0.0%",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Pineapple juice",
+          "amount": "60 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "15 ml"
+        },
+        {
+          "name": "1:1 syrup 0.0%",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g for shaking + 80 g for serving"
+        },
+        {
+          "name": "Pineapple",
+          "amount": "1 wedge (20 g)"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Пряний замінник темного рому 0.0%",
+          "amount": "45 мл"
+        },
+        {
+          "name": "Червоний гіркий аперитив 0.0%",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Ананасовий сік",
+          "amount": "60 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Сироп 1:1 0.0%",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г для шейкера + 80 г для подачі"
+        },
+        {
+          "name": "Ананас",
+          "amount": "1 часточка (20 г)"
+        }
+      ],
+      "steps": [
+        "Combine the 0.0% rum base, aperitif, juices, and syrup in a shaker.",
+        "Shake with 100 g of ice for 12–15 s and strain into a rocks glass with fresh ice.",
+        "Garnish with a pineapple wedge."
+      ],
+      "steps_uk": [
+        "З’єднайте ромову базу й аперитив 0.0%, соки та сироп у шейкері.",
+        "Струсіть зі 100 г льоду 12–15 с і процідіть у рокс зі свіжим льодом.",
+        "Прикрасьте часточкою ананаса."
+      ],
+      "photo": "virgin-jungle-bird.jpg"
+    },
+    {
+      "id": "tropical-escape-virgin-singapore-sling",
+      "name": "Virgin Singapore Sling",
+      "name_uk": "Безалкогольний Сінгапур слінґ",
+      "tags": [
+        "Iced",
+        "Citrus",
+        "Tropical"
+      ],
+      "description": "A complex fruit-and-herbal profile: pineapple, cherry, lime, and a light bitterness.",
+      "description_uk": "Складний фруктово-трав’яний профіль: ананас, вишня, лайм і легка гірчинка.",
+      "time_min": 6,
+      "glass": "Highball",
+      "glass_uk": "Хайбол",
+      "glass_ml": 400,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Juniper substitute gin 0.0%",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Pineapple juice",
+          "amount": "90 ml"
+        },
+        {
+          "name": "Lime juice",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Cherry syrup 0.0%",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Grenadine 0.0%",
+          "amount": "5 ml"
+        },
+        {
+          "name": "Orange triple sec substitute 0.0%",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Herbal-honey Bénédictine substitute 0.0%",
+          "amount": "10 ml"
+        },
+        {
+          "name": "Red bitter aperitif 0.0%",
+          "amount": "5 ml"
+        },
+        {
+          "name": "Soda water",
+          "amount": "30 ml"
+        },
+        {
+          "name": "Ice",
+          "amount": "100 g for shaking + 100 g for serving"
+        },
+        {
+          "name": "Pineapple",
+          "amount": "1 wedge (20 g)"
+        },
+        {
+          "name": "Cherry (alcohol-free)",
+          "amount": "1 piece"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ялівцевий замінник джину 0.0%",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Ананасовий сік",
+          "amount": "90 мл"
+        },
+        {
+          "name": "Сік лайма",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Вишневий сироп 0.0%",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Гренадин 0.0%",
+          "amount": "5 мл"
+        },
+        {
+          "name": "Апельсиновий замінник triple sec 0.0%",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Трав’яно-медовий замінник Bénédictine 0.0%",
+          "amount": "10 мл"
+        },
+        {
+          "name": "Червоний гіркий аперитив 0.0%",
+          "amount": "5 мл"
+        },
+        {
+          "name": "Содова",
+          "amount": "30 мл"
+        },
+        {
+          "name": "Лід",
+          "amount": "100 г для шейкера + 100 г для подачі"
+        },
+        {
+          "name": "Ананас",
+          "amount": "1 часточка (20 г)"
+        },
+        {
+          "name": "Вишня без алкоголю",
+          "amount": "1 шт"
+        }
+      ],
+      "steps": [
+        "Shake all liquid ingredients except soda with 100 g of ice for 12 s. For the herbal note, a specialized 0.0% base is required.",
+        "Strain into a highball with fresh ice. Top with soda and gently stir.",
+        "Garnish with pineapple and cherry. Do not add alcoholic bitters or regular liqueurs."
+      ],
+      "steps_uk": [
+        "Струсіть усі рідкі інгредієнти, крім содової, зі 100 г льоду 12 с. Для трав’яної ноти потрібна саме спеціалізована база 0.0%.",
+        "Процідіть у хайбол зі свіжим льодом. Долийте содову й легко перемішайте.",
+        "Прикрасьте ананасом і вишнею. Алкогольні біттери та звичайні лікери не додавайте."
+      ],
+      "photo": "virgin-singapore-sling.jpg"
+    },
+    {
+      "id": "tropical-escape-aam-panna",
+      "name": "Aam Panna",
+      "name_uk": "Аам панна",
+      "tags": [
+        "Frozen",
+        "Tropical",
+        "Minty"
+      ],
+      "description": "Sour-sweet Indian drink made from cooked unripe green mango, cumin, and mint.",
+      "description_uk": "Кисло-солодкий індійський напій із вареного незрілого зеленого манґо, кумину та м’яти.",
+      "time_min": 25,
+      "glass": "Tumbler",
+      "glass_uk": "Тумблер",
+      "glass_ml": 400,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Unripe green mango pulp",
+          "amount": "80 g"
+        },
+        {
+          "name": "Water for cooking",
+          "amount": "80 ml"
+        },
+        {
+          "name": "Cold water",
+          "amount": "120 ml"
+        },
+        {
+          "name": "Sugar",
+          "amount": "15 g"
+        },
+        {
+          "name": "Roasted ground cumin",
+          "amount": "0.5 g"
+        },
+        {
+          "name": "Black salt kala namak",
+          "amount": "0.5 g"
+        },
+        {
+          "name": "Mint",
+          "amount": "4 leaves"
+        },
+        {
+          "name": "Ice",
+          "amount": "60 g"
+        },
+        {
+          "name": "Mint for garnish",
+          "amount": "1 sprig"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "М’якоть незрілого зеленого манґо",
+          "amount": "80 г"
+        },
+        {
+          "name": "Вода для варіння",
+          "amount": "80 мл"
+        },
+        {
+          "name": "Холодна вода",
+          "amount": "120 мл"
+        },
+        {
+          "name": "Цукор",
+          "amount": "15 г"
+        },
+        {
+          "name": "Обсмажений мелений кумин",
+          "amount": "0,5 г"
+        },
+        {
+          "name": "Чорна сіль kala namak",
+          "amount": "0,5 г"
+        },
+        {
+          "name": "М’ята",
+          "amount": "4 листки"
+        },
+        {
+          "name": "Лід",
+          "amount": "60 г"
+        },
+        {
+          "name": "М’ята для декору",
+          "amount": "1 гілочка"
+        }
+      ],
+      "steps": [
+        "Chop 80 g of unripe green mango pulp. Cook with 80 ml of water, covered, over low heat for 12–15 min until tender; reserve the liquid.",
+        "Blend the mango with the reserved liquid, sugar, cumin, kala namak, and 4 mint leaves. Cool completely.",
+        "Dilute with 120 ml of cold water, pour over ice, and garnish with mint. Use unripe mango; do not add milk or yogurt."
+      ],
+      "steps_uk": [
+        "Наріжте 80 г очищеної м’якоті зеленого манґо. Варіть із 80 мл води під кришкою на малому вогні 12–15 хв до м’якості; збережіть рідину.",
+        "Збийте манґо разом із рідиною, цукром, кумином, kala namak та 4 листками м’яти. Повністю остудіть.",
+        "Розведіть 120 мл холодної води, налийте на лід і прикрасьте м’ятою. Використовуйте незріле манґо; молоко та йогурт не додавайте."
+      ],
+      "photo": "aam-panna.jpg"
+    }
+  ],
+  "subtitle_uk": "10 напоїв · ананас, кокос і манго"
+}

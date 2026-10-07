@@ -1,0 +1,781 @@
+{
+  "id": "winter-warmers",
+  "title": "Winter Warmers",
+  "title_uk": "Зимові теплі",
+  "subtitle": "10 drinks · hot & spiced",
+  "description": "Spiced juices, honey, silky milk and fragrant tea — ten warm alcohol-free drinks.",
+  "description_uk": "Пряні соки, мед, ніжне молоко та ароматний чай — десять теплих напоїв без алкоголю.",
+  "productId": "com.filonexperiencedesign.mocktailfinder.pack.winterwarmers",
+  "price": "€2.99",
+  "cover": "alcohol-free-mulled-wine.jpg",
+  "recipes": [
+    {
+      "id": "winter-warmers-alcohol-free-mulled-wine",
+      "name": "Alcohol-free Mulled Wine",
+      "name_uk": "Безалкогольний глінтвейн",
+      "tags": [
+        "Hot",
+        "Citrus",
+        "Spiced"
+      ],
+      "description": "A rich ruby drink with fruity acidity, orange peel, cinnamon and cloves. The wine base is strictly 0.0%.",
+      "description_uk": "Насичений рубіновий напій із фруктовою кислинкою, апельсиновою цедрою, корицею та гвоздикою. Винна основа — лише 0.0%.",
+      "time_min": 15,
+      "glass": "Heatproof mug",
+      "glass_uk": "Термостійкий кухоль",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Red wine 0.0%",
+          "amount": "200 ml"
+        },
+        {
+          "name": "Water",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Orange",
+          "amount": "2 half-wheels (30 g)"
+        },
+        {
+          "name": "Sugar",
+          "amount": "8 g"
+        },
+        {
+          "name": "Cinnamon",
+          "amount": "1 stick (5 cm)"
+        },
+        {
+          "name": "Cloves",
+          "amount": "2 whole"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Червоне вино 0.0%",
+          "amount": "200 мл"
+        },
+        {
+          "name": "Вода",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Апельсин",
+          "amount": "2 півкружальця (30 г)"
+        },
+        {
+          "name": "Цукор",
+          "amount": "8 г"
+        },
+        {
+          "name": "Кориця",
+          "amount": "1 паличка (5 см)"
+        },
+        {
+          "name": "Гвоздика",
+          "amount": "2 бутони"
+        }
+      ],
+      "steps": [
+        "Put the 0.0% wine, water, sugar, one orange half-wheel and spices in a small saucepan.",
+        "Heat gently for 4 min without boiling. Cover and infuse off the heat for 8 min.",
+        "Strain into a heatproof mug. Add the second half-wheel and cinnamon stick; cool to a comfortable drinking temperature."
+      ],
+      "steps_uk": [
+        "Покладіть вино 0.0%, воду, цукор, одне півкружальце апельсина й спеції в маленьку каструлю.",
+        "Нагрівайте 4 хв на слабкому вогні, не кип’ятіть. Накрийте й настоюйте 8 хв без вогню.",
+        "Процідіть у термостійкий кухоль. Додайте друге півкружальце й паличку кориці; дайте охолонути до комфортної температури."
+      ],
+      "photo": "alcohol-free-mulled-wine.jpg"
+    },
+    {
+      "id": "winter-warmers-wassail",
+      "name": "Wassail",
+      "name_uk": "Восейл",
+      "tags": [
+        "Hot",
+        "Citrus",
+        "Spiced"
+      ],
+      "description": "A juice-based version of the traditional hot apple punch: rounded fruit sweetness, orange and warming spices. No hard cider.",
+      "description_uk": "Традиційний гарячий яблучний пунш у соковій версії: округла фруктова солодкість, апельсин і теплі спеції. Без алкогольного сидру.",
+      "time_min": 18,
+      "glass": "Heatproof mug",
+      "glass_uk": "Термостійкий кухоль",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Non-fermented apple juice",
+          "amount": "180 ml"
+        },
+        {
+          "name": "Orange juice",
+          "amount": "40 ml"
+        },
+        {
+          "name": "Orange",
+          "amount": "1 half-wheel (15 g)"
+        },
+        {
+          "name": "Cinnamon",
+          "amount": "1 stick (5 cm)"
+        },
+        {
+          "name": "Cloves",
+          "amount": "2 whole"
+        },
+        {
+          "name": "Ground nutmeg",
+          "amount": "0.1 g"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Неферментований яблучний сік",
+          "amount": "180 мл"
+        },
+        {
+          "name": "Апельсиновий сік",
+          "amount": "40 мл"
+        },
+        {
+          "name": "Апельсин",
+          "amount": "1 півкружальце (15 г)"
+        },
+        {
+          "name": "Кориця",
+          "amount": "1 паличка (5 см)"
+        },
+        {
+          "name": "Гвоздика",
+          "amount": "2 бутони"
+        },
+        {
+          "name": "Мелений мускатний горіх",
+          "amount": "0,1 г"
+        }
+      ],
+      "steps": [
+        "Combine both juices, cinnamon, cloves and nutmeg in a small saucepan.",
+        "Heat for 4 min until gently steaming. Cover and keep over the lowest heat for 10 min, without a rolling boil.",
+        "Strain into the mug, add the orange half-wheel and cinnamon stick. Cool slightly before drinking."
+      ],
+      "steps_uk": [
+        "З’єднайте обидва соки, корицю, гвоздику й мускатний горіх у маленькій каструлі.",
+        "Нагрійте за 4 хв до легкого парування. Накрийте й тримайте на найслабшому вогні 10 хв, без бурхливого кипіння.",
+        "Процідіть у кухоль, додайте півкружальце апельсина й паличку кориці. Трохи остудіть перед питтям."
+      ],
+      "photo": "wassail.jpg"
+    },
+    {
+      "id": "winter-warmers-alcohol-free-hot-toddy",
+      "name": "Alcohol-free Hot Toddy",
+      "name_uk": "Безалкогольний Хот тоді",
+      "tags": [
+        "Hot",
+        "Citrus",
+        "Spiced"
+      ],
+      "description": "A light honey-lemon drink with oak-spice notes from a 0.0% whiskey alternative. Clear, mellow and pleasantly tart.",
+      "description_uk": "Легкий медово-лимонний напій із дубово-пряними нотами замінника віскі 0.0%. Прозорий, м’який і приємно кислуватий.",
+      "time_min": 6,
+      "glass": "Heatproof mug",
+      "glass_uk": "Термостійкий кухоль",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Oak-spiced whiskey alternative 0.0%",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Hot water (80°C)",
+          "amount": "150 ml"
+        },
+        {
+          "name": "Lemon juice",
+          "amount": "15 ml"
+        },
+        {
+          "name": "Honey",
+          "amount": "15 g"
+        },
+        {
+          "name": "Lemon",
+          "amount": "1 wheel (10 g)"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Дубово-пряний замінник віскі 0.0%",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Гаряча вода (80°C)",
+          "amount": "150 мл"
+        },
+        {
+          "name": "Лимонний сік",
+          "amount": "15 мл"
+        },
+        {
+          "name": "Мед",
+          "amount": "15 г"
+        },
+        {
+          "name": "Лимон",
+          "amount": "1 кружальце (10 г)"
+        }
+      ],
+      "steps": [
+        "Heat the water to 80°C. In a heatproof mug, dissolve the honey in 50 ml of the measured hot water.",
+        "Add the lemon juice, 0.0% oak-spiced base and remaining 100 ml water. Stir for 15 s.",
+        "Add the lemon wheel. Let the drink cool until comfortably warm. Do not add regular whiskey."
+      ],
+      "steps_uk": [
+        "Нагрійте воду до 80°C. У термостійкому кухлі розчиніть мед у 50 мл відміряної гарячої води.",
+        "Додайте лимонний сік, дубово-пряну базу 0.0% та решту 100 мл води. Перемішайте 15 с.",
+        "Покладіть кружальце лимона. Дайте напою охолонути до комфортно теплої температури. Звичайний віскі не додавайте."
+      ],
+      "photo": "alcohol-free-hot-toddy.jpg"
+    },
+    {
+      "id": "winter-warmers-alcohol-free-hot-buttered-rum",
+      "name": "Alcohol-free Hot Buttered Rum",
+      "name_uk": "Гарячий масляний ром 0.0%",
+      "tags": [
+        "Hot",
+        "Creamy",
+        "Spiced"
+      ],
+      "description": "A buttery, slightly opaque caramel cup with cinnamon and nutmeg. Only a 0.0% base provides the rum-style aroma; contains milk.",
+      "description_uk": "Масляниста, злегка непрозора карамельна чашка з корицею й мускатним горіхом. Ромовий аромат дає лише база 0.0%; містить молоко.",
+      "time_min": 7,
+      "glass": "Ceramic mug",
+      "glass_uk": "Керамічний кухоль",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Rum-style alternative 0.0%",
+          "amount": "50 ml"
+        },
+        {
+          "name": "Hot water (80°C)",
+          "amount": "160 ml"
+        },
+        {
+          "name": "Unsalted butter",
+          "amount": "8 g"
+        },
+        {
+          "name": "Brown sugar",
+          "amount": "10 g"
+        },
+        {
+          "name": "Ground cinnamon",
+          "amount": "0.3 g"
+        },
+        {
+          "name": "Ground nutmeg",
+          "amount": "0.1 g"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Ромовий замінник 0.0%",
+          "amount": "50 мл"
+        },
+        {
+          "name": "Гаряча вода (80°C)",
+          "amount": "160 мл"
+        },
+        {
+          "name": "Несолоне вершкове масло",
+          "amount": "8 г"
+        },
+        {
+          "name": "Коричневий цукор",
+          "amount": "10 г"
+        },
+        {
+          "name": "Мелена кориця",
+          "amount": "0,3 г"
+        },
+        {
+          "name": "Мелений мускатний горіх",
+          "amount": "0,1 г"
+        }
+      ],
+      "steps": [
+        "Mash the softened butter with the sugar, cinnamon and nutmeg in a ceramic mug.",
+        "Add 60 ml hot water and stir until the butter melts and the sugar dissolves.",
+        "Add the 0.0% base and remaining 100 ml water. Whisk for 20 s. Cool slightly; stir again before drinking."
+      ],
+      "steps_uk": [
+        "Розітріть м’яке масло з цукром, корицею та мускатним горіхом у керамічному кухлі.",
+        "Додайте 60 мл гарячої води й розмішуйте, доки масло розтане, а цукор розчиниться.",
+        "Влийте базу 0.0% та решту 100 мл води. Збийте маленьким вінчиком 20 с. Трохи остудіть; перемішайте перед питтям."
+      ],
+      "photo": "alcohol-free-hot-buttered-rum.jpg"
+    },
+    {
+      "id": "winter-warmers-sbiten",
+      "name": "Sbiten",
+      "name_uk": "Збитень",
+      "tags": [
+        "Hot",
+        "Spiced"
+      ],
+      "description": "A non-fermented version of the traditional honey-spice drink: golden and light, with ginger, cinnamon and clove warmth. No mead.",
+      "description_uk": "Традиційний медово-пряний напій у неферментованій версії: золотистий, легкий, із теплом імбиру, кориці та гвоздики. Без медовухи.",
+      "time_min": 15,
+      "glass": "Ceramic cup",
+      "glass_uk": "Керамічна чашка",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Water",
+          "amount": "230 ml"
+        },
+        {
+          "name": "Honey",
+          "amount": "20 g"
+        },
+        {
+          "name": "Fresh ginger",
+          "amount": "3 g, sliced"
+        },
+        {
+          "name": "Cinnamon",
+          "amount": "1 stick (5 cm)"
+        },
+        {
+          "name": "Cloves",
+          "amount": "2 whole"
+        },
+        {
+          "name": "Cardamom",
+          "amount": "1 lightly crushed pod"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Вода",
+          "amount": "230 мл"
+        },
+        {
+          "name": "Мед",
+          "amount": "20 г"
+        },
+        {
+          "name": "Свіжий імбир",
+          "amount": "3 г, скибочками"
+        },
+        {
+          "name": "Кориця",
+          "amount": "1 паличка (5 см)"
+        },
+        {
+          "name": "Гвоздика",
+          "amount": "2 бутони"
+        },
+        {
+          "name": "Кардамон",
+          "amount": "1 злегка розчавлена коробочка"
+        }
+      ],
+      "steps": [
+        "Add ginger, cinnamon, cloves and cardamom to the water. Bring to a gentle simmer in 3 min.",
+        "Cover and simmer gently for 8 min. Strain, removing all the spices.",
+        "Cool for 2–3 min, stir in the honey and pour into the cup. Serve comfortably warm immediately; do not leave to ferment."
+      ],
+      "steps_uk": [
+        "Покладіть імбир, корицю, гвоздику й кардамон у воду. Доведіть до слабкого кипіння за 3 хв.",
+        "Накрийте й томіть 8 хв на слабкому вогні. Процідіть, видаливши всі спеції.",
+        "Дайте охолонути 2–3 хв, розмішайте мед і перелийте в чашку. Подавайте комфортно теплим одразу, не залишайте для бродіння."
+      ],
+      "photo": "sbiten.jpg"
+    },
+    {
+      "id": "winter-warmers-sahlab",
+      "name": "Sahlab",
+      "name_uk": "Сахлаб",
+      "tags": [
+        "Hot",
+        "Creamy",
+        "Spiced"
+      ],
+      "description": "A gently thickened milk drink with vanilla, cinnamon and pistachios. A practical cornflour home version, not made with orchid powder.",
+      "description_uk": "Ніжний густуватий молочний напій із ваніллю, корицею та фісташками. Практична домашня версія з кукурудзяним крохмалем, не орхідейним порошком.",
+      "time_min": 10,
+      "glass": "Ceramic mug",
+      "glass_uk": "Керамічний кухоль",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Milk",
+          "amount": "220 ml"
+        },
+        {
+          "name": "Cornflour (cornstarch)",
+          "amount": "6 g"
+        },
+        {
+          "name": "Sugar",
+          "amount": "10 g"
+        },
+        {
+          "name": "Vanilla extract 0.0%",
+          "amount": "1 ml"
+        },
+        {
+          "name": "Ground cinnamon",
+          "amount": "0.2 g"
+        },
+        {
+          "name": "Unsalted pistachios",
+          "amount": "5 g, chopped"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Молоко",
+          "amount": "220 мл"
+        },
+        {
+          "name": "Кукурудзяний крохмаль",
+          "amount": "6 г"
+        },
+        {
+          "name": "Цукор",
+          "amount": "10 г"
+        },
+        {
+          "name": "Ванільний екстракт 0.0%",
+          "amount": "1 мл"
+        },
+        {
+          "name": "Мелена кориця",
+          "amount": "0,2 г"
+        },
+        {
+          "name": "Несолоні фісташки",
+          "amount": "5 г, подрібнені"
+        }
+      ],
+      "steps": [
+        "Mix the cornflour with 40 ml cold milk until smooth. Heat the remaining 180 ml milk with the sugar for 3 min.",
+        "Whisk in the slurry. Bring to a gentle simmer and cook for 2 min until lightly thickened.",
+        "Remove from the heat and add 0.0% vanilla. Pour into the mug, top with cinnamon and pistachios. Cool for 3 min. Contains milk and nuts."
+      ],
+      "steps_uk": [
+        "Розмішайте крохмаль із 40 мл холодного молока до гладкої суспензії. Решту 180 мл молока нагрійте з цукром 3 хв.",
+        "Влийте суспензію, постійно збиваючи. Доведіть до легкого кипіння й готуйте 2 хв, доки напій трохи загусне.",
+        "Зніміть з вогню, додайте ваніль 0.0%. Перелийте в кухоль, посипте корицею й фісташками. Остудіть 3 хв. Містить молоко та горіхи."
+      ],
+      "photo": "sahlab.jpg"
+    },
+    {
+      "id": "winter-warmers-vanilla-atole",
+      "name": "Vanilla Atole",
+      "name_uk": "Ванільний атоле",
+      "tags": [
+        "Hot",
+        "Sparkling",
+        "Creamy"
+      ],
+      "description": "A traditional warm masa harina drink: gentle corn flavour, vanilla and cinnamon. Creamy yet drinkable, with no cocoa or chocolate.",
+      "description_uk": "Традиційний теплий напій із masa harina: м’який кукурудзяний смак, ваніль і кориця. Кремова, питна консистенція; без какао чи шоколаду.",
+      "time_min": 15,
+      "glass": "Ceramic mug",
+      "glass_uk": "Керамічний кухоль",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Milk",
+          "amount": "150 ml"
+        },
+        {
+          "name": "Water",
+          "amount": "100 ml"
+        },
+        {
+          "name": "Masa harina (nixtamalized corn flour)",
+          "amount": "12 g"
+        },
+        {
+          "name": "Brown sugar",
+          "amount": "10 g"
+        },
+        {
+          "name": "Cinnamon",
+          "amount": "1 stick (5 cm)"
+        },
+        {
+          "name": "Vanilla extract 0.0%",
+          "amount": "1 ml"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Молоко",
+          "amount": "150 мл"
+        },
+        {
+          "name": "Вода",
+          "amount": "100 мл"
+        },
+        {
+          "name": "Masa harina (нікстамалізоване кукурудзяне борошно)",
+          "amount": "12 г"
+        },
+        {
+          "name": "Коричневий цукор",
+          "amount": "10 г"
+        },
+        {
+          "name": "Кориця",
+          "amount": "1 паличка (5 см)"
+        },
+        {
+          "name": "Ванільний екстракт 0.0%",
+          "amount": "1 мл"
+        }
+      ],
+      "steps": [
+        "Whisk the masa harina into 100 ml cold water until smooth. Do not substitute cornstarch.",
+        "Heat the milk with sugar and cinnamon for 3 min. Add the corn mixture; simmer gently for 8 min, stirring constantly.",
+        "Remove the cinnamon and add 0.0% vanilla. Pour into the mug and cool slightly: it should be creamy but drinkable. Contains milk."
+      ],
+      "steps_uk": [
+        "Розмішайте masa harina в 100 мл холодної води до гладкої суміші. Не замінюйте її крохмалем.",
+        "Нагрійте молоко з цукром і корицею 3 хв. Влийте кукурудзяну суміш; варіть при слабкому кипінні 8 хв, постійно помішуючи.",
+        "Вийміть корицю, додайте ваніль 0.0%. Перелийте в кухоль і дайте трохи охолонути: напій має бути кремовим, але питним. Містить молоко."
+      ],
+      "photo": "vanilla-atole.jpg"
+    },
+    {
+      "id": "winter-warmers-london-fog",
+      "name": "London Fog",
+      "name_uk": "Лондонський туман",
+      "tags": [
+        "Hot",
+        "Creamy",
+        "Tea"
+      ],
+      "description": "Bergamot-scented Earl Grey beneath a thin layer of milk foam, with soft vanilla sweetness from 0.0% syrup. Contains caffeine and milk.",
+      "description_uk": "Бергамотовий Earl Grey під тонким шаром молочної піни, із м’якою ванільною солодкістю сиропу 0.0%. Містить кофеїн і молоко.",
+      "time_min": 8,
+      "glass": "Ceramic cup",
+      "glass_uk": "Керамічна чашка",
+      "glass_ml": 350,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Earl Grey tea",
+          "amount": "2 g"
+        },
+        {
+          "name": "Water (95°C)",
+          "amount": "150 ml"
+        },
+        {
+          "name": "Milk",
+          "amount": "100 ml"
+        },
+        {
+          "name": "Vanilla syrup 0.0%",
+          "amount": "15 ml"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Чай Earl Grey",
+          "amount": "2 г"
+        },
+        {
+          "name": "Вода (95°C)",
+          "amount": "150 мл"
+        },
+        {
+          "name": "Молоко",
+          "amount": "100 мл"
+        },
+        {
+          "name": "Ванільний сироп 0.0%",
+          "amount": "15 мл"
+        }
+      ],
+      "steps": [
+        "Pour 150 ml water at 95°C over the Earl Grey. Cover and steep for exactly 4 min, then strain completely.",
+        "While the tea steeps, heat the milk to 60–65°C without boiling. Froth with a handheld frother for 20–30 s.",
+        "Stir the 0.0% syrup into the tea. Pour in the milk and spoon its foam over the top. Cool to a comfortable drinking temperature."
+      ],
+      "steps_uk": [
+        "Залийте Earl Grey 150 мл води при 95°C. Накрийте й настоюйте рівно 4 хв, потім повністю процідіть.",
+        "Поки чай настоюється, нагрійте молоко до 60–65°C, не кип’ятіть. Спіньте ручним спінювачем 20–30 с.",
+        "Розмішайте сироп 0.0% у чаї. Влийте молоко, зверху викладіть його піну. Дайте охолонути до комфортної температури."
+      ],
+      "photo": "london-fog.jpg"
+    },
+    {
+      "id": "winter-warmers-moroccan-mint-tea",
+      "name": "Moroccan Mint Tea",
+      "name_uk": "Марокканський м’ятний чай",
+      "tags": [
+        "Hot",
+        "Tea",
+        "Minty"
+      ],
+      "description": "Green tea with a vivid fresh-mint aroma and sugary sweetness. A clear golden infusion with gentle astringency; contains caffeine.",
+      "description_uk": "Зелений чай із виразним ароматом свіжої м’яти та цукровою солодкістю. Прозорий золотистий настій із легкою терпкістю; містить кофеїн.",
+      "time_min": 7,
+      "glass": "Heatproof tea glass",
+      "glass_uk": "Термостійка чайна склянка",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "Gunpowder green tea",
+          "amount": "2 g"
+        },
+        {
+          "name": "Water (85°C)",
+          "amount": "220 ml"
+        },
+        {
+          "name": "Fresh mint",
+          "amount": "5 g (4 g to infuse, 1 g to garnish)"
+        },
+        {
+          "name": "Sugar",
+          "amount": "12 g"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "Зелений чай gunpowder",
+          "amount": "2 г"
+        },
+        {
+          "name": "Вода (85°C)",
+          "amount": "220 мл"
+        },
+        {
+          "name": "Свіжа м’ята",
+          "amount": "5 г (4 г для настою, 1 г для подачі)"
+        },
+        {
+          "name": "Цукор",
+          "amount": "12 г"
+        }
+      ],
+      "steps": [
+        "Place the green tea in a teapot. Add 220 ml water at 85°C and steep for 2 min.",
+        "Add 4 g washed mint and the sugar. Stir, cover and infuse for another 2 min.",
+        "Strain out the tea and mint into a heatproof glass. Add the remaining 1 g fresh mint. Cool slightly; do not leave tea leaves in the drink."
+      ],
+      "steps_uk": [
+        "Покладіть зелений чай у заварник. Залийте 220 мл води при 85°C й настоюйте 2 хв.",
+        "Додайте 4 г промитої м’яти та цукор. Перемішайте, накрийте й настоюйте ще 2 хв.",
+        "Процідіть чай і м’яту в термостійку склянку. Додайте решту 1 г свіжої м’яти. Трохи остудіть; не залишайте листя чаю в напої."
+      ],
+      "photo": "moroccan-mint-tea.jpg"
+    },
+    {
+      "id": "winter-warmers-hot-spiced-cranberry-punch",
+      "name": "Hot Spiced Cranberry Punch",
+      "name_uk": "Гарячий журавлинний пунш",
+      "tags": [
+        "Hot",
+        "Citrus",
+        "Berry"
+      ],
+      "description": "A ruby hot punch with tart cranberry, sweet apple, orange and spices. No pineapple or ginger ale; distinct from cold Cranberry Punch.",
+      "description_uk": "Рубіновий гарячий пунш із журавлинною кислинкою, яблучною солодкістю, апельсином і спеціями. Без ананаса та ginger ale; не холодний Cranberry Punch.",
+      "time_min": 15,
+      "glass": "Heatproof mug",
+      "glass_uk": "Термостійкий кухоль",
+      "glass_ml": 300,
+      "servings": 1,
+      "ingredients": [
+        {
+          "name": "100% unsweetened cranberry juice",
+          "amount": "100 ml"
+        },
+        {
+          "name": "Non-fermented apple juice",
+          "amount": "100 ml"
+        },
+        {
+          "name": "Water",
+          "amount": "20 ml"
+        },
+        {
+          "name": "Sugar",
+          "amount": "8 g"
+        },
+        {
+          "name": "Orange",
+          "amount": "1 half-wheel (15 g)"
+        },
+        {
+          "name": "Cinnamon",
+          "amount": "1 stick (5 cm)"
+        },
+        {
+          "name": "Cloves",
+          "amount": "2 whole"
+        }
+      ],
+      "ingredients_uk": [
+        {
+          "name": "100% журавлинний сік без цукру",
+          "amount": "100 мл"
+        },
+        {
+          "name": "Неферментований яблучний сік",
+          "amount": "100 мл"
+        },
+        {
+          "name": "Вода",
+          "amount": "20 мл"
+        },
+        {
+          "name": "Цукор",
+          "amount": "8 г"
+        },
+        {
+          "name": "Апельсин",
+          "amount": "1 півкружальце (15 г)"
+        },
+        {
+          "name": "Кориця",
+          "amount": "1 паличка (5 см)"
+        },
+        {
+          "name": "Гвоздика",
+          "amount": "2 бутони"
+        }
+      ],
+      "steps": [
+        "Combine the juices, water, sugar, orange, cinnamon and cloves in a small saucepan.",
+        "Heat for 4 min until gently steaming, stirring to dissolve the sugar. Cover and infuse off the heat for 8 min.",
+        "Strain into a heatproof mug. Return the orange half-wheel and cinnamon stick. Cool slightly before serving."
+      ],
+      "steps_uk": [
+        "З’єднайте соки, воду, цукор, апельсин, корицю й гвоздику в маленькій каструлі.",
+        "Нагрівайте 4 хв до легкого парування, помішуючи до розчинення цукру. Накрийте й настоюйте без вогню 8 хв.",
+        "Процідіть у термостійкий кухоль. Поверніть півкружальце апельсина й паличку кориці. Трохи остудіть перед подачею."
+      ],
+      "photo": "hot-spiced-cranberry-punch.jpg"
+    }
+  ],
+  "subtitle_uk": "10 напоїв · гарячі й пряні"
+}

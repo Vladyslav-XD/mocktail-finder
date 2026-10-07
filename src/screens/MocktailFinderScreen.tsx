@@ -11,15 +11,16 @@ import { Recipe } from '../data/mockData';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { SCREENS } from '../constants/screens';
-import { fetchMocktails, fillInDetails } from '../api/recipes';
 import { CHARACTER_FILTERS, INGREDIENT_FILTERS, recipeHasIngredient } from '../constants/filters';
 import { useFavorites } from '../context/FavoritesContext';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { localizeRecipe, matchesSearch } from '../i18n/localizeRecipe';
 import { DrinkTag } from '../utils/drinkTags';
-import { useSelector } from 'react-redux';
-import { RootState } from '../store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../store/store';
+import { loadCatalogue } from '../store/catalogueSlice';
+import { selectVisibleDrinks } from '../store/selectors';
 
 // "all" and "my" are pseudo-categories; the rest are real drink tags.
 type Category = 'all' | 'my' | DrinkTag;
@@ -29,52 +30,27 @@ export const MocktailFinderScreen = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<Category>('all');
   const [activeIngredients, setActiveIngredients] = useState<string[]>([]);
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [fillingIn, setFillingIn] = useState<boolean>(false);
-  const [error, setError] = useState(false);
   const [displayLimit, setDisplayLimit] = useState<number>(5);
 
   const navigation = useNavigation<StackNavigationProp<any>>();
   const { isFavorite, toggleFavorite } = useFavorites();
   const { colors } = useTheme();
   const { lang, t } = useLanguage();
+  const dispatch = useDispatch<AppDispatch>();
   const customRecipes = useSelector((state: RootState) => state.myRecipes.recipes);
+  const allAvailableRecipes = useSelector(selectVisibleDrinks);
+  const { status, fillingIn } = useSelector((state: RootState) => state.catalogue);
+  const loading = status === 'idle' || status === 'loading';
+  const error = status === 'error';
 
   const loadRecipes = useCallback(() => {
-    let cancelled = false;
-    setLoading(true);
-    setError(false);
-    fetchMocktails()
-      .then(result => {
-        if (cancelled) return;
-        setRecipes(result);
-        setLoading(false);
-        // The list endpoint has no ingredients or tags. Fetch them once (cached on
-        // the device afterwards) and let cards fill in as batches arrive.
-        if (result.some(r => !r.tags)) {
-          setFillingIn(true);
-          fillInDetails(result, update => {
-            if (!cancelled) setRecipes(update);
-          }).finally(() => {
-            if (!cancelled) setFillingIn(false);
-          });
-        }
-      })
-      .catch(() => {
-        if (cancelled) return;
-        setError(true);
-        setLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+    dispatch(loadCatalogue());
+  }, [dispatch]);
 
   useEffect(() => {
-    const cancel = loadRecipes();
-    return cancel;
-  }, [loadRecipes]);
+    // Once per app run; Surprise and My Bar read the same list from the store.
+    if (status === 'idle') loadRecipes();
+  }, [status, loadRecipes]);
 
   useEffect(() => {
     setDisplayLimit(5);
@@ -85,11 +61,6 @@ export const MocktailFinderScreen = () => {
       prev.includes(ing) ? prev.filter(i => i !== ing) : [...prev, ing]
     );
   }, []);
-
-  const allAvailableRecipes = useMemo(
-    () => [...[...customRecipes].reverse(), ...recipes],
-    [customRecipes, recipes]
-  );
 
   const filteredRecipes = useMemo(() => {
     return allAvailableRecipes.filter(recipe => {

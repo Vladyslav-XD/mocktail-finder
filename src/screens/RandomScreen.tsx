@@ -7,7 +7,6 @@ import { Badge } from '../components/Badge';
 import { spacing } from '../theme/spacing';
 import { RecipeDetails } from '../api/api';
 import { fetchDetailsCached } from '../api/detailsCache';
-import { fetchMocktails } from '../api/recipes';
 import { Recipe } from '../data/mockData';
 import { tagsToSubtitle } from '../utils/drinkTags';
 import { PhotoScrim } from '../components/PhotoScrim';
@@ -17,13 +16,14 @@ import { shareRecipe, splitInstructions } from '../utils/recipeText';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { localizeRecipe, tagLabels } from '../i18n/localizeRecipe';
-import { useSelector } from 'react-redux';
-import { RootState } from '../store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../store/store';
+import { loadCatalogue } from '../store/catalogueSlice';
+import { selectVisibleDrinks } from '../store/selectors';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
 export const RandomScreen = () => {
-  const [allRecipes, setAllRecipes] = useState<Recipe[]>([]);
   const [currentRecipe, setCurrentRecipe] = useState<Recipe | null>(null);
   const [details, setDetails] = useState<Partial<RecipeDetails> | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -35,27 +35,16 @@ export const RandomScreen = () => {
   const { colors } = useTheme();
   const { lang, t } = useLanguage();
   const insets = useSafeAreaInsets();
-  const customRecipes = useSelector((state: RootState) => state.myRecipes.recipes);
-  const [loadError, setLoadError] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
+  // Catalogue + own recipes + unlocked collections, the same list Home shows.
+  const allRecipes = useSelector(selectVisibleDrinks);
+  const catalogueStatus = useSelector((state: RootState) => state.catalogue.status);
+  const loadError = catalogueStatus === 'error';
   // Guards against a slow earlier lookup overwriting the details of a newer pick.
   const requestId = useRef(0);
 
-  const loadInitialData = async () => {
-    setLoading(true);
-    setLoadError(false);
-    try {
-      const recipes = await fetchMocktails();
-      const combined = [...recipes, ...customRecipes];
-      setAllRecipes(combined);
-      if (combined.length > 0) {
-        pickRandomRecipe(combined);
-      } else {
-        setLoading(false);
-      }
-    } catch {
-      setLoadError(true);
-      setLoading(false);
-    }
+  const loadInitialData = () => {
+    dispatch(loadCatalogue());
   };
 
   const pickRandomRecipe = async (recipesArray = allRecipes) => {
@@ -126,12 +115,21 @@ export const RandomScreen = () => {
   };
 
   useEffect(() => {
-    loadInitialData();
+    // Opened from Home the list is already there; otherwise (or after an error) load it.
+    if (catalogueStatus === 'idle') loadInitialData();
   }, []);
+
+  useEffect(() => {
+    // First pick as soon as there is something to pick from.
+    if (!currentRecipe && catalogueStatus === 'ready' && allRecipes.length > 0) pickRandomRecipe(allRecipes);
+  }, [catalogueStatus, allRecipes.length]);
 
   const parseInstructions = splitInstructions;
 
-  if (loading && !currentRecipe) {
+  // Waiting for the list or the first pick. An error, or a list with nothing in it,
+  // falls through to the message below.
+  const nothingToPick = catalogueStatus === 'ready' && allRecipes.length === 0;
+  if (loading && !currentRecipe && !loadError && !nothingToPick) {
     return (
       <View style={[styles.container, styles.centerContainer, { backgroundColor: colors.background }]}>
         <ActivityIndicator size="large" color={colors.activeBadgeBG} />
@@ -167,7 +165,7 @@ export const RandomScreen = () => {
     t
   );
   const ingredientsToDisplay = shown.ingredients || [];
-  const stepsToDisplay = parseInstructions(shown.instructions || '');
+  const stepsToDisplay = shown.steps?.length ? shown.steps : parseInstructions(shown.instructions || '');
   // A user recipe shows its own description; a database drink shows its tags as chips below.
   const description =
     currentRecipe.subtitle && currentRecipe.subtitle !== tagsToSubtitle(tags) ? currentRecipe.subtitle : '';
@@ -178,6 +176,7 @@ export const RandomScreen = () => {
         title: shown.title,
         ingredients: ingredientsToDisplay,
         instructions: shown.instructions,
+        steps: shown.steps,
         imageUrl: currentRecipe.imageUrl,
       },
       t

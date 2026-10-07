@@ -1,10 +1,13 @@
 import { Recipe } from '../data/mockData';
 import { DrinkTag, tagsToSubtitle } from '../utils/drinkTags';
 import ukDrinks from '../data/uk/drinks.json';
+import { findPackRecipe } from '../data/packs';
+import { formatIngredientLine } from '../utils/measures';
 import type { Language, Translate } from '.';
 
 /**
- * The Ukrainian layer for the 58 catalogue drinks (Cowork, src/data/uk/drinks.json).
+ * The Ukrainian layer for the 58 catalogue drinks (Cowork, src/data/uk/drinks.json);
+ * collection drinks carry their own Ukrainian (data/packs).
  * Shape per drink: name, glass, ingredients [{ measure, name }] in the API's order,
  * instructions. Every field is optional: whatever is missing stays English.
  */
@@ -36,7 +39,25 @@ export function localizeRecipe(recipe: Recipe, lang: Language, t: Translate): Re
     if (subtitle !== recipe.subtitle) out = { ...out, subtitle };
   }
 
-  const uk = lang === 'uk' ? UK_DRINKS[recipe.id] : undefined;
+  if (lang !== 'uk') return out;
+
+  // Collection drinks are bilingual in their own data.
+  const pack = findPackRecipe(recipe.id);
+  if (pack) {
+    const r = pack.recipe;
+    return {
+      ...out,
+      title: r.name_uk || recipe.title,
+      ingredients: r.ingredients_uk?.length
+        ? r.ingredients_uk.map(i => formatIngredientLine(i.amount, i.name))
+        : recipe.ingredients,
+      steps: r.steps_uk?.length ? r.steps_uk : recipe.steps,
+      instructions: r.steps_uk?.length ? r.steps_uk.join(' ') : recipe.instructions,
+      description: r.description_uk || recipe.description,
+    };
+  }
+
+  const uk = UK_DRINKS[recipe.id];
   if (!uk) return out;
 
   const ingredients = recipe.ingredients?.map((line, i) => {

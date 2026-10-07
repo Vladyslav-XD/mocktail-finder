@@ -228,6 +228,8 @@ export const uk: Dictionary = {
     Spiced: "Пряний",
     Sweet: "Солодкий",
     Savoury: "Пікантний",
+    Bitter: "Гіркий",
+    Herbal: "Трав'яний",
   },
   // Character tags: Category chip form
   tagChip: {
@@ -247,6 +249,8 @@ export const uk: Dictionary = {
     Spiced: "Пряний",
     Sweet: "Солодкий",
     Savoury: "Пікантні",
+    Bitter: "Гіркий",
+    Herbal: "Трав'яний",
   },
   // Ingredient keys (My Bar, ingredient chips)
   ing: {

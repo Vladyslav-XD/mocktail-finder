@@ -16,4 +16,13 @@ export interface Recipe {
   category?: string;
   /** Character tags (see utils/drinkTags). Derived for database drinks, chosen for user recipes. */
   tags?: DrinkTag[];
+  /**
+   * Steps as written, one per entry. Collection drinks have them (a step can hold
+   * several sentences); everything else splits `instructions` (utils/recipeText).
+   */
+  steps?: string[];
+  /** Collection drinks: the pack they belong to (data/packs). */
+  packId?: string;
+  /** Collection drinks: one-line description from recipes.json. */
+  description?: string;
 }

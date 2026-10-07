@@ -1,5 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import myRecipesReducer, { hydrateRecipes } from './myRecipesSlice';
+import catalogueReducer from './catalogueSlice';
+import packsReducer from './packsSlice';
+import entitlementsReducer from './entitlementsSlice';
 import { loadJson, saveJson, STORAGE_KEYS } from '../storage/storage';
 import { Recipe } from '../data/mockData';
 import { DrinkTag, tagsToSubtitle } from '../utils/drinkTags';
@@ -7,6 +10,9 @@ import { DrinkTag, tagsToSubtitle } from '../utils/drinkTags';
 export const store = configureStore({
   reducer: {
     myRecipes: myRecipesReducer,
+    catalogue: catalogueReducer,
+    packs: packsReducer,
+    entitlements: entitlementsReducer,
   },
 });
 
