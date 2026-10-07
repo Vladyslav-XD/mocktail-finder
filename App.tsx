@@ -10,7 +10,7 @@ import { useFonts } from 'expo-font';
 // Per-weight imports so only the two weights we use are bundled (not all eight).
 import { Sora_600SemiBold } from '@expo-google-fonts/sora/600SemiBold';
 import { Sora_700Bold } from '@expo-google-fonts/sora/700Bold';
-import { TabNavigator } from './src/navigation/TabNavigator';
+import { RootNavigator } from './src/navigation/RootNavigator';
 import { FavoritesProvider } from './src/context/FavoritesContext';
 import { ThemeProvider, ThemeMode, loadThemeMode } from './src/context/ThemeContext';
 import { store, hydrateStore } from './src/store/store';
@@ -70,7 +70,7 @@ export default function App() {
                   <PurchasesProvider initialOwned={cachedOwned}>
                     <FavoritesProvider>
                       <NavigationContainer>
-                        <TabNavigator />
+                        <RootNavigator />
                       </NavigationContainer>
                     </FavoritesProvider>
                   </PurchasesProvider>

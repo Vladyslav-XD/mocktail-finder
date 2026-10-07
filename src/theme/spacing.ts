@@ -39,6 +39,12 @@ export const sizes = {
   tagBadge: 34,
   pill: 20,
   pillLock: 24,
+  packCard: 160,
+  packCover: 130,
+  /** Header logo (the martini glass), drawn 24 × 48. */
+  logo: 24,
+  /** Lifts the glass so its foot sits on the wordmark baseline (Sora 28/34 descender). */
+  logoBaseline: 6,
   roundButton: 36,
   stepperButton: 36,
   segment: 34,

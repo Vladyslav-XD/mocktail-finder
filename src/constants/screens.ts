@@ -10,4 +10,6 @@ export const SCREENS = {
   RECIPE_DETAILS: 'RecipeDetails',
   // Same screen component as the Add Recipe tab, pushed on top of a recipe when editing it.
   EDIT_RECIPE: 'EditRecipe',
+  // Pushed over the tabs from the header's "…" button.
+  ABOUT: 'About',
 };

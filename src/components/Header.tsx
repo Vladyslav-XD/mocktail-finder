@@ -1,128 +1,106 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import { spacing } from '../theme/spacing';
-import { fonts } from '../theme/typography';
-import { MoonIcon, SunIcon, ArrowLeftIcon } from './icons';
+import { opacity, radius, sizes, spacing } from '../theme/spacing';
+import { type } from '../theme/typography';
+import { SCREENS } from '../constants/screens';
+import { ArrowLeftIcon, DotsIcon } from './icons';
 import { AnimatedMartiniIcon } from './AnimatedMartiniIcon';
 
 interface HeaderProps {
   title: string;
   subtitle?: string;
-  /** Shows a back arrow on the left. Only screens pushed on top of another one pass this. */
+  /** Shows a back arrow instead of the logo. Only screens pushed on top of another one pass this. */
   onBack?: () => void;
+  /** The "…" button that opens About. On by default; About itself turns it off. */
+  showMore?: boolean;
 }
 
-export const Header = ({ title, subtitle, onBack }: HeaderProps) => {
-  const { theme, mode, toggleTheme, useSystemTheme, colors } = useTheme();
+/**
+ * Gradient header (README → Screens → Home; "Prototype wins" #4): logo with its foot
+ * on the wordmark baseline, the title in Sora, and only "…" on the right — the theme
+ * moved to About → Theme.
+ */
+export const Header = ({ title, subtitle, onBack, showMore = true }: HeaderProps) => {
+  const { colors } = useTheme();
   const { t } = useLanguage();
-
-  const gradientColors = theme === 'light'
-    ? ['#00BBA7', '#0092B8'] as const
-    : ['#00786F', '#005F78'] as const;
+  const navigation = useNavigation<any>();
 
   return (
-    <LinearGradient
-      colors={gradientColors}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
-      style={styles.headerBackground}
-    >
-      <SafeAreaView edges={['top']}>
-        <View style={styles.headerContent}>
-          <View style={{ flex: 1 }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 4 }}>
-              {onBack ? (
-                <TouchableOpacity
-                  style={styles.backButton}
-                  onPress={onBack}
-                  accessibilityRole="button"
-                  accessibilityLabel={t('a11yBack')}
-                >
-                  <ArrowLeftIcon size={22} color="#FFFFFF" />
-                </TouchableOpacity>
-              ) : (
-                <View style={{ marginRight: 8, marginTop: -22 }}>
-                  <AnimatedMartiniIcon size={24} color="#FFFFFF" disablePulsing />
-                </View>
-              )}
-              <Text style={[styles.headerTitle, { color: '#FFFFFF', marginBottom: 0, marginTop: 4 }]}>{title}</Text>
+    <LinearGradient colors={colors.headerGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
+      <SafeAreaView edges={['top']} style={styles.content}>
+        <View style={styles.row}>
+          {onBack ? (
+            <TouchableOpacity
+              style={[styles.round, { backgroundColor: colors.onGradientFill }]}
+              onPress={onBack}
+              activeOpacity={opacity.pressed}
+              accessibilityRole="button"
+              accessibilityLabel={t('a11yBack')}
+            >
+              <ArrowLeftIcon size={sizes.icon.l} color={colors.onGradient} />
+            </TouchableOpacity>
+          ) : (
+            <View style={styles.logo} accessible={false}>
+              <AnimatedMartiniIcon size={sizes.logo} color={colors.onGradient} disablePulsing />
             </View>
-            {!!subtitle && (
-              <Text style={[styles.headerSubtitle, { color: '#FFFFFF' }]}>{subtitle}</Text>
-            )}
-          </View>
-          <TouchableOpacity
-            style={styles.themeToggle}
-            onPress={toggleTheme}
-            onLongPress={useSystemTheme}
-            accessibilityRole="button"
-            accessibilityLabel={t(theme === 'light' ? 'a11yThemeToDark' : 'a11yThemeToLight')}
-            accessibilityHint={t('a11yThemeHint')}
+          )}
+          <Text
+            accessibilityRole="header"
+            numberOfLines={1}
+            style={[type.wordmark, styles.title, { color: colors.onGradient }]}
           >
-            {theme === 'light' ? <MoonIcon size={20} color="#FFFFFF" /> : <SunIcon size={20} color="#FFFFFF" />}
-            {/* A dot means "following the system"; it disappears once the user picks a theme. */}
-            {mode === 'system' && <View style={styles.systemDot} />}
-          </TouchableOpacity>
+            {title}
+          </Text>
+          {showMore && (
+            <TouchableOpacity
+              style={[styles.round, { backgroundColor: colors.onGradientFill }]}
+              onPress={() => navigation.navigate(SCREENS.ABOUT)}
+              activeOpacity={opacity.pressed}
+              accessibilityRole="button"
+              accessibilityLabel={t('about')}
+            >
+              <DotsIcon size={sizes.icon.l} color={colors.onGradient} />
+            </TouchableOpacity>
+          )}
         </View>
+        {!!subtitle && <Text style={[type.body, styles.subtitle, { color: colors.headerSubtitle }]}>{subtitle}</Text>}
       </SafeAreaView>
     </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
-  headerBackground: {
-    overflow: 'hidden',
-    paddingBottom: spacing.l,
+  content: {
+    paddingHorizontal: spacing.screen,
+    paddingTop: spacing.s,
+    paddingBottom: spacing.ml,
   },
-  headerContent: {
-    paddingHorizontal: spacing.l,
-    paddingTop: spacing.m,
+  row: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
+    alignItems: 'flex-end',
+    gap: spacing.sm,
   },
-  textContainer: {
+  logo: {
+    // The glass's foot on the wordmark baseline, not on the bottom of its line box.
+    marginBottom: sizes.logoBaseline,
+  },
+  title: {
     flex: 1,
+    minWidth: 0,
   },
-  headerTitle: {
-    // Brand wordmark in Sora. Weight lives in the font file itself, so no fontWeight here —
-    // on iOS a fontWeight with a custom family can silently fall back to the system font.
-    fontFamily: fonts.brand,
-    fontSize: 28,
-    letterSpacing: -0.3,
-    marginBottom: spacing.xs,
-  },
-  headerSubtitle: {
-    fontSize: 16,
-  },
-  backButton: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    backgroundColor: 'rgba(255,255,255,0.2)',
+  round: {
+    width: sizes.roundButton,
+    height: sizes.roundButton,
+    borderRadius: radius.pill,
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: spacing.s,
   },
-  themeToggle: {
-    padding: spacing.s,
-    backgroundColor: 'rgba(255,255,255,0.2)',
-    borderRadius: 20,
-  },
-  systemDot: {
-    position: 'absolute',
-    right: 6,
-    bottom: 6,
-    width: 6,
-    height: 6,
-    borderRadius: 3,
-    backgroundColor: '#FFFFFF',
-  },
-  themeToggleText: {
-    fontSize: 24,
+  subtitle: {
+    marginTop: -spacing.xs,
   },
 });

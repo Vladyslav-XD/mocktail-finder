@@ -53,6 +53,9 @@ export type ThemeColors = {
   onGradientFill: string;
   /** Base colour of every shadow; opacity lives in `shadows`. */
   shadow: string;
+  /** "Unlocked" pill on a pack cover: the same in both themes (prototype). */
+  unlockedPillBg: string;
+  unlockedPillText: string;
 };
 
 export const lightColors: ThemeColors = {
@@ -97,6 +100,8 @@ export const lightColors: ThemeColors = {
   coachRing: '#009689',
   onGradientFill: 'rgba(255, 255, 255, 0.2)',
   shadow: '#101828',
+  unlockedPillBg: '#FFFFFF',
+  unlockedPillText: '#009689',
 };
 
 export const darkColors: ThemeColors = {
@@ -141,6 +146,8 @@ export const darkColors: ThemeColors = {
   coachRing: '#14B8A6',
   onGradientFill: 'rgba(255, 255, 255, 0.2)',
   shadow: '#000000',
+  unlockedPillBg: '#FFFFFF',
+  unlockedPillText: '#009689',
 };
 
 export const colors = lightColors;

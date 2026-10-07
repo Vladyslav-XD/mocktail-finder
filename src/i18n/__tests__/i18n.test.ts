@@ -62,13 +62,14 @@ describe('translate', () => {
     expect(translate('en', 'tag.Citrus')).toBe('Citrus');
     expect(translate('uk', 'tag.Citrus')).toBe('Цитрусовий');
     expect(translate('uk', 'tagChip.Citrus')).toBe('Цитрусові');
-    expect(translate('uk', 'tagChip.Fruity')).toBe('Фруктовий');
+    expect(translate('uk', 'tagChip.Fruity')).toBe('Фруктові');
+    expect(translate('uk', 'tagChip.Savoury')).toBe('Солоні');
     expect(translate('uk', 'ing.lime')).toBe('Лайм');
   });
 
   it('falls back to English for a key Ukrainian lacks', () => {
-    expect('a11yThemeHint' in uk).toBe(false);
-    expect(translate('uk', 'a11yThemeHint')).toBe('Press and hold to follow the system appearance');
+    // The Category chip form exists only for the 15 chips; Sweet falls back to its card form.
+    expect(translate('uk', 'tagChip.Sweet')).toBe('Солодкий');
   });
 
   it('has the 1.1 strings Cowork added', () => {
@@ -78,13 +79,10 @@ describe('translate', () => {
 });
 
 describe('dictionaries', () => {
-  // Every copy key must exist in Ukrainian too; only the header theme toggle's
-  // VoiceOver labels (removed in task 5) are English-only.
-  const LEGACY = ['a11yThemeToDark', 'a11yThemeToLight', 'a11yThemeHint'];
+  // Every copy key must exist in Ukrainian too.
 
-  it('Ukrainian has every key but the theme-toggle labels', () => {
-    const missing = Object.keys(en).filter(k => !(k in uk));
-    expect(missing.sort()).toEqual([...LEGACY].sort());
+  it('Ukrainian has every key', () => {
+    expect(Object.keys(en).filter(k => !(k in uk))).toEqual([]);
   });
 
   it('Ukrainian plurals have all three forms', () => {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Svg, { Path, G, Defs, ClipPath, Rect, SvgProps, Mask } from 'react-native-svg';
+import Svg, { Path, G, Defs, ClipPath, Rect, SvgProps, Mask, Circle } from 'react-native-svg';
 
 export interface IconProps extends SvgProps {
   color?: string;
@@ -308,5 +308,32 @@ export const PlusIcon = ({ size = 18, color = '#99A1AF', strokeWidth = 2.2, ...p
 export const MinusIcon = ({ size = 18, color = '#99A1AF', strokeWidth = 2.2, ...props }: IconProps) => (
   <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
     <Path d="M5 12h14" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" />
+  </Svg>
+);
+
+export const DotsIcon = ({ size = 20, color = '#FFFFFF', ...props }: IconProps) => (
+  <Svg width={size} height={size} viewBox="0 0 24 24" fill={color} {...props}>
+    <Circle cx={6} cy={12} r={1.8} />
+    <Circle cx={12} cy={12} r={1.8} />
+    <Circle cx={18} cy={12} r={1.8} />
+  </Svg>
+);
+
+export const GlobeIcon = ({ size = 20, color = '#99A1AF', strokeWidth = 2, ...props }: IconProps) => (
+  <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
+    <Circle cx={12} cy={12} r={10} stroke={color} strokeWidth={strokeWidth} />
+    <Path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+  </Svg>
+);
+
+export const ThemeIcon = ({ size = 20, color = '#99A1AF', strokeWidth = 2, ...props }: IconProps) => (
+  <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
+    <Path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+  </Svg>
+);
+
+export const ChevronRightIcon = ({ size = 18, color = '#99A1AF', strokeWidth = 2, ...props }: IconProps) => (
+  <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
+    <Path d="m9 18 6-6-6-6" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
   </Svg>
 );

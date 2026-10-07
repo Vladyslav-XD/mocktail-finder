@@ -377,10 +377,6 @@ export const en = {
   shareGet: "Get Mocktail Finder: {url}",
   a11yBack: "Go back",
   a11yShuffle: "Another random recipe",
-  // Header theme toggle; goes away in task 5 (the theme moves to About). English only.
-  a11yThemeToDark: "Switch to dark theme",
-  a11yThemeToLight: "Switch to light theme",
-  a11yThemeHint: "Press and hold to follow the system appearance",
 };
 
 

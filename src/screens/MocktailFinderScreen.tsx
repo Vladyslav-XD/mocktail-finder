@@ -1,15 +1,20 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { View, Text, StyleSheet, ScrollView, Dimensions, FlatList, ActivityIndicator, TouchableOpacity } from 'react-native';
-import { Header } from '../components/Header';
-import { Badge } from '../components/Badge';
-import { SearchBar } from '../components/SearchBar';
-import { RecipeCard } from '../components/RecipeCard';
-import { recipeImageSource } from '../utils/recipeImage';
-import { ShuffleIcon } from '../components/icons';
-import { spacing } from '../theme/spacing';
-import { Recipe } from '../data/mockData';
+import { View, Text, StyleSheet, ScrollView, FlatList, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { useDispatch, useSelector } from 'react-redux';
+import { Header } from '../components/Header';
+import { Chip } from '../components/Chip';
+import { PackCard } from '../components/PackCard';
+import { SectionTitle } from '../components/SectionTitle';
+import { SearchBar } from '../components/SearchBar';
+import { RecipeCard } from '../components/RecipeCard';
+import { ShuffleIcon } from '../components/icons';
+import { recipeImageSource } from '../utils/recipeImage';
+import { opacity, radius, sizes, spacing } from '../theme/spacing';
+import { type } from '../theme/typography';
+import { Recipe } from '../data/mockData';
+import { PACKS } from '../data/packs';
 import { SCREENS } from '../constants/screens';
 import { CHARACTER_FILTERS, INGREDIENT_FILTERS, recipeHasIngredient } from '../constants/filters';
 import { useFavorites } from '../context/FavoritesContext';
@@ -17,28 +22,40 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { localizeRecipe, matchesSearch } from '../i18n/localizeRecipe';
 import { DrinkTag } from '../utils/drinkTags';
-import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../store/store';
 import { loadCatalogue } from '../store/catalogueSlice';
 import { selectVisibleDrinks } from '../store/selectors';
+import { usePurchases } from '../purchases/PurchasesContext';
+import { usePaywall } from '../purchases/usePaywall';
+import { PRODUCT_IDS } from '../purchases/products';
 
-// "all" and "my" are pseudo-categories; the rest are real drink tags.
+// "all" and "my" are pseudo-categories; the rest are real drink tags (all 15 from 1.1).
 type Category = 'all' | 'my' | DrinkTag;
 const CATEGORIES: Category[] = ['all', 'my', ...CHARACTER_FILTERS];
+const PAGE = 5;
 
+/**
+ * Home (README → Screens → Home): Search → Collections → Category → Filter by
+ * Ingredients → Featured Recipes. The Collections row hides while a search, a
+ * category or an ingredient filter is on. Tapping an unlocked collection lists its
+ * drinks ("<collection> · 10 drinks", "All recipes" back); a locked one opens its sheet.
+ */
 export const MocktailFinderScreen = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<Category>('all');
   const [activeIngredients, setActiveIngredients] = useState<string[]>([]);
-  const [displayLimit, setDisplayLimit] = useState<number>(5);
+  const [activePack, setActivePack] = useState<string | null>(null);
+  const [displayLimit, setDisplayLimit] = useState(PAGE);
 
   const navigation = useNavigation<StackNavigationProp<any>>();
+  const dispatch = useDispatch<AppDispatch>();
   const { isFavorite, toggleFavorite } = useFavorites();
   const { colors } = useTheme();
-  const { lang, t } = useLanguage();
-  const dispatch = useDispatch<AppDispatch>();
+  const { lang, t, plural } = useLanguage();
+  const { price, unlockedPacks, ownsEverything } = usePurchases();
+  const { openPaywall, openCollection } = usePaywall();
   const customRecipes = useSelector((state: RootState) => state.myRecipes.recipes);
-  const allAvailableRecipes = useSelector(selectVisibleDrinks);
+  const visibleDrinks = useSelector(selectVisibleDrinks);
   const { status, fillingIn } = useSelector((state: RootState) => state.catalogue);
   const loading = status === 'idle' || status === 'loading';
   const error = status === 'error';
@@ -53,22 +70,52 @@ export const MocktailFinderScreen = () => {
   }, [status, loadRecipes]);
 
   useEffect(() => {
-    setDisplayLimit(5);
-  }, [searchQuery, activeCategory, activeIngredients]);
+    setDisplayLimit(PAGE);
+  }, [searchQuery, activeCategory, activeIngredients, activePack]);
 
-  const toggleIngredient = useCallback((ing: string) => {
-    setActiveIngredients(prev =>
-      prev.includes(ing) ? prev.filter(i => i !== ing) : [...prev, ing]
-    );
+  const chooseCategory = useCallback((cat: Category) => {
+    setActivePack(null);
+    setActiveCategory(cat);
   }, []);
 
+  const toggleIngredient = useCallback((label: string) => {
+    setActivePack(null);
+    setActiveIngredients(prev => (prev.includes(label) ? prev.filter(i => i !== label) : [...prev, label]));
+  }, []);
+
+  const clearIngredients = useCallback(() => {
+    setActivePack(null);
+    setActiveIngredients([]);
+  }, []);
+
+  const openPack = useCallback(
+    (packId: string) => {
+      if (!unlockedPacks.includes(packId)) {
+        openCollection(packId);
+        return;
+      }
+      setActivePack(packId);
+      setActiveCategory('all');
+      setActiveIngredients([]);
+      setSearchQuery('');
+    },
+    [unlockedPacks, openCollection]
+  );
+
+  const pack = activePack ? PACKS.find(p => p.id === activePack) : undefined;
+  const filtersOn = !!searchQuery.trim() || activeCategory !== 'all' || activeIngredients.length > 0;
+  const everythingPrice = ownsEverything ? null : price(PRODUCT_IDS.everything);
+
   const filteredRecipes = useMemo(() => {
-    return allAvailableRecipes.filter(recipe => {
+    const searchHit = (recipe: Recipe) =>
+      !searchQuery.trim() || matchesSearch(recipe, localizeRecipe(recipe, lang, t), searchQuery);
+
+    if (activePack) return visibleDrinks.filter(r => r.packId === activePack && searchHit(r));
+
+    return visibleDrinks.filter(recipe => {
       // Search matches the name or any ingredient ("ginger" finds Masala Chai), in the
       // language on screen and in English.
-      if (searchQuery.trim() && !matchesSearch(recipe, localizeRecipe(recipe, lang, t), searchQuery)) {
-        return false;
-      }
+      if (!searchHit(recipe)) return false;
 
       if (activeCategory === 'my') {
         if (!customRecipes.some(cr => cr.id === recipe.id)) return false;
@@ -81,146 +128,165 @@ export const MocktailFinderScreen = () => {
       if (activeIngredients.length > 0) {
         if (!activeIngredients.some(label => recipeHasIngredient(recipe, label))) return false;
       }
-
       return true;
     });
-  }, [allAvailableRecipes, searchQuery, activeCategory, activeIngredients, customRecipes, lang, t]);
+  }, [visibleDrinks, searchQuery, activeCategory, activeIngredients, activePack, customRecipes, lang, t]);
 
-  const handleClearIngredients = useCallback(() => setActiveIngredients([]), []);
   const handleNavigateRandom = useCallback(() => navigation.navigate(SCREENS.RANDOM_TAB), [navigation]);
-  const handleLoadMore = useCallback(() => setDisplayLimit(prev => prev + 5), []);
+  const handleLoadMore = useCallback(() => setDisplayLimit(prev => prev + PAGE), []);
 
-  const renderHeader = useCallback(() => (
+  const renderHeader = () => (
     <>
-      <View style={styles.searchWrapper}>
-        <SearchBar
-          value={searchQuery}
-          onChangeText={setSearchQuery}
-          placeholder={t('search')}
-        />
+      <View style={styles.padded}>
+        <SearchBar value={searchQuery} onChangeText={setSearchQuery} placeholder={t('search')} />
+
+        {!filtersOn && (
+          <SectionTitle
+            title={t('collections')}
+            action={everythingPrice ? { label: `${t('everything')} · ${everythingPrice}`, onPress: () => openPaywall() } : undefined}
+          />
+        )}
       </View>
-      <View style={styles.section}>
-        <Text style={[styles.sectionTitle, { color: colors.categoryTitle }]}>{t('category')}</Text>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.horizontalList}
-        >
-          {CATEGORIES.map((cat) => (
-            <Badge
-              key={cat}
-              label={cat === 'all' ? t('all') : cat === 'my' ? t('myRecipes') : t(`tagChip.${cat}`)}
-              active={activeCategory === cat}
-              onPress={() => setActiveCategory(cat)}
+      {!filtersOn && (
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.packRow}>
+          {PACKS.map(p => (
+            <PackCard
+              key={p.id}
+              packId={p.id}
+              title={lang === 'uk' ? p.title_uk : p.title}
+              subtitle={lang === 'uk' ? p.subtitle_uk : p.subtitle}
+              locked={!unlockedPacks.includes(p.id)}
+              price={price(p.productId)}
+              unlockedLabel={t('unlocked')}
+              onPress={() => openPack(p.id)}
             />
           ))}
         </ScrollView>
+      )}
+
+      <View style={styles.padded}>
+        <SectionTitle title={t('category')} />
       </View>
-      <View style={styles.section}>
-        <Text style={[styles.sectionTitle, { color: colors.categoryTitle }]}>{t('filterIng')}</Text>
-        <View style={styles.wrapList}>
-          <Badge
-            label={t('all')}
-            active={activeIngredients.length === 0}
-            onPress={handleClearIngredients}
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chipRow}>
+        {CATEGORIES.map(cat => (
+          <Chip
+            key={cat}
+            label={cat === 'all' ? t('all') : cat === 'my' ? t('myRecipes') : t(`tagChip.${cat}`)}
+            active={!activePack && activeCategory === cat}
+            onPress={() => chooseCategory(cat)}
           />
-          {INGREDIENT_FILTERS.map((ing) => (
-            <Badge
-              key={ing.label}
-              label={t(`ing.${ing.key}`)}
-              active={activeIngredients.includes(ing.label)}
-              onPress={() => toggleIngredient(ing.label)}
-            />
-          ))}
-        </View>
+        ))}
+      </ScrollView>
+
+      <View style={styles.padded}>
+        <SectionTitle title={t('filterIng')} />
       </View>
-      <View style={[styles.section, { paddingBottom: spacing.s }]}>
-        <View style={styles.sectionHeaderRow}>
-          <Text style={[styles.sectionTitle, { color: colors.categoryTitle, marginBottom: 0, paddingHorizontal: 0 }]}>{t('featured')}</Text>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chipRow}>
+        <Chip label={t('all')} active={!activePack && activeIngredients.length === 0} onPress={clearIngredients} />
+        {INGREDIENT_FILTERS.map(ing => (
+          <Chip
+            key={ing.label}
+            label={t(`ing.${ing.key}`)}
+            active={!activePack && activeIngredients.includes(ing.label)}
+            onPress={() => toggleIngredient(ing.label)}
+          />
+        ))}
+      </ScrollView>
+
+      <View style={styles.padded}>
+        {pack ? (
+          <SectionTitle
+            title={`${lang === 'uk' ? pack.title_uk : pack.title} · ${pack.recipes.length} ${plural('drinks', pack.recipes.length)}`}
+            action={{ label: t('allRecipes'), onPress: () => setActivePack(null) }}
+          />
+        ) : (
+          <View style={styles.featuredRow}>
+            <Text accessibilityRole="header" style={[type.titleS, { color: colors.categoryTitle }]}>
+              {t('featured')}
+            </Text>
             <TouchableOpacity
-              style={{ flexDirection: 'row', backgroundColor: colors.activeBadgeBG, paddingHorizontal: 16, paddingVertical: 8, borderRadius: 20, justifyContent: 'center', alignItems: 'center' }}
+              style={[styles.surprise, { backgroundColor: colors.brand }]}
               onPress={handleNavigateRandom}
+              activeOpacity={opacity.pressed}
+              accessibilityRole="button"
             >
-              <ShuffleIcon size={16} color="#FFFFFF" />
-              <Text style={{ color: '#FFFFFF', marginLeft: 8, fontWeight: '600', fontSize: 14 }}>{t('surpriseBtn')}</Text>
+              <ShuffleIcon size={sizes.icon.s} color={colors.onBrand} />
+              <Text style={[type.label, { color: colors.onBrand }]}>{t('surpriseBtn')}</Text>
             </TouchableOpacity>
           </View>
-        </View>
+        )}
         {filteredRecipes.length === 0 && !loading && !error && (
-          <Text style={[styles.emptyText, { color: colors.subtitle }]}>
+          <Text style={[type.body, styles.emptyText, { color: colors.subtitle }]}>
             {fillingIn ? t('loadingDetails') : t('noMatch')}
           </Text>
         )}
       </View>
     </>
-  ), [searchQuery, activeCategory, activeIngredients, filteredRecipes.length, loading, fillingIn, error, colors, t, toggleIngredient, handleClearIngredients, handleNavigateRandom]);
+  );
 
-  const renderFooter = useCallback(() => {
-    if (filteredRecipes.length > displayLimit) {
+  const renderFooter = () =>
+    filteredRecipes.length > displayLimit ? (
+      <View style={styles.footer}>
+        <TouchableOpacity
+          style={[styles.browseMore, { backgroundColor: colors.surface, borderColor: colors.border }]}
+          activeOpacity={opacity.pressed}
+          onPress={handleLoadMore}
+          accessibilityRole="button"
+        >
+          <Text style={[type.button, { color: colors.title }]}>{t('browseMore')}</Text>
+        </TouchableOpacity>
+      </View>
+    ) : null;
+
+  const renderItem = useCallback(
+    ({ item }: { item: Recipe }) => {
+      const shown = localizeRecipe(item, lang, t);
       return (
-        <View style={styles.footerContainer}>
-          <TouchableOpacity
-            style={[styles.browseMoreBtn, { backgroundColor: colors.surface, borderColor: colors.badgeBorder }]}
-            activeOpacity={0.8}
-            onPress={handleLoadMore}
-          >
-            <Text style={[styles.browseMoreText, { color: colors.title }]}>{t('browseMore')}</Text>
-          </TouchableOpacity>
+        <View style={styles.padded}>
+          <RecipeCard
+            title={shown.title}
+            subtitle={shown.subtitle}
+            imageUrl={recipeImageSource(item.id, item.imageUrl)}
+            isFavorite={isFavorite(item.id)}
+            onFavoritePress={() => toggleFavorite(item)}
+            onPress={() => navigation.navigate(SCREENS.RECIPE_DETAILS, { recipe: item })}
+          />
         </View>
       );
-    }
-    return null;
-  }, [filteredRecipes.length, displayLimit, colors, t, handleLoadMore]);
-
-  const renderItem = useCallback(({ item }: { item: Recipe }) => {
-    const shown = localizeRecipe(item, lang, t);
-    return (
-    <View style={styles.recipeListItem}>
-      <RecipeCard
-        title={shown.title}
-        subtitle={shown.subtitle}
-        imageUrl={recipeImageSource(item.id, item.imageUrl)}
-        isFavorite={isFavorite(item.id)}
-        onFavoritePress={() => toggleFavorite(item)}
-        onPress={() => navigation.navigate(SCREENS.RECIPE_DETAILS, { recipe: item })}
-      />
-    </View>
-    );
-  }, [isFavorite, toggleFavorite, navigation, lang, t]);
+    },
+    [isFavorite, toggleFavorite, navigation, lang, t]
+  );
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <Header
-        title="Mocktail Finder"
-        subtitle=""
-      />
+      <Header title="Mocktail Finder" />
 
       {loading ? (
-        <View style={styles.centerContainer}>
-          <ActivityIndicator size="large" color={colors.activeBadgeBG} />
-          <Text style={[styles.loadingText, { color: colors.title }]}>{t('loadingRecipes')}</Text>
+        <View style={styles.center}>
+          <ActivityIndicator size="large" color={colors.brand} />
+          <Text style={[type.body, styles.loadingText, { color: colors.title }]}>{t('loadingRecipes')}</Text>
         </View>
       ) : error ? (
-        <View style={styles.centerContainer}>
-          <Text style={[styles.errorText, { color: colors.title }]}>{t('loadError')}</Text>
+        <View style={styles.center}>
+          <Text style={[type.body, styles.errorText, { color: colors.title }]}>{t('loadError')}</Text>
           <TouchableOpacity
-            style={[styles.retryBtn, { backgroundColor: colors.activeBadgeBG }]}
-            onPress={() => loadRecipes()}
-            activeOpacity={0.8}
+            style={[styles.retry, { backgroundColor: colors.brand }]}
+            onPress={loadRecipes}
+            activeOpacity={opacity.pressed}
             accessibilityRole="button"
           >
-            <Text style={styles.retryBtnText}>{t('tryAgain')}</Text>
+            <Text style={[type.button, { color: colors.onBrand }]}>{t('tryAgain')}</Text>
           </TouchableOpacity>
         </View>
       ) : (
         <FlatList
           data={filteredRecipes.slice(0, displayLimit)}
-          keyExtractor={item => item.id.toString()}
+          keyExtractor={item => item.id}
           renderItem={renderItem}
           ListHeaderComponent={renderHeader()}
           ListFooterComponent={renderFooter()}
-          contentContainerStyle={styles.scrollContent}
+          contentContainerStyle={styles.listContent}
+          keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         />
       )}
@@ -232,91 +298,69 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  scrollContent: {
-    paddingBottom: 100,
+  listContent: {
+    paddingTop: spacing.m,
+    paddingBottom: spacing.xxl * 2,
   },
-  searchWrapper: {
-    paddingHorizontal: spacing.l,
-    marginTop: spacing.m,
+  padded: {
+    paddingHorizontal: spacing.screen,
   },
-  section: {
-    marginTop: spacing.l,
+  packRow: {
+    paddingHorizontal: spacing.screen,
+    gap: spacing.sm,
   },
-  sectionHeaderRow: {
+  chipRow: {
+    paddingHorizontal: spacing.screen,
+    gap: spacing.s,
+  },
+  featuredRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: spacing.l,
-    marginBottom: spacing.s,
+    justifyContent: 'space-between',
+    gap: spacing.sm,
+    marginTop: spacing.ml,
+    marginBottom: spacing.m,
   },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: '700',
-    paddingHorizontal: spacing.l,
-    marginBottom: spacing.s,
-  },
-  totalCountText: {
-    fontSize: 14,
-    fontWeight: '500',
-  },
-  horizontalList: {
-    paddingHorizontal: spacing.l,
-  },
-  wrapList: {
+  surprise: {
+    height: sizes.chipRemovable,
+    paddingHorizontal: spacing.sm,
+    borderRadius: radius.pill,
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    paddingHorizontal: spacing.l,
+    alignItems: 'center',
+    gap: spacing.s,
   },
-  recipeListItem: {
-    paddingHorizontal: spacing.l,
+  emptyText: {
+    marginBottom: spacing.m,
   },
-  centerContainer: {
+  center: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: spacing.l,
+    padding: spacing.screen,
   },
   loadingText: {
     marginTop: spacing.m,
-    fontSize: 16,
   },
   errorText: {
-    fontSize: 16,
     textAlign: 'center',
-    lineHeight: 22,
   },
-  retryBtn: {
+  retry: {
     marginTop: spacing.l,
-    paddingVertical: 12,
-    paddingHorizontal: 28,
-    borderRadius: 12,
+    height: sizes.button,
+    paddingHorizontal: spacing.xl,
+    borderRadius: radius.control,
+    justifyContent: 'center',
   },
-  retryBtnText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  emptyText: {
-    paddingHorizontal: spacing.l,
-    fontSize: 15,
-    marginTop: spacing.s,
-  },
-  footerContainer: {
-    paddingHorizontal: spacing.l,
+  footer: {
+    paddingHorizontal: spacing.screen,
     paddingTop: spacing.m,
     paddingBottom: spacing.xl,
-    alignItems: 'center',
   },
-  browseMoreBtn: {
-    paddingVertical: 14,
-    paddingHorizontal: 24,
-    borderRadius: 12,
-    borderWidth: 1,
-    width: '100%',
+  browseMore: {
+    height: sizes.button,
+    borderRadius: radius.control,
+    borderWidth: sizes.hairline,
     alignItems: 'center',
-  },
-  browseMoreText: {
-    fontSize: 16,
-    fontWeight: '600',
+    justifyContent: 'center',
   },
 });

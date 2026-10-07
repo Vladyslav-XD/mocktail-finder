@@ -23,18 +23,15 @@ interface ThemeContextType {
   /** The theme actually in use, after 'system' is resolved. */
   theme: ThemeType;
   mode: ThemeMode;
-  /** Picks the opposite theme explicitly, leaving 'system' behind. */
-  toggleTheme: () => void;
-  /** Goes back to following the system setting. */
-  useSystemTheme: () => void;
+  /** About → Theme: System follows the iPhone; Light and Dark are explicit. Saved at once. */
+  setMode: (mode: ThemeMode) => void;
   colors: ThemeColors;
 }
 
 export const ThemeContext = createContext<ThemeContextType>({
   theme: 'light',
   mode: 'system',
-  toggleTheme: () => {},
-  useSystemTheme: () => {},
+  setMode: () => {},
   colors: lightColors,
 });
 
@@ -57,14 +54,11 @@ export const ThemeProvider = ({
     saveJson(STORAGE_KEYS.theme, next);
   }, []);
 
-  const toggleTheme = useCallback(() => choose(theme === 'light' ? 'dark' : 'light'), [choose, theme]);
-  const useSystemTheme = useCallback(() => choose('system'), [choose]);
-
   const currentColors = theme === 'light' ? lightColors : darkColors;
 
   const value = useMemo(
-    () => ({ theme, mode, toggleTheme, useSystemTheme, colors: currentColors }),
-    [theme, mode, toggleTheme, useSystemTheme, currentColors]
+    () => ({ theme, mode, setMode: choose, colors: currentColors }),
+    [theme, mode, choose, currentColors]
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
