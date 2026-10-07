@@ -2,6 +2,11 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-07 · Decision: Sora stays, Ukrainian titles in the system font (Vlad)
+- Vlad asked why Ukrainian titles look different from English ones. The reason: the bundled **Sora has no Cyrillic** (checked in `Sora_700Bold.ttf`: 378 code points, 0 in U+0400–04FF, no і ї є ґ), so iOS draws Cyrillic in San Francisco. The handoff loads Sora for Latin only, so the prototype does the same.
+- This affects only what is set in Sora: the screen titles in the header ("Мій бар", "Улюблені", "Про застосунок"…) and the share card title. The "Mocktail Finder" wordmark is Latin and stays Sora in both languages. Everything else uses the system font anyway.
+- **Decision (Vlad, 7 Oct): leave it as it is.** No font change. If it comes back, any Cyrillic display font must be checked for origin first (no Russian foundries such as ParaType).
+
 ## 2026-10-07 · 1.2 task 7 — E. My Bar (Claude Code)
 - **New third tab "My Bar" / «Мій бар»** (glass icon); Add Recipe moves to fourth. The prototype tab bar is Home · Favourites · My Bar · Add; the task's "rename the third tab" came from Figma ("Kitchen"), and the handoff wins. Header subtitle "Mix with what you have".
 - `MyBarScreen` with `SegmentedControl` "What I have | Shopping list":
