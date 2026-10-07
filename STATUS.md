@@ -2,6 +2,14 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-07 · 1.2 task 0 — branch, version, spec in the repo (Claude Code)
+- Branch `release/1.2` created from `main` at `54056b7` (1.1.0 build 5, tag `v1.1.0`); `main` and `release/1.1` untouched.
+- `app.json`: `expo.version` → `1.2.0`. Build number not touched (EAS, `appVersionSource: remote`).
+- `CLAUDE.md`: push rule now names `release/1.2`; "Current status" says 1.2 is in progress on `release/1.2` (Cowork's other edits to the file kept as they were).
+- Committed the spec `design_handoff_mocktail_1.2/` (126 files, 13 MB; the prototype HTML alone is 7 MB), `TASKS.md`, `TESTING.md` (Cowork's skeleton) and `src/data/uk/drinks.json`.
+- Decision without asking: `src/data/uk/drinks.json` goes in this commit rather than task 2 — task 2 already treats it as "in the repo", and it is data, not code.
+- Verified: `src/data/uk/drinks.json` parses, 58 ids; `recipes.json` parses, 58 catalogue drinks + 6 packs; handoff scanned for keys/secrets — none; `npx tsc --noEmit` clean.
+
 ## 2026-09-24 · 1.1 is live (Claude Code)
 - **1.1.0 (build 5) released on the App Store on 24 September 2026:** https://apps.apple.com/app/id6811610325
 - Task 7 in `TASKS.md` ticked — the whole 1.1 queue (tasks 0–7) is now closed. What shipped: delete and edit your own recipes, camera for recipe photos, 58 bundled drink photos, a remembered theme (system/light/dark), UK spelling, opaque sticky headers and the photo scrim.

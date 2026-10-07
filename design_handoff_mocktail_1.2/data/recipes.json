@@ -1,0 +1,7003 @@
+{
+ "generated": "2026-10-05",
+ "catalogue": [
+  {
+   "id": "db-12560",
+   "name": "Afterglow",
+   "tags": [
+    "Iced",
+    "Citrus",
+    "Tropical"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1 part",
+     "name": "Grenadine"
+    },
+    {
+     "measure": "4 parts",
+     "name": "Orange juice"
+    },
+    {
+     "measure": "4 parts",
+     "name": "Pineapple juice"
+    }
+   ],
+   "steps": [
+    "Mix.",
+    "Serve over ice."
+   ],
+   "photo": "afterglow.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12562",
+   "name": "Alice Cocktail",
+   "tags": [
+    "Iced",
+    "Citrus",
+    "Tropical"
+   ],
+   "glass": "Cocktail glass",
+   "ingredients": [
+    {
+     "measure": "1 cl",
+     "name": "Grenadine"
+    },
+    {
+     "measure": "1 cl",
+     "name": "Orange juice"
+    },
+    {
+     "measure": "2 cl",
+     "name": "Pineapple juice"
+    },
+    {
+     "measure": "4 cl",
+     "name": "Cream"
+    }
+   ],
+   "steps": [
+    "Shake well, strain into a large cocktail glass."
+   ],
+   "photo": "alice-cocktail.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12862",
+   "name": "Aloha Fruit punch",
+   "tags": [
+    "Iced",
+    "Fruity",
+    "Spiced"
+   ],
+   "glass": "Collins Glass",
+   "ingredients": [
+    {
+     "measure": "3/4 cup",
+     "name": "Water"
+    },
+    {
+     "measure": "2 tsp",
+     "name": "Ginger"
+    },
+    {
+     "measure": "2 cups",
+     "name": "Guava juice"
+    },
+    {
+     "measure": "1 1/2 tblsp",
+     "name": "Lemon juice"
+    },
+    {
+     "measure": "1 1/2 cup",
+     "name": "Pineapple"
+    },
+    {
+     "measure": "1 cup",
+     "name": "Sugar"
+    },
+    {
+     "measure": "3-4 cups",
+     "name": "Pineapple juice"
+    }
+   ],
+   "steps": [
+    "Add 1/4 cup water to ginger root.",
+    "Boil 3 minutes.",
+    "Strain.",
+    "Add the liquid to the guava, lemon and pineapple juices.",
+    "Make a syrup of sugar and remaining water.",
+    "Cool.",
+    "Combine with juices and pineapple.",
+    "Chill throroughly."
+   ],
+   "photo": "aloha-fruit-punch.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-15106",
+   "name": "Apello",
+   "tags": [
+    "Citrus",
+    "Fruity"
+   ],
+   "glass": "Collins Glass",
+   "ingredients": [
+    {
+     "measure": "4 cl",
+     "name": "Orange juice"
+    },
+    {
+     "measure": "3 cl",
+     "name": "Grapefruit juice"
+    },
+    {
+     "measure": "1 cl",
+     "name": "Apple juice"
+    },
+    {
+     "measure": "1",
+     "name": "Maraschino cherry"
+    }
+   ],
+   "steps": [
+    "Stirr.",
+    "Grnish with maraschino cherry."
+   ],
+   "photo": "apello.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12710",
+   "name": "Apple Berry Smoothie",
+   "tags": [
+    "Berry",
+    "Fruity"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1 cup",
+     "name": "Berries"
+    },
+    {
+     "measure": "2",
+     "name": "Apple"
+    }
+   ],
+   "steps": [
+    "Throw everything into a blender and liquify."
+   ],
+   "photo": "apple-berry-smoothie.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12564",
+   "name": "Apple Karate",
+   "tags": [
+    "Fruity"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "2 cups",
+     "name": "Apple juice"
+    },
+    {
+     "measure": "1 large",
+     "name": "Carrot"
+    }
+   ],
+   "steps": [
+    "Place all ingredients in the blender jar - cover and whiz on medium speed until well blended.",
+    "Pour in one tall, 2 medium or 3 small glasses and drink up."
+   ],
+   "photo": "apple-karate.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12708",
+   "name": "Banana Cantaloupe Smoothie",
+   "tags": [
+    "Fruity"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "Juice of 1/2",
+     "name": "Cantaloupe"
+    },
+    {
+     "measure": "1",
+     "name": "Banana"
+    }
+   ],
+   "steps": [
+    "Juice cantaloupe, pour juice into blender, add banana, and liquify."
+   ],
+   "photo": "banana-cantaloupe-smoothie.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12654",
+   "name": "Banana Milk Shake",
+   "tags": [
+    "Iced",
+    "Creamy",
+    "Fruity"
+   ],
+   "glass": "White wine glass",
+   "ingredients": [
+    {
+     "measure": "10 cl cold",
+     "name": "Milk"
+    },
+    {
+     "measure": "4 cl",
+     "name": "Orange juice"
+    },
+    {
+     "measure": "2 tsp",
+     "name": "Sugar syrup"
+    },
+    {
+     "measure": "1/2",
+     "name": "Banana"
+    }
+   ],
+   "steps": [
+    "Blend very well, preferably in a household mixer.",
+    "Serve in a wine glass, garnish with whipped cream and a piece of banana."
+   ],
+   "photo": "banana-milk-shake.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12656",
+   "name": "Banana Strawberry Shake",
+   "tags": [
+    "Frozen",
+    "Berry",
+    "Fruity"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1/2 lb frozen",
+     "name": "Strawberries"
+    },
+    {
+     "measure": "1 frozen",
+     "name": "Banana"
+    },
+    {
+     "measure": "1 cup plain",
+     "name": "Yoghurt"
+    },
+    {
+     "measure": "1 cup",
+     "name": "Milk"
+    },
+    {
+     "measure": "to taste",
+     "name": "Honey"
+    }
+   ],
+   "steps": [
+    "Blend all together in a blender until smooth."
+   ],
+   "photo": "banana-strawberry-shake.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12658",
+   "name": "Banana Strawberry Shake Daiquiri",
+   "tags": [
+    "Frozen",
+    "Berry",
+    "Fruity"
+   ],
+   "glass": "Cocktail Glass",
+   "ingredients": [
+    {
+     "measure": "1/2 lb frozen",
+     "name": "Strawberries"
+    },
+    {
+     "measure": "1 frozen",
+     "name": "Banana"
+    },
+    {
+     "measure": "2 cups fresh",
+     "name": "Apple juice"
+    }
+   ],
+   "steps": [
+    "Blend all together in a blender until smooth."
+   ],
+   "photo": "banana-strawberry-shake-daiquiri.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12572",
+   "name": "Bora Bora",
+   "tags": [
+    "Iced",
+    "Tropical",
+    "Citrus"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "10 cl",
+     "name": "Pineapple juice"
+    },
+    {
+     "measure": "6 cl",
+     "name": "Passion fruit juice"
+    },
+    {
+     "measure": "1 cl",
+     "name": "Lemon juice"
+    },
+    {
+     "measure": "1 cl",
+     "name": "Grenadine"
+    }
+   ],
+   "steps": [
+    "Prepare in a blender or shaker, serve in a highball glass on the rocks.",
+    "Garnish with 1 slice of pineapple and one cherry."
+   ],
+   "photo": "bora-bora.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12730",
+   "name": "Castillian Hot Chocolate",
+   "tags": [
+    "Hot",
+    "Chocolate",
+    "Sweet"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "1/2 cup",
+     "name": "Cocoa powder"
+    },
+    {
+     "measure": "1 cup",
+     "name": "Sugar"
+    },
+    {
+     "measure": "7 tsp",
+     "name": "Cornstarch"
+    },
+    {
+     "measure": "1/2 cup",
+     "name": "Water"
+    },
+    {
+     "measure": "1 qt",
+     "name": "Milk"
+    }
+   ],
+   "steps": [
+    "Shift the cocoa and sugar together into a medium-sized saucepan.",
+    "Dissolve the cornstarch in the water, and stir into the cocoa and sugar until it is a smooth paste.",
+    "Begin heating the mixture, stirring it with a whisk, and gradually pour in the milk.",
+    "Continue stirring with the whisk as you bring the liquid to a simmer.",
+    "Allow the chocolate to simmer for about 10 minutes, stirring often, until it is thick, glossy and completely smooth.",
+    "Serve steaming hot in coffee mug.",
+    "Serves six."
+   ],
+   "photo": "castillian-hot-chocolate.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12732",
+   "name": "Chocolate Beverage",
+   "tags": [
+    "Hot",
+    "Chocolate",
+    "Spiced"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "6 cups",
+     "name": "Milk"
+    },
+    {
+     "measure": "3 oz Mexican",
+     "name": "Chocolate"
+    },
+    {
+     "measure": "1 tsp powdered",
+     "name": "Cinnamon"
+    },
+    {
+     "measure": "3",
+     "name": "Egg"
+    }
+   ],
+   "steps": [
+    "Boil milk in the top of a deep double boiler five minutes.",
+    "Remove from fire and add chocolate, mixed with the cinnamon, a little at a time, beating with molinillo or egg beater after each addition.",
+    "When the chocolate is thoroughly blended, heat to the boiling point.",
+    "Place over bottom of double boiler and add eggs, whipping constantly, until they are thoroughly blended and the mixture is frothing.",
+    "Serve in coffee mug.",
+    "Serves eight."
+   ],
+   "photo": "chocolate-beverage.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12734",
+   "name": "Chocolate Drink",
+   "tags": [
+    "Hot",
+    "Chocolate",
+    "Creamy"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "125 gr",
+     "name": "Chocolate"
+    },
+    {
+     "measure": "3/4 L",
+     "name": "Milk"
+    },
+    {
+     "measure": "",
+     "name": "Water"
+    }
+   ],
+   "steps": [
+    "Melt the bar in a small amount of boiling water.",
+    "Add milk.",
+    "Cook over low heat, whipping gently (with a whisk, i would assume) until heated well.",
+    "Don't let it boil!",
+    "Serve in coffee mug."
+   ],
+   "photo": "chocolate-drink.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-17108",
+   "name": "Coke and Drops",
+   "tags": [
+    "Iced",
+    "Sparkling",
+    "Citrus"
+   ],
+   "glass": "Cocktail glass",
+   "ingredients": [
+    {
+     "measure": "1 dl",
+     "name": "Coca-Cola"
+    },
+    {
+     "measure": "7 drops",
+     "name": "Lemon juice"
+    }
+   ],
+   "steps": [
+    "Take a glass, pour the Coke in the glass, then you take 7 drops of lemon juice.",
+    "Granish with a lemon slice on the rim of the glass."
+   ],
+   "photo": "coke-and-drops.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12890",
+   "name": "Cranberry Punch",
+   "tags": [
+    "Iced",
+    "Berry",
+    "Tropical"
+   ],
+   "glass": "Punch Bowl",
+   "ingredients": [
+    {
+     "measure": "4 cups",
+     "name": "Cranberry juice"
+    },
+    {
+     "measure": "1 1/2 cup",
+     "name": "Sugar"
+    },
+    {
+     "measure": "4 cups",
+     "name": "Pineapple juice"
+    },
+    {
+     "measure": "1 tblsp",
+     "name": "Almond flavoring"
+    },
+    {
+     "measure": "2 qt",
+     "name": "Ginger ale"
+    }
+   ],
+   "steps": [
+    "Combine first four ingredients.",
+    "Stir until sugar is dissolved, chill.",
+    "Then add ginger ale just before serving.",
+    "Add ice ring to keep punch cold."
+   ],
+   "photo": "cranberry-punch.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12736",
+   "name": "Drinking Chocolate",
+   "tags": [
+    "Hot",
+    "Chocolate",
+    "Spiced"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "2 oz",
+     "name": "Heavy cream"
+    },
+    {
+     "measure": "6-8 oz",
+     "name": "Milk"
+    },
+    {
+     "measure": "1 stick",
+     "name": "Cinnamon"
+    },
+    {
+     "measure": "1",
+     "name": "Vanilla"
+    },
+    {
+     "measure": "2 oz finely chopped dark",
+     "name": "Chocolate"
+    },
+    {
+     "measure": "Fresh",
+     "name": "Whipped cream"
+    }
+   ],
+   "steps": [
+    "Heat the cream and milk with the cinnamon and vanilla bean very slowly for 15-20 minutes. (If you don't have any beans add 1-2 tsp of vanilla after heating).",
+    "Remove the bean and cinnamon.",
+    "Add the chocolate.",
+    "Mix until fully melted.",
+    "Serve topped with some very dense fresh whipped cream.",
+    "Serves 1-2 depending upon how much of a glutton you are.",
+    "For a richer chocolate, use 4 oz of milk, 4 oz of cream, 4 oz of chocolate.",
+    "Serve in coffee mug."
+   ],
+   "photo": "drinking-chocolate.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12668",
+   "name": "Egg Cream",
+   "tags": [
+    "Iced",
+    "Creamy",
+    "Chocolate"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "2 tblsp",
+     "name": "Chocolate syrup"
+    },
+    {
+     "measure": "6 oz whole",
+     "name": "Milk"
+    },
+    {
+     "measure": "6 oz",
+     "name": "Soda water"
+    }
+   ],
+   "steps": [
+    "Mix syrup and milk in a fountain glass.",
+    "Add soda water, serve with a straw."
+   ],
+   "photo": "egg-cream.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12768",
+   "name": "Frappé",
+   "tags": [
+    "Iced",
+    "Coffee",
+    "Creamy"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1/2 cup black",
+     "name": "Coffee"
+    },
+    {
+     "measure": "1/2 cup",
+     "name": "Milk"
+    },
+    {
+     "measure": "1-2 tsp",
+     "name": "Sugar"
+    }
+   ],
+   "steps": [
+    "Mix together.",
+    "Blend at highest blender speed for about 1 minute.",
+    "Pour into a glass and drink with a straw.",
+    "Notes: This works best if everything is cold (if you make fresh coffee, mix it with the milk and let it sit in the fridge for 1/2 hour.",
+    "If it is not frothy, add more milk, or even just some more milk powder.",
+    "The froth gradually turns to liquid at the bottom of the glass, so you will find that you can sit and drink this for about 1/2 hour, with more iced coffee continually appearing at the bottom.",
+    "Very refreshing."
+   ],
+   "photo": "frappe.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12670",
+   "name": "Fruit Cooler",
+   "tags": [
+    "Iced",
+    "Fruity",
+    "Berry"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1 can frozen",
+     "name": "Apple juice"
+    },
+    {
+     "measure": "1 cup",
+     "name": "Strawberries"
+    },
+    {
+     "measure": "2 tblsp",
+     "name": "Sugar"
+    },
+    {
+     "measure": "1",
+     "name": "Lemon"
+    },
+    {
+     "measure": "1",
+     "name": "Apple"
+    },
+    {
+     "measure": "1 L",
+     "name": "Soda water"
+    },
+    {
+     "measure": "",
+     "name": "Ice"
+    }
+   ],
+   "steps": [
+    "Toss strawberries with sugar, and let sit overnight in refrigerator.",
+    "Cut lemon, reserve two slices.",
+    "Juice the rest.",
+    "Mix together the lemon juice, strawberries, apple juice, and soda water.",
+    "Add slices of lemon (decor, really).",
+    "In glasses, put ice cubes, and a slice of apple.",
+    "Pour drink in, and serve."
+   ],
+   "photo": "fruit-cooler.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12672",
+   "name": "Fruit Flip-Flop",
+   "tags": [
+    "Fruity",
+    "Creamy"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1 cup",
+     "name": "Yoghurt"
+    },
+    {
+     "measure": "1 cup",
+     "name": "Fruit juice"
+    }
+   ],
+   "steps": [
+    "Place all ingredients in the blender jar - cover and whiz on medium speed until well blended.",
+    "Pour in one tall, 2 medium or 3 small glasses and drink up."
+   ],
+   "photo": "fruit-flip-flop.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12674",
+   "name": "Fruit Shake",
+   "tags": [
+    "Frozen",
+    "Fruity",
+    "Citrus"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1 cup fruit",
+     "name": "Yoghurt"
+    },
+    {
+     "measure": "1",
+     "name": "Banana"
+    },
+    {
+     "measure": "4 oz frozen",
+     "name": "Orange juice"
+    },
+    {
+     "measure": "1/2 piece textural",
+     "name": "Fruit"
+    },
+    {
+     "measure": "6",
+     "name": "Ice"
+    }
+   ],
+   "steps": [
+    "Blend til smooth."
+   ],
+   "photo": "fruit-shake.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12712",
+   "name": "Grape lemon pineapple Smoothie",
+   "tags": [
+    "Fruity",
+    "Citrus",
+    "Tropical"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "1 cup",
+     "name": "Grapes"
+    },
+    {
+     "measure": "1/4",
+     "name": "Lemon"
+    },
+    {
+     "measure": "1/2",
+     "name": "Pineapple"
+    }
+   ],
+   "steps": [
+    "Throw everything into a blender and liquify."
+   ],
+   "photo": "grape-lemon-pineapple-smoothie.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12954",
+   "name": "Holloween Punch",
+   "tags": [
+    "Iced",
+    "Fruity",
+    "Sparkling"
+   ],
+   "glass": "Punch bowl",
+   "ingredients": [
+    {
+     "measure": "",
+     "name": "Grape juice"
+    },
+    {
+     "measure": ", orange",
+     "name": "Carbonated soft drink"
+    },
+    {
+     "measure": "",
+     "name": "Sherbet"
+    },
+    {
+     "measure": "",
+     "name": "Sherbet"
+    }
+   ],
+   "steps": [
+    "Take a bunch of grape juice and a bunch of fizzy stuff (club soda, ginger ale, lemonlime, whatever).",
+    "Mix them in a punch bowl.",
+    "Take orange sherbet and lime sherbet.",
+    "Scoop out scoops and float them in the punch, let them melt a little so that a nasty film spreads all over the top of the punch but there are still \"bubbles\" in it in the form of sherbet scoops.",
+    "Looks horrible, tastes just fine."
+   ],
+   "photo": "holloween-punch.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12738",
+   "name": "Hot Chocolate to Die for",
+   "tags": [
+    "Hot",
+    "Chocolate",
+    "Creamy"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "12 oz fine",
+     "name": "Chocolate"
+    },
+    {
+     "measure": "1 tsp",
+     "name": "Butter"
+    },
+    {
+     "measure": "1/2 tsp",
+     "name": "Vanilla extract"
+    },
+    {
+     "measure": "1 cup",
+     "name": "Half-and-half"
+    },
+    {
+     "measure": "mini",
+     "name": "Marshmallows"
+    }
+   ],
+   "steps": [
+    "Melt the chocolate, butter and vanilla in a double boiler.",
+    "When just smooth stir in the cream."
+   ],
+   "photo": "hot-chocolate-to-die-for.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12770",
+   "name": "Iced Coffee",
+   "tags": [
+    "Iced",
+    "Coffee",
+    "Sweet"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "1/4 cup instant",
+     "name": "Coffee"
+    },
+    {
+     "measure": "1/4 cup",
+     "name": "Sugar"
+    },
+    {
+     "measure": "1/4 cup hot",
+     "name": "Water"
+    },
+    {
+     "measure": "4 cups cold",
+     "name": "Milk"
+    }
+   ],
+   "steps": [
+    "Mix together until coffee and sugar is dissolved.",
+    "Add milk.",
+    "Shake well.",
+    "Using a blender or milk shake maker produces a very foamy drink.",
+    "Serve in coffee mug."
+   ],
+   "photo": "iced-coffee.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-17176",
+   "name": "Ipamena",
+   "tags": [
+    "Iced",
+    "Citrus",
+    "Tropical"
+   ],
+   "glass": "Wine Glass",
+   "ingredients": [
+    {
+     "measure": "½",
+     "name": "Lime"
+    },
+    {
+     "measure": "2 tsp",
+     "name": "Brown sugar"
+    },
+    {
+     "measure": "4 cl",
+     "name": "Passion fruit juice"
+    },
+    {
+     "measure": "top up with",
+     "name": "Ginger ale"
+    },
+    {
+     "measure": "fill",
+     "name": "Ice"
+    }
+   ],
+   "steps": [
+    "Cut half a lime into pieces, place in a shaker, add the sugar and crush.",
+    "Measure the passion fruit juice, add it to the shaker and fill up with ice cubes.",
+    "Close the shaker and shake vigorously.",
+    "Pour the liquid into a glass, top up with ginger ale, stir with a teaspoon and then garnish the rim of the glass with a slice of lime"
+   ],
+   "photo": "ipamena.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12688",
+   "name": "Just a Moonmint",
+   "tags": [
+    "Chocolate",
+    "Minty",
+    "Creamy"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "2 cups",
+     "name": "Milk"
+    },
+    {
+     "measure": "",
+     "name": "Chocolate syrup"
+    },
+    {
+     "measure": "",
+     "name": "Mint syrup"
+    }
+   ],
+   "steps": [
+    "Place all ingredients in the blender jar - cover and whiz on medium speed until well blended.",
+    "Pour in one tall, 2 medium or 3 small glasses and drink up."
+   ],
+   "photo": "just-a-moonmint.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12720",
+   "name": "Kill the cold Smoothie",
+   "tags": [
+    "Hot",
+    "Spiced",
+    "Citrus"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "1 inch",
+     "name": "Ginger"
+    },
+    {
+     "measure": "1/4",
+     "name": "Lemon"
+    },
+    {
+     "measure": "1 cup hot",
+     "name": "Water"
+    }
+   ],
+   "steps": [
+    "Juice ginger and lemon and add it to hot water.",
+    "You may add cardomom."
+   ],
+   "photo": "kill-the-cold-smoothie.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12714",
+   "name": "Kiwi Papaya Smoothie",
+   "tags": [
+    "Fruity",
+    "Tropical"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "3",
+     "name": "Kiwi"
+    },
+    {
+     "measure": "1/2",
+     "name": "Papaya"
+    }
+   ],
+   "steps": [
+    "Throw everything into a blender and liquify."
+   ],
+   "photo": "kiwi-papaya-smoothie.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12690",
+   "name": "Lassi - A South Indian Drink",
+   "tags": [
+    "Iced",
+    "Spiced",
+    "Savoury"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1/2 cup plain",
+     "name": "Yoghurt"
+    },
+    {
+     "measure": "1 1/4 cup cold",
+     "name": "Water"
+    },
+    {
+     "measure": "1/2 tsp ground roasted",
+     "name": "Cumin seed"
+    },
+    {
+     "measure": "1/4 tsp",
+     "name": "Salt"
+    },
+    {
+     "measure": "1/4 tsp dried",
+     "name": "Mint"
+    }
+   ],
+   "steps": [
+    "Blend in a blender for 3 seconds.",
+    "Lassi is one of the easiest things to make, and there are many ways of making it.",
+    "Basically, it is buttermilk (yoghurt whisked with water), and you can choose almost any consistency that you like, from the thinnest to the thickest.",
+    "Serve cold."
+   ],
+   "photo": "lassi-a-south-indian-drink.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12698",
+   "name": "Lassi - Mango",
+   "tags": [
+    "Iced",
+    "Tropical",
+    "Creamy"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "2",
+     "name": "Mango"
+    },
+    {
+     "measure": "2 cups",
+     "name": "Yoghurt"
+    },
+    {
+     "measure": "1/2 cup",
+     "name": "Sugar"
+    },
+    {
+     "measure": "1 cup iced",
+     "name": "Water"
+    }
+   ],
+   "steps": [
+    "Put it all in a blender and pour over crushed ice.",
+    "You can also use other fruits like strawberries and bananas."
+   ],
+   "photo": "lassi-mango.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12696",
+   "name": "Lassi - Sweet",
+   "tags": [
+    "Iced",
+    "Citrus",
+    "Creamy"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "1 cup",
+     "name": "Yoghurt"
+    },
+    {
+     "measure": "2 cups cold",
+     "name": "Water"
+    },
+    {
+     "measure": "4 tblsp",
+     "name": "Sugar"
+    },
+    {
+     "measure": "pinch",
+     "name": "Salt"
+    },
+    {
+     "measure": "2 tblsp",
+     "name": "Lemon juice"
+    }
+   ],
+   "steps": [
+    "Put all ingredients into a blender and blend until nice and frothy.",
+    "Serve chilled."
+   ],
+   "photo": "lassi-sweet.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12692",
+   "name": "Lassi Khara",
+   "tags": [
+    "Iced",
+    "Savoury",
+    "Creamy"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1 cup",
+     "name": "Yoghurt"
+    },
+    {
+     "measure": "2 cups cold",
+     "name": "Water"
+    },
+    {
+     "measure": "1 tsp",
+     "name": "Salt"
+    },
+    {
+     "measure": "1 pinch",
+     "name": "Asafoetida"
+    }
+   ],
+   "steps": [
+    "Blend (frappe) in blender until frothy.",
+    "Add torn curry leaves and serve cold."
+   ],
+   "photo": "lassi-khara.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12694",
+   "name": "Lassi Raita",
+   "tags": [
+    "Frozen",
+    "Citrus",
+    "Creamy"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "2 cups",
+     "name": "Yoghurt"
+    },
+    {
+     "measure": "4-6",
+     "name": "Ice"
+    },
+    {
+     "measure": "",
+     "name": "Sugar"
+    },
+    {
+     "measure": "",
+     "name": "Lime"
+    },
+    {
+     "measure": "",
+     "name": "Salt"
+    }
+   ],
+   "steps": [
+    "Blend the yoghurt and ice cubes together, until the yoghurt becomes more liquid.",
+    "Add sugar to taste.",
+    "The lemon/lime is optional but it gives it a slightly tart taste.",
+    "Dash of salt.",
+    "Raita is also good for the summer.",
+    "Instead of having a traditional salad you can make raita instead."
+   ],
+   "photo": "lassi-raita.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12702",
+   "name": "Lemouroudji",
+   "tags": [
+    "Iced",
+    "Spiced",
+    "Citrus"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "2 pieces",
+     "name": "Ginger"
+    },
+    {
+     "measure": "1 gal",
+     "name": "Water"
+    },
+    {
+     "measure": "1 lb",
+     "name": "Lemon"
+    },
+    {
+     "measure": "1 cup",
+     "name": "Sugar"
+    },
+    {
+     "measure": "ground",
+     "name": "Cayenne pepper"
+    }
+   ],
+   "steps": [
+    "Juice the lemons.",
+    "Peel and grate the ginger.",
+    "Place the grated ginger and a liberal dash of the cayenne pepper into a piece of cheesecloth, and tie it into a knot.",
+    "Let soak in the water.",
+    "After 15 minutes or so, add the sugar, and the lemon juice.",
+    "Chill, and serve."
+   ],
+   "photo": "lemouroudji.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12704",
+   "name": "Limeade",
+   "tags": [
+    "Iced",
+    "Citrus",
+    "Sweet"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "Juice of 1",
+     "name": "Lime"
+    },
+    {
+     "measure": "1 tblsp",
+     "name": "Sugar"
+    },
+    {
+     "measure": "(seltzer water)",
+     "name": "Soda water"
+    },
+    {
+     "measure": "",
+     "name": "Lime peel"
+    }
+   ],
+   "steps": [
+    "In a large glass, put the lime juice and sugar, and stir well.",
+    "Add cold seltzer water to fill.",
+    "Put the lime peels in the glass.",
+    "Drink.",
+    "Repeat until limes or soda run out."
+   ],
+   "photo": "limeade.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12716",
+   "name": "Mango Orange Smoothie",
+   "tags": [
+    "Tropical",
+    "Citrus"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1",
+     "name": "Mango"
+    },
+    {
+     "measure": "2",
+     "name": "Orange"
+    }
+   ],
+   "steps": [
+    "Throw everything into a blender and liquify."
+   ],
+   "photo": "mango-orange-smoothie.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12774",
+   "name": "Masala Chai",
+   "tags": [
+    "Hot",
+    "Tea",
+    "Spiced"
+   ],
+   "glass": "Coffee Mug",
+   "ingredients": [
+    {
+     "measure": "2 cups",
+     "name": "Water"
+    },
+    {
+     "measure": "3-4 tsp",
+     "name": "Tea"
+    },
+    {
+     "measure": "1 chunk dried",
+     "name": "Ginger"
+    },
+    {
+     "measure": "3-4 crushed",
+     "name": "Cardamom"
+    },
+    {
+     "measure": "3",
+     "name": "Cloves"
+    },
+    {
+     "measure": "1 piece",
+     "name": "Cinnamon"
+    },
+    {
+     "measure": "1-2 whole",
+     "name": "Black pepper"
+    },
+    {
+     "measure": "to taste",
+     "name": "Sugar"
+    },
+    {
+     "measure": "to taste",
+     "name": "Milk"
+    }
+   ],
+   "steps": [
+    "Bring 2 cups of water to boil.",
+    "Add all the ingredients and boil again for about 15 seconds.",
+    "Let stand for a minute.",
+    "Warm milk in a pot.",
+    "Filter tea into cups.",
+    "Add milk and sugar.",
+    "That's IT."
+   ],
+   "photo": "masala-chai.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12776",
+   "name": "Melya",
+   "tags": [
+    "Hot",
+    "Coffee",
+    "Chocolate"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "",
+     "name": "Espresso"
+    },
+    {
+     "measure": "Unsweetened",
+     "name": "Honey"
+    },
+    {
+     "measure": "",
+     "name": "Cocoa powder"
+    }
+   ],
+   "steps": [
+    "Brew espresso.",
+    "In a coffee mug, place 1 teaspoon of unsweetened powdered cocoa, then cover a teaspoon with honey and drizzle it into the cup.",
+    "Stir while the coffee brews, this is the fun part.",
+    "The cocoa seems to coat the honey without mixing, so you get a dusty, sticky mass that looks as though it will never mix.",
+    "Then all at once, presto!",
+    "It looks like dark chocolate sauce.",
+    "Pour hot espresso over the honey, stirring to dissolve.",
+    "Serve with cream."
+   ],
+   "photo": "melya.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12744",
+   "name": "Microwave Hot Cocoa",
+   "tags": [
+    "Hot",
+    "Chocolate",
+    "Sweet"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "5 tblsp",
+     "name": "Sugar"
+    },
+    {
+     "measure": "3 tblsp",
+     "name": "Cocoa powder"
+    },
+    {
+     "measure": "1 dash",
+     "name": "Salt"
+    },
+    {
+     "measure": "3 tblsp hot",
+     "name": "Water"
+    },
+    {
+     "measure": "2 cups",
+     "name": "Milk"
+    },
+    {
+     "measure": "1/4 tsp",
+     "name": "Vanilla extract"
+    }
+   ],
+   "steps": [
+    "Combine sugar, cocoa, salt and hot water in 1-quart micro-proof measuring cup (or coffee mug).",
+    "Microwave at HIGH (100%) for 1 to 1 1/2 minutes or until boiling.",
+    "Add milk, sitr and microwave an additonal 1 1/2 to 2 minutes or until hot.",
+    "Stir in vanilla, blend well."
+   ],
+   "photo": "microwave-hot-cocoa.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12746",
+   "name": "Nuked Hot Chocolate",
+   "tags": [
+    "Hot",
+    "Chocolate",
+    "Sweet"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "2 tsp",
+     "name": "Cocoa powder"
+    },
+    {
+     "measure": "1 tsp",
+     "name": "Sugar"
+    },
+    {
+     "measure": "1/2 tsp",
+     "name": "Vanilla extract"
+    },
+    {
+     "measure": "12 oz",
+     "name": "Milk"
+    }
+   ],
+   "steps": [
+    "Mix with a bit of milk (1 oz or so) in coffee mug.",
+    "Nuke mug for about 30-50 seconds.",
+    "Stir until the heated cocoa dissolves.",
+    "Fill mug with milk.",
+    "Nuke for 1-2 minutes, depending on wattage and preferences as to burnt mouth parts."
+   ],
+   "photo": "nuked-hot-chocolate.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12748",
+   "name": "Orange Scented Hot Chocolate",
+   "tags": [
+    "Hot",
+    "Chocolate",
+    "Citrus"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "2 cups",
+     "name": "Milk"
+    },
+    {
+     "measure": "4 oz chopped bittersweet or semi-sweet",
+     "name": "Chocolate"
+    },
+    {
+     "measure": "3 2-inch strips",
+     "name": "Orange peel"
+    },
+    {
+     "measure": "1/2 tsp instant",
+     "name": "Espresso"
+    },
+    {
+     "measure": "1/8 tsp ground",
+     "name": "Nutmeg"
+    }
+   ],
+   "steps": [
+    "Combine all ingredients in heavy medium saucepan.",
+    "Stir over low heat until chocolate melts.",
+    "Increase heat and bring just to a boil, stirring often.",
+    "Remove from heat and whisk untily frothy.",
+    "Return to heat and bring to boil again.",
+    "Remove from heat, whisk until frothy.",
+    "Repeat heating and whisking once again.",
+    "Discard orange peel. (Can be prepared 2 hours ahead.",
+    "Let stand at room temperature.",
+    "Before serving, bring just to boil, remove from heat and whisk until frothy.) Pour hot chocolate into coffee mugs.",
+    "Makes 2 servings."
+   ],
+   "photo": "orange-scented-hot-chocolate.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12618",
+   "name": "Orangeade",
+   "tags": [
+    "Iced",
+    "Citrus",
+    "Sweet"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "5 cl",
+     "name": "Lemon juice"
+    },
+    {
+     "measure": "15 cl",
+     "name": "Orange juice"
+    },
+    {
+     "measure": "2-3 cl",
+     "name": "Sugar syrup"
+    },
+    {
+     "measure": "",
+     "name": "Soda water"
+    }
+   ],
+   "steps": [
+    "Place some ice cubes in a large tumbler or highball glass, add lemon juice, orange juice, sugar syrup, and stir well.",
+    "Top up with cold soda water, serve with a drinking straw."
+   ],
+   "photo": "orangeade.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12718",
+   "name": "Pineapple Gingerale Smoothie",
+   "tags": [
+    "Tropical",
+    "Fruity",
+    "Spiced"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1/4 inch",
+     "name": "Ginger"
+    },
+    {
+     "measure": "1/2",
+     "name": "Pineapple"
+    }
+   ],
+   "steps": [
+    "Throw everything into a blender and liquify."
+   ],
+   "photo": "pineapple-gingerale-smoothie.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-15092",
+   "name": "Pysch Vitamin Light",
+   "tags": [
+    "Iced",
+    "Citrus",
+    "Tropical"
+   ],
+   "glass": "Collins Glass",
+   "ingredients": [
+    {
+     "measure": "1 part",
+     "name": "Orange juice"
+    },
+    {
+     "measure": "1 part",
+     "name": "Apple juice"
+    },
+    {
+     "measure": "1 part",
+     "name": "Pineapple juice"
+    },
+    {
+     "measure": "",
+     "name": "Ice"
+    }
+   ],
+   "steps": [
+    "Shake with ice."
+   ],
+   "photo": "pysch-vitamin-light.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12630",
+   "name": "Rail Splitter",
+   "tags": [
+    "Iced",
+    "Citrus",
+    "Sweet"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "2 tsp",
+     "name": "Sugar syrup"
+    },
+    {
+     "measure": "",
+     "name": "Lemon juice"
+    },
+    {
+     "measure": "",
+     "name": "Ginger ale"
+    }
+   ],
+   "steps": [
+    "Mix sugar syrup with lemon juice in a tall glass.",
+    "Fill up with ginger ale."
+   ],
+   "photo": "rail-splitter.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12750",
+   "name": "Spanish chocolate",
+   "tags": [
+    "Hot",
+    "Chocolate",
+    "Spiced"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "2 cups",
+     "name": "Milk"
+    },
+    {
+     "measure": "2 oz sweet",
+     "name": "Chocolate"
+    },
+    {
+     "measure": "1/2 tsp",
+     "name": "Cinnamon"
+    },
+    {
+     "measure": "2 beaten",
+     "name": "Egg yolk"
+    }
+   ],
+   "steps": [
+    "Stir the milk with the chocolate and the cinnamon over low heat until the chocolate dissolves.",
+    "Add the eggs and beat the mixture until it becomes thick, taking care not to boil.",
+    "Serve in coffee mug."
+   ],
+   "photo": "spanish-chocolate.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-13032",
+   "name": "Spiced Peach Punch",
+   "tags": [
+    "Hot",
+    "Fruity",
+    "Spiced"
+   ],
+   "glass": "Collins Glass",
+   "ingredients": [
+    {
+     "measure": "46 oz",
+     "name": "Peach nectar"
+    },
+    {
+     "measure": "20 oz",
+     "name": "Orange juice"
+    },
+    {
+     "measure": "1/2 cup",
+     "name": "Brown sugar"
+    },
+    {
+     "measure": "3 3-inch",
+     "name": "Cinnamon"
+    },
+    {
+     "measure": "1/2 tsp",
+     "name": "Cloves"
+    },
+    {
+     "measure": "2 tblsp",
+     "name": "Lime juice"
+    }
+   ],
+   "steps": [
+    "Combine peach nectar, orange juice and brown sugar in a large saucepan.",
+    "Tie cinnamon and cloves in a small cheesecloth bag.",
+    "Drop into saucepan.",
+    "Heat slowly, stirring constantly, until sugar dissolves.",
+    "Simmer 10 minutes.",
+    "Stir in lime juice.",
+    "Serve in hot mugs."
+   ],
+   "photo": "spiced-peach-punch.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12780",
+   "name": "Spiking coffee",
+   "tags": [
+    "Hot",
+    "Coffee",
+    "Spiced"
+   ],
+   "glass": "Coffee mug",
+   "ingredients": [
+    {
+     "measure": "",
+     "name": "Coffee"
+    },
+    {
+     "measure": "",
+     "name": "Cinnamon"
+    }
+   ],
+   "steps": [
+    "Incidentally, a pinch of cinnamon is indeed a nice addition to coffee but true heaven is a cardamom seed.",
+    "Of course, you serve it in a coffee mug."
+   ],
+   "photo": "spiking-coffee.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-13036",
+   "name": "Strawberry Lemonade",
+   "tags": [
+    "Iced",
+    "Citrus",
+    "Berry"
+   ],
+   "glass": "Collins Glass",
+   "ingredients": [
+    {
+     "measure": "Juice of 1",
+     "name": "Lemon"
+    },
+    {
+     "measure": "1 tblsp",
+     "name": "Sugar"
+    },
+    {
+     "measure": "8-10 ripe",
+     "name": "Strawberries"
+    },
+    {
+     "measure": "1 cup",
+     "name": "Water"
+    }
+   ],
+   "steps": [
+    "Throw everything into a blender and mix until fairly smooth.",
+    "Serve over ice."
+   ],
+   "photo": "strawberry-lemonade.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12722",
+   "name": "Strawberry Shivers",
+   "tags": [
+    "Berry",
+    "Sweet"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "1 1/2 cup",
+     "name": "Strawberries"
+    },
+    {
+     "measure": "4 tsp",
+     "name": "Honey"
+    },
+    {
+     "measure": "1/2 cup",
+     "name": "Water"
+    }
+   ],
+   "steps": [
+    "Place all ingredients in the blender jar - cover and whiz on medium speed until well blended.",
+    "Pour in one tall, 2 medium or 3 small glasses and drink up."
+   ],
+   "photo": "strawberry-shivers.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12724",
+   "name": "Sweet Bananas",
+   "tags": [
+    "Fruity",
+    "Creamy",
+    "Sweet"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "2 cups",
+     "name": "Milk"
+    },
+    {
+     "measure": "1",
+     "name": "Banana"
+    },
+    {
+     "measure": "1 tblsp",
+     "name": "Honey"
+    }
+   ],
+   "steps": [
+    "Place all ingredients in the blender jar - cover and whiz on medium speed until well blended.",
+    "Pour in one tall, 2 medium or 3 small glasses and drink up."
+   ],
+   "photo": "sweet-bananas.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12782",
+   "name": "Thai Coffee",
+   "tags": [
+    "Iced",
+    "Coffee",
+    "Spiced"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "6 tblsp ground",
+     "name": "Coffee"
+    },
+    {
+     "measure": "1/4 tsp",
+     "name": "Coriander"
+    },
+    {
+     "measure": "4-5 whole green",
+     "name": "Cardamom"
+    },
+    {
+     "measure": "",
+     "name": "Sugar"
+    },
+    {
+     "measure": "",
+     "name": "Whipping cream"
+    },
+    {
+     "measure": "",
+     "name": "Ice"
+    }
+   ],
+   "steps": [
+    "Place the coffee and spices in the filter cone of your coffee maker.",
+    "Brew coffee as usual, let it cool.",
+    "In a tall glass, dissolve 1 or 2 teaspoons of sugar in an ounce of the coffee (it's easier to dissolve than if you put it right over ice).",
+    "Add 5-6 ice cubes and pour coffee to within about 1 inch of the top of the glass.",
+    "Rest a spoon on top of the coffee and slowly pour whipping cream into the spoon.",
+    "This will make the cream float on top of the coffee rather than dispersing into it right away."
+   ],
+   "photo": "thai-coffee.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12784",
+   "name": "Thai Iced Coffee",
+   "tags": [
+    "Iced",
+    "Coffee",
+    "Spiced"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "black",
+     "name": "Coffee"
+    },
+    {
+     "measure": "",
+     "name": "Sugar"
+    },
+    {
+     "measure": "pods",
+     "name": "Cream"
+    },
+    {
+     "measure": "",
+     "name": "Cardamom"
+    }
+   ],
+   "steps": [
+    "Prepare a pot of coffee at a good European strength.",
+    "In the ground coffee, add 2 or 3 freshly ground cardamom pods.",
+    "Sweeten while hot, then cool quickly.",
+    "Serve in highball glass over ice, with cream.",
+    "To get the layered effect, place a spoon atop the coffee and pour the milk carefully into the spoon so that it floats on the top of the coffee."
+   ],
+   "photo": "thai-iced-coffee.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12786",
+   "name": "Thai Iced Tea",
+   "tags": [
+    "Iced",
+    "Tea",
+    "Minty"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "1/4 cup Thai",
+     "name": "Tea"
+    },
+    {
+     "measure": "1/2 cup boiling",
+     "name": "Water"
+    },
+    {
+     "measure": "2 tsp sweetened",
+     "name": "Condensed milk"
+    },
+    {
+     "measure": "cubes",
+     "name": "Ice"
+    },
+    {
+     "measure": "garnish",
+     "name": "Mint"
+    }
+   ],
+   "steps": [
+    "Combine Thai tea (i.e., the powder), boiling water, and sweetened condensed milk, stir until blended.",
+    "Pour into 2 tall glasses filled with ice cubes.",
+    "Garnish with mint leaves.",
+    "Makes 2 servings."
+   ],
+   "photo": "thai-iced-tea.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12726",
+   "name": "Tomato Tang",
+   "tags": [
+    "Savoury",
+    "Citrus"
+   ],
+   "glass": "Highball glass",
+   "ingredients": [
+    {
+     "measure": "2 cups",
+     "name": "Tomato juice"
+    },
+    {
+     "measure": "1-2 tblsp",
+     "name": "Lemon juice"
+    },
+    {
+     "measure": "1 dash",
+     "name": "Celery salt"
+    }
+   ],
+   "steps": [
+    "Place all ingredients in the blender jar - cover and whiz on medium speed until well blended.",
+    "Pour in one tall, 2 medium or 3 small glasses and drink up."
+   ],
+   "photo": "tomato-tang.jpg",
+   "source": "TheCocktailDB"
+  },
+  {
+   "id": "db-12728",
+   "name": "Yoghurt Cooler",
+   "tags": [
+    "Frozen",
+    "Creamy",
+    "Fruity"
+   ],
+   "glass": "Highball Glass",
+   "ingredients": [
+    {
+     "measure": "1 cup",
+     "name": "Yoghurt"
+    },
+    {
+     "measure": "1 cup",
+     "name": "Fruit"
+    },
+    {
+     "measure": "",
+     "name": "Ice"
+    }
+   ],
+   "steps": [
+    "Place all ingredients in the blender jar - cover and whiz on medium speed until well blended.",
+    "Pour in one tall, 2 medium or 3 small glasses and drink up.",
+    "Note: Use lots of ice in this one - great on hot days!",
+    "To add ice: Remove the center of the cover while the blender is on - drop 3 or 4 ice cubs and blend until they're completely crushed."
+   ],
+   "photo": "yoghurt-cooler.jpg",
+   "source": "TheCocktailDB"
+  }
+ ],
+ "packs": [
+  {
+   "id": "dry-january",
+   "title": "Dry January",
+   "title_uk": "Січень без алкоголю",
+   "subtitle": "10 drinks · dry & bittersweet",
+   "description": "Dry, citrus-led and bittersweet classics in 0.0% versions.",
+   "description_uk": "Сухі, цитрусові й гіркуваті класики у версіях 0.0%.",
+   "productId": "com.filonexperiencedesign.mocktailfinder.pack.dryjanuary",
+   "price": "€2.99",
+   "cover": "virgin-margarita.jpg",
+   "recipes": [
+    {
+     "id": "dry-january-virgin-margarita",
+     "name": "Virgin Margarita",
+     "name_uk": "Безалкогольна Маргарита",
+     "tags": [
+      "Iced",
+      "Citrus"
+     ],
+     "description": "Dry agave base, lime, and orange notes; a salty rim emphasizes the acidity.",
+     "description_uk": "Сухувата агавова база, лайм і апельсинова нота; солоний край підкреслює кислинку.",
+     "time_min": 5,
+     "glass": "Rocks",
+     "glass_uk": "Рокс",
+     "glass_ml": 250,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Agave tequila substitute 0.0%",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Orange triple sec substitute 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "Agave syrup 0.0%",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g for shaking + 80 g for serving"
+      },
+      {
+       "name": "Salt for rim",
+       "amount": "2 g"
+      },
+      {
+       "name": "Lime",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Агавовий замінник текіли 0.0%",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Апельсиновий замінник triple sec 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Агавовий сироп 0.0%",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г для шейкера + 80 г для подачі"
+      },
+      {
+       "name": "Сіль для краю",
+       "amount": "2 г"
+      },
+      {
+       "name": "Лайм",
+       "amount": "1 часточка"
+      }
+     ],
+     "steps": [
+      "Rub half the rim with a lime wedge and dip into salt. Add 80 g ice.",
+      "Shake both 0.0% substitutes, lime juice, and agave syrup with 100 g ice for 12 s.",
+      "Strain into the glass and anchor the used lime wedge on the rim."
+     ],
+     "steps_uk": [
+      "Змочіть половину краю келиха часточкою лайма й умочіть у сіль. Покладіть 80 г льоду.",
+      "Струсіть обидва замінники 0.0%, сік лайма та агавовий сироп зі 100 г льоду 12 с.",
+      "Процідіть у келих і закріпіть використану часточку лайма на краю."
+     ],
+     "photo": "virgin-margarita.jpg"
+    },
+    {
+     "id": "dry-january-virgin-daiquiri",
+     "name": "Virgin Daiquiri",
+     "name_uk": "Безалкогольний Дайкірі",
+     "tags": [
+      "Iced",
+      "Citrus"
+     ],
+     "description": "A crisp, sour-sweet cocktail with lime and a light cane note.",
+     "description_uk": "Лаконічний кисло-солодкий коктейль із лаймом і легкою тростинною нотою.",
+     "time_min": 4,
+     "glass": "Coupe",
+     "glass_uk": "Купе",
+     "glass_ml": 180,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "White rum substitute 0.0%",
+       "amount": "60 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "Syrup 1:1 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Ice for shaker",
+       "amount": "120 g"
+      },
+      {
+       "name": "Lime",
+       "amount": "1 wheel"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Замінник білого рому 0.0%",
+       "amount": "60 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Лід для шейкера",
+       "amount": "120 г"
+      },
+      {
+       "name": "Лайм",
+       "amount": "1 кружальце"
+      }
+     ],
+     "steps": [
+      "Chill a coupe. Pour rum base 0.0%, lime juice, and syrup into a shaker.",
+      "Add 120 g ice and shake vigorously for 12–15 s.",
+      "Double strain into a coupe without ice. Garnish with a lime wheel."
+     ],
+     "steps_uk": [
+      "Охолодіть купе. Налийте ромову базу 0.0%, лаймовий сік і сироп у шейкер.",
+      "Додайте 120 г льоду та енергійно струсіть 12–15 с.",
+      "Двічі процідіть у купе без льоду. Прикрасьте кружальцем лайма."
+     ],
+     "photo": "virgin-daiquiri.jpg"
+    },
+    {
+     "id": "dry-january-virgin-paloma",
+     "name": "Virgin Paloma",
+     "name_uk": "Безалкогольна Палома",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Grapefruit bitterness, agave aroma, and dry sparkling freshness.",
+     "description_uk": "Грейпфрутова гірчинка, агавовий аромат і суха газована свіжість.",
+     "time_min": 4,
+     "glass": "Highball",
+     "glass_uk": "Хайбол",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Agave tequila substitute 0.0%",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Grapefruit juice",
+       "amount": "80 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Agave syrup 0.0%",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Soda water",
+       "amount": "60 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g"
+      },
+      {
+       "name": "Salt",
+       "amount": "2 g"
+      },
+      {
+       "name": "Grapefruit",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Агавовий замінник текіли 0.0%",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Грейпфрутовий сік",
+       "amount": "80 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Агавовий сироп 0.0%",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Содова",
+       "amount": "60 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г"
+      },
+      {
+       "name": "Сіль",
+       "amount": "2 г"
+      },
+      {
+       "name": "Грейпфрут",
+       "amount": "1 часточка"
+      }
+     ],
+     "steps": [
+      "Rim the glass with a small amount of measured lime juice and dip it into salt. Add ice.",
+      "Pour in the agave base 0.0%, juices, and syrup. Stir.",
+      "Top with soda water, stir once, and garnish with a grapefruit wedge."
+     ],
+     "steps_uk": [
+      "Змочіть край келиха невеликою кількістю відміряного лаймового соку та умочіть у сіль. Додайте лід.",
+      "Влийте агавову базу 0.0%, соки й сироп. Перемішайте.",
+      "Долийте содову, перемішайте один раз. Прикрасьте часточкою грейпфрута."
+     ],
+     "photo": "virgin-paloma.jpg"
+    },
+    {
+     "id": "dry-january-alcohol-free-aperol-style-spritz",
+     "name": "Alcohol-free Aperol-style Spritz",
+     "name_uk": "Спріц у стилі Аперолю без алкоголю",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Bright orange bitterness and bubbles; no traditional Aperol alcohol.",
+     "description_uk": "Яскрава апельсинова гірчинка та бульбашки; без звичайного алкогольного Аперолю.",
+     "time_min": 3,
+     "glass": "Wine glass",
+     "glass_uk": "Винний келих",
+     "glass_ml": 450,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Orange bitter aperitif 0.0%",
+       "amount": "60 ml"
+      },
+      {
+       "name": "Sparkling white wine 0.0%",
+       "amount": "90 ml"
+      },
+      {
+       "name": "Soda water",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "150 g"
+      },
+      {
+       "name": "Orange",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Помаранчевий гірко-апельсиновий аперитив 0.0%",
+       "amount": "60 мл"
+      },
+      {
+       "name": "Сухе біле ігристе вино 0.0%",
+       "amount": "90 мл"
+      },
+      {
+       "name": "Содова",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "150 г"
+      },
+      {
+       "name": "Апельсин",
+       "amount": "1 кружальце"
+      }
+     ],
+     "steps": [
+      "Fill the wine glass with ice.",
+      "Pour in 0.0% sparkling wine, orange bitter aperitif 0.0%, and soda water.",
+      "Stir gently and add an orange wedge."
+     ],
+     "steps_uk": [
+      "Заповніть винний келих льодом.",
+      "Влийте ігристе 0.0%, гірко-апельсиновий аперитив 0.0% та содову.",
+      "Легко перемішайте й додайте кружальце апельсина."
+     ],
+     "photo": "alcohol-free-aperol-style-spritz.jpg"
+    },
+    {
+     "id": "dry-january-virgin-negroni",
+     "name": "Virgin Negroni",
+     "name_uk": "Безалкогольний Неґроні",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Bitter"
+     ],
+     "description": "Bitter, herbal, and intense: three specialized 0.0% bases in equal parts.",
+     "description_uk": "Гіркий, трав’яний і насичений: три спеціалізовані бази 0.0% у рівних частинах.",
+     "time_min": 4,
+     "glass": "Rocks glass",
+     "glass_uk": "Рокс",
+     "glass_ml": 250,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Gin substitute 0.0%",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Red bitter aperitif 0.0%",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Herbal sweet red vermouth substitute 0.0%",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "120 g for stirring + 60 g for serving"
+      },
+      {
+       "name": "Orange peel",
+       "amount": "1 strip"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ялівцевий замінник джину 0.0%",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Червоний гіркий аперитив 0.0%",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Трав’яний замінник солодкого червоного вермуту 0.0%",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "120 г для змішування + 60 г для подачі"
+      },
+      {
+       "name": "Апельсинова цедра",
+       "amount": "1 смужка"
+      }
+     ],
+     "steps": [
+      "Pour the three 0.0% bases into a mixing glass with 120 g of ice.",
+      "Stir for 20 seconds to chill. Strain into a rocks glass with a large 60 g ice cube.",
+      "Express the peel over the drink and place it in the glass."
+     ],
+     "steps_uk": [
+      "Влийте три бази 0.0% у змішувальну склянку зі 120 г льоду.",
+      "Перемішуйте 20 с для охолодження. Процідіть у рокс із великим кубом льоду масою 60 г.",
+      "Стисніть цедру над напоєм і покладіть у келих."
+     ],
+     "photo": "virgin-negroni.jpg"
+    },
+    {
+     "id": "dry-january-virgin-americano",
+     "name": "Virgin Americano",
+     "name_uk": "Безалкогольний Американо",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Bitter aperitif and herbal vermouth 0.0% become lighter with soda water.",
+     "description_uk": "Гіркий аперитив і трав’яний вермут 0.0% стають легшими завдяки содовій.",
+     "time_min": 3,
+     "glass": "Highball glass",
+     "glass_uk": "Хайбол",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Red bitter aperitif 0.0%",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Herbal sweet red vermouth substitute 0.0%",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Soda water",
+       "amount": "90 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "120 g"
+      },
+      {
+       "name": "Orange",
+       "amount": "1 half-wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Червоний гіркий аперитив 0.0%",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Трав’яний замінник солодкого червоного вермуту 0.0%",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Содова",
+       "amount": "90 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "120 г"
+      },
+      {
+       "name": "Апельсин",
+       "amount": "1 півкружальце"
+      }
+     ],
+     "steps": [
+      "Fill the highball with ice. Pour in both 0.0% aperitif and vermouth base.",
+      "Top with soda water and stir gently.",
+      "Add an orange half-wedge."
+     ],
+     "steps_uk": [
+      "Покладіть лід у хайбол. Влийте аперитив і вермутову базу, обидва 0.0%.",
+      "Долийте содову та обережно перемішайте.",
+      "Додайте півкружальце апельсина."
+     ],
+     "photo": "virgin-americano.jpg"
+    },
+    {
+     "id": "dry-january-alcohol-free-gin-tonic",
+     "name": "Alcohol-free Gin & Tonic",
+     "name_uk": "Джин-тонік без алкоголю",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Juniper and tonic bitterness — clean, dry flavor with lime.",
+     "description_uk": "Ялівець і хінінова гірчинка тоніка — чистий, сухуватий смак із лаймом.",
+     "time_min": 3,
+     "glass": "Balloon glass",
+     "glass_uk": "Келих балон",
+     "glass_ml": 450,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Gin substitute 0.0%",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Tonic water",
+       "amount": "150 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "150 g"
+      },
+      {
+       "name": "Lime",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ялівцевий замінник джину 0.0%",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Тонік",
+       "amount": "150 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "150 г"
+      },
+      {
+       "name": "Лайм",
+       "amount": "1 кружальце"
+      }
+     ],
+     "steps": [
+      "Fill the chilled glass with ice and pour in the 0.0% juniper base.",
+      "Slowly pour cold tonic water down the side of the glass.",
+      "Stir once and add a lime wedge."
+     ],
+     "steps_uk": [
+      "Наповніть охолоджений келих льодом і влийте ялівцеву базу 0.0%.",
+      "Повільно долийте холодний тонік по стінці.",
+      "Перемішайте один раз і додайте кружальце лайма."
+     ],
+     "photo": "alcohol-free-gin-and-tonic.jpg"
+    },
+    {
+     "id": "dry-january-virgin-tom-collins",
+     "name": "Virgin Tom Collins",
+     "name_uk": "Безалкогольний Том Коллінз",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Lemon acidity, 0.0% juniper base, and soda in a long refreshing serve.",
+     "description_uk": "Лимонна кислинка, ялівцева база 0.0% і содова в довгій освіжальній подачі.",
+     "time_min": 5,
+     "glass": "Collins glass",
+     "glass_uk": "Коллінз",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Gin substitute 0.0%",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "Simple syrup 1:1 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Soda water",
+       "amount": "100 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g for shaking + 100 g for serving"
+      },
+      {
+       "name": "Lemon",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ялівцевий замінник джину 0.0%",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Содова",
+       "amount": "100 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г для шейкера + 100 г для подачі"
+      },
+      {
+       "name": "Лимон",
+       "amount": "1 кружальце"
+      }
+     ],
+     "steps": [
+      "Shake the 0.0% juniper base, lemon juice, and syrup with 100 g of ice for 10 seconds.",
+      "Strain into a Collins glass with fresh 100 g of ice. Top with soda water.",
+      "Stir gently and garnish with a lemon wedge."
+     ],
+     "steps_uk": [
+      "Струсіть ялівцеву базу 0.0%, лимонний сік і сироп зі 100 г льоду 10 с.",
+      "Процідіть у коллінз зі свіжими 100 г льоду. Долийте содову.",
+      "Ніжно перемішайте й прикрасьте кружальцем лимона."
+     ],
+     "photo": "virgin-tom-collins.jpg"
+    },
+    {
+     "id": "dry-january-virgin-french-75",
+     "name": "Virgin French 75",
+     "name_uk": "Безалкогольний Френч 75",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Lemon and juniper in an elegant serve with dry 0.0% sparkling wine.",
+     "description_uk": "Лимон і ялівець у витонченій подачі з сухим ігристим вином 0.0%.",
+     "time_min": 5,
+     "glass": "Flute",
+     "glass_uk": "Флюте",
+     "glass_ml": 200,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Gin substitute 0.0%",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Simple syrup 1:1 0.0%",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Dry sparkling white wine 0.0%",
+       "amount": "80 ml"
+      },
+      {
+       "name": "Ice for shaker",
+       "amount": "100 g"
+      },
+      {
+       "name": "Lemon peel",
+       "amount": "1 strip"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ялівцевий замінник джину 0.0%",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Сухе біле ігристе вино 0.0%",
+       "amount": "80 мл"
+      },
+      {
+       "name": "Лід для шейкера",
+       "amount": "100 г"
+      },
+      {
+       "name": "Лимонна цедра",
+       "amount": "1 смужка"
+      }
+     ],
+     "steps": [
+      "Chill the flute. Shake the 0.0% juniper base, juice, and syrup with ice for 10 seconds.",
+      "Double-strain into the flute without ice.",
+      "Slowly pour in 0.0% sparkling wine and garnish with a twisted lemon peel."
+     ],
+     "steps_uk": [
+      "Охолодіть флюте. Струсіть ялівцеву базу 0.0%, сік і сироп зі льодом 10 с.",
+      "Двічі процідіть у флюте без льоду.",
+      "Повільно долийте ігристе 0.0%, прикрасьте скрученою лимонною цедрою."
+     ],
+     "photo": "virgin-french-75.jpg"
+    },
+    {
+     "id": "dry-january-virgin-gimlet",
+     "name": "Virgin Gimlet",
+     "name_uk": "Безалкогольний Ґімлет",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Herbal"
+     ],
+     "description": "A short juniper cocktail with lime: distinctly sour, smooth, and restrained.",
+     "description_uk": "Короткий ялівцевий коктейль із лаймом: виразно кислий, гладкий і стриманий.",
+     "time_min": 4,
+     "glass": "Coupe",
+     "glass_uk": "Купе",
+     "glass_ml": 180,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Gin substitute 0.0%",
+       "amount": "60 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "Simple syrup 1:1 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Ice for shaker",
+       "amount": "120 g"
+      },
+      {
+       "name": "Lime",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ялівцевий замінник джину 0.0%",
+       "amount": "60 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Лід для шейкера",
+       "amount": "120 г"
+      },
+      {
+       "name": "Лайм",
+       "amount": "1 кружальце"
+      }
+     ],
+     "steps": [
+      "Pour the 0.0% juniper base, lime juice, and syrup into the shaker.",
+      "Add ice, shake for 12 seconds, and double-strain into a chilled coupe.",
+      "Serve without ice with a lime wedge."
+     ],
+     "steps_uk": [
+      "Налийте ялівцеву базу 0.0%, лаймовий сік і сироп у шейкер.",
+      "Додайте лід, струсіть 12 с та двічі процідіть в охолоджене купе.",
+      "Подавайте без льоду з кружальцем лайма."
+     ],
+     "photo": "virgin-gimlet.jpg"
+    }
+   ],
+   "subtitle_uk": "10 напоїв · сухі й гіркуваті"
+  },
+  {
+   "id": "evening-classics",
+   "title": "Evening Classics",
+   "title_uk": "Вечірні класики",
+   "subtitle": "10 drinks · ginger, coffee & cream",
+   "description": "Ginger, coffee, creamy and foamy cocktails for a relaxed evening.",
+   "description_uk": "Імбирні, кавові, вершкові й пінні коктейлі для неспішного вечора.",
+   "productId": "com.filonexperiencedesign.mocktailfinder.pack.eveningclassics",
+   "price": "€2.99",
+   "cover": "virgin-moscow-mule.jpg",
+   "recipes": [
+    {
+     "id": "evening-classics-virgin-moscow-mule",
+     "name": "Virgin Moscow Mule",
+     "name_uk": "Безалкогольний Московський мул",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Spicy ginger, lime, and neutral base 0.0% — dry, invigorating long drink.",
+     "description_uk": "Пекучий імбир, лайм і нейтральна база 0.0% — сухий, бадьорий long drink.",
+     "time_min": 3,
+     "glass": "Copper mug",
+     "glass_uk": "Скляний кухоль",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Neutral vodka substitute 0.0%",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Ginger ale 0.0%",
+       "amount": "150 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "120 g"
+      },
+      {
+       "name": "Lime",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Нейтральний замінник горілки 0.0%",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Ginger beer 0.0%",
+       "amount": "150 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "120 г"
+      },
+      {
+       "name": "Лайм",
+       "amount": "1 часточка"
+      }
+     ],
+     "steps": [
+      "Fill the copper mug with ice. Pour in the neutral base 0.0% and lime juice.",
+      "Top with ginger ale 0.0% — only with a 0.0% label. Stir gently.",
+      "Add a lime wedge and serve immediately."
+     ],
+     "steps_uk": [
+      "Наповніть скляний кухоль льодом. Влийте нейтральну базу 0.0% та сік лайма.",
+      "Долийте ginger beer лише з етикеткою 0.0%. Обережно перемішайте.",
+      "Додайте часточку лайма та подавайте відразу."
+     ],
+     "photo": "virgin-moscow-mule.jpg"
+    },
+    {
+     "id": "evening-classics-virgin-dark-n-stormy",
+     "name": "Virgin Dark ’n’ Stormy",
+     "name_uk": "Безалкогольний Дарк енд Стормі",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Dark spicy rum base 0.0% over spicy ginger with lime.",
+     "description_uk": "Темна пряна ромова база 0.0% поверх гострого імбиру з лаймом.",
+     "time_min": 3,
+     "glass": "Highball",
+     "glass_uk": "Хайбол",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Spicy dark rum substitute 0.0%",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Ginger ale 0.0%",
+       "amount": "150 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "120 g"
+      },
+      {
+       "name": "Lime",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Пряний замінник темного рому 0.0%",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Ginger beer 0.0%",
+       "amount": "150 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "120 г"
+      },
+      {
+       "name": "Лайм",
+       "amount": "1 часточка"
+      }
+     ],
+     "steps": [
+      "Fill the highball with ice. Pour in lime juice and chilled ginger ale 0.0%.",
+      "Slowly pour the dark spicy rum base 0.0% down the back of a spoon to create a darker top layer.",
+      "Garnish with lime. Stir before drinking."
+     ],
+     "steps_uk": [
+      "Покладіть лід у хайбол. Влийте сік лайма й холодний ginger beer 0.0%.",
+      "Повільно налийте темну пряну ромову базу 0.0% по зворотному боку ложки, щоб утворився темніший верхній шар.",
+      "Прикрасьте лаймом. Перед питтям перемішайте."
+     ],
+     "photo": "virgin-dark-n-stormy.jpg"
+    },
+    {
+     "id": "evening-classics-virgin-clover-club",
+     "name": "Virgin Clover Club",
+     "name_uk": "Безалкогольний Кловер Клаб",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Berry"
+     ],
+     "description": "A raspberry juniper sour with soft, stable aquafaba foam.",
+     "description_uk": "Малиновий ялівцевий sour із м’якою, стійкою піною з аквафаби.",
+     "time_min": 6,
+     "glass": "Coupe",
+     "glass_uk": "Купе",
+     "glass_ml": 220,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Juniper gin alternative 0.0%",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "Raspberry syrup 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Salt-free aquafaba",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Ice for shaker",
+       "amount": "120 g"
+      },
+      {
+       "name": "Raspberries",
+       "amount": "3 berries"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ялівцевий замінник джину 0.0%",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Малиновий сироп 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Аквафаба без солі",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Лід для шейкера",
+       "amount": "120 г"
+      },
+      {
+       "name": "Малина",
+       "amount": "3 ягоди"
+      }
+     ],
+     "steps": [
+      "Pour all liquid ingredients into the shaker. Shake without ice for 20 s to whip the aquafaba.",
+      "Add ice and shake for another 12 s. Double strain into a coupe without ice.",
+      "Wait 20 s for the foam to settle. Place three raspberries on a pick on top of the foam."
+     ],
+     "steps_uk": [
+      "Налийте всі рідкі інгредієнти в шейкер. Струсіть без льоду 20 с, щоб спінити аквафабу.",
+      "Додайте лід і струсіть ще 12 с. Двічі процідіть у купе без льоду.",
+      "Зачекайте 20 с, поки піна вирівняється. Покладіть три ягоди малини на шпажці поверх піни."
+     ],
+     "photo": "virgin-clover-club.jpg"
+    },
+    {
+     "id": "evening-classics-alcohol-free-whiskey-sour",
+     "name": "Alcohol-free Whiskey Sour",
+     "name_uk": "Віскі сауер без алкоголю",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Spiced"
+     ],
+     "description": "Oak and vanilla notes from the 0.0% base, lemon acidity, and silky foam.",
+     "description_uk": "Дубові й ванільні ноти бази 0.0%, лимонна кислинка та шовковиста піна.",
+     "time_min": 6,
+     "glass": "Rocks",
+     "glass_uk": "Рокс",
+     "glass_ml": 250,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Oak-spiced whiskey alternative 0.0%",
+       "amount": "60 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "1:1 sugar syrup 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Salt-free aquafaba",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g for shaking + 60 g for serving"
+      },
+      {
+       "name": "Orange",
+       "amount": "1 wheel"
+      },
+      {
+       "name": "Alcohol-free cherry",
+       "amount": "1 piece"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Дубово-пряний замінник віскі 0.0%",
+       "amount": "60 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Аквафаба без солі",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г для шейкера + 60 г для подачі"
+      },
+      {
+       "name": "Апельсин",
+       "amount": "1 півкружальце"
+      },
+      {
+       "name": "Вишня без алкоголю",
+       "amount": "1 шт"
+      }
+     ],
+     "steps": [
+      "Shake whiskey base 0.0%, juice, syrup, and aquafaba without ice for 20 s.",
+      "Add 100 g ice, shake for another 12 s, and strain into a rocks glass with a 60 g large cube.",
+      "Garnish with an orange wheel and a cherry. Do not use spirit-based bitters."
+     ],
+     "steps_uk": [
+      "Струсіть віскі-базу 0.0%, сік, сироп і аквафабу без льоду 20 с.",
+      "Додайте 100 г льоду, струсіть ще 12 с та процідіть у рокс із великим кубом 60 г.",
+      "Прикрасьте півкружальцем апельсина й вишнею. Алкогольні біттери не додавайте."
+     ],
+     "photo": "alcohol-free-whiskey-sour.jpg"
+    },
+    {
+     "id": "evening-classics-alcohol-free-amaretto-sour",
+     "name": "Alcohol-free Amaretto Sour",
+     "name_uk": "Амарето сауер без алкоголю",
+     "tags": [
+      "Iced",
+      "Citrus"
+     ],
+     "description": "Almond aroma, lemon, and airy foam; without traditional amaretto liqueur.",
+     "description_uk": "Мигдалевий аромат, лимон і повітряна піна; без звичайного лікеру амарето.",
+     "time_min": 6,
+     "glass": "Rocks",
+     "glass_uk": "Рокс",
+     "glass_ml": 250,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Almond amaretto alternative 0.0%",
+       "amount": "60 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "30 ml"
+      },
+      {
+       "name": "1:1 sugar syrup 0.0%",
+       "amount": "5 ml"
+      },
+      {
+       "name": "Salt-free aquafaba",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g for shaking + 60 g for serving"
+      },
+      {
+       "name": "Lemon",
+       "amount": "1 wheel"
+      },
+      {
+       "name": "Alcohol-free cherry",
+       "amount": "1 piece"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Мигдалевий замінник амарето 0.0%",
+       "amount": "60 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "5 мл"
+      },
+      {
+       "name": "Аквафаба без солі",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г для шейкера + 60 г для подачі"
+      },
+      {
+       "name": "Лимон",
+       "amount": "1 півкружальце"
+      },
+      {
+       "name": "Вишня без алкоголю",
+       "amount": "1 шт"
+      }
+     ],
+     "steps": [
+      "Shake almond base 0.0%, juice, syrup, and aquafaba without ice for 20 s.",
+      "Add 100 g ice and shake for another 12 s. Strain into a rocks glass with a 60 g ice cube.",
+      "Add lemon and cherry. Do not use spirit-based almond extract."
+     ],
+     "steps_uk": [
+      "Струсіть мигдалеву базу 0.0%, сік, сироп та аквафабу без льоду 20 с.",
+      "Додайте 100 г льоду та збивайте ще 12 с. Процідіть у рокс із кубом льоду 60 г.",
+      "Додайте лимон і вишню. Не використовуйте спиртовий мигдалевий екстракт."
+     ],
+     "photo": "alcohol-free-amaretto-sour.jpg"
+    },
+    {
+     "id": "evening-classics-virgin-espresso-martini",
+     "name": "Virgin Espresso Martini",
+     "name_uk": "Безалкогольний Еспресо мартіні",
+     "tags": [
+      "Iced",
+      "Creamy",
+      "Coffee"
+     ],
+     "description": "Rich coffee, light sweetness, and delicate coffee foam without milk.",
+     "description_uk": "Насичена кава, легка солодкість і тонка кавова піна без молока.",
+     "time_min": 6,
+     "glass": "Martini glass",
+     "glass_uk": "Келих мартіні",
+     "glass_ml": 180,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Neutral vodka alternative 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Coffee liqueur alternative 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Espresso, chilled",
+       "amount": "40 ml"
+      },
+      {
+       "name": "1:1 sugar syrup 0.0%",
+       "amount": "5 ml"
+      },
+      {
+       "name": "Ice for shaker",
+       "amount": "120 g"
+      },
+      {
+       "name": "Coffee beans",
+       "amount": "3 beans"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Нейтральний замінник горілки 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Кавовий замінник лікеру 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Еспресо, охолоджений",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "5 мл"
+      },
+      {
+       "name": "Лід для шейкера",
+       "amount": "120 г"
+      },
+      {
+       "name": "Кавові зерна",
+       "amount": "3 шт"
+      }
+     ],
+     "steps": [
+      "Prepare 40 ml espresso and chill it. Chill the glass as well.",
+      "Shake both 0.0% bases, espresso, and syrup with ice for 15–20 s to create coffee foam.",
+      "Double strain into a chilled glass without ice. Place three coffee beans on top of the foam."
+     ],
+     "steps_uk": [
+      "Приготуйте 40 мл еспресо й охолодіть. Келих теж охолодіть.",
+      "Струсіть обидві бази 0.0%, еспресо та сироп зі льодом 15–20 с для кавової піни.",
+      "Двічі процідіть у келих без льоду. Викладіть три кавові зерна поверх піни."
+     ],
+     "photo": "virgin-espresso-martini.jpg"
+    },
+    {
+     "id": "evening-classics-virgin-white-russian",
+     "name": "Virgin White Russian",
+     "name_uk": "Безалкогольний Білий росіянин",
+     "tags": [
+      "Iced",
+      "Creamy",
+      "Coffee"
+     ],
+     "description": "Coffee base 0.0% and chilled cream create delicate creamy swirls.",
+     "description_uk": "Кавова основа 0.0% і прохолодні вершки утворюють ніжні молочні завитки.",
+     "time_min": 3,
+     "glass": "Rocks",
+     "glass_uk": "Рокс",
+     "glass_ml": 250,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Neutral vodka alternative 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Coffee liqueur alternative 0.0%",
+       "amount": "30 ml"
+      },
+      {
+       "name": "20% cream",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g"
+      },
+      {
+       "name": "Garnish",
+       "amount": "none"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Нейтральний замінник горілки 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Кавовий замінник лікеру 0.0%",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Вершки 20%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г"
+      },
+      {
+       "name": "Декор",
+       "amount": "немає"
+      }
+     ],
+     "steps": [
+      "Fill a rocks glass with ice. Add neutral and coffee bases 0.0% and stir.",
+      "Slowly pour cream over the back of a spoon, keeping the top layer light.",
+      "Serve without garnish. Gently stir before drinking."
+     ],
+     "steps_uk": [
+      "Покладіть лід у рокс. Додайте нейтральну й кавову бази 0.0%, перемішайте.",
+      "Повільно влийте вершки по зворотному боку ложки, залишаючи світлий верхній шар.",
+      "Подавайте без декору. Перед питтям легко перемішайте."
+     ],
+     "photo": "virgin-white-russian.jpg"
+    },
+    {
+     "id": "evening-classics-virgin-grasshopper",
+     "name": "Virgin Grasshopper",
+     "name_uk": "Безалкогольний Ґрасгопер",
+     "tags": [
+      "Iced",
+      "Sparkling",
+      "Creamy"
+     ],
+     "description": "Mint-chocolate creamy dessert cocktail in a soft green color.",
+     "description_uk": "М’ятно-шоколадний вершковий десертний коктейль ніжного зеленого кольору.",
+     "time_min": 5,
+     "glass": "Coupe",
+     "glass_uk": "Купе",
+     "glass_ml": 180,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Green mint syrup 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Clear cocoa syrup 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "20% cream",
+       "amount": "60 ml"
+      },
+      {
+       "name": "Milk",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Ice for shaker",
+       "amount": "120 g"
+      },
+      {
+       "name": "Mint for garnish",
+       "amount": "1 leaf"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Зелений м’ятний сироп 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Прозорий какао-сироп 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Вершки 20%",
+       "amount": "60 мл"
+      },
+      {
+       "name": "Молоко",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Лід для шейкера",
+       "amount": "120 г"
+      },
+      {
+       "name": "М’ята для декору",
+       "amount": "1 листок"
+      }
+     ],
+     "steps": [
+      "Pour mint and clear cocoa syrups 0.0%, cream, and milk into the shaker.",
+      "Add ice, shake for 15 s, and strain into a chilled coupe without ice.",
+      "Garnish with a mint leaf. Do not use traditional crème de menthe or crème de cacao."
+     ],
+     "steps_uk": [
+      "Налийте м’ятний і прозорий какао-сиропи 0.0%, вершки та молоко в шейкер.",
+      "Додайте лід, струсіть 15 с і процідіть в охолоджене купе без льоду.",
+      "Прикрасьте листком м’яти. Звичайні crème de menthe та crème de cacao не використовуйте."
+     ],
+     "photo": "virgin-grasshopper.jpg"
+    },
+    {
+     "id": "evening-classics-virgin-lychee-martini",
+     "name": "Virgin Lychee Martini",
+     "name_uk": "Безалкогольний Лічі мартіні",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Tropical"
+     ],
+     "description": "A delicate floral-fruity lychee and lime aroma in a clear short serve.",
+     "description_uk": "Ніжний квітково-фруктовий аромат лічі та лайм у прозорій короткій подачі.",
+     "time_min": 5,
+     "glass": "Martini glass",
+     "glass_uk": "Келих мартіні",
+     "glass_ml": 180,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Neutral vodka substitute 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Lychee juice",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Canned lychee syrup 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Ice for shaker",
+       "amount": "120 g"
+      },
+      {
+       "name": "Peeled lychee",
+       "amount": "1 fruit"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Нейтральний замінник горілки 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Сік лічі",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Сироп із консервованих лічі 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Лід для шейкера",
+       "amount": "120 г"
+      },
+      {
+       "name": "Очищений лічі",
+       "amount": "1 плід"
+      }
+     ],
+     "steps": [
+      "Combine the 0.0% neutral base, lychee juice, canned syrup, and lime juice.",
+      "Shake with ice for 12 s and double-strain into a chilled glass without ice.",
+      "Place one peeled lychee on a short pick on the rim of the glass."
+     ],
+     "steps_uk": [
+      "З’єднайте нейтральну базу 0.0%, сік лічі, консервний сироп 0.0% і сік лайма.",
+      "Струсіть зі льодом 12 с та двічі процідіть в охолоджений келих без льоду.",
+      "Покладіть один очищений лічі на короткій шпажці на край келиха."
+     ],
+     "photo": "virgin-lychee-martini.jpg"
+    },
+    {
+     "id": "evening-classics-virgin-pornstar-martini",
+     "name": "Virgin Pornstar Martini",
+     "name_uk": "Безалкогольний Порнстар мартіні",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Tropical"
+     ],
+     "description": "Bright passionfruit and vanilla. In this adaptation, 0.0% sparkling wine is poured directly into the glass.",
+     "description_uk": "Яскрава маракуя та ваніль. У цій адаптації ігристе 0.0% доливається в сам келих.",
+     "time_min": 6,
+     "glass": "Coupe",
+     "glass_uk": "Купе",
+     "glass_ml": 220,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Neutral vodka substitute 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Passionfruit puree (seedless)",
+       "amount": "40 g"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Vanilla syrup 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Sparkling white wine 0.0%",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Ice for shaker",
+       "amount": "120 g"
+      },
+      {
+       "name": "Passionfruit",
+       "amount": "1 half"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Нейтральний замінник горілки 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Пюре маракуї без насіння",
+       "amount": "40 г"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Ванільний сироп 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Сухе біле ігристе вино 0.0%",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Лід для шейкера",
+       "amount": "120 г"
+      },
+      {
+       "name": "Маракуя",
+       "amount": "1 половинка"
+      }
+     ],
+     "steps": [
+      "Shake the 0.0% neutral base, passionfruit puree, lime juice, and vanilla syrup with ice for 15 s.",
+      "Double-strain into a coupe without ice. Slowly pour in 30 ml of 0.0% sparkling wine — do not stir.",
+      "Place a passionfruit half cut-side up on the surface of the drink."
+     ],
+     "steps_uk": [
+      "Струсіть нейтральну базу 0.0%, пюре маракуї, сік лайма й ванільний сироп 0.0% зі льодом 15 с.",
+      "Двічі процідіть у купе без льоду. Повільно долийте 30 мл ігристого 0.0% — не збовтуйте.",
+      "Покладіть половинку маракуї зрізом угору на поверхню напою."
+     ],
+     "photo": "virgin-pornstar-martini.jpg"
+    }
+   ],
+   "subtitle_uk": "10 напоїв · імбир, кава й вершки"
+  },
+  {
+   "id": "winter-warmers",
+   "title": "Winter Warmers",
+   "title_uk": "Зимові теплі",
+   "subtitle": "10 drinks · hot & spiced",
+   "description": "Spiced juices, honey, silky milk and fragrant tea — ten warm alcohol-free drinks.",
+   "description_uk": "Пряні соки, мед, ніжне молоко та ароматний чай — десять теплих напоїв без алкоголю.",
+   "productId": "com.filonexperiencedesign.mocktailfinder.pack.winterwarmers",
+   "price": "€2.99",
+   "cover": "alcohol-free-mulled-wine.jpg",
+   "recipes": [
+    {
+     "id": "winter-warmers-alcohol-free-mulled-wine",
+     "name": "Alcohol-free Mulled Wine",
+     "name_uk": "Безалкогольний глінтвейн",
+     "tags": [
+      "Hot",
+      "Citrus",
+      "Spiced"
+     ],
+     "description": "A rich ruby drink with fruity acidity, orange peel, cinnamon and cloves. The wine base is strictly 0.0%.",
+     "description_uk": "Насичений рубіновий напій із фруктовою кислинкою, апельсиновою цедрою, корицею та гвоздикою. Винна основа — лише 0.0%.",
+     "time_min": 15,
+     "glass": "Heatproof mug",
+     "glass_uk": "Термостійкий кухоль",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Red wine 0.0%",
+       "amount": "200 ml"
+      },
+      {
+       "name": "Water",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Orange",
+       "amount": "2 half-wheels (30 g)"
+      },
+      {
+       "name": "Sugar",
+       "amount": "8 g"
+      },
+      {
+       "name": "Cinnamon",
+       "amount": "1 stick (5 cm)"
+      },
+      {
+       "name": "Cloves",
+       "amount": "2 whole"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Червоне вино 0.0%",
+       "amount": "200 мл"
+      },
+      {
+       "name": "Вода",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Апельсин",
+       "amount": "2 півкружальця (30 г)"
+      },
+      {
+       "name": "Цукор",
+       "amount": "8 г"
+      },
+      {
+       "name": "Кориця",
+       "amount": "1 паличка (5 см)"
+      },
+      {
+       "name": "Гвоздика",
+       "amount": "2 бутони"
+      }
+     ],
+     "steps": [
+      "Put the 0.0% wine, water, sugar, one orange half-wheel and spices in a small saucepan.",
+      "Heat gently for 4 min without boiling. Cover and infuse off the heat for 8 min.",
+      "Strain into a heatproof mug. Add the second half-wheel and cinnamon stick; cool to a comfortable drinking temperature."
+     ],
+     "steps_uk": [
+      "Покладіть вино 0.0%, воду, цукор, одне півкружальце апельсина й спеції в маленьку каструлю.",
+      "Нагрівайте 4 хв на слабкому вогні, не кип’ятіть. Накрийте й настоюйте 8 хв без вогню.",
+      "Процідіть у термостійкий кухоль. Додайте друге півкружальце й паличку кориці; дайте охолонути до комфортної температури."
+     ],
+     "photo": "alcohol-free-mulled-wine.jpg"
+    },
+    {
+     "id": "winter-warmers-wassail",
+     "name": "Wassail",
+     "name_uk": "Восейл",
+     "tags": [
+      "Hot",
+      "Citrus",
+      "Spiced"
+     ],
+     "description": "A juice-based version of the traditional hot apple punch: rounded fruit sweetness, orange and warming spices. No hard cider.",
+     "description_uk": "Традиційний гарячий яблучний пунш у соковій версії: округла фруктова солодкість, апельсин і теплі спеції. Без алкогольного сидру.",
+     "time_min": 18,
+     "glass": "Heatproof mug",
+     "glass_uk": "Термостійкий кухоль",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Non-fermented apple juice",
+       "amount": "180 ml"
+      },
+      {
+       "name": "Orange juice",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Orange",
+       "amount": "1 half-wheel (15 g)"
+      },
+      {
+       "name": "Cinnamon",
+       "amount": "1 stick (5 cm)"
+      },
+      {
+       "name": "Cloves",
+       "amount": "2 whole"
+      },
+      {
+       "name": "Ground nutmeg",
+       "amount": "0.1 g"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Неферментований яблучний сік",
+       "amount": "180 мл"
+      },
+      {
+       "name": "Апельсиновий сік",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Апельсин",
+       "amount": "1 півкружальце (15 г)"
+      },
+      {
+       "name": "Кориця",
+       "amount": "1 паличка (5 см)"
+      },
+      {
+       "name": "Гвоздика",
+       "amount": "2 бутони"
+      },
+      {
+       "name": "Мелений мускатний горіх",
+       "amount": "0,1 г"
+      }
+     ],
+     "steps": [
+      "Combine both juices, cinnamon, cloves and nutmeg in a small saucepan.",
+      "Heat for 4 min until gently steaming. Cover and keep over the lowest heat for 10 min, without a rolling boil.",
+      "Strain into the mug, add the orange half-wheel and cinnamon stick. Cool slightly before drinking."
+     ],
+     "steps_uk": [
+      "З’єднайте обидва соки, корицю, гвоздику й мускатний горіх у маленькій каструлі.",
+      "Нагрійте за 4 хв до легкого парування. Накрийте й тримайте на найслабшому вогні 10 хв, без бурхливого кипіння.",
+      "Процідіть у кухоль, додайте півкружальце апельсина й паличку кориці. Трохи остудіть перед питтям."
+     ],
+     "photo": "wassail.jpg"
+    },
+    {
+     "id": "winter-warmers-alcohol-free-hot-toddy",
+     "name": "Alcohol-free Hot Toddy",
+     "name_uk": "Безалкогольний Хот тоді",
+     "tags": [
+      "Hot",
+      "Citrus",
+      "Spiced"
+     ],
+     "description": "A light honey-lemon drink with oak-spice notes from a 0.0% whiskey alternative. Clear, mellow and pleasantly tart.",
+     "description_uk": "Легкий медово-лимонний напій із дубово-пряними нотами замінника віскі 0.0%. Прозорий, м’який і приємно кислуватий.",
+     "time_min": 6,
+     "glass": "Heatproof mug",
+     "glass_uk": "Термостійкий кухоль",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Oak-spiced whiskey alternative 0.0%",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Hot water (80°C)",
+       "amount": "150 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Honey",
+       "amount": "15 g"
+      },
+      {
+       "name": "Lemon",
+       "amount": "1 wheel (10 g)"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Дубово-пряний замінник віскі 0.0%",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Гаряча вода (80°C)",
+       "amount": "150 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Мед",
+       "amount": "15 г"
+      },
+      {
+       "name": "Лимон",
+       "amount": "1 кружальце (10 г)"
+      }
+     ],
+     "steps": [
+      "Heat the water to 80°C. In a heatproof mug, dissolve the honey in 50 ml of the measured hot water.",
+      "Add the lemon juice, 0.0% oak-spiced base and remaining 100 ml water. Stir for 15 s.",
+      "Add the lemon wheel. Let the drink cool until comfortably warm. Do not add regular whiskey."
+     ],
+     "steps_uk": [
+      "Нагрійте воду до 80°C. У термостійкому кухлі розчиніть мед у 50 мл відміряної гарячої води.",
+      "Додайте лимонний сік, дубово-пряну базу 0.0% та решту 100 мл води. Перемішайте 15 с.",
+      "Покладіть кружальце лимона. Дайте напою охолонути до комфортно теплої температури. Звичайний віскі не додавайте."
+     ],
+     "photo": "alcohol-free-hot-toddy.jpg"
+    },
+    {
+     "id": "winter-warmers-alcohol-free-hot-buttered-rum",
+     "name": "Alcohol-free Hot Buttered Rum",
+     "name_uk": "Гарячий масляний ром 0.0%",
+     "tags": [
+      "Hot",
+      "Creamy",
+      "Spiced"
+     ],
+     "description": "A buttery, slightly opaque caramel cup with cinnamon and nutmeg. Only a 0.0% base provides the rum-style aroma; contains milk.",
+     "description_uk": "Масляниста, злегка непрозора карамельна чашка з корицею й мускатним горіхом. Ромовий аромат дає лише база 0.0%; містить молоко.",
+     "time_min": 7,
+     "glass": "Ceramic mug",
+     "glass_uk": "Керамічний кухоль",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Rum-style alternative 0.0%",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Hot water (80°C)",
+       "amount": "160 ml"
+      },
+      {
+       "name": "Unsalted butter",
+       "amount": "8 g"
+      },
+      {
+       "name": "Brown sugar",
+       "amount": "10 g"
+      },
+      {
+       "name": "Ground cinnamon",
+       "amount": "0.3 g"
+      },
+      {
+       "name": "Ground nutmeg",
+       "amount": "0.1 g"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ромовий замінник 0.0%",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Гаряча вода (80°C)",
+       "amount": "160 мл"
+      },
+      {
+       "name": "Несолоне вершкове масло",
+       "amount": "8 г"
+      },
+      {
+       "name": "Коричневий цукор",
+       "amount": "10 г"
+      },
+      {
+       "name": "Мелена кориця",
+       "amount": "0,3 г"
+      },
+      {
+       "name": "Мелений мускатний горіх",
+       "amount": "0,1 г"
+      }
+     ],
+     "steps": [
+      "Mash the softened butter with the sugar, cinnamon and nutmeg in a ceramic mug.",
+      "Add 60 ml hot water and stir until the butter melts and the sugar dissolves.",
+      "Add the 0.0% base and remaining 100 ml water. Whisk for 20 s. Cool slightly; stir again before drinking."
+     ],
+     "steps_uk": [
+      "Розітріть м’яке масло з цукром, корицею та мускатним горіхом у керамічному кухлі.",
+      "Додайте 60 мл гарячої води й розмішуйте, доки масло розтане, а цукор розчиниться.",
+      "Влийте базу 0.0% та решту 100 мл води. Збийте маленьким вінчиком 20 с. Трохи остудіть; перемішайте перед питтям."
+     ],
+     "photo": "alcohol-free-hot-buttered-rum.jpg"
+    },
+    {
+     "id": "winter-warmers-sbiten",
+     "name": "Sbiten",
+     "name_uk": "Збитень",
+     "tags": [
+      "Hot",
+      "Spiced"
+     ],
+     "description": "A non-fermented version of the traditional honey-spice drink: golden and light, with ginger, cinnamon and clove warmth. No mead.",
+     "description_uk": "Традиційний медово-пряний напій у неферментованій версії: золотистий, легкий, із теплом імбиру, кориці та гвоздики. Без медовухи.",
+     "time_min": 15,
+     "glass": "Ceramic cup",
+     "glass_uk": "Керамічна чашка",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Water",
+       "amount": "230 ml"
+      },
+      {
+       "name": "Honey",
+       "amount": "20 g"
+      },
+      {
+       "name": "Fresh ginger",
+       "amount": "3 g, sliced"
+      },
+      {
+       "name": "Cinnamon",
+       "amount": "1 stick (5 cm)"
+      },
+      {
+       "name": "Cloves",
+       "amount": "2 whole"
+      },
+      {
+       "name": "Cardamom",
+       "amount": "1 lightly crushed pod"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Вода",
+       "amount": "230 мл"
+      },
+      {
+       "name": "Мед",
+       "amount": "20 г"
+      },
+      {
+       "name": "Свіжий імбир",
+       "amount": "3 г, скибочками"
+      },
+      {
+       "name": "Кориця",
+       "amount": "1 паличка (5 см)"
+      },
+      {
+       "name": "Гвоздика",
+       "amount": "2 бутони"
+      },
+      {
+       "name": "Кардамон",
+       "amount": "1 злегка розчавлена коробочка"
+      }
+     ],
+     "steps": [
+      "Add ginger, cinnamon, cloves and cardamom to the water. Bring to a gentle simmer in 3 min.",
+      "Cover and simmer gently for 8 min. Strain, removing all the spices.",
+      "Cool for 2–3 min, stir in the honey and pour into the cup. Serve comfortably warm immediately; do not leave to ferment."
+     ],
+     "steps_uk": [
+      "Покладіть імбир, корицю, гвоздику й кардамон у воду. Доведіть до слабкого кипіння за 3 хв.",
+      "Накрийте й томіть 8 хв на слабкому вогні. Процідіть, видаливши всі спеції.",
+      "Дайте охолонути 2–3 хв, розмішайте мед і перелийте в чашку. Подавайте комфортно теплим одразу, не залишайте для бродіння."
+     ],
+     "photo": "sbiten.jpg"
+    },
+    {
+     "id": "winter-warmers-sahlab",
+     "name": "Sahlab",
+     "name_uk": "Сахлаб",
+     "tags": [
+      "Hot",
+      "Creamy",
+      "Spiced"
+     ],
+     "description": "A gently thickened milk drink with vanilla, cinnamon and pistachios. A practical cornflour home version, not made with orchid powder.",
+     "description_uk": "Ніжний густуватий молочний напій із ваніллю, корицею та фісташками. Практична домашня версія з кукурудзяним крохмалем, не орхідейним порошком.",
+     "time_min": 10,
+     "glass": "Ceramic mug",
+     "glass_uk": "Керамічний кухоль",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Milk",
+       "amount": "220 ml"
+      },
+      {
+       "name": "Cornflour (cornstarch)",
+       "amount": "6 g"
+      },
+      {
+       "name": "Sugar",
+       "amount": "10 g"
+      },
+      {
+       "name": "Vanilla extract 0.0%",
+       "amount": "1 ml"
+      },
+      {
+       "name": "Ground cinnamon",
+       "amount": "0.2 g"
+      },
+      {
+       "name": "Unsalted pistachios",
+       "amount": "5 g, chopped"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Молоко",
+       "amount": "220 мл"
+      },
+      {
+       "name": "Кукурудзяний крохмаль",
+       "amount": "6 г"
+      },
+      {
+       "name": "Цукор",
+       "amount": "10 г"
+      },
+      {
+       "name": "Ванільний екстракт 0.0%",
+       "amount": "1 мл"
+      },
+      {
+       "name": "Мелена кориця",
+       "amount": "0,2 г"
+      },
+      {
+       "name": "Несолоні фісташки",
+       "amount": "5 г, подрібнені"
+      }
+     ],
+     "steps": [
+      "Mix the cornflour with 40 ml cold milk until smooth. Heat the remaining 180 ml milk with the sugar for 3 min.",
+      "Whisk in the slurry. Bring to a gentle simmer and cook for 2 min until lightly thickened.",
+      "Remove from the heat and add 0.0% vanilla. Pour into the mug, top with cinnamon and pistachios. Cool for 3 min. Contains milk and nuts."
+     ],
+     "steps_uk": [
+      "Розмішайте крохмаль із 40 мл холодного молока до гладкої суспензії. Решту 180 мл молока нагрійте з цукром 3 хв.",
+      "Влийте суспензію, постійно збиваючи. Доведіть до легкого кипіння й готуйте 2 хв, доки напій трохи загусне.",
+      "Зніміть з вогню, додайте ваніль 0.0%. Перелийте в кухоль, посипте корицею й фісташками. Остудіть 3 хв. Містить молоко та горіхи."
+     ],
+     "photo": "sahlab.jpg"
+    },
+    {
+     "id": "winter-warmers-vanilla-atole",
+     "name": "Vanilla Atole",
+     "name_uk": "Ванільний атоле",
+     "tags": [
+      "Hot",
+      "Sparkling",
+      "Creamy"
+     ],
+     "description": "A traditional warm masa harina drink: gentle corn flavour, vanilla and cinnamon. Creamy yet drinkable, with no cocoa or chocolate.",
+     "description_uk": "Традиційний теплий напій із masa harina: м’який кукурудзяний смак, ваніль і кориця. Кремова, питна консистенція; без какао чи шоколаду.",
+     "time_min": 15,
+     "glass": "Ceramic mug",
+     "glass_uk": "Керамічний кухоль",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Milk",
+       "amount": "150 ml"
+      },
+      {
+       "name": "Water",
+       "amount": "100 ml"
+      },
+      {
+       "name": "Masa harina (nixtamalized corn flour)",
+       "amount": "12 g"
+      },
+      {
+       "name": "Brown sugar",
+       "amount": "10 g"
+      },
+      {
+       "name": "Cinnamon",
+       "amount": "1 stick (5 cm)"
+      },
+      {
+       "name": "Vanilla extract 0.0%",
+       "amount": "1 ml"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Молоко",
+       "amount": "150 мл"
+      },
+      {
+       "name": "Вода",
+       "amount": "100 мл"
+      },
+      {
+       "name": "Masa harina (нікстамалізоване кукурудзяне борошно)",
+       "amount": "12 г"
+      },
+      {
+       "name": "Коричневий цукор",
+       "amount": "10 г"
+      },
+      {
+       "name": "Кориця",
+       "amount": "1 паличка (5 см)"
+      },
+      {
+       "name": "Ванільний екстракт 0.0%",
+       "amount": "1 мл"
+      }
+     ],
+     "steps": [
+      "Whisk the masa harina into 100 ml cold water until smooth. Do not substitute cornstarch.",
+      "Heat the milk with sugar and cinnamon for 3 min. Add the corn mixture; simmer gently for 8 min, stirring constantly.",
+      "Remove the cinnamon and add 0.0% vanilla. Pour into the mug and cool slightly: it should be creamy but drinkable. Contains milk."
+     ],
+     "steps_uk": [
+      "Розмішайте masa harina в 100 мл холодної води до гладкої суміші. Не замінюйте її крохмалем.",
+      "Нагрійте молоко з цукром і корицею 3 хв. Влийте кукурудзяну суміш; варіть при слабкому кипінні 8 хв, постійно помішуючи.",
+      "Вийміть корицю, додайте ваніль 0.0%. Перелийте в кухоль і дайте трохи охолонути: напій має бути кремовим, але питним. Містить молоко."
+     ],
+     "photo": "vanilla-atole.jpg"
+    },
+    {
+     "id": "winter-warmers-london-fog",
+     "name": "London Fog",
+     "name_uk": "Лондонський туман",
+     "tags": [
+      "Hot",
+      "Creamy",
+      "Tea"
+     ],
+     "description": "Bergamot-scented Earl Grey beneath a thin layer of milk foam, with soft vanilla sweetness from 0.0% syrup. Contains caffeine and milk.",
+     "description_uk": "Бергамотовий Earl Grey під тонким шаром молочної піни, із м’якою ванільною солодкістю сиропу 0.0%. Містить кофеїн і молоко.",
+     "time_min": 8,
+     "glass": "Ceramic cup",
+     "glass_uk": "Керамічна чашка",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Earl Grey tea",
+       "amount": "2 g"
+      },
+      {
+       "name": "Water (95°C)",
+       "amount": "150 ml"
+      },
+      {
+       "name": "Milk",
+       "amount": "100 ml"
+      },
+      {
+       "name": "Vanilla syrup 0.0%",
+       "amount": "15 ml"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Чай Earl Grey",
+       "amount": "2 г"
+      },
+      {
+       "name": "Вода (95°C)",
+       "amount": "150 мл"
+      },
+      {
+       "name": "Молоко",
+       "amount": "100 мл"
+      },
+      {
+       "name": "Ванільний сироп 0.0%",
+       "amount": "15 мл"
+      }
+     ],
+     "steps": [
+      "Pour 150 ml water at 95°C over the Earl Grey. Cover and steep for exactly 4 min, then strain completely.",
+      "While the tea steeps, heat the milk to 60–65°C without boiling. Froth with a handheld frother for 20–30 s.",
+      "Stir the 0.0% syrup into the tea. Pour in the milk and spoon its foam over the top. Cool to a comfortable drinking temperature."
+     ],
+     "steps_uk": [
+      "Залийте Earl Grey 150 мл води при 95°C. Накрийте й настоюйте рівно 4 хв, потім повністю процідіть.",
+      "Поки чай настоюється, нагрійте молоко до 60–65°C, не кип’ятіть. Спіньте ручним спінювачем 20–30 с.",
+      "Розмішайте сироп 0.0% у чаї. Влийте молоко, зверху викладіть його піну. Дайте охолонути до комфортної температури."
+     ],
+     "photo": "london-fog.jpg"
+    },
+    {
+     "id": "winter-warmers-moroccan-mint-tea",
+     "name": "Moroccan Mint Tea",
+     "name_uk": "Марокканський м’ятний чай",
+     "tags": [
+      "Hot",
+      "Tea",
+      "Minty"
+     ],
+     "description": "Green tea with a vivid fresh-mint aroma and sugary sweetness. A clear golden infusion with gentle astringency; contains caffeine.",
+     "description_uk": "Зелений чай із виразним ароматом свіжої м’яти та цукровою солодкістю. Прозорий золотистий настій із легкою терпкістю; містить кофеїн.",
+     "time_min": 7,
+     "glass": "Heatproof tea glass",
+     "glass_uk": "Термостійка чайна склянка",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Gunpowder green tea",
+       "amount": "2 g"
+      },
+      {
+       "name": "Water (85°C)",
+       "amount": "220 ml"
+      },
+      {
+       "name": "Fresh mint",
+       "amount": "5 g (4 g to infuse, 1 g to garnish)"
+      },
+      {
+       "name": "Sugar",
+       "amount": "12 g"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Зелений чай gunpowder",
+       "amount": "2 г"
+      },
+      {
+       "name": "Вода (85°C)",
+       "amount": "220 мл"
+      },
+      {
+       "name": "Свіжа м’ята",
+       "amount": "5 г (4 г для настою, 1 г для подачі)"
+      },
+      {
+       "name": "Цукор",
+       "amount": "12 г"
+      }
+     ],
+     "steps": [
+      "Place the green tea in a teapot. Add 220 ml water at 85°C and steep for 2 min.",
+      "Add 4 g washed mint and the sugar. Stir, cover and infuse for another 2 min.",
+      "Strain out the tea and mint into a heatproof glass. Add the remaining 1 g fresh mint. Cool slightly; do not leave tea leaves in the drink."
+     ],
+     "steps_uk": [
+      "Покладіть зелений чай у заварник. Залийте 220 мл води при 85°C й настоюйте 2 хв.",
+      "Додайте 4 г промитої м’яти та цукор. Перемішайте, накрийте й настоюйте ще 2 хв.",
+      "Процідіть чай і м’яту в термостійку склянку. Додайте решту 1 г свіжої м’яти. Трохи остудіть; не залишайте листя чаю в напої."
+     ],
+     "photo": "moroccan-mint-tea.jpg"
+    },
+    {
+     "id": "winter-warmers-hot-spiced-cranberry-punch",
+     "name": "Hot Spiced Cranberry Punch",
+     "name_uk": "Гарячий журавлинний пунш",
+     "tags": [
+      "Hot",
+      "Citrus",
+      "Berry"
+     ],
+     "description": "A ruby hot punch with tart cranberry, sweet apple, orange and spices. No pineapple or ginger ale; distinct from cold Cranberry Punch.",
+     "description_uk": "Рубіновий гарячий пунш із журавлинною кислинкою, яблучною солодкістю, апельсином і спеціями. Без ананаса та ginger ale; не холодний Cranberry Punch.",
+     "time_min": 15,
+     "glass": "Heatproof mug",
+     "glass_uk": "Термостійкий кухоль",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "100% unsweetened cranberry juice",
+       "amount": "100 ml"
+      },
+      {
+       "name": "Non-fermented apple juice",
+       "amount": "100 ml"
+      },
+      {
+       "name": "Water",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Sugar",
+       "amount": "8 g"
+      },
+      {
+       "name": "Orange",
+       "amount": "1 half-wheel (15 g)"
+      },
+      {
+       "name": "Cinnamon",
+       "amount": "1 stick (5 cm)"
+      },
+      {
+       "name": "Cloves",
+       "amount": "2 whole"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "100% журавлинний сік без цукру",
+       "amount": "100 мл"
+      },
+      {
+       "name": "Неферментований яблучний сік",
+       "amount": "100 мл"
+      },
+      {
+       "name": "Вода",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Цукор",
+       "amount": "8 г"
+      },
+      {
+       "name": "Апельсин",
+       "amount": "1 півкружальце (15 г)"
+      },
+      {
+       "name": "Кориця",
+       "amount": "1 паличка (5 см)"
+      },
+      {
+       "name": "Гвоздика",
+       "amount": "2 бутони"
+      }
+     ],
+     "steps": [
+      "Combine the juices, water, sugar, orange, cinnamon and cloves in a small saucepan.",
+      "Heat for 4 min until gently steaming, stirring to dissolve the sugar. Cover and infuse off the heat for 8 min.",
+      "Strain into a heatproof mug. Return the orange half-wheel and cinnamon stick. Cool slightly before serving."
+     ],
+     "steps_uk": [
+      "З’єднайте соки, воду, цукор, апельсин, корицю й гвоздику в маленькій каструлі.",
+      "Нагрівайте 4 хв до легкого парування, помішуючи до розчинення цукру. Накрийте й настоюйте без вогню 8 хв.",
+      "Процідіть у термостійкий кухоль. Поверніть півкружальце апельсина й паличку кориці. Трохи остудіть перед подачею."
+     ],
+     "photo": "hot-spiced-cranberry-punch.jpg"
+    }
+   ],
+   "subtitle_uk": "10 напоїв · гарячі й пряні"
+  },
+  {
+   "id": "summer-garden",
+   "title": "Summer Garden",
+   "title_uk": "Літній сад",
+   "subtitle": "10 drinks · herbs, berries & citrus",
+   "description": "Herbs, berries, citrus and refreshing drinks for warm days.",
+   "description_uk": "Трави, ягоди, цитруси та легкі напої для спекотних днів.",
+   "productId": "com.filonexperiencedesign.mocktailfinder.pack.summergarden",
+   "price": "€2.99",
+   "cover": "arnold-palmer.jpg",
+   "recipes": [
+    {
+     "id": "summer-garden-arnold-palmer",
+     "name": "Arnold Palmer",
+     "name_uk": "Арнольд Палмер",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Tea"
+     ],
+     "description": "Equal parts black tea and lemonade: tangy, citrusy, and moderately sweet.",
+     "description_uk": "Рівні частини чорного чаю та лимонаду: терпкий, цитрусовий і помірно солодкий.",
+     "time_min": 5,
+     "glass": "Highball",
+     "glass_uk": "Хайбол",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Chilled black tea",
+       "amount": "120 ml"
+      },
+      {
+       "name": "Water",
+       "amount": "90 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Syrup 1:1 0.0%",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Ice for serving",
+       "amount": "100 g"
+      },
+      {
+       "name": "Lemon",
+       "amount": "1 wheel"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Охолоджений чорний чай",
+       "amount": "120 мл"
+      },
+      {
+       "name": "Вода",
+       "amount": "90 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Лід для подачі",
+       "amount": "100 г"
+      },
+      {
+       "name": "Лимон",
+       "amount": "1 кружальце"
+      }
+     ],
+     "steps": [
+      "For the tea, steep 2 g black tea in 150 ml hot water for 3 min; strain, chill, and measure 120 ml.",
+      "Mix 90 ml water, lemon juice, and syrup — that is 120 ml lemonade.",
+      "Pour tea and lemonade over ice. Stir and garnish with a lemon wheel."
+     ],
+     "steps_uk": [
+      "Для чаю заваріть 2 г чорного чаю у 150 мл гарячої води 3 хв; процідіть, остудіть і відміряйте 120 мл.",
+      "Змішайте 90 мл води, лимонний сік і сироп — це 120 мл лимонаду.",
+      "Налийте чай і лимонад на лід. Перемішайте, прикрасьте кружальцем лимона."
+     ],
+     "photo": "arnold-palmer.jpg"
+    },
+    {
+     "id": "summer-garden-virgin-hugo",
+     "name": "Virgin Hugo",
+     "name_uk": "Безалкогольний Гуґо",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "A floral elderflower spritz with mint, lime, and a 0.0% wine base.",
+     "description_uk": "Квітковий бузиновий spritz із м’ятою, лаймом та винною основою 0.0%.",
+     "time_min": 4,
+     "glass": "Wine glass",
+     "glass_uk": "Винний келих",
+     "glass_ml": 450,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Sparkling white wine 0.0%",
+       "amount": "120 ml"
+      },
+      {
+       "name": "Elderflower syrup 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Soda water",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Mint",
+       "amount": "6 leaves"
+      },
+      {
+       "name": "Ice",
+       "amount": "120 g"
+      },
+      {
+       "name": "Lime",
+       "amount": "2 wheels"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Сухе біле ігристе вино 0.0%",
+       "amount": "120 мл"
+      },
+      {
+       "name": "Бузиновий сироп 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Содова",
+       "amount": "50 мл"
+      },
+      {
+       "name": "М’ята",
+       "amount": "6 листків"
+      },
+      {
+       "name": "Лід",
+       "amount": "120 г"
+      },
+      {
+       "name": "Лайм",
+       "amount": "2 кружальця"
+      }
+     ],
+     "steps": [
+      "Gently slap the mint leaves with your palms without bruising them. Place them in the glass with ice and lime wedges.",
+      "Add elderflower syrup, 0.0% sparkling wine, and soda water.",
+      "Stir gently from bottom to top and serve."
+     ],
+     "steps_uk": [
+      "Легко поплескайте листки м’яти долонями, не розтираючи. Покладіть у келих із льодом та кружальцями лайма.",
+      "Додайте бузиновий сироп, ігристе 0.0% і содову.",
+      "Обережно перемішайте знизу вгору й подавайте."
+     ],
+     "photo": "virgin-hugo.jpg"
+    },
+    {
+     "id": "summer-garden-virgin-basil-smash",
+     "name": "Virgin Basil Smash",
+     "name_uk": "Безалкогольний Базил смеш",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Herbal"
+     ],
+     "description": "Fresh green basil, lemon, and 0.0% juniper base with a herbal finish.",
+     "description_uk": "Свіжий зелений базилік, лимон і ялівцева основа 0.0% з трав’яним післясмаком.",
+     "time_min": 6,
+     "glass": "Rocks glass",
+     "glass_uk": "Рокс",
+     "glass_ml": 250,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Gin substitute 0.0%",
+       "amount": "60 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "Simple syrup 1:1 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Basil",
+       "amount": "8 leaves"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g for shaking + 80 g for serving"
+      },
+      {
+       "name": "Basil for garnish",
+       "amount": "1 sprig"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ялівцевий замінник джину 0.0%",
+       "amount": "60 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Базилік",
+       "amount": "8 листків"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г для шейкера + 80 г для подачі"
+      },
+      {
+       "name": "Базилік для декору",
+       "amount": "1 гілочка"
+      }
+     ],
+     "steps": [
+      "In the shaker, gently press 8 basil leaves with syrup and lemon juice.",
+      "Add the 0.0% juniper base and 100 g of ice; shake for 12–15 seconds.",
+      "Double-strain into a rocks glass with fresh ice. Garnish with a basil sprig."
+     ],
+     "steps_uk": [
+      "У шейкері м’яко притисніть 8 листків базиліку з сиропом і лимонним соком.",
+      "Додайте ялівцеву базу 0.0% та 100 г льоду; струсіть 12–15 с.",
+      "Двічі процідіть у рокс зі свіжим льодом. Прикрасьте гілочкою базиліку."
+     ],
+     "photo": "virgin-basil-smash.jpg"
+    },
+    {
+     "id": "summer-garden-virgin-bramble",
+     "name": "Virgin Bramble",
+     "name_uk": "Безалкогольний Брамбл",
+     "tags": [
+      "Frozen",
+      "Citrus",
+      "Berry"
+     ],
+     "description": "Lemon juniper sour with a dark blackberry drizzle in crushed ice.",
+     "description_uk": "Лимонний ялівцевий sour із темною ожиновою доріжкою в подрібненому льоді.",
+     "time_min": 6,
+     "glass": "Rocks glass",
+     "glass_uk": "Рокс",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Gin substitute 0.0%",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "Simple syrup 1:1 0.0%",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Blackberry syrup 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g for shaking + 130 g crushed for serving"
+      },
+      {
+       "name": "Blackberries",
+       "amount": "2 berries"
+      },
+      {
+       "name": "Lemon",
+       "amount": "1 half-wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ялівцевий замінник джину 0.0%",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Ожиновий сироп 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г для шейкера + 130 г подрібненого для подачі"
+      },
+      {
+       "name": "Ожина",
+       "amount": "2 ягоди"
+      },
+      {
+       "name": "Лимон",
+       "amount": "1 півкружальце"
+      }
+     ],
+     "steps": [
+      "Shake the 0.0% juniper base, juice, and simple syrup with 100 g of ice for 12 seconds.",
+      "Strain into a rocks glass filled with crushed ice.",
+      "Slowly pour in blackberry syrup without stirring. Add two berries and a lemon half-wedge."
+     ],
+     "steps_uk": [
+      "Струсіть ялівцеву базу 0.0%, сік і простий сироп зі 100 г льоду 12 с.",
+      "Процідіть у рокс, заповнений подрібненим льодом.",
+      "Повільно полийте ожиновим сиропом, не перемішуючи. Додайте дві ягоди та півкружальце лимона."
+     ],
+     "photo": "virgin-bramble.jpg"
+    },
+    {
+     "id": "summer-garden-virgin-southside",
+     "name": "Virgin Southside",
+     "name_uk": "Безалкогольний Саутсайд",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "A minty juniper sour without soda: short, strained, and not a mojito.",
+     "description_uk": "М’ятний ялівцевий sour без содової: коротка, проціджена подача, не мохіто.",
+     "time_min": 5,
+     "glass": "Coupe",
+     "glass_uk": "Купе",
+     "glass_ml": 180,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Juniper gin alternative 0.0%",
+       "amount": "60 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "1:1 sugar syrup 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Mint",
+       "amount": "6 leaves"
+      },
+      {
+       "name": "Ice for shaker",
+       "amount": "120 g"
+      },
+      {
+       "name": "Mint for garnish",
+       "amount": "1 leaf"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ялівцевий замінник джину 0.0%",
+       "amount": "60 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "М’ята",
+       "amount": "6 листків"
+      },
+      {
+       "name": "Лід для шейкера",
+       "amount": "120 г"
+      },
+      {
+       "name": "М’ята для декору",
+       "amount": "1 листок"
+      }
+     ],
+     "steps": [
+      "Gently press 6 mint leaves with syrup in the shaker; do not over-muddle.",
+      "Add juniper base 0.0%, lemon juice, and ice. Shake for 12 s.",
+      "Double strain into a coupe without ice and garnish with one mint leaf."
+     ],
+     "steps_uk": [
+      "М’яко притисніть 6 листків м’яти із сиропом у шейкері; не розтирайте до кашки.",
+      "Додайте ялівцеву базу 0.0%, лимонний сік та лід. Струсіть 12 с.",
+      "Двічі процідіть у купе без льоду й прикрасьте одним листком м’яти."
+     ],
+     "photo": "virgin-southside.jpg"
+    },
+    {
+     "id": "summer-garden-virgin-sea-breeze",
+     "name": "Virgin Sea Breeze",
+     "name_uk": "Безалкогольний Морський бриз",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Berry"
+     ],
+     "description": "Tart cranberry and bitter grapefruit in a light, non-creamy composition.",
+     "description_uk": "Терпка журавлина та гіркуватий грейпфрут у легкій, не вершковій композиції.",
+     "time_min": 3,
+     "glass": "Highball",
+     "glass_uk": "Хайбол",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Neutral vodka substitute 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Cranberry juice",
+       "amount": "100 ml"
+      },
+      {
+       "name": "Grapefruit juice",
+       "amount": "60 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g"
+      },
+      {
+       "name": "Lime",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Нейтральний замінник горілки 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Журавлинний морс",
+       "amount": "100 мл"
+      },
+      {
+       "name": "Грейпфрутовий сік",
+       "amount": "60 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г"
+      },
+      {
+       "name": "Лайм",
+       "amount": "1 часточка"
+      }
+     ],
+     "steps": [
+      "Fill the glass with ice. Pour in the neutral base 0.0% and cranberry juice.",
+      "Add grapefruit juice and stir with a spoon.",
+      "Garnish with a lime wedge."
+     ],
+     "steps_uk": [
+      "Покладіть лід у келих. Влийте нейтральну базу 0.0% та журавлинний морс.",
+      "Додайте грейпфрутовий сік і перемішайте ложкою.",
+      "Прикрасьте часточкою лайма."
+     ],
+     "photo": "virgin-sea-breeze.jpg"
+    },
+    {
+     "id": "summer-garden-alcohol-free-sangria",
+     "name": "Alcohol-free Sangria",
+     "name_uk": "Сангрія без алкоголю",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "0.0% red wine with citrus and apple — fruity, slightly tart, and refreshing.",
+     "description_uk": "Червоне вино 0.0% із цитрусом та яблуком — фруктова, терпкувата й прохолодна.",
+     "time_min": 5,
+     "glass": "Wine glass",
+     "glass_uk": "Винний келих",
+     "glass_ml": 450,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Red wine 0.0%",
+       "amount": "150 ml"
+      },
+      {
+       "name": "Orange juice",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Soda water",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Orange",
+       "amount": "30 g"
+      },
+      {
+       "name": "Apple",
+       "amount": "30 g"
+      },
+      {
+       "name": "Lemon",
+       "amount": "1 wheel (10 g)"
+      },
+      {
+       "name": "Ice",
+       "amount": "80 g"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Червоне вино 0.0%",
+       "amount": "150 мл"
+      },
+      {
+       "name": "Апельсиновий сік",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Содова",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Апельсин",
+       "amount": "30 г"
+      },
+      {
+       "name": "Яблуко",
+       "amount": "30 г"
+      },
+      {
+       "name": "Лимон",
+       "amount": "1 кружальце (10 г)"
+      },
+      {
+       "name": "Лід",
+       "amount": "80 г"
+      }
+     ],
+     "steps": [
+      "Cut the orange and apple into pieces and the lemon into a wheel. Combine the fruit, 0.0% red wine, and orange juice.",
+      "Cover and refrigerate for 30 min so the flavors combine.",
+      "Pour together with the fruit into a glass with ice. Add soda and gently stir."
+     ],
+     "steps_uk": [
+      "Наріжте апельсин і яблуко шматочками, лимон — кружальцем. З’єднайте фрукти, червоне вино 0.0% та апельсиновий сік.",
+      "Накрийте й поставте в холодильник на 30 хв, щоб смаки поєдналися.",
+      "Перелийте разом із фруктами у келих із льодом. Додайте содову та легко перемішайте."
+     ],
+     "photo": "alcohol-free-sangria.jpg"
+    },
+    {
+     "id": "summer-garden-alcohol-free-tinto-de-verano",
+     "name": "Alcohol-free Tinto de Verano",
+     "name_uk": "Тінто де верано без алкоголю",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Simpler than sangria: a summer mix of 0.0% red wine and lemon soda water.",
+     "description_uk": "Простіша за сангрію літня суміш червоного вина 0.0% та лимонної газованої води.",
+     "time_min": 2,
+     "glass": "Tall tumbler",
+     "glass_uk": "Високий тумблер",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Red wine 0.0%",
+       "amount": "100 ml"
+      },
+      {
+       "name": "Lemon soda water",
+       "amount": "100 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g"
+      },
+      {
+       "name": "Lemon",
+       "amount": "1 wheel"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Червоне вино 0.0%",
+       "amount": "100 мл"
+      },
+      {
+       "name": "Лимонна газована вода",
+       "amount": "100 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г"
+      },
+      {
+       "name": "Лимон",
+       "amount": "1 кружальце"
+      }
+     ],
+     "steps": [
+      "Fill a tumbler with ice and pour in chilled 0.0% red wine.",
+      "Top with lemon soda water in equal measure and gently stir.",
+      "Garnish with a lemon wheel. Do not infuse and do not add sliced fruit."
+     ],
+     "steps_uk": [
+      "Заповніть тумблер льодом та влийте холодне червоне вино 0.0%.",
+      "Долийте лимонну газовану воду в рівній кількості й ніжно перемішайте.",
+      "Прикрасьте кружальцем лимона. Не настоюйте й не додавайте нарізані фрукти."
+     ],
+     "photo": "alcohol-free-tinto-de-verano.jpg"
+    },
+    {
+     "id": "summer-garden-limonana",
+     "name": "Limonana",
+     "name_uk": "Лімонана",
+     "tags": [
+      "Frozen",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "A blended lemon-mint drink with crushed ice: no lime, no soda, and no rum base.",
+     "description_uk": "Збитий лимонно-м’ятний напій із дрібним льодом: без лайма, содової та ромової бази.",
+     "time_min": 5,
+     "glass": "Tall tumbler",
+     "glass_uk": "Високий тумблер",
+     "glass_ml": 400,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Lemon juice",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Cold water",
+       "amount": "120 ml"
+      },
+      {
+       "name": "Sugar",
+       "amount": "20 g"
+      },
+      {
+       "name": "Mint",
+       "amount": "10 leaves"
+      },
+      {
+       "name": "Ice for blender",
+       "amount": "100 g"
+      },
+      {
+       "name": "Mint for garnish",
+       "amount": "1 sprig"
+      },
+      {
+       "name": "Lemon",
+       "amount": "1 wheel"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Лимонний сік",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Холодна вода",
+       "amount": "120 мл"
+      },
+      {
+       "name": "Цукор",
+       "amount": "20 г"
+      },
+      {
+       "name": "М’ята",
+       "amount": "10 листків"
+      },
+      {
+       "name": "Лід для блендера",
+       "amount": "100 г"
+      },
+      {
+       "name": "М’ята для декору",
+       "amount": "1 гілочка"
+      },
+      {
+       "name": "Лимон",
+       "amount": "1 кружальце"
+      }
+     ],
+     "steps": [
+      "Dissolve sugar in lemon juice and water, stirring until crystals disappear.",
+      "Add 10 mint leaves and ice. Blend until you get a fine icy texture with green specks.",
+      "Pour into a tumbler, garnish with a mint sprig and a lemon wheel."
+     ],
+     "steps_uk": [
+      "Розчиніть цукор у лимонному соку та воді, перемішуючи до зникнення кристалів.",
+      "Додайте 10 листків м’яти й лід. Збийте в блендері до дрібної крижаної текстури із зеленими цятками.",
+      "Перелийте у тумблер, прикрасьте гілочкою м’яти та кружальцем лимона."
+     ],
+     "photo": "limonana.jpg"
+    },
+    {
+     "id": "summer-garden-jaljeera",
+     "name": "Jaljeera",
+     "name_uk": "Джалджіра",
+     "tags": [
+      "Frozen",
+      "Citrus",
+      "Minty"
+     ],
+     "description": "An Indian spicy cooler with cumin, mint, tamarind, and black salt.",
+     "description_uk": "Індійський пряний прохолодний напій із кумином, м’ятою, тамариндом і чорною сіллю.",
+     "time_min": 7,
+     "glass": "Tumbler",
+     "glass_uk": "Тумблер",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Cold water",
+       "amount": "200 ml"
+      },
+      {
+       "name": "Mint",
+       "amount": "8 leaves"
+      },
+      {
+       "name": "Cilantro",
+       "amount": "5 g"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Tamarind paste",
+       "amount": "5 g"
+      },
+      {
+       "name": "Roasted ground cumin",
+       "amount": "1 g"
+      },
+      {
+       "name": "Black salt kala namak",
+       "amount": "0.5 g"
+      },
+      {
+       "name": "Dried ground ginger",
+       "amount": "0.2 g"
+      },
+      {
+       "name": "Sugar",
+       "amount": "5 g"
+      },
+      {
+       "name": "Ice",
+       "amount": "80 g"
+      },
+      {
+       "name": "Mint for garnish",
+       "amount": "1 sprig"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Холодна вода",
+       "amount": "200 мл"
+      },
+      {
+       "name": "М’ята",
+       "amount": "8 листків"
+      },
+      {
+       "name": "Кінза",
+       "amount": "5 г"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Паста тамаринду",
+       "amount": "5 г"
+      },
+      {
+       "name": "Обсмажений мелений кумин",
+       "amount": "1 г"
+      },
+      {
+       "name": "Чорна сіль kala namak",
+       "amount": "0,5 г"
+      },
+      {
+       "name": "Сухий мелений імбир",
+       "amount": "0,2 г"
+      },
+      {
+       "name": "Цукор",
+       "amount": "5 г"
+      },
+      {
+       "name": "Лід",
+       "amount": "80 г"
+      },
+      {
+       "name": "М’ята для декору",
+       "amount": "1 гілочка"
+      }
+     ],
+     "steps": [
+      "Blend 50 ml of measured water with mint, cilantro, tamarind, and lemon juice.",
+      "Add cumin, kala namak, ginger, sugar, and the remaining 150 ml of water. Stir and strain through a fine-mesh sieve.",
+      "Pour over ice and garnish with mint. The drink should be spicy-sour, not a sweet smoothie."
+     ],
+     "steps_uk": [
+      "Збийте 50 мл відміряної води з м’ятою, кінзою, тамариндом і лимонним соком.",
+      "Додайте кумин, kala namak, імбир, цукор та решту 150 мл води. Перемішайте й процідіть через дрібне сито.",
+      "Налийте на лід і прикрасьте м’ятою. Напій має бути пряно-кислим, а не солодким смузі."
+     ],
+     "photo": "jaljeera.jpg"
+    }
+   ],
+   "subtitle_uk": "10 напоїв · трави, ягоди й цитрус"
+  },
+  {
+   "id": "tropical-escape",
+   "title": "Tropical Escape",
+   "title_uk": "Тропічні канікули",
+   "subtitle": "10 drinks · pineapple, coconut & mango",
+   "description": "Pineapple, coconut, mango and vibrant tropical combinations.",
+   "description_uk": "Ананас, кокос, манґо та яскраві тропічні поєднання.",
+   "productId": "com.filonexperiencedesign.mocktailfinder.pack.tropicalescape",
+   "price": "€2.99",
+   "cover": "virgin-pina-colada.jpg",
+   "recipes": [
+    {
+     "id": "tropical-escape-virgin-pi-a-colada",
+     "name": "Virgin Piña Colada",
+     "name_uk": "Безалкогольна Пінья Колада",
+     "tags": [
+      "Frozen",
+      "Tropical",
+      "Creamy"
+     ],
+     "description": "Thick, creamy, and frothy pineapple-coconut classic without rum.",
+     "description_uk": "Густа, ніжна й вершкова ананасово-кокосова класика без рому.",
+     "time_min": 5,
+     "glass": "Hurricane",
+     "glass_uk": "Харікейн",
+     "glass_ml": 400,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Pineapple juice",
+       "amount": "120 ml"
+      },
+      {
+       "name": "Coconut cream",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Coconut syrup 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Crushed ice",
+       "amount": "120 g"
+      },
+      {
+       "name": "Pineapple",
+       "amount": "1 wedge (20 g)"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ананасовий сік",
+       "amount": "120 мл"
+      },
+      {
+       "name": "Кокосові вершки",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Кокосовий сироп 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Подрібнений лід",
+       "amount": "120 г"
+      },
+      {
+       "name": "Ананас",
+       "amount": "1 часточка (20 г)"
+      }
+     ],
+     "steps": [
+      "Blend pineapple juice, coconut cream, and syrup in a blender until smooth.",
+      "Add 120 g crushed ice and blend another 15–20 s until thick and icy.",
+      "Pour into a hurricane glass and garnish with a pineapple wedge."
+     ],
+     "steps_uk": [
+      "Збийте ананасовий сік, кокосові вершки та сироп у блендері до однорідності.",
+      "Додайте 120 г подрібненого льоду й збивайте ще 15–20 с до густої крижаної текстури.",
+      "Перелийте в харікейн і прикрасьте часточкою ананаса."
+     ],
+     "photo": "virgin-pina-colada.jpg"
+    },
+    {
+     "id": "tropical-escape-mango-virgin-margarita",
+     "name": "Mango Virgin Margarita",
+     "name_uk": "Манґова безалкогольна Маргарита",
+     "tags": [
+      "Frozen",
+      "Citrus",
+      "Tropical"
+     ],
+     "description": "Silky mango with bright lime, orange aroma, and a salty rim.",
+     "description_uk": "Шовковисте манґо з яскравим лаймом, апельсиновим ароматом та солоним краєм.",
+     "time_min": 6,
+     "glass": "Margarita",
+     "glass_uk": "Маргарита",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Mango puree",
+       "amount": "70 g"
+      },
+      {
+       "name": "Agave tequila substitute 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Orange triple sec substitute 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "Agave syrup 0.0%",
+       "amount": "5 ml"
+      },
+      {
+       "name": "Ice for blender",
+       "amount": "100 g"
+      },
+      {
+       "name": "Salt",
+       "amount": "2 g"
+      },
+      {
+       "name": "Lime",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Пюре стиглого манґо",
+       "amount": "70 г"
+      },
+      {
+       "name": "Агавовий замінник текіли 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Апельсиновий замінник triple sec 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Агавовий сироп 0.0%",
+       "amount": "5 мл"
+      },
+      {
+       "name": "Лід для блендера",
+       "amount": "100 г"
+      },
+      {
+       "name": "Сіль",
+       "amount": "2 г"
+      },
+      {
+       "name": "Лайм",
+       "amount": "1 часточка"
+      }
+     ],
+     "steps": [
+      "Rub half the rim with lime and dip into salt.",
+      "Blend mango puree, both 0.0% substitutes, lime juice, syrup, and ice in a blender.",
+      "Pour the thick drink into the glass and garnish with a lime wedge."
+     ],
+     "steps_uk": [
+      "Змочіть половину краю келиха лаймом і умочіть у сіль.",
+      "Збийте манґове пюре, обидва замінники 0.0%, лаймовий сік, сироп та лід у блендері.",
+      "Перелийте густий напій у келих, прикрасьте часточкою лайма."
+     ],
+     "photo": "mango-virgin-margarita.jpg"
+    },
+    {
+     "id": "tropical-escape-strawberry-virgin-daiquiri",
+     "name": "Strawberry Virgin Daiquiri",
+     "name_uk": "Полуничний безалкогольний Дайкірі",
+     "tags": [
+      "Frozen",
+      "Citrus",
+      "Berry"
+     ],
+     "description": "Frozen strawberry and lime with rum base 0.0%. No banana, milk, or yogurt.",
+     "description_uk": "Крижана полуниця та лайм із ромовою базою 0.0%. Без банана, молока й йогурту.",
+     "time_min": 5,
+     "glass": "Coupe",
+     "glass_uk": "Купе",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Strawberries",
+       "amount": "80 g"
+      },
+      {
+       "name": "White rum substitute 0.0%",
+       "amount": "50 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "Syrup 1:1 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Ice for blender",
+       "amount": "100 g"
+      },
+      {
+       "name": "Strawberry for garnish",
+       "amount": "1"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Полуниця",
+       "amount": "80 г"
+      },
+      {
+       "name": "Замінник білого рому 0.0%",
+       "amount": "50 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Лід для блендера",
+       "amount": "100 г"
+      },
+      {
+       "name": "Полуниця для декору",
+       "amount": "1 шт"
+      }
+     ],
+     "steps": [
+      "Hull 80 g strawberries and place them in a blender.",
+      "Add rum base 0.0%, lime juice, syrup, and ice. Blend until fine and evenly icy.",
+      "Pour into a coupe and garnish with a whole strawberry."
+     ],
+     "steps_uk": [
+      "Очистіть 80 г полуниці від хвостиків і покладіть у блендер.",
+      "Додайте ромову базу 0.0%, сік лайма, сироп і лід. Збийте до дрібної рівномірної крижаної текстури.",
+      "Перелийте в купе та прикрасьте цілою полуницею."
+     ],
+     "photo": "strawberry-virgin-daiquiri.jpg"
+    },
+    {
+     "id": "tropical-escape-virgin-bay-breeze",
+     "name": "Virgin Bay Breeze",
+     "name_uk": "Безалкогольний Бриз затоки",
+     "tags": [
+      "Iced",
+      "Berry",
+      "Tropical"
+     ],
+     "description": "Pineapple softens cranberry tartness and adds tropical aroma.",
+     "description_uk": "Ананас пом’якшує журавлинну терпкість і додає тропічний аромат.",
+     "time_min": 3,
+     "glass": "Highball",
+     "glass_uk": "Хайбол",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Neutral vodka substitute 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Cranberry juice",
+       "amount": "90 ml"
+      },
+      {
+       "name": "Pineapple juice",
+       "amount": "70 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g"
+      },
+      {
+       "name": "Pineapple",
+       "amount": "1 wedge (20 g)"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Нейтральний замінник горілки 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Журавлинний морс",
+       "amount": "90 мл"
+      },
+      {
+       "name": "Ананасовий сік",
+       "amount": "70 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г"
+      },
+      {
+       "name": "Ананас",
+       "amount": "1 часточка (20 г)"
+      }
+     ],
+     "steps": [
+      "Fill the highball with ice and pour in the neutral base 0.0%.",
+      "Add cranberry juice and pineapple juice. Stir until the color is evenly pink-coral.",
+      "Garnish with a pineapple wedge."
+     ],
+     "steps_uk": [
+      "Покладіть лід у хайбол і влийте нейтральну базу 0.0%.",
+      "Додайте журавлинний морс та ананасовий сік. Перемішайте до однорідного рожево-коралового кольору.",
+      "Прикрасьте часточкою ананаса."
+     ],
+     "photo": "virgin-bay-breeze.jpg"
+    },
+    {
+     "id": "tropical-escape-virgin-mai-tai",
+     "name": "Virgin Mai Tai",
+     "name_uk": "Безалкогольний Май Тай",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Minty"
+     ],
+     "description": "Lime, almond, and orange on two rum bases 0.0% — a rich tiki adaptation.",
+     "description_uk": "Лайм, мигдаль і апельсин на двох ромових базах 0.0% — насичена tiki-адаптація.",
+     "time_min": 6,
+     "glass": "Rocks",
+     "glass_uk": "Рокс",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "White rum alternative 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Spiced dark rum alternative 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Orange triple sec alternative 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "Almond orgeat syrup 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g for shaking + 130 g crushed for serving"
+      },
+      {
+       "name": "Mint",
+       "amount": "1 sprig"
+      },
+      {
+       "name": "Lime",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Замінник білого рому 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Пряний замінник темного рому 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Апельсиновий замінник triple sec 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Мигдалевий сироп оржат 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г для шейкера + 130 г подрібненого для подачі"
+      },
+      {
+       "name": "М’ята",
+       "amount": "1 гілочка"
+      },
+      {
+       "name": "Лайм",
+       "amount": "1 часточка"
+      }
+     ],
+     "steps": [
+      "Shake white rum and orange bases 0.0%, lime juice, and orgeat with 100 g ice for 12 s.",
+      "Strain into a rocks glass with crushed ice. Slowly float the dark rum base 0.0% on top.",
+      "Garnish with a mint sprig and a lime wedge."
+     ],
+     "steps_uk": [
+      "Струсіть білу ромову та апельсинову бази 0.0%, сік лайма й оржат зі 100 г льоду 12 с.",
+      "Процідіть у рокс із подрібненим льодом. Повільно влийте зверху темну ромову базу 0.0%.",
+      "Прикрасьте гілочкою м’яти й часточкою лайма."
+     ],
+     "photo": "virgin-mai-tai.jpg"
+    },
+    {
+     "id": "tropical-escape-virgin-blue-hawaiian",
+     "name": "Virgin Blue Hawaiian",
+     "name_uk": "Безалкогольний Блю Гаваян",
+     "tags": [
+      "Frozen",
+      "Citrus",
+      "Tropical"
+     ],
+     "description": "Coconut and pineapple with blue orange syrup; soft tropical texture.",
+     "description_uk": "Кокос і ананас із блакитним апельсиновим сиропом; м’яка тропічна текстура.",
+     "time_min": 5,
+     "glass": "Hurricane",
+     "glass_uk": "Харікейн",
+     "glass_ml": 400,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "White rum alternative 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Pineapple juice",
+       "amount": "80 ml"
+      },
+      {
+       "name": "Coconut cream",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Blue curaçao syrup 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Ice for blender",
+       "amount": "120 g"
+      },
+      {
+       "name": "Pineapple",
+       "amount": "1 wedge (20 g)"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Замінник білого рому 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Ананасовий сік",
+       "amount": "80 мл"
+      },
+      {
+       "name": "Кокосові вершки",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Сироп blue curaçao 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Лід для блендера",
+       "amount": "120 г"
+      },
+      {
+       "name": "Ананас",
+       "amount": "1 часточка (20 г)"
+      }
+     ],
+     "steps": [
+      "Blend rum base 0.0%, pineapple juice, coconut cream, blue curaçao 0.0%, and lime juice.",
+      "Add ice and blend for another 15 s until frosty and creamy.",
+      "Pour into a hurricane glass, garnish with pineapple. Blue curaçao here is only a non-alcoholic syrup, not liqueur."
+     ],
+     "steps_uk": [
+      "Збийте ромову базу 0.0%, ананасовий сік, кокосові вершки, blue curaçao 0.0% і лаймовий сік.",
+      "Додайте лід і збивайте ще 15 с до крижаної кремової текстури.",
+      "Перелийте в харікейн, прикрасьте ананасом. Blue curaçao тут лише безалкогольний сироп, не лікер."
+     ],
+     "photo": "virgin-blue-hawaiian.jpg"
+    },
+    {
+     "id": "tropical-escape-virgin-painkiller",
+     "name": "Virgin Painkiller",
+     "name_uk": "Безалкогольний Пейнкілер",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Tropical"
+     ],
+     "description": "Pineapple, orange, and coconut with a 0.0% rum base; nutmeg adds warmth.",
+     "description_uk": "Ананас, апельсин і кокос із ромовою базою 0.0%; мускатний горіх додає теплоти.",
+     "time_min": 5,
+     "glass": "Hurricane",
+     "glass_uk": "Харікейн",
+     "glass_ml": 400,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Spiced dark rum substitute 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Pineapple juice",
+       "amount": "100 ml"
+      },
+      {
+       "name": "Orange juice",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Coconut cream",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Coconut syrup 0.0%",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g for shaking + 100 g for serving"
+      },
+      {
+       "name": "Nutmeg",
+       "amount": "0.1 g"
+      },
+      {
+       "name": "Orange",
+       "amount": "1 wheel"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Пряний замінник темного рому 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Ананасовий сік",
+       "amount": "100 мл"
+      },
+      {
+       "name": "Апельсиновий сік",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Кокосові вершки",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Кокосовий сироп 0.0%",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г для шейкера + 100 г для подачі"
+      },
+      {
+       "name": "Мускатний горіх",
+       "amount": "0,1 г"
+      },
+      {
+       "name": "Апельсин",
+       "amount": "1 півкружальце"
+      }
+     ],
+     "steps": [
+      "Shake the 0.0% rum base, both juices, coconut cream, and syrup with 100 g of ice for 15 s.",
+      "Strain into a hurricane glass with fresh 100 g of ice.",
+      "Grate 0.1 g of nutmeg on top and add an orange wheel."
+     ],
+     "steps_uk": [
+      "Струсіть ромову базу 0.0%, обидва соки, кокосові вершки та сироп зі 100 г льоду 15 с.",
+      "Процідіть у харікейн зі свіжими 100 г льоду.",
+      "Натріть зверху 0,1 г мускатного горіха й додайте півкружальце апельсина."
+     ],
+     "photo": "virgin-painkiller.jpg"
+    },
+    {
+     "id": "tropical-escape-virgin-jungle-bird",
+     "name": "Virgin Jungle Bird",
+     "name_uk": "Безалкогольний Джангл Берд",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Tropical"
+     ],
+     "description": "Tropical pineapple meets bitter red aperitif and dark 0.0% rum base.",
+     "description_uk": "Тропічний ананас зустрічається з гірким червоним аперитивом і темною ромовою базою 0.0%.",
+     "time_min": 5,
+     "glass": "Rocks",
+     "glass_uk": "Рокс",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Spiced dark rum substitute 0.0%",
+       "amount": "45 ml"
+      },
+      {
+       "name": "Red bitter aperitif 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Pineapple juice",
+       "amount": "60 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "15 ml"
+      },
+      {
+       "name": "1:1 syrup 0.0%",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g for shaking + 80 g for serving"
+      },
+      {
+       "name": "Pineapple",
+       "amount": "1 wedge (20 g)"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Пряний замінник темного рому 0.0%",
+       "amount": "45 мл"
+      },
+      {
+       "name": "Червоний гіркий аперитив 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Ананасовий сік",
+       "amount": "60 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Сироп 1:1 0.0%",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г для шейкера + 80 г для подачі"
+      },
+      {
+       "name": "Ананас",
+       "amount": "1 часточка (20 г)"
+      }
+     ],
+     "steps": [
+      "Combine the 0.0% rum base, aperitif, juices, and syrup in a shaker.",
+      "Shake with 100 g of ice for 12–15 s and strain into a rocks glass with fresh ice.",
+      "Garnish with a pineapple wedge."
+     ],
+     "steps_uk": [
+      "З’єднайте ромову базу й аперитив 0.0%, соки та сироп у шейкері.",
+      "Струсіть зі 100 г льоду 12–15 с і процідіть у рокс зі свіжим льодом.",
+      "Прикрасьте часточкою ананаса."
+     ],
+     "photo": "virgin-jungle-bird.jpg"
+    },
+    {
+     "id": "tropical-escape-virgin-singapore-sling",
+     "name": "Virgin Singapore Sling",
+     "name_uk": "Безалкогольний Сінгапур слінґ",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Tropical"
+     ],
+     "description": "A complex fruit-and-herbal profile: pineapple, cherry, lime, and a light bitterness.",
+     "description_uk": "Складний фруктово-трав’яний профіль: ананас, вишня, лайм і легка гірчинка.",
+     "time_min": 6,
+     "glass": "Highball",
+     "glass_uk": "Хайбол",
+     "glass_ml": 400,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Juniper substitute gin 0.0%",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Pineapple juice",
+       "amount": "90 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Cherry syrup 0.0%",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Grenadine 0.0%",
+       "amount": "5 ml"
+      },
+      {
+       "name": "Orange triple sec substitute 0.0%",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Herbal-honey Bénédictine substitute 0.0%",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Red bitter aperitif 0.0%",
+       "amount": "5 ml"
+      },
+      {
+       "name": "Soda water",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g for shaking + 100 g for serving"
+      },
+      {
+       "name": "Pineapple",
+       "amount": "1 wedge (20 g)"
+      },
+      {
+       "name": "Cherry (alcohol-free)",
+       "amount": "1 piece"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Ялівцевий замінник джину 0.0%",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Ананасовий сік",
+       "amount": "90 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Вишневий сироп 0.0%",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Гренадин 0.0%",
+       "amount": "5 мл"
+      },
+      {
+       "name": "Апельсиновий замінник triple sec 0.0%",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Трав’яно-медовий замінник Bénédictine 0.0%",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Червоний гіркий аперитив 0.0%",
+       "amount": "5 мл"
+      },
+      {
+       "name": "Содова",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г для шейкера + 100 г для подачі"
+      },
+      {
+       "name": "Ананас",
+       "amount": "1 часточка (20 г)"
+      },
+      {
+       "name": "Вишня без алкоголю",
+       "amount": "1 шт"
+      }
+     ],
+     "steps": [
+      "Shake all liquid ingredients except soda with 100 g of ice for 12 s. For the herbal note, a specialized 0.0% base is required.",
+      "Strain into a highball with fresh ice. Top with soda and gently stir.",
+      "Garnish with pineapple and cherry. Do not add alcoholic bitters or regular liqueurs."
+     ],
+     "steps_uk": [
+      "Струсіть усі рідкі інгредієнти, крім содової, зі 100 г льоду 12 с. Для трав’яної ноти потрібна саме спеціалізована база 0.0%.",
+      "Процідіть у хайбол зі свіжим льодом. Долийте содову й легко перемішайте.",
+      "Прикрасьте ананасом і вишнею. Алкогольні біттери та звичайні лікери не додавайте."
+     ],
+     "photo": "virgin-singapore-sling.jpg"
+    },
+    {
+     "id": "tropical-escape-aam-panna",
+     "name": "Aam Panna",
+     "name_uk": "Аам панна",
+     "tags": [
+      "Frozen",
+      "Tropical",
+      "Minty"
+     ],
+     "description": "Sour-sweet Indian drink made from cooked unripe green mango, cumin, and mint.",
+     "description_uk": "Кисло-солодкий індійський напій із вареного незрілого зеленого манґо, кумину та м’яти.",
+     "time_min": 25,
+     "glass": "Tumbler",
+     "glass_uk": "Тумблер",
+     "glass_ml": 400,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Unripe green mango pulp",
+       "amount": "80 g"
+      },
+      {
+       "name": "Water for cooking",
+       "amount": "80 ml"
+      },
+      {
+       "name": "Cold water",
+       "amount": "120 ml"
+      },
+      {
+       "name": "Sugar",
+       "amount": "15 g"
+      },
+      {
+       "name": "Roasted ground cumin",
+       "amount": "0.5 g"
+      },
+      {
+       "name": "Black salt kala namak",
+       "amount": "0.5 g"
+      },
+      {
+       "name": "Mint",
+       "amount": "4 leaves"
+      },
+      {
+       "name": "Ice",
+       "amount": "60 g"
+      },
+      {
+       "name": "Mint for garnish",
+       "amount": "1 sprig"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "М’якоть незрілого зеленого манґо",
+       "amount": "80 г"
+      },
+      {
+       "name": "Вода для варіння",
+       "amount": "80 мл"
+      },
+      {
+       "name": "Холодна вода",
+       "amount": "120 мл"
+      },
+      {
+       "name": "Цукор",
+       "amount": "15 г"
+      },
+      {
+       "name": "Обсмажений мелений кумин",
+       "amount": "0,5 г"
+      },
+      {
+       "name": "Чорна сіль kala namak",
+       "amount": "0,5 г"
+      },
+      {
+       "name": "М’ята",
+       "amount": "4 листки"
+      },
+      {
+       "name": "Лід",
+       "amount": "60 г"
+      },
+      {
+       "name": "М’ята для декору",
+       "amount": "1 гілочка"
+      }
+     ],
+     "steps": [
+      "Chop 80 g of unripe green mango pulp. Cook with 80 ml of water, covered, over low heat for 12–15 min until tender; reserve the liquid.",
+      "Blend the mango with the reserved liquid, sugar, cumin, kala namak, and 4 mint leaves. Cool completely.",
+      "Dilute with 120 ml of cold water, pour over ice, and garnish with mint. Use unripe mango; do not add milk or yogurt."
+     ],
+     "steps_uk": [
+      "Наріжте 80 г очищеної м’якоті зеленого манґо. Варіть із 80 мл води під кришкою на малому вогні 12–15 хв до м’якості; збережіть рідину.",
+      "Збийте манґо разом із рідиною, цукром, кумином, kala namak та 4 листками м’яти. Повністю остудіть.",
+      "Розведіть 120 мл холодної води, налийте на лід і прикрасьте м’ятою. Використовуйте незріле манґо; молоко та йогурт не додавайте."
+     ],
+     "photo": "aam-panna.jpg"
+    }
+   ],
+   "subtitle_uk": "10 напоїв · ананас, кокос і манго"
+  },
+  {
+   "id": "party-brunch",
+   "title": "Party & Brunch",
+   "title_uk": "Свято та бранч",
+   "subtitle": "10 drinks · sparkling & fruity",
+   "description": "Sparkling and fruity drinks for celebrations. Not a dedicated children’s collection.",
+   "description_uk": "Ігристі й фруктові напої для святкового столу. Не спеціальна дитяча добірка.",
+   "productId": "com.filonexperiencedesign.mocktailfinder.pack.partybrunch",
+   "price": "€2.99",
+   "cover": "shirley-temple.jpg",
+   "recipes": [
+    {
+     "id": "party-brunch-shirley-temple",
+     "name": "Shirley Temple",
+     "name_uk": "Ширлі Темпл",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "A playful classic with pomegranate sweetness, light ginger notes, and cherry.",
+     "description_uk": "Ігриста класика з гранатовою солодкістю, легкою імбирною нотою та вишнею.",
+     "time_min": 3,
+     "glass": "Highball",
+     "glass_uk": "Хайбол",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Ginger ale 0.0%",
+       "amount": "180 ml"
+      },
+      {
+       "name": "Grenadine 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Ice for serving",
+       "amount": "120 g"
+      },
+      {
+       "name": "Cocktail cherry (alcohol-free)",
+       "amount": "1"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Імбирний ель 0.0%",
+       "amount": "180 мл"
+      },
+      {
+       "name": "Гренадин 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Лід для подачі",
+       "amount": "120 г"
+      },
+      {
+       "name": "Коктейльна вишня без алкоголю",
+       "amount": "1 шт"
+      }
+     ],
+     "steps": [
+      "Fill a highball with ice. Add grenadine and lime juice.",
+      "Pour in chilled ginger ale. Stir gently with a spoon without foaming.",
+      "Garnish with a cherry and serve immediately."
+     ],
+     "steps_uk": [
+      "Наповніть хайбол льодом. Влийте гренадин і сік лайма.",
+      "Долийте холодний імбирний ель. Легко перемішайте ложкою, не збиваючи бульбашки.",
+      "Прикрасьте вишнею та подавайте одразу."
+     ],
+     "photo": "shirley-temple.jpg"
+    },
+    {
+     "id": "party-brunch-roy-rogers",
+     "name": "Roy Rogers",
+     "name_uk": "Рой Роджерс",
+     "tags": [
+      "Iced",
+      "Sparkling"
+     ],
+     "description": "Dark cola with a fruity pomegranate note and a sweet cherry accent.",
+     "description_uk": "Темна газована кола з фруктовою нотою граната й солодким вишневим акцентом.",
+     "time_min": 2,
+     "glass": "Highball",
+     "glass_uk": "Хайбол",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Cola",
+       "amount": "200 ml"
+      },
+      {
+       "name": "Grenadine 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Ice for serving",
+       "amount": "120 g"
+      },
+      {
+       "name": "Cocktail cherry (alcohol-free)",
+       "amount": "1"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Кола",
+       "amount": "200 мл"
+      },
+      {
+       "name": "Гренадин 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Лід для подачі",
+       "amount": "120 г"
+      },
+      {
+       "name": "Коктейльна вишня без алкоголю",
+       "amount": "1 шт"
+      }
+     ],
+     "steps": [
+      "Place ice in a tall glass and add grenadine.",
+      "Slowly pour in cold cola and gently stir.",
+      "Anchor the cherry on the rim of the glass."
+     ],
+     "steps_uk": [
+      "Покладіть лід у високий келих і влийте гренадин.",
+      "Повільно долийте холодну колу та обережно перемішайте.",
+      "Закріпіть вишню на краю келиха."
+     ],
+     "photo": "roy-rogers.jpg"
+    },
+    {
+     "id": "party-brunch-virgin-mary",
+     "name": "Virgin Mary",
+     "name_uk": "Безалкогольна Кривава Мері",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Spiced"
+     ],
+     "description": "Rich tomato drink with a spicy kick, pepper, and tangy spice — more than just tomato juice.",
+     "description_uk": "Насичений томатний напій із гострим хроном, перцем і пряною кислинкою — не просто томатний сік.",
+     "time_min": 5,
+     "glass": "Highball",
+     "glass_uk": "Хайбол",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Tomato juice",
+       "amount": "180 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Worcestershire sauce 0.0%",
+       "amount": "5 ml"
+      },
+      {
+       "name": "Tabasco 0.0%",
+       "amount": "0.5 ml"
+      },
+      {
+       "name": "Grated horseradish",
+       "amount": "3 g"
+      },
+      {
+       "name": "Celery salt",
+       "amount": "0.5 g"
+      },
+      {
+       "name": "Black pepper",
+       "amount": "0.1 g"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g"
+      },
+      {
+       "name": "Celery",
+       "amount": "1 stalk"
+      },
+      {
+       "name": "Lemon",
+       "amount": "1 wedge"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Томатний сік",
+       "amount": "180 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Вустерський соус 0.0%",
+       "amount": "5 мл"
+      },
+      {
+       "name": "Табаско 0.0%",
+       "amount": "0,5 мл"
+      },
+      {
+       "name": "Тертий хрін",
+       "amount": "3 г"
+      },
+      {
+       "name": "Селерова сіль",
+       "amount": "0,5 г"
+      },
+      {
+       "name": "Чорний перець",
+       "amount": "0,1 г"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г"
+      },
+      {
+       "name": "Селера",
+       "amount": "1 стебло"
+      },
+      {
+       "name": "Лимон",
+       "amount": "1 часточка"
+      }
+     ],
+     "steps": [
+      "Mix tomato and lemon juices, sauces, horseradish, celery salt, and pepper. Ensure sauces are alcohol-free.",
+      "Pour the mixture between two glasses 3–4 times; do not foam.",
+      "Pour over ice in a highball. Add a celery stalk and a lemon wedge."
+     ],
+     "steps_uk": [
+      "Змішайте томатний і лимонний соки, соуси, хрін, селерову сіль та перець. Переконайтеся, що соуси не містять алкоголю.",
+      "Перелийте суміш між двома склянками 3–4 рази; не збивайте в піну.",
+      "Налийте на лід у хайбол. Додайте стебло селери й часточку лимона."
+     ],
+     "photo": "virgin-mary.jpg"
+    },
+    {
+     "id": "party-brunch-strawberry-virgin-margarita",
+     "name": "Strawberry Virgin Margarita",
+     "name_uk": "Полунична безалкогольна Маргарита",
+     "tags": [
+      "Frozen",
+      "Citrus",
+      "Berry"
+     ],
+     "description": "Juicy strawberry, lime, and agave profile with a subtle salty contrast.",
+     "description_uk": "Соковита полуниця, лайм і агавовий профіль з тонким солоним контрастом.",
+     "time_min": 6,
+     "glass": "Margarita",
+     "glass_uk": "Маргарита",
+     "glass_ml": 300,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Strawberries",
+       "amount": "70 g"
+      },
+      {
+       "name": "Agave tequila substitute 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Orange triple sec substitute 0.0%",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "25 ml"
+      },
+      {
+       "name": "Agave syrup 0.0%",
+       "amount": "10 ml"
+      },
+      {
+       "name": "Ice for blender",
+       "amount": "100 g"
+      },
+      {
+       "name": "Salt",
+       "amount": "2 g"
+      },
+      {
+       "name": "Lime",
+       "amount": "1 wedge"
+      },
+      {
+       "name": "Strawberry for garnish",
+       "amount": "1"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Полуниця",
+       "amount": "70 г"
+      },
+      {
+       "name": "Агавовий замінник текіли 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Апельсиновий замінник triple sec 0.0%",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "25 мл"
+      },
+      {
+       "name": "Агавовий сироп 0.0%",
+       "amount": "10 мл"
+      },
+      {
+       "name": "Лід для блендера",
+       "amount": "100 г"
+      },
+      {
+       "name": "Сіль",
+       "amount": "2 г"
+      },
+      {
+       "name": "Лайм",
+       "amount": "1 часточка"
+      },
+      {
+       "name": "Полуниця для декору",
+       "amount": "1 шт"
+      }
+     ],
+     "steps": [
+      "Rub half the rim with lime and add salt.",
+      "Blend 70 g strawberries with both 0.0% substitutes, lime juice, syrup, and ice until thick and uniform.",
+      "Pour into the glass. Garnish with a strawberry and a lime wedge."
+     ],
+     "steps_uk": [
+      "Змочіть половину краю келиха лаймом і додайте сіль.",
+      "Збийте 70 г полуниці з обома замінниками 0.0%, соком лайма, сиропом і льодом до густої однорідної суміші.",
+      "Налийте в келих. Прикрасьте полуницею й часточкою лайма."
+     ],
+     "photo": "strawberry-virgin-margarita.jpg"
+    },
+    {
+     "id": "party-brunch-virgin-cosmopolitan",
+     "name": "Virgin Cosmopolitan",
+     "name_uk": "Безалкогольний Космополітен",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Berry"
+     ],
+     "description": "Pink, tart, and citrusy: cranberry, lime, and orange aroma.",
+     "description_uk": "Рожевий, терпкуватий і цитрусовий: журавлина, лайм та апельсиновий аромат.",
+     "time_min": 5,
+     "glass": "Martini glass",
+     "glass_uk": "Келих мартіні",
+     "glass_ml": 180,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Neutral vodka substitute 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Cranberry juice",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Orange triple sec substitute 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Lime juice",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Shaker ice",
+       "amount": "120 g"
+      },
+      {
+       "name": "Orange zest",
+       "amount": "1 strip"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Нейтральний замінник горілки 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Журавлинний морс",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Апельсиновий замінник triple sec 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Сік лайма",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Лід для шейкера",
+       "amount": "120 г"
+      },
+      {
+       "name": "Апельсинова цедра",
+       "amount": "1 смужка"
+      }
+     ],
+     "steps": [
+      "Chill the glass. Combine both 0.0% substitutes, cranberry juice, and lime juice in a shaker.",
+      "Add ice, shake for 12 s, and double-strain into a chilled glass without ice.",
+      "Squeeze the zest over the surface and place it on the rim."
+     ],
+     "steps_uk": [
+      "Охолодіть келих. Змішайте обидва замінники 0.0%, журавлинний морс і сік лайма в шейкері.",
+      "Додайте лід, струсіть 12 с і двічі процідіть у келих без льоду.",
+      "Стисніть цедру над поверхнею й покладіть її на край."
+     ],
+     "photo": "virgin-cosmopolitan.jpg"
+    },
+    {
+     "id": "party-brunch-virgin-sex-on-the-beach",
+     "name": "Virgin Sex on the Beach",
+     "name_uk": "Безалкогольний Секс на пляжі",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Berry"
+     ],
+     "description": "Peach aroma combines orange sweetness and cranberry tartness.",
+     "description_uk": "Персиковий аромат поєднує апельсинову солодкість і журавлинну терпкість.",
+     "time_min": 4,
+     "glass": "Highball",
+     "glass_uk": "Хайбол",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Neutral vodka substitute 0.0%",
+       "amount": "30 ml"
+      },
+      {
+       "name": "Peach nectar",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Orange juice",
+       "amount": "70 ml"
+      },
+      {
+       "name": "Cranberry juice",
+       "amount": "70 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "100 g"
+      },
+      {
+       "name": "Orange",
+       "amount": "1 wheel"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Нейтральний замінник горілки 0.0%",
+       "amount": "30 мл"
+      },
+      {
+       "name": "Персиковий нектар",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Апельсиновий сік",
+       "amount": "70 мл"
+      },
+      {
+       "name": "Журавлинний морс",
+       "amount": "70 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "100 г"
+      },
+      {
+       "name": "Апельсин",
+       "amount": "1 кружальце"
+      }
+     ],
+     "steps": [
+      "Fill the highball with ice. Add the neutral base 0.0%, peach nectar, and orange juice.",
+      "Top with cranberry juice and stir until the color is evenly coral.",
+      "Garnish with an orange wheel."
+     ],
+     "steps_uk": [
+      "Наповніть хайбол льодом. Додайте нейтральну базу 0.0%, персиковий нектар та апельсиновий сік.",
+      "Долийте журавлинний морс і перемішайте до рівномірного коралового кольору.",
+      "Прикрасьте кружальцем апельсина."
+     ],
+     "photo": "virgin-sex-on-the-beach.jpg"
+    },
+    {
+     "id": "party-brunch-virgin-mimosa",
+     "name": "Virgin Mimosa",
+     "name_uk": "Безалкогольна Мімоза",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Orange juice and dry sparkling wine 0.0%: light bubbles and fresh citrus.",
+     "description_uk": "Апельсиновий сік і сухе ігристе 0.0%: легкі бульбашки та свіжий цитрус.",
+     "time_min": 2,
+     "glass": "Flute",
+     "glass_uk": "Флюте",
+     "glass_ml": 200,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Dry white sparkling wine 0.0%",
+       "amount": "90 ml"
+      },
+      {
+       "name": "Orange juice without pulp",
+       "amount": "90 ml"
+      },
+      {
+       "name": "Orange zest",
+       "amount": "1 strip"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Сухе біле ігристе вино 0.0%",
+       "amount": "90 мл"
+      },
+      {
+       "name": "Апельсиновий сік без м’якоті",
+       "amount": "90 мл"
+      },
+      {
+       "name": "Апельсинова цедра",
+       "amount": "1 смужка"
+      }
+     ],
+     "steps": [
+      "Chill the juice, sparkling wine 0.0%, and flute.",
+      "Pour in orange juice, then slowly top with sparkling wine. Do not stir.",
+      "Garnish with zest; serve without ice."
+     ],
+     "steps_uk": [
+      "Охолодіть сік, ігристе 0.0% та флюте.",
+      "Влийте апельсиновий сік, потім повільно долийте ігристе. Не збовтуйте.",
+      "Прикрасьте цедрою; подавайте без льоду."
+     ],
+     "photo": "virgin-mimosa.jpg"
+    },
+    {
+     "id": "party-brunch-virgin-bellini",
+     "name": "Virgin Bellini",
+     "name_uk": "Безалкогольний Белліні",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Gentle white peach puree in dry sparkling wine 0.0% with delicate foam.",
+     "description_uk": "Ніжне пюре білого персика в сухому ігристому 0.0% з делікатною піною.",
+     "time_min": 4,
+     "glass": "Flute",
+     "glass_uk": "Флюте",
+     "glass_ml": 200,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "White peach puree",
+       "amount": "50 g"
+      },
+      {
+       "name": "Dry white sparkling wine 0.0%",
+       "amount": "100 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "5 ml"
+      },
+      {
+       "name": "White peach",
+       "amount": "1 thin slice (10 g)"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Пюре білого персика",
+       "amount": "50 г"
+      },
+      {
+       "name": "Сухе біле ігристе вино 0.0%",
+       "amount": "100 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "5 мл"
+      },
+      {
+       "name": "Білий персик",
+       "amount": "1 тонка скибка (10 г)"
+      }
+     ],
+     "steps": [
+      "Strain the peach puree through a sieve, mix with lemon juice, and chill well.",
+      "Place the puree in a flute. Add half of the sparkling wine 0.0% and gently stir.",
+      "Top with the remaining sparkling wine. Garnish with a peach slice; serve without ice."
+     ],
+     "steps_uk": [
+      "Протріть персикове пюре через сито, змішайте з лимонним соком і добре охолодіть.",
+      "Викладіть пюре у флюте. Додайте половину ігристого 0.0%, ніжно розмішайте.",
+      "Долийте решту ігристого. Прикрасьте скибкою персика; без льоду."
+     ],
+     "photo": "virgin-bellini.jpg"
+    },
+    {
+     "id": "party-brunch-virgin-rossini",
+     "name": "Virgin Rossini",
+     "name_uk": "Безалкогольний Россіні",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Berry"
+     ],
+     "description": "Strawberry puree and dry sparkling wine 0.0% — berry, fresh, with fine bubbles.",
+     "description_uk": "Полуничне пюре й сухе ігристе 0.0% — ягідний, свіжий, з дрібними бульбашками.",
+     "time_min": 4,
+     "glass": "Flute",
+     "glass_uk": "Флюте",
+     "glass_ml": 200,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Strawberry puree",
+       "amount": "50 g"
+      },
+      {
+       "name": "Dry white sparkling wine 0.0%",
+       "amount": "100 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "5 ml"
+      },
+      {
+       "name": "Strawberry",
+       "amount": "1 whole"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Полуничне пюре",
+       "amount": "50 г"
+      },
+      {
+       "name": "Сухе біле ігристе вино 0.0%",
+       "amount": "100 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "5 мл"
+      },
+      {
+       "name": "Полуниця",
+       "amount": "1 шт"
+      }
+     ],
+     "steps": [
+      "Strain the puree through a sieve and mix with lemon juice. Chill.",
+      "Place the puree in a flute. Add the sparkling wine 0.0% in two portions, gently stirring after the first.",
+      "Garnish with a strawberry and serve without ice."
+     ],
+     "steps_uk": [
+      "Протріть пюре через сито й змішайте з лимонним соком. Охолодіть.",
+      "Помістіть пюре у флюте. Додайте ігристе 0.0% двома порціями, легко перемішуючи після першої.",
+      "Прикрасьте полуницею та подавайте без льоду."
+     ],
+     "photo": "virgin-rossini.jpg"
+    },
+    {
+     "id": "party-brunch-virgin-blue-lagoon",
+     "name": "Virgin Blue Lagoon",
+     "name_uk": "Безалкогольна Блакитна лагуна",
+     "tags": [
+      "Iced",
+      "Citrus",
+      "Sparkling"
+     ],
+     "description": "Clear blue citrus long drink with fizzy lemon freshness.",
+     "description_uk": "Прозорий блакитний цитрусовий long drink із газованою лимонною свіжістю.",
+     "time_min": 3,
+     "glass": "Highball",
+     "glass_uk": "Хайбол",
+     "glass_ml": 350,
+     "servings": 1,
+     "ingredients": [
+      {
+       "name": "Neutral vodka alternative 0.0%",
+       "amount": "40 ml"
+      },
+      {
+       "name": "Blue curaçao syrup 0.0%",
+       "amount": "20 ml"
+      },
+      {
+       "name": "Lemon juice",
+       "amount": "15 ml"
+      },
+      {
+       "name": "Lemon-lime soda",
+       "amount": "120 ml"
+      },
+      {
+       "name": "Ice",
+       "amount": "120 g"
+      },
+      {
+       "name": "Lemon",
+       "amount": "1 wheel"
+      }
+     ],
+     "ingredients_uk": [
+      {
+       "name": "Нейтральний замінник горілки 0.0%",
+       "amount": "40 мл"
+      },
+      {
+       "name": "Сироп blue curaçao 0.0%",
+       "amount": "20 мл"
+      },
+      {
+       "name": "Лимонний сік",
+       "amount": "15 мл"
+      },
+      {
+       "name": "Лимонно-лаймова газована вода",
+       "amount": "120 мл"
+      },
+      {
+       "name": "Лід",
+       "amount": "120 г"
+      },
+      {
+       "name": "Лимон",
+       "amount": "1 кружальце"
+      }
+     ],
+     "steps": [
+      "Fill a highball with ice. Add neutral base 0.0%, blue curaçao syrup 0.0%, and lemon juice.",
+      "Top with lemon-lime soda and gently stir.",
+      "Garnish with a lemon wheel. Do not use spirit-based blue curaçao."
+     ],
+     "steps_uk": [
+      "Наповніть хайбол льодом. Додайте нейтральну базу 0.0%, сироп blue curaçao 0.0% та лимонний сік.",
+      "Долийте лимонно-лаймову газовану воду й ніжно перемішайте.",
+      "Прикрасьте кружальцем лимона. Не використовуйте алкогольний blue curaçao."
+     ],
+     "photo": "virgin-blue-lagoon.jpg"
+    }
+   ],
+   "subtitle_uk": "10 напоїв · ігристі й фруктові"
+  }
+ ]
+}
