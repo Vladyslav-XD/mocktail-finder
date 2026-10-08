@@ -2,6 +2,29 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-08 · 1.2 task 10 — ready for review, STOPPED before the build (Claude Code)
+**Report for Vlad.** Tasks 0–9 are done and pushed (`release/1.2`, last code commit `78fa0fd`). Nothing has been built or uploaded.
+- Checks:
+  - `src/data/uk/drinks.json` is unchanged since Cowork delivered it on 7 Oct; there is nothing newer on GitHub.
+  - `npx tsc --noEmit` clean; `npm test` 103/103 in 11 suites; `npx expo export --platform ios` bundles (1559 modules); `npx expo install --check` up to date.
+  - `app.json`: version 1.2.0, bundle id unchanged, no `ios.buildNumber` (EAS `appVersionSource: remote` + `autoIncrement` → the next build is 6, never reused).
+- **Screenshots for review: `~/Desktop/mocktail-1.2-release-review/`** — 88 files: `SE/` and `ProMax/` × `en-light`, `en-dark`, `uk-light`, `uk-dark` × 11 screens:
+  - Home, Recipe Free, Recipe Pro, My Bar Free, My Bar Pro, Shopping list, Paywall (opened from Servings), Collection sheet (Winter Warmers), About, tour welcome, tour Collections.
+- How they were made:
+  - A throwaway driver in the app (not committed) switched language and theme through the app's own settings and used the DEV switches for Free / Pro. Hints were off for the run.
+  - The driver asked a local-only screenshot server on the Mac for each frame and waited for it, so every file shows exactly the screen named.
+  - Two first attempts were discarded. Another Claude session was driving the shared simulators for Pace Tape at the same time, and log-based timing lagged on the Pro Max.
+- **New simulators** (Vlad's ok, 8 Oct): "Mocktail SE" (iPhone SE 3rd gen) and "Mocktail Pro Max" (iPhone 17 Pro Max), iOS 26.5, used only by this project, so other projects' sessions cannot interfere. Expo Go, the `exp://` approval and the 9:41 status bar are set up on both.
+- What the screenshots cannot show yet:
+  - **Prices**: Expo Go has no StoreKit, so every buy button reads "Not available right now" and the tip cards "—". Real prices, the 0.6 s skeleton, purchasing and "Thanks!" need the 11 products in App Store Connect and a TestFlight build.
+  - On the SE, Recipe Free and Pro look the same above the fold; the locked Servings row and Pro buttons are lower. The Pro Max shows the difference.
+- **Next, only after Vlad's ok**:
+  1. `npx eas-cli@latest build --platform ios --profile production` (answer **n** to the Apple-account login question).
+  2. TestFlight on Vlad's iPhone per `TESTING.md` (sandbox: Pro, a collection, Everything on a second tester, a tip, Ask to Buy, Restore after reinstall).
+  3. Cowork updates screenshots / What's New / App Store Connect.
+  4. `eas submit` only with a separate ok.
+- Before TestFlight: the 11 products from TASKS.md must exist in App Store Connect (Pro, Everything, 6 collections, 3 tips), Family Sharing on for the 8 non-consumables, plus a sandbox tester. Vlad / Cowork do this; Claude Code does not touch App Store Connect.
+
 ## 2026-10-08 · 1.2 task 9 — G. Tour and hints (Claude Code)
 - **Logic** `src/onboarding/logic.ts` (pure, tested):
   - `tourSequence`: new install welcome + Collections, Servings, Shopping list, Share as a card, Your own recipes, What's at home?, Mocktail Finder Pro; update from 1.1 what's new + the same without Your own recipes; Pro users skip the last step.
