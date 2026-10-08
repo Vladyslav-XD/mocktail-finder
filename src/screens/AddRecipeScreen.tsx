@@ -8,6 +8,7 @@ import { Header } from '../components/Header';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useToast } from '../components/Toast';
+import { CoachTarget, useCoachFacts } from '../onboarding/OnboardingContext';
 import { spacing } from '../theme/spacing';
 import { AddRecipeIcon, XIcon } from '../components/icons';
 import { SCREENS } from '../constants/screens';
@@ -67,6 +68,9 @@ export const AddRecipeScreen = () => {
   );
   const [saving, setSaving] = useState(false);
   const [picking, setPicking] = useState(false);
+
+  // Hint "Your own recipes" shows until a photo is added.
+  useCoachFacts({ addHasPhoto: !!photo });
 
   const photoPreviewUri = photo ? (photo.kind === 'stored' ? resolveImageUri(photo.ref) : photo.uri) : null;
 
@@ -247,6 +251,7 @@ export const AddRecipeScreen = () => {
               </View>
             </View>
           ) : (
+            <CoachTarget id="photo">
             <TouchableOpacity
               style={[styles.addButton, { borderColor: colors.badgeBorder, backgroundColor: colors.surface }]}
               onPress={handleAddPhoto}
@@ -255,6 +260,7 @@ export const AddRecipeScreen = () => {
               <AddRecipeIcon size={18} color={colors.title} />
               <Text style={[styles.addButtonText, { color: colors.title }]}>{t('addPhoto')}</Text>
             </TouchableOpacity>
+            </CoachTarget>
           )}
         </View>
 

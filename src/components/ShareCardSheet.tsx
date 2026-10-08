@@ -9,6 +9,7 @@ import { type } from '../theme/typography';
 import { shareCardCanvas, sharePreviewColors as P, sharePreviewSize } from '../theme/shareCard';
 import { ShareCard, ShareCardContent } from './ShareCard';
 import { ShareIcon, XIcon } from './icons';
+import { useOverlayOpen } from '../onboarding/OverlayContext';
 
 interface ShareCardSheetProps {
   visible: boolean;
@@ -27,6 +28,7 @@ export const ShareCardSheet = ({ visible, content, onClose }: ShareCardSheetProp
   const insets = useSafeAreaInsets();
   const capture = useRef<View>(null);
   const [busy, setBusy] = useState(false);
+  useOverlayOpen(visible);
   const { width: windowWidth } = useWindowDimensions();
   // Prototype: 345 pt wide; narrower on the smallest iPhones.
   const previewWidth = Math.min(sharePreviewSize.width, windowWidth - 2 * spacing.screen);

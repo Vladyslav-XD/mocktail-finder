@@ -15,6 +15,7 @@ import { useTheme } from '../context/ThemeContext';
 import { radius, sizes, spacing } from '../theme/spacing';
 import { duration, easing, useReduceMotion } from '../theme/motion';
 import { ToastOutlet } from './Toast';
+import { useOverlayOpen } from '../onboarding/OverlayContext';
 
 interface BottomSheetProps {
   visible: boolean;
@@ -46,6 +47,8 @@ export const BottomSheet = ({ visible, onClose, children, fullHeight = false, cl
   const reduceMotion = useReduceMotion();
 
   const [mounted, setMounted] = useState(visible);
+  // Hints stay away while any sheet is up.
+  useOverlayOpen(visible);
   const sheet = useRef(new Animated.Value(0)).current;
   const scrim = useRef(new Animated.Value(0)).current;
   const drag = useRef(new Animated.Value(0)).current;

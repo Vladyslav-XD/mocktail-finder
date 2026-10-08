@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ActivityIndicator, Alert, Image } from 'react-native';
+import React, { useEffect, useState, useCallback, useMemo, useRef } from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ActivityIndicator, Alert, Image, useWindowDimensions } from 'react-native';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -32,6 +32,7 @@ import { setShoppingList } from '../store/shoppingListSlice';
 import { RootState } from '../store/store';
 import { usePurchases } from '../purchases/PurchasesContext';
 import { usePaywall } from '../purchases/usePaywall';
+import { CoachTarget, useCoachFacts, useOnboarding } from '../onboarding/OnboardingContext';
 
 type ParamList = {
   RecipeDetails: {
@@ -75,6 +76,31 @@ export const RecipeDetailsScreen = () => {
   const [error, setError] = useState(false);
   const [servings, setServings] = useState(() => baseServings(recipe));
   const [cardOpen, setCardOpen] = useState(false);
+  const onboarding = useOnboarding();
+  const scrollRef = useRef<ScrollView>(null);
+  const scrollY = useRef(0);
+  const { height: windowHeight } = useWindowDimensions();
+
+  // Hints: count opened recipes, and whether this one is saved.
+  const recipeOpened = onboarding?.recipeOpened;
+  useEffect(() => recipeOpened?.(), [recipe.id, recipeOpened]);
+  useCoachFacts({ recipeIsFavourite: isFav });
+
+  // A tour step about a Pro tool scrolls its button into view (on a small iPhone the
+  // buttons start below the edge; the prototype never needed to).
+  const tourKey = onboarding?.current?.mode === 'tour' ? onboarding.current.key : null;
+  useEffect(() => {
+    if (tourKey !== 'serv' && tourKey !== 'shop' && tourKey !== 'card') return;
+    const id = setTimeout(() => {
+      onboarding?.target(tourKey)?.measureInWindow((_x, y, _w, h) => {
+        const mid = windowHeight / 2;
+        if (y + h > windowHeight * 0.75 || y < windowHeight * 0.15) {
+          scrollRef.current?.scrollTo({ y: Math.max(0, scrollY.current + y - mid), animated: true });
+        }
+      });
+    }, 400);
+    return () => clearTimeout(id);
+  }, [tourKey, onboarding, windowHeight, loading]);
 
   // Another recipe in the same screen instance starts at its own servings.
   useEffect(() => setServings(baseServings(recipe)), [recipe.id]);
@@ -169,7 +195,13 @@ export const RecipeDetailsScreen = () => {
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scroll}>
+      <ScrollView
+        ref={scrollRef}
+        onScroll={e => (scrollY.current = e.nativeEvent.contentOffset.y)}
+        scrollEventThrottle={16}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scroll}
+      >
         <View style={[styles.photo, { backgroundColor: colors.iconBG }]}>
           <Image source={recipeImageSource(recipe.id, recipe.imageUrl)} style={styles.photoImage} resizeMode="cover" />
           <PhotoScrim />
@@ -183,6 +215,7 @@ export const RecipeDetailsScreen = () => {
             >
               <ArrowLeftIcon size={sizes.icon.l} color={colors.title} />
             </TouchableOpacity>
+            <CoachTarget id="fav">
             <TouchableOpacity
               accessibilityRole="button"
               accessibilityLabel={isFav ? t('savedFav') : t('addFav')}
@@ -193,6 +226,7 @@ export const RecipeDetailsScreen = () => {
             >
               <HeartIcon size={sizes.icon.l} color={colors.favoriteHeart} focused={isFav} />
             </TouchableOpacity>
+            </CoachTarget>
           </View>
         </View>
 
@@ -229,6 +263,7 @@ export const RecipeDetailsScreen = () => {
                 <Text accessibilityRole="header" style={[type.titleS, { color: colors.categoryTitle }]}>
                   {t('ingredients')}
                 </Text>
+                <CoachTarget id="serv">
                 <TouchableOpacity
                   activeOpacity={isPro ? 1 : opacity.pressed}
                   disabled={isPro}
@@ -255,6 +290,7 @@ export const RecipeDetailsScreen = () => {
                     dimWhenLocked={false}
                   />
                 </TouchableOpacity>
+                </CoachTarget>
                 <View style={styles.lines}>
                   {lines.map((line, i) => (
                     <View key={i} style={styles.line}>
@@ -296,6 +332,7 @@ export const RecipeDetailsScreen = () => {
                   icon={c => <ShareIcon size={sizes.icon.m} color={c} />}
                   onPress={handleShare}
                 />
+                <CoachTarget id="shop">
                 <Button
                   label={t('addShop')}
                   variant="outline"
@@ -304,6 +341,8 @@ export const RecipeDetailsScreen = () => {
                   locked={!isPro}
                   onPress={handleAddToList}
                 />
+                </CoachTarget>
+                <CoachTarget id="card">
                 <Button
                   label={t('shareCard')}
                   variant="outline"
@@ -312,6 +351,7 @@ export const RecipeDetailsScreen = () => {
                   locked={!isPro}
                   onPress={handleShareCard}
                 />
+                </CoachTarget>
                 {isOwnRecipe && (
                   <View style={styles.ownRow}>
                     <Button

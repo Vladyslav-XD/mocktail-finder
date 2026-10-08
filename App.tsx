@@ -13,6 +13,10 @@ import { Sora_700Bold } from '@expo-google-fonts/sora/700Bold';
 import { RootNavigator } from './src/navigation/RootNavigator';
 import { navigationRef } from './src/navigation/navigationRef';
 import { PaywallProvider } from './src/purchases/usePaywall';
+import { OverlayProvider } from './src/onboarding/OverlayContext';
+import { OnboardingProvider } from './src/onboarding/OnboardingContext';
+import { CoachOverlay } from './src/onboarding/CoachOverlay';
+import { loadOnboarding, OnboardingSaved } from './src/onboarding/storage';
 import { FavoritesProvider } from './src/context/FavoritesContext';
 import { ThemeProvider, ThemeMode, loadThemeMode } from './src/context/ThemeContext';
 import { store, hydrateStore } from './src/store/store';
@@ -30,6 +34,7 @@ export default function App() {
   const [themeMode, setThemeMode] = useState<ThemeMode>('system');
   const [language, setLanguage] = useState<LanguageSetting>('system');
   const [cachedOwned, setCachedOwned] = useState<string[]>([]);
+  const [onboarding, setOnboarding] = useState<OnboardingSaved | null>(null);
   // Brand font for the wordmark. If loading fails we still start (system font fallback)
   // rather than leaving the user on the splash forever.
   const [fontsLoaded, fontError] = useFonts({ Sora_600SemiBold, Sora_700Bold });
@@ -40,13 +45,14 @@ export default function App() {
     // Favourites, user recipes, the drink-details cache, the saved theme and the
     // language are all read while the splash plays, so the app opens in its final state.
     // Purchases are cached too; StoreKit is asked later, without holding up the UI.
-    Promise.all([hydrateStore(), loadDetailsCache(), loadThemeMode(), loadLanguageSetting(), loadCachedOwned()])
-      .then(([, , savedMode, savedLanguage, owned]) => {
+    Promise.all([hydrateStore(), loadDetailsCache(), loadThemeMode(), loadLanguageSetting(), loadCachedOwned(), loadOnboarding()])
+      .then(([, , savedMode, savedLanguage, owned, savedOnboarding]) => {
         if (cancelled) return;
         setThemeMode(savedMode);
         setLanguage(savedLanguage);
         store.dispatch(setOwned(owned));
         setCachedOwned(owned);
+        setOnboarding(savedOnboarding);
       })
       .finally(() => {
         if (!cancelled) setStoreReady(true);
@@ -71,11 +77,16 @@ export default function App() {
                 <ToastProvider>
                   <PurchasesProvider initialOwned={cachedOwned}>
                     <FavoritesProvider>
-                      <NavigationContainer ref={navigationRef}>
-                        <PaywallProvider>
-                          <RootNavigator />
-                        </PaywallProvider>
-                      </NavigationContainer>
+                      <OverlayProvider>
+                        <NavigationContainer ref={navigationRef}>
+                          <PaywallProvider>
+                            <OnboardingProvider initial={onboarding ?? { tourDone: true, user: 'new', seen: {}, sessions: 1 }}>
+                              <RootNavigator />
+                              <CoachOverlay />
+                            </OnboardingProvider>
+                          </PaywallProvider>
+                        </NavigationContainer>
+                      </OverlayProvider>
                     </FavoritesProvider>
                   </PurchasesProvider>
                   <ToastOutlet />

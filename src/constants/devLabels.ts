@@ -8,4 +8,6 @@ export const DEV_LABELS = {
   everything: 'Simulate Everything',
   pack: (title: string) => `Simulate ${title}`,
   storeDown: 'Store unreachable',
+  tourNew: 'Replay tour (new install)',
+  tourUpdate: 'Replay tour (update from 1.1)',
 };

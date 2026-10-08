@@ -28,6 +28,7 @@ import { selectVisibleDrinks } from '../store/selectors';
 import { usePurchases } from '../purchases/PurchasesContext';
 import { usePaywall } from '../purchases/usePaywall';
 import { PRODUCT_IDS } from '../purchases/products';
+import { CoachTarget, useCoachFacts } from '../onboarding/OnboardingContext';
 
 // "all" and "my" are pseudo-categories; the rest are real drink tags (all 15 from 1.1).
 type Category = 'all' | 'my' | DrinkTag;
@@ -105,6 +106,8 @@ export const MocktailFinderScreen = () => {
   const pack = activePack ? PACKS.find(p => p.id === activePack) : undefined;
   const filtersOn = !!searchQuery.trim() || activeCategory !== 'all' || activeIngredients.length > 0;
   const everythingPrice = ownsEverything ? null : price(PRODUCT_IDS.everything);
+  // Hints on Home only show over the plain list (Collections row visible).
+  useCoachFacts({ homeUnfiltered: !filtersOn });
 
   const filteredRecipes = useMemo(() => {
     const searchHit = (recipe: Recipe) =>
@@ -149,9 +152,9 @@ export const MocktailFinderScreen = () => {
       </View>
       {!filtersOn && (
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.packRow}>
-          {PACKS.map(p => (
+          {PACKS.map((p, i) => (
+            <CoachTarget key={p.id} id={i === 0 ? 'coll' : `pack-${p.id}`}>
             <PackCard
-              key={p.id}
               packId={p.id}
               title={lang === 'uk' ? p.title_uk : p.title}
               subtitle={lang === 'uk' ? p.subtitle_uk : p.subtitle}
@@ -160,6 +163,7 @@ export const MocktailFinderScreen = () => {
               unlockedLabel={t('unlocked')}
               onPress={() => openPack(p.id)}
             />
+            </CoachTarget>
           ))}
         </ScrollView>
       )}
@@ -204,6 +208,7 @@ export const MocktailFinderScreen = () => {
             <Text accessibilityRole="header" style={[type.titleS, { color: colors.categoryTitle }]}>
               {t('featured')}
             </Text>
+            <CoachTarget id="surprise">
             <TouchableOpacity
               style={[styles.surprise, { backgroundColor: colors.brand }]}
               onPress={handleNavigateRandom}
@@ -213,6 +218,7 @@ export const MocktailFinderScreen = () => {
               <ShuffleIcon size={sizes.icon.s} color={colors.onBrand} />
               <Text style={[type.label, { color: colors.onBrand }]}>{t('surpriseBtn')}</Text>
             </TouchableOpacity>
+            </CoachTarget>
           </View>
         )}
         {filteredRecipes.length === 0 && !loading && !error && (

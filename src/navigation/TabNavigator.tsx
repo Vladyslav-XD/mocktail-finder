@@ -7,6 +7,7 @@ import { RandomScreen } from '../screens/RandomScreen';
 import { AddRecipeScreen } from '../screens/AddRecipeScreen';
 import { MyBarScreen } from '../screens/MyBarScreen';
 import { GlassIcon } from '../components/icons/barIcons';
+import { CoachTarget } from '../onboarding/OnboardingContext';
 import { SCREENS } from '../constants/screens';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -105,6 +106,12 @@ export const TabNavigator = () => {
         options={{
           tabBarLabel: t('tabKitchen'),
           tabBarIcon: ({ color }) => <GlassIcon size={24} color={color} />,
+          // The tour's "What's at home?" step points at this tab.
+          tabBarButton: props => (
+            <CoachTarget id="bartab" style={{ flex: 1 }}>
+              <TabBarButton {...props} />
+            </CoachTarget>
+          ),
         }}
       />
       <Tab.Screen

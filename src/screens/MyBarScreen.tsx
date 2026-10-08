@@ -34,6 +34,7 @@ import { clearTicked, removeItem, toggleItem } from '../store/shoppingListSlice'
 import { radius, sizes, spacing } from '../theme/spacing';
 import { type } from '../theme/typography';
 import type { en } from '../i18n/en';
+import { CoachTarget, useCoachFacts } from '../onboarding/OnboardingContext';
 
 type Segment = 'have' | 'shop';
 type IngKey = keyof typeof en.ing;
@@ -62,6 +63,8 @@ export const MyBarScreen = () => {
   useEffect(() => {
     if (catalogueStatus === 'idle') dispatch(loadCatalogue());
   }, [catalogueStatus, dispatch]);
+
+  useCoachFacts({ myBarSegment: segment, shopHasItems: items.length > 0 });
 
   const freq = useMemo(() => keyFrequency(drinks), [drinks]);
   const results = useMemo(() => barResults(drinks, ticked), [drinks, ticked]);
@@ -133,9 +136,9 @@ export const MyBarScreen = () => {
         action={tickedCount ? { label: t('clearTicked'), onPress: () => dispatch(clearTicked()) } : undefined}
       />
       <View style={styles.rows}>
-        {items.map(item => (
+        {items.map((item, i) => (
+          <CoachTarget key={item.key} id={i === 0 ? 'swipe' : `row-${item.key}`}>
           <CheckRow
-            key={item.key}
             label={itemName(item, lang)}
             amount={itemAmount(item, lang)}
             checked={item.ticked}
@@ -143,6 +146,7 @@ export const MyBarScreen = () => {
             onDelete={() => dispatch(removeItem(item.key))}
             deleteLabel={t('a11yDelete')}
           />
+          </CoachTarget>
         ))}
       </View>
       <Button

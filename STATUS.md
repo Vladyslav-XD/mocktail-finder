@@ -2,6 +2,37 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-08 · 1.2 task 9 — G. Tour and hints (Claude Code)
+- **Logic** `src/onboarding/logic.ts` (pure, tested):
+  - `tourSequence`: new install welcome + Collections, Servings, Shopping list, Share as a card, Your own recipes, What's at home?, Mocktail Finder Pro; update from 1.1 what's new + the same without Your own recipes; Pro users skip the last step.
+  - `stepCounter` ("1 of 7", none on the first card); `detectTourUser` (update = favourites, own recipes or a saved theme on the first 1.2 launch).
+  - `hintFor`: the README chains — Recipe Servings → Shopping list → Share as a card → Keep the ones you love; Home Collections → Can't decide?; Add Recipe Your own recipes until a photo; Shopping list Tick or remove; My Bar What's at home? → Mocktail Finder Pro. One at a time, each once, only after a navigation that follows the tour, never over a sheet, modal, About or the paywall.
+  - `afterHint`: a Free user who dismisses a paid hint gets no more paid hints until the next session. `STARTER_KEYS` for What's at home?.
+- **State** `@mocktail-finder/onboarding` (`STORAGE_KEYS.onboarding`): tour done, user (new / upd), seen hints, session counter; read during the splash (`loadOnboarding`, which also detects the user on the first 1.2 launch). Session-only: navigation count, opened recipes, the paid-hint pause.
+- **`OnboardingProvider`** (inside the NavigationContainer, under `PaywallProvider`):
+  - Runs the tour: each step takes the user to its screen (the tour recipe is Virgin Margarita when Dry January is open, otherwise Afterglow). Skip anywhere; the last step "Learn more" → paywall (My Bar highlighted), "Not now" → Home; every shown step counts as seen.
+  - Counts navigations through `navigationRef`, reads the route for the hint rules, keeps a registry of `CoachTarget`s. Screens report facts with `useCoachFacts`.
+  - `OverlayProvider` counts open sheets (`BottomSheet`, the share-card preview) so hints never sit on top of one.
+- **`CoachOverlay`** (at the root, over the navigator):
+  - Tour: `coachDim` backdrop with a cut-out (four rectangles) and a 3 px `coachRing`; the UI underneath is blocked.
+  - Hint: a 3 px ring that pulses outwards over 1.6 s (static with Reduce Motion), no dim, the UI stays usable; hidden while its target is under the status bar or the tab bar.
+  - `CoachBubble` (inside the overlay): caret up / down, pill "Pro" (Free) / "New in 1.2" (Pro users updating), counter, title, text, the what's-new list, the What's at home? starter chips (they tick My Bar) with "N drinks you can make right now", Skip / Next / Done / Got it / See Pro / Learn more / Not now as the README lists.
+- **Targets** (`CoachTarget`): first collection card (coll), Surprise pill, Servings row, Add to shopping list, Share as card, recipe heart (fav), Add Photo, the My Bar tab button, the first shopping-list row (swipe).
+- **Decision without asking**: a tour step about a recipe tool scrolls the recipe so the button is on screen. On an iPhone the Shopping list / Share as card buttons start below the edge; the taller prototype never needed it.
+- **DEV**: About → DEV → "Replay tour (new install)" / "Replay tour (update from 1.1)" clear the tour and seen hints and start again.
+- Tests: `src/onboarding/__tests__/logic.test.ts` (13). Total 103/103 green.
+- Verified:
+  - `tsc` clean, `expo export` bundles.
+  - In Expo Go on a fresh state (SE Ukrainian, Pro Max English), the tour driven by a temporary auto-"Next" (removed):
+    - Collections "1 з 7" ring on the first card.
+    - Servings with the "Pro" pill, the recipe scrolled to it.
+    - Share as a card, the recipe scrolled to the button.
+    - What's at home? with the starter chips on the My Bar tab.
+    - Mocktail Finder Pro "7 з 7" centred.
+    - Learn more → the paywall with "What can I make" highlighted.
+  - After the tour, opening a recipe showed the hint "Keep the ones you love" (pulsing ring on the heart, no dim, Got it) on both phones.
+  - Not seen on screen: the update-from-1.1 tour (needs a phone with 1.1 data, or DEV replay), the Pro user without the last step, See Pro, the next-session pause, Reduce Motion — TESTING.md § 8.
+
 ## 2026-10-08 · Restore reachable on the smallest iPhone (Claude Code)
 - Vlad's review of task 8: on iPhone SE the collection sheet and the paywall are taller than the screen, so the hint and Restore Purchases sit below the edge. Restore must be reachable (App Review).
 - Checked on the SE simulator by opening both with a temporary scroll offset to the end (removed): **both already scroll to the end**. The collection sheet's content is in the `BottomSheet` ScrollView, bounded by the sheet's max height. The paywall is a full-screen ScrollView. Restore, the hint and the prices note are all reachable. No layout change was needed for that.

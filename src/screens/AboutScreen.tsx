@@ -14,6 +14,7 @@ import { useTheme, ThemeMode } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { usePurchases } from '../purchases/PurchasesContext';
 import { usePaywall } from '../purchases/usePaywall';
+import { useOnboarding } from '../onboarding/OnboardingContext';
 import { PACK_PRODUCT_IDS, PRODUCT_IDS } from '../purchases/products';
 import { PACKS } from '../data/packs';
 import { Language, LanguageSetting, resolveLanguage } from '../i18n';
@@ -43,6 +44,7 @@ export const AboutScreen = () => {
   const { t, setting, setSetting } = useLanguage();
   const { isPro, price, purchasing, thankedTips, tip, restore, dev } = usePurchases();
   const { openPaywall } = usePaywall();
+  const onboarding = useOnboarding();
   const locales = useLocales();
   const [sheet, setSheet] = useState<'language' | 'theme' | null>(null);
   const [devOpen, setDevOpen] = useState(false);
@@ -95,6 +97,9 @@ export const AboutScreen = () => {
               );
             })}
             <DevSwitch label={DEV_LABELS.storeDown} value={dev.storeDown} onChange={v => dev.set({ storeDown: v })} />
+            {/* Clears the tour state and seen hints, then starts the tour again. */}
+            <Button label={DEV_LABELS.tourNew} variant="text" compact onPress={() => onboarding?.devReset('new')} />
+            <Button label={DEV_LABELS.tourUpdate} variant="text" compact onPress={() => onboarding?.devReset('upd')} />
           </View>
         )}
 
