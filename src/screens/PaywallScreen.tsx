@@ -62,10 +62,11 @@ export const PaywallScreen = () => {
   const everythingLabel = everythingPrice ? `${t('everything')} · ${everythingPrice}` : t('unavailable');
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]} accessibilityViewIsModal>
+    // The top inset sits outside the scroll view, so scrolled text never runs under the status bar.
+    <View style={[styles.container, { backgroundColor: colors.background, paddingTop: insets.top }]} accessibilityViewIsModal>
       {/* Plain background, no gradient: the bar needs dark text in light mode. */}
       <StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
-      <ScrollView contentContainerStyle={[styles.content, { paddingTop: insets.top + spacing.s, paddingBottom: insets.bottom + spacing.xl }]}>
+      <ScrollView contentContainerStyle={[styles.content, { paddingTop: spacing.s, paddingBottom: insets.bottom + spacing.xl }]}>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           activeOpacity={opacity.pressed}

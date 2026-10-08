@@ -2,6 +2,12 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-08 · Restore reachable on the smallest iPhone (Claude Code)
+- Vlad's review of task 8: on iPhone SE the collection sheet and the paywall are taller than the screen, so the hint and Restore Purchases sit below the edge. Restore must be reachable (App Review).
+- Checked on the SE simulator by opening both with a temporary scroll offset to the end (removed): **both already scroll to the end**. The collection sheet's content is in the `BottomSheet` ScrollView, bounded by the sheet's max height. The paywall is a full-screen ScrollView. Restore, the hint and the prices note are all reachable. No layout change was needed for that.
+- Fixed while there: scrolled paywall text ran under the status bar and over the clock. The top safe-area inset now sits outside the scroll view.
+- Files: `src/screens/PaywallScreen.tsx`. Verified: `tsc` clean; SE screenshots scrolled to the end.
+
 ## 2026-10-08 · 1.2 task 8 — F. Paywall, collection sheet, About (Claude Code)
 - **`usePaywall()` is real now** (`src/purchases/usePaywall.tsx`, replacing the task-5 stub, same two calls): `openPaywall(feature?)` navigates to the paywall through `navigationRef`; `openCollection(packId)` opens the one `CollectionSheet` drawn by `PaywallProvider` (inside the NavigationContainer in `App.tsx`). Every locked thing from tasks 5–7 now opens them.
 - **`PaywallScreen`**: a modal in the root stack, sliding up in 400 ms on the shared easing.
