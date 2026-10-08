@@ -11,6 +11,8 @@ import { useFonts } from 'expo-font';
 import { Sora_600SemiBold } from '@expo-google-fonts/sora/600SemiBold';
 import { Sora_700Bold } from '@expo-google-fonts/sora/700Bold';
 import { RootNavigator } from './src/navigation/RootNavigator';
+import { navigationRef } from './src/navigation/navigationRef';
+import { PaywallProvider } from './src/purchases/usePaywall';
 import { FavoritesProvider } from './src/context/FavoritesContext';
 import { ThemeProvider, ThemeMode, loadThemeMode } from './src/context/ThemeContext';
 import { store, hydrateStore } from './src/store/store';
@@ -69,8 +71,10 @@ export default function App() {
                 <ToastProvider>
                   <PurchasesProvider initialOwned={cachedOwned}>
                     <FavoritesProvider>
-                      <NavigationContainer>
-                        <RootNavigator />
+                      <NavigationContainer ref={navigationRef}>
+                        <PaywallProvider>
+                          <RootNavigator />
+                        </PaywallProvider>
                       </NavigationContainer>
                     </FavoritesProvider>
                   </PurchasesProvider>

@@ -13,4 +13,6 @@ export const SCREENS = {
   EDIT_RECIPE: 'EditRecipe',
   // Pushed over the tabs from the header's "…" button.
   ABOUT: 'About',
+  // Modal over everything, from any locked thing (purchases/usePaywall).
+  PAYWALL: 'Paywall',
 };

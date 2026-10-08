@@ -64,3 +64,33 @@ export const GROUP_ICONS = {
     'm7.5 4.27 9 5.15',
   ]),
 };
+
+/** Paywall feature rows. */
+export const BulletListIcon = outline(['M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01']);
+export const UsersIcon = outline([
+  'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2',
+  'M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z',
+  'M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8',
+]);
+export const ImageIcon = outline([
+  'M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z',
+  'M11 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z',
+  'm21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21',
+]);
+
+/** About rows. */
+export const RestoreIcon = outline(['M21 12a9 9 0 1 1-9-9c2.5 0 4.8 1 6.5 2.7L21 8', 'M21 3v5h-5']);
+export const ExternalIcon = outline(['M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6']);
+export const StarIcon = outline(['M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z']);
+
+/** Tip jar: Lemonade, Smoothie, Punch (prototype `tipIcon`, without the inner motion). */
+export const TIP_ICONS = {
+  tipSmall: outline([
+    'M5 8h11l-1.4 13H6.4Z',
+    'M13 8l2-6h2',
+    'M20.2 9a3.2 3.2 0 1 1-6.4 0 3.2 3.2 0 0 1 6.4 0Z',
+    'M17 5.8v6.4M13.8 9h6.4',
+  ]),
+  tipMedium: outline(['M6 10h12l-1.5 11h-9Z', 'M5 10a7 3.2 0 0 1 14 0', 'M12 6.8V2.5h3']),
+  tipLarge: outline(['M3 11h18a9 7 0 0 1-18 0Z', 'M9 21h6', 'M12 18v3', 'M15 11V5a2 2 0 0 1 4 0']),
+};

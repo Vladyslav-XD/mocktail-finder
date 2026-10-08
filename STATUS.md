@@ -2,6 +2,29 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-08 · 1.2 task 8 — F. Paywall, collection sheet, About (Claude Code)
+- **`usePaywall()` is real now** (`src/purchases/usePaywall.tsx`, replacing the task-5 stub, same two calls): `openPaywall(feature?)` navigates to the paywall through `navigationRef`; `openCollection(packId)` opens the one `CollectionSheet` drawn by `PaywallProvider` (inside the NavigationContainer in `App.tsx`). Every locked thing from tasks 5–7 now opens them.
+- **`PaywallScreen`**: a modal in the root stack, sliding up in 400 ms on the shared easing.
+  - Content: ×, app icon 56 (radius 13), "Mocktail Finder Pro" (`obProT`), subtitle, four `FeatureRow`s (the feature that opened it is highlighted and listed first), "Get Pro · {price}", "Everything · {price}", hint, Restore Purchases, prices note + Privacy Policy link.
+  - States: 0.6 s minimum price skeleton (`duration.priceSkeleton`) · store unreachable (banner "The App Store is not reachable…", buttons "Not available right now" at 50 %) · purchasing (spinner in the tapped button) · "You have Pro" disabled · Everything hidden when owned. It closes itself once a purchase made from it unlocks Pro.
+  - Its own dark-text status bar in light mode: the default light bar was invisible on its white background.
+- **`CollectionSheet`** (`BottomSheet`): cover 170, title, description, 4 thumbnails, "Unlock collection · {price}" with a lock, "Everything · {price}" (hidden when owned), hint, Restore. States: locked, purchasing (spinner), unreachable, Everything owned. It closes itself when the collection unlocks.
+- **`AboutScreen` complete**:
+  - App icon 64 (radius 14), name, version line "Version 1.2.0 (N) · Pro unlocked / · Free". N is the binary's `CFBundleVersion` from `Constants.platform.ios.buildNumber`, set by EAS; Expo Go has none, so the brackets are left out. No new dependency.
+  - "Get Pro" for Free only; rows Language, Theme, Restore Purchases, Privacy Policy, Support, Rate on the App Store (`src/constants/links.ts`).
+  - "Drinks for the developer" on the tip-panel colour: three identical `TipCard`s (icon, name, StoreKit price or "—" at 50 % when unreachable, spinner while buying, "Thanks!" pill), note "Nothing unlocks".
+  - Tip icons hop in a 6 s wave, offsets 0 / 0.35 / 0.7 s, static with Reduce Motion. The prototype's inner details (spinning lemon, bubbles, wiggling straw) are left out: the wave is the brief.
+- **DEV switches**: long-press 800 ms on the version line, `__DEV__` only (`usePurchases().dev` is null otherwise). Simulate Pro, Everything, each of the six collections, store unreachable; tour and hints reset follows in task 9. Labels not in the copy doc are English in `src/constants/devLabels.ts` (never shown in TestFlight or the App Store).
+- New: `PaywallScreen`, `CollectionSheet`, `TipCard`, icons (`BulletListIcon`, `UsersIcon`, `ImageIcon`, `RestoreIcon`, `ExternalIcon`, `StarIcon`, `TIP_ICONS`), `navigationRef`, tokens (`skeletonOnBrand`, `sizes.appIcon`, `appIconSmall`, `collectionCover`, `tipCard`, `skeletonPrice`, `skeletonHeight`).
+- Verified:
+  - `tsc` clean; `npm test` 90/90; `expo export` bundles.
+  - In Expo Go (store unreachable by design), SE (Ukrainian, light) and Pro Max (English, dark), with temporary triggers removed before this commit:
+    - About with the DEV panel, and the tip jar ("—", 50 %).
+    - Paywall opened from Servings (row highlighted and first, store banner, both buttons "Not available right now").
+    - Paywall from Share card as Pro ("You have Pro", disabled).
+    - Collection sheet for Winter Warmers.
+  - Not visible in Expo Go: prices, the skeleton, purchasing, "Thanks!". They need StoreKit: a development build with products in App Store Connect, or TestFlight (TESTING.md § 3, § 7).
+
 ## 2026-10-07 · Decision: Sora stays, Ukrainian titles in the system font (Vlad)
 - Vlad asked why Ukrainian titles look different from English ones. The reason: the bundled **Sora has no Cyrillic** (checked in `Sora_700Bold.ttf`: 378 code points, 0 in U+0400–04FF, no і ї є ґ), so iOS draws Cyrillic in San Francisco. The handoff loads Sora for Latin only, so the prototype does the same.
 - This affects only what is set in Sora: the screen titles in the header ("Мій бар", "Улюблені", "Про застосунок"…) and the share card title. The "Mocktail Finder" wordmark is Latin and stays Sora in both languages. Everything else uses the system font anyway.

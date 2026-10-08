@@ -56,6 +56,8 @@ export type ThemeColors = {
   /** "Unlocked" pill on a pack cover: the same in both themes (prototype). */
   unlockedPillBg: string;
   unlockedPillText: string;
+  /** Price skeleton inside a filled brand button while products load. */
+  skeletonOnBrand: string;
 };
 
 export const lightColors: ThemeColors = {
@@ -102,6 +104,7 @@ export const lightColors: ThemeColors = {
   shadow: '#101828',
   unlockedPillBg: '#FFFFFF',
   unlockedPillText: '#009689',
+  skeletonOnBrand: 'rgba(255, 255, 255, 0.38)',
 };
 
 export const darkColors: ThemeColors = {
@@ -148,6 +151,7 @@ export const darkColors: ThemeColors = {
   shadow: '#000000',
   unlockedPillBg: '#FFFFFF',
   unlockedPillText: '#009689',
+  skeletonOnBrand: 'rgba(255, 255, 255, 0.38)',
 };
 
 export const colors = lightColors;

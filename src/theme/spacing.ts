@@ -41,6 +41,12 @@ export const sizes = {
   pillLock: 24,
   packCard: 160,
   recipePhoto: 300,
+  appIcon: 64,
+  appIconSmall: 56,
+  collectionCover: 170,
+  tipCard: 106,
+  skeletonPrice: 48,
+  skeletonHeight: 14,
   stepNumber: 20,
   /** Tick circle on an ingredient tile. */
   tickCircle: 20,
