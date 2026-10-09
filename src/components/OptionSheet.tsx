@@ -62,7 +62,7 @@ export function OptionSheet<T extends string>({
               ]}
             >
               <Text style={[type.body, { color: colors.title }]}>{option.label}</Text>
-              {isSelected && <CheckIcon size={sizes.icon.l} color={colors.brand} />}
+              {isSelected && <CheckIcon size={sizes.icon.l} color={colors.brandText} />}
             </TouchableOpacity>
           );
         })}

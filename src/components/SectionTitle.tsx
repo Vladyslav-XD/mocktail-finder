@@ -30,7 +30,7 @@ export const SectionTitle = ({ title, pill, action, detail }: SectionTitleProps)
       {!!detail && <Text style={[type.bodyS, { color: colors.subtitle }]}>{detail}</Text>}
       {!!action && (
         <TouchableOpacity activeOpacity={opacity.pressed} onPress={action.onPress} accessibilityRole="link" hitSlop={spacing.s}>
-          <Text numberOfLines={1} style={[type.label, { color: colors.brand }]}>
+          <Text numberOfLines={1} style={[type.label, { color: colors.brandText }]}>
             {action.label}
           </Text>
         </TouchableOpacity>

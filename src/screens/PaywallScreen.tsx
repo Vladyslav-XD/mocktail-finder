@@ -147,7 +147,7 @@ interface PriceButtonProps {
 const PriceButton = ({ variant, label, skeletonLabel, skeleton, busy, disabled, onPress, style }: PriceButtonProps) => {
   const { colors } = useTheme();
   const filled = variant === 'filled';
-  const fg = filled ? colors.onBrand : colors.brand;
+  const fg = filled ? colors.onBrand : colors.brandText;
   return (
     <TouchableOpacity
       onPress={onPress}

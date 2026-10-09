@@ -60,7 +60,7 @@ export const TipCard = ({ kind, label, price, busy, thanked, thanksLabel, onPres
     >
       <View style={[styles.icon, { backgroundColor: colors.iconBG }]}>
         <Animated.View style={{ transform: [{ translateY }, { scale }] }}>
-          <Icon size={sizes.icon.xl} color={colors.brand} />
+          <Icon size={sizes.icon.xl} color={colors.brandText} />
         </Animated.View>
       </View>
       <Text numberOfLines={1} style={[type.bodyS, { color: colors.title }]}>{label}</Text>

@@ -32,7 +32,7 @@ export const AboutRow = ({ icon, label, value, onPress, last = false, muted = fa
       accessibilityHint={hint}
       style={[styles.row, !last && { borderBottomWidth: sizes.hairline, borderBottomColor: colors.border }]}
     >
-      <View accessible={false}>{icon(muted ? colors.subtitle : colors.brand)}</View>
+      <View accessible={false}>{icon(muted ? colors.subtitle : colors.brandText)}</View>
       <Text numberOfLines={1} style={[muted ? type.bodyS : type.body, styles.label, { color: muted ? colors.subtitle : colors.title }]}>
         {label}
       </Text>

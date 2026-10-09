@@ -214,7 +214,7 @@ export const RandomScreen = () => {
             <View style={styles.badgeWrapper}>
               {(tags.length > 0 ? tagLabels(tags, t) : [t('randomPick')]).map(tag => (
                 <View key={tag} style={[{ backgroundColor: `${colors.activeBadgeBG}15`, paddingHorizontal: 12, paddingVertical: 6, borderRadius: 16 }]}>
-                  <Text style={[{ color: colors.activeBadgeBG, fontWeight: '500' }]}>{tag}</Text>
+                  <Text style={[{ color: colors.brandText, fontWeight: '500' }]}>{tag}</Text>
                 </View>
               ))}
             </View>

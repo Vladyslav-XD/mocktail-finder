@@ -9,7 +9,8 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useToast } from '../components/Toast';
 import { CoachTarget, useCoachFacts } from '../onboarding/OnboardingContext';
-import { opacity, spacing } from '../theme/spacing';
+import { opacity, sizes, spacing } from '../theme/spacing';
+import { SparklesIcon } from '../components/icons/barIcons';
 import { AddRecipeIcon, XIcon } from '../components/icons';
 import { SCREENS } from '../constants/screens';
 import { ALL_TAGS, DrinkTag, tagsToSubtitle } from '../utils/drinkTags';
@@ -240,7 +241,7 @@ export const AddRecipeScreen = () => {
       />
 
       <KeyboardAvoidingView
-        style={styles.formContainer}
+        style={styles.container}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
       <ScrollView
@@ -251,20 +252,23 @@ export const AddRecipeScreen = () => {
         keyboardDismissMode="on-drag"
       >
 
-        {!editing && (
-          <TouchableOpacity
-            onPress={toggleExample}
-            activeOpacity={opacity.pressed}
-            accessibilityRole="button"
-            hitSlop={spacing.s}
-            style={styles.example}
-          >
-            <Text style={[type.button, { color: colors.subtitle }]}>{exampleOn ? t('arExampleClear') : t('arExample')}</Text>
-          </TouchableOpacity>
-        )}
-
         <View style={styles.inputGroup}>
-          <Text style={[styles.label, { color: colors.title }]}>{t('photoOpt')}</Text>
+          {/* New recipe: "Show an example" sits on the photo label's row (wraps under it if there is no room). */}
+          <View style={styles.photoHead}>
+            <Text style={[styles.label, styles.photoLabel, { color: colors.title }]}>{t('photoOpt')}</Text>
+            {!editing && (
+              <TouchableOpacity
+                onPress={toggleExample}
+                activeOpacity={opacity.pressed}
+                accessibilityRole="button"
+                hitSlop={spacing.s}
+                style={styles.example}
+              >
+                <SparklesIcon size={sizes.icon.m} color={colors.brandText} />
+                <Text style={[type.button, { color: colors.brandText }]}>{exampleOn ? t('arExampleClear') : t('arExample')}</Text>
+              </TouchableOpacity>
+            )}
+          </View>
           {photoPreviewUri ? (
             <View>
               <Image source={{ uri: photoPreviewUri }} style={[styles.photoPreview, { borderColor: colors.badgeBorder }]} />
@@ -434,9 +438,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  photoHead: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    columnGap: spacing.sm,
+    marginBottom: spacing.s,
+  },
+  photoLabel: {
+    marginBottom: 0,
+  },
   example: {
-    alignSelf: 'flex-start',
-    marginBottom: spacing.m,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
   },
   help: {
     marginBottom: spacing.sm,
@@ -444,11 +460,12 @@ const styles = StyleSheet.create({
   },
   formContainer: {
     flex: 1,
-    paddingHorizontal: spacing.l,
-    paddingTop: spacing.l,
     // no hardcoded background: the screen container paints colors.background (light or dark)
   },
+  // Same side and top padding as My Bar (the form used to pad twice: keyboard view and scroll view).
   scrollContent: {
+    paddingHorizontal: spacing.screen,
+    paddingTop: spacing.m,
     paddingBottom: 60,
   },
   inputGroup: {

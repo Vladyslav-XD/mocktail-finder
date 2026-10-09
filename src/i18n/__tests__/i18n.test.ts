@@ -93,3 +93,11 @@ describe('dictionaries', () => {
     }
   });
 });
+
+describe('Ukrainian "e.g." placeholders', () => {
+  it('all write «напр., …» the same way', () => {
+    const values = Object.values(uk).filter((v): v is string => typeof v === 'string' && v.startsWith('напр'));
+    expect(values.length).toBeGreaterThanOrEqual(2);
+    values.forEach(v => expect(v.startsWith('напр., ')).toBe(true));
+  });
+});

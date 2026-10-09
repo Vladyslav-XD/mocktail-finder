@@ -29,6 +29,8 @@ export type ThemeColors = {
   border: string;
   textMuted: string;
   brand: string;
+  /** Brand as text or icon on a light surface: teal-700 in light (5.3:1 on white), = brand in dark (7.1:1). Fills keep `brand`. */
+  brandText: string;
   onBrand: string;
   scrim: string;
   /** Two stops, top-left → bottom-right (135°). */
@@ -84,6 +86,7 @@ export const lightColors: ThemeColors = {
   border: '#E5E7EB',
   textMuted: '#99A1AF',
   brand: '#009689',
+  brandText: '#00796B',
   onBrand: '#FFFFFF',
   scrim: 'rgba(0, 0, 0, 0.45)',
   headerGradient: ['#00BBA7', '#0092B8'],
@@ -131,6 +134,7 @@ export const darkColors: ThemeColors = {
   border: '#374151',
   textMuted: '#9CA3AF',
   brand: '#14B8A6',
+  brandText: '#14B8A6',
   onBrand: '#FFFFFF',
   scrim: 'rgba(0, 0, 0, 0.45)',
   headerGradient: ['#00786F', '#005F78'],

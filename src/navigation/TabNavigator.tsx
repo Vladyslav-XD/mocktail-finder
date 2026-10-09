@@ -70,7 +70,7 @@ export const TabNavigator = () => {
           paddingHorizontal: 20,
           paddingBottom: 10,
         },
-        tabBarActiveTintColor: colors.activeBadgeBG,
+        tabBarActiveTintColor: colors.brandText,
         tabBarInactiveTintColor: colors.mainBtn,
         tabBarLabelStyle: {
           fontSize: 12,

@@ -45,11 +45,11 @@ export const IngredientGroup = ({ icon, title, subtitle, hasTicks, open, onToggl
         style={styles.head}
       >
         <View style={[styles.icon, { backgroundColor: hasTicks ? colors.brand : colors.iconBG }]}>
-          {icon(hasTicks ? colors.onBrand : colors.brand)}
+          {icon(hasTicks ? colors.onBrand : colors.brandText)}
         </View>
         <View style={styles.titles}>
           <Text style={[type.titleS, { color: colors.title }]}>{title}</Text>
-          <Text style={[type.caption, { color: hasTicks ? colors.brand : colors.subtitle }]}>{subtitle}</Text>
+          <Text style={[type.caption, { color: hasTicks ? colors.brandText : colors.subtitle }]}>{subtitle}</Text>
         </View>
         <View style={open && styles.flipped}>
           <ChevronDownIcon size={sizes.icon.m} color={colors.textMuted} />

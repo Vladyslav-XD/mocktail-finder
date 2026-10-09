@@ -41,7 +41,8 @@ export const Button = ({
 }: ButtonProps) => {
   const { colors } = useTheme();
   const accent = tone === 'danger' ? colors.error : colors.brand;
-  const fg = variant === 'filled' ? colors.onBrand : variant === 'outline' ? accent : colors.subtitle;
+  // Outline labels use brandText (contrast); the border and fills keep the brand colour.
+  const fg = variant === 'filled' ? colors.onBrand : variant === 'outline' ? (tone === 'danger' ? colors.error : colors.brandText) : colors.subtitle;
 
   return (
     <TouchableOpacity

@@ -29,7 +29,7 @@ export const FeatureRow = ({ icon, title, subtitle, highlighted = false }: Featu
       ]}
     >
       <View style={[styles.icon, { backgroundColor: highlighted ? colors.brand : colors.iconBG }]}>
-        {icon(highlighted ? colors.onBrand : colors.brand)}
+        {icon(highlighted ? colors.onBrand : colors.brandText)}
       </View>
       <View style={styles.texts}>
         <Text style={[type.body, styles.title, { color: colors.title }]}>{title}</Text>

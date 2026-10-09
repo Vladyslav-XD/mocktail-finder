@@ -22,7 +22,7 @@ export const LockedCard = ({ title, text, actionLabel, onAction, actionDisabled 
   return (
     <View style={[styles.card, { borderColor: colors.border, backgroundColor: colors.surface }]}>
       <View style={[styles.lock, { backgroundColor: colors.iconBG }]}>
-        <LockIcon size={sizes.icon.xl} color={colors.brand} />
+        <LockIcon size={sizes.icon.xl} color={colors.brandText} />
       </View>
       <Text accessibilityRole="header" style={[type.titleM, styles.title, { color: colors.title }]}>
         {title}

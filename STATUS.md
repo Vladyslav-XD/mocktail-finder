@@ -2,6 +2,16 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-09 · Build 7 fixes from Vlad's review (Claude Code)
+- Answers: Restore stays `subtitle`; Bartender school keeps the graduation cap.
+- **Copy:** `descPh` (uk) → «напр., Освіжний тропічний напій»; every Ukrainian «напр.» placeholder now reads «напр., …» (test). Tag Frozen (uk) «Фрозен» → «Заморожений» (category chips and Add Recipe).
+- **New token `brandText`:** light `#00796B` (teal-700, 5.32:1 on white, ≥ 4.83:1 on the light greys), dark = `brand` (`#14B8A6`). Used for brand-coloured **text and icons**: active tab label + icon, SectionTitle links ("Everything · price"), outline-button labels (`Button`, paywall `PriceButton`), About row icons, OptionSheet check, FeatureRow / IngredientGroup icons and caption, removable-chip ×, TipCard and LockedCard icons, the tour's "N drinks…" line, Surprise tags. Fills, borders, rings, spinners and the switch track keep `brand`. Test: `src/theme/__tests__/contrast.test.ts` (brandText and subtitle ≥ 4.5:1 on background and surface, both themes). Not changed: the share-card PNG colours (`theme/shareCard.ts`, fixed image design).
+- **Add Recipe:** "Show an example" is now a button — `SparklesIcon` (Lucide "sparkles") + Button type in `brandText`, on the right of the "Photo (optional)" label row; it wraps under the label when there is no room (SE Ukrainian). The empty band under the header is gone: the form padded twice (keyboard view and scroll view); now one padding like My Bar (`spacing.screen` sides, `spacing.m` top) — the fields are also 24 pt wider on each side.
+- **Version line:** already "Version 1.2.0 (N)" since task 8 — `Constants.platform.ios.buildNumber` is the binary's `CFBundleVersion` (checked in `expo-constants` native code), no new dependency. Expo Go has none, so the screenshots show no brackets; TestFlight build 7 shows "(7)". TESTING.md item added.
+- TESTING.md: § 8 update-from-1.1 item (Vlad's wording), § 7 version and brandText items, § 5 example button / Frozen / placeholder.
+- Screenshots: `~/Desktop/mocktail-1.2-build7-review/fix/` (SE, Ukrainian, light): About, Add Recipe before / after the example, My Bar.
+- Verified: `tsc` clean, tests 128/128 in 15 suites.
+
 ## 2026-10-09 · 1.2 task 11 — review screenshots, STOPPED before the build (Claude Code)
 **Report for Vlad.** Task 11 bullets 1–6 are done (commits `6ef10cc`, `61b5db3`, `417e196`, `bf54586`, `48e193f`; bullet 6 = the tour bug fix `373a45f`). Nothing built or uploaded. Build 7 needs Vlad's ok.
 - Checks: `npx tsc --noEmit` clean; `npm test` 124/124 in 14 suites.

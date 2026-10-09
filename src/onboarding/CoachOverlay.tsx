@@ -237,7 +237,7 @@ const Bubble = ({ state, rect }: { state: CoachState; rect: Rect | null }) => {
           </View>
         )}
         {((tour && key === 'bar') || (key === 'pro' && canMake > 0)) && (
-          <Text style={[type.titleS, styles.ready, { color: colors.brand }]}>{ready}</Text>
+          <Text style={[type.titleS, styles.ready, { color: colors.brandText }]}>{ready}</Text>
         )}
 
         <View style={styles.actions}>

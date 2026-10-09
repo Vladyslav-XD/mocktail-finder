@@ -45,7 +45,7 @@ export const Chip = ({ label, onPress, active = false, removable = false, remove
       <Text numberOfLines={1} style={[type.label, { color: look.color }]}>
         {label}
       </Text>
-      {removable && <XIcon size={sizes.icon.xs} color={colors.brand} strokeWidth={sizes.stroke.bold} />}
+      {removable && <XIcon size={sizes.icon.xs} color={colors.brandText} strokeWidth={sizes.stroke.bold} />}
     </TouchableOpacity>
   );
 };

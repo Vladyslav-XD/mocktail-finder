@@ -59,7 +59,7 @@ export const uk: Dictionary = {
   recipeName: "Назва рецепта",
   namePh: "Тропічний світанок",
   shortDesc: "Короткий опис",
-  descPh: "напр. Освіжний тропічний напій",
+  descPh: "напр., Освіжний тропічний напій",
   arNamePh: "напр., Лимонад з м'ятою",
   arAmountPh: "50 мл",
   arIngredientPh: "сік лайму",
@@ -269,7 +269,7 @@ export const uk: Dictionary = {
   // Character tags: card / badge form
   tag: {
     Iced: "З льодом",
-    Frozen: "Фрозен",
+    Frozen: "Заморожений",
     Hot: "Гарячий",
     Citrus: "Цитрусовий",
     Tropical: "Тропічний",
