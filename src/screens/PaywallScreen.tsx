@@ -118,8 +118,8 @@ export const PaywallScreen = () => {
           />
         )}
         <Text style={[type.caption, styles.hint, { color: colors.subtitle }]}>{t('pwHint')}</Text>
-        <TouchableOpacity onPress={restore} activeOpacity={opacity.pressed} accessibilityRole="button" style={styles.restore}>
-          <Text style={[type.button, { color: colors.brand }]}>{t('restore')}</Text>
+        <TouchableOpacity onPress={restore} activeOpacity={opacity.pressed} accessibilityRole="button" hitSlop={spacing.s} style={styles.restore}>
+          <Text style={[type.bodyS, { color: colors.subtitle }]}>{t('restore')}</Text>
         </TouchableOpacity>
         <Text style={[type.caption, styles.note, { color: colors.subtitle }]}>
           {t('pricesNote')}{' '}

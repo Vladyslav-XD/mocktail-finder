@@ -2,6 +2,13 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-09 · 1.2 task 11.1 — Restore Purchases, quieter (Claude Code)
+- Paywall and collection sheet: the Restore text button goes from Button / brand to **Body S / `subtitle`**. About: `AboutRow` gets `muted` (icon and label in `subtitle`, label Body S, row height unchanged), used by the Restore row.
+- **Decision without asking (accessibility):** the task names `textMuted`, but `textMuted` in light is #99A1AF on white = **2.6:1**, below the 4.5:1 text minimum. `subtitle` (#6A7282) = **4.84:1** light, 5.78–6.99:1 dark (in dark both tokens are the same colour). `subtitle` is also exactly what the prices note uses, which the task names as the target look. Cowork/Vlad: say if you want `textMuted` anyway.
+- Touch area: `hitSlop` 8 on the two text buttons, so the target is ≥ 44 pt without moving anything.
+- Still `accessibilityRole="button"` everywhere. Components changed: `AboutRow` (`muted`).
+- Files: `src/screens/PaywallScreen.tsx`, `src/components/CollectionSheet.tsx`, `src/components/AboutRow.tsx`, `src/screens/AboutScreen.tsx`, `TESTING.md`. Verified: `tsc` clean; screenshots with the task-11 set.
+
 ## 2026-10-09 · Bug: no tour after updating from 1.1 (build 6) — fixed (Claude Code)
 - Vlad's report: build 6 from TestFlight over 1.1.0 (build 5) with his data showed no tour, not at first launch and not later. A clean install did show it. His 1.1 data is gone from the phone, so it was reproduced on the simulator.
 - Ruled out by reading the code: the tour is not behind `__DEV__` or a DEV switch; no persisted "hints off" exists; the 1.1 storage keys (favourites, own recipes, theme) match what 1.2 checks; the first tour card (Welcome / What's new) has no target, so no layout measurement can hide it.

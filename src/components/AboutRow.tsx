@@ -14,10 +14,12 @@ interface AboutRowProps {
   onPress: () => void;
   /** No divider under the last row of a group. */
   last?: boolean;
+  /** Quieter row (Restore Purchases): icon and label in `subtitle` (4.8:1 light), Body S, same height. */
+  muted?: boolean;
 }
 
 /** One row of the About list: icon, label, value, chevron. 50 high. */
-export const AboutRow = ({ icon, label, value, onPress, last = false }: AboutRowProps) => {
+export const AboutRow = ({ icon, label, value, onPress, last = false, muted = false }: AboutRowProps) => {
   const { colors } = useTheme();
   return (
     <TouchableOpacity
@@ -27,8 +29,8 @@ export const AboutRow = ({ icon, label, value, onPress, last = false }: AboutRow
       accessibilityLabel={value ? `${label}, ${value}` : label}
       style={[styles.row, !last && { borderBottomWidth: sizes.hairline, borderBottomColor: colors.border }]}
     >
-      <View accessible={false}>{icon(colors.brand)}</View>
-      <Text numberOfLines={1} style={[type.body, styles.label, { color: colors.title }]}>
+      <View accessible={false}>{icon(muted ? colors.subtitle : colors.brand)}</View>
+      <Text numberOfLines={1} style={[muted ? type.bodyS : type.body, styles.label, { color: muted ? colors.subtitle : colors.title }]}>
         {label}
       </Text>
       {!!value && <Text style={[type.body, { color: colors.subtitle }]}>{value}</Text>}

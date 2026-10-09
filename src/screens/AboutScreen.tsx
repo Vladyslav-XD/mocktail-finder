@@ -115,7 +115,7 @@ export const AboutScreen = () => {
           <AboutGroup>
             <AboutRow icon={c => <GlobeIcon size={sizes.icon.l} color={c} />} label={t('language')} value={languageValue} onPress={() => setSheet('language')} />
             <AboutRow icon={c => <ThemeIcon size={sizes.icon.l} color={c} />} label={t('theme')} value={themeValue} onPress={() => setSheet('theme')} />
-            <AboutRow icon={c => <RestoreIcon size={sizes.icon.l} color={c} />} label={t('restore')} onPress={restore} />
+            <AboutRow icon={c => <RestoreIcon size={sizes.icon.l} color={c} />} label={t('restore')} onPress={restore} muted />
             <AboutRow icon={c => <ExternalIcon size={sizes.icon.l} color={c} />} label={t('privacy')} onPress={() => Linking.openURL(PRIVACY_URL)} />
             <AboutRow icon={c => <ExternalIcon size={sizes.icon.l} color={c} />} label={t('support')} onPress={() => Linking.openURL(SUPPORT_URL)} />
             <AboutRow icon={c => <StarIcon size={sizes.icon.l} color={c} />} label={t('rate')} onPress={() => Linking.openURL(RATE_URL)} last />
