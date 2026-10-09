@@ -1,7 +1,8 @@
 import { Recipe } from '../../data/mockData';
+import { STARTER_KEYS } from '../../onboarding/logic';
 import { ALL_PACK_RECIPES } from '../../data/packs';
 import { DRINK_KEYS } from '../../data/ingredients';
-import { barResults, groupItems, keyFrequency, keysOf, mostUsed, shownTicks } from '../myBar';
+import { barResults, groupItems, keyFrequency, keysOf, mostUsed, showBarStarter, shownTicks } from '../myBar';
 
 const drink = (id: string): Recipe => ({ id, title: id, subtitle: '', imageUrl: '', isFavorite: false });
 const catalogue: Recipe[] = Object.keys(DRINK_KEYS).filter(id => !id.startsWith('pack:')).map(drink);
@@ -61,5 +62,25 @@ describe('shownTicks', () => {
   it('keeps ticks saved but shows only keys of visible drinks, in group order', () => {
     const freq = keyFrequency(catalogue);
     expect(shownTicks(['soda', 'gin0', 'lime'], freq)).toEqual(['lime', 'soda']);
+  });
+});
+
+describe('showBarStarter', () => {
+  const freq = keyFrequency(catalogue);
+
+  it('shows the starter card while the bar is empty', () => {
+    expect(showBarStarter([], freq)).toBe(true);
+  });
+
+  it('the first tick turns it into "Your bar"', () => {
+    expect(showBarStarter(['lime'], freq)).toBe(false);
+  });
+
+  it('ticks only in a re-locked collection count as empty', () => {
+    expect(showBarStarter(['gin0'], freq)).toBe(true);
+  });
+
+  it('ticking any starter chip leaves the starter card, even tonic (only in collections)', () => {
+    STARTER_KEYS.forEach(k => expect([k, showBarStarter([k], freq)]).toEqual([k, false]));
   });
 });

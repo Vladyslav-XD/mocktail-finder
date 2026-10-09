@@ -2,6 +2,15 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-09 · 1.2 task 11.4 — My Bar starter card (Claude Code)
+- New `BarStarterCard` (My Bar → What I have, Pro, nothing ticked shown): `barStartT`, three numbered lines `barStart1–3` (brand circles like the recipe steps), the 13 `STARTER_KEYS` as tickable `Chip`s, outline button `barStartMore` → the Add ingredients sheet. The first tick shows the normal `BarSummaryCard` with the chip in it; removing the last tick brings the starter back. Free keeps the locked card.
+- `showBarStarter()` in `src/utils/myBar.ts` decides it (= no shown tick).
+- **Bug found by the new test and fixed:** tonic is only in collection drinks, so for Pro without collections a tick on it was filtered out of "Your bar" and the starter card would not change. `shownTicks` now always keeps starter ingredients.
+- Not added: the "Ice, water, sugar and salt are always in." note — not in the card's spec (it stays on "Your bar").
+- New strings (en + uk, verbatim): `barStartT`, `barStart1–3`, `barStartMore`. Components: new `BarStarterCard`.
+- Tests: `showBarStarter` (4) in `myBar.test.ts`; total 120/120.
+- Files: `src/components/BarStarterCard.tsx`, `src/screens/MyBarScreen.tsx`, `src/utils/myBar.ts`, `src/utils/__tests__/myBar.test.ts`, `src/i18n/en.ts`, `uk.ts`, `TESTING.md` § 6. Verified: `tsc` clean; screenshot with the task-11 set.
+
 ## 2026-10-09 · 1.2 task 11.3 — "Bartender school" in About (Claude Code)
 - New `AboutRow` between Theme and Restore Purchases: label `aboutTour`, no value, chevron, VoiceOver hint `aboutTourHint`. Visible to everyone, in every build.
 - Tap → `useOnboarding().startSchool()`: the new-install tour from step 0 for any user (`tourFor({ user, isPro, school })` in `logic.ts`), Pro step skipped for Pro users. The first card shows `tourSchoolT` / `tourSchoolS` instead of Welcome (app icon kept). It navigates to Home (closing About) like the DEV replay. Session only: nothing is persisted until it ends, then it ends like the normal tour (steps shown count as seen). The DEV panel keeps its two replay buttons.

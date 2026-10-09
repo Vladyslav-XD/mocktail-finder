@@ -6,6 +6,7 @@ import { Header } from '../components/Header';
 import { SegmentedControl } from '../components/SegmentedControl';
 import { LockedCard } from '../components/LockedCard';
 import { BarSummaryCard } from '../components/BarSummaryCard';
+import { BarStarterCard } from '../components/BarStarterCard';
 import { AddIngredientsSheet } from '../components/AddIngredientsSheet';
 import { RecipeCard } from '../components/RecipeCard';
 import { SectionTitle } from '../components/SectionTitle';
@@ -21,7 +22,7 @@ import { usePaywall } from '../purchases/usePaywall';
 import { PRODUCT_IDS } from '../purchases/products';
 import { localizeRecipe } from '../i18n/localizeRecipe';
 import { recipeImageSource } from '../utils/recipeImage';
-import { barResults, keyFrequency, shownTicks } from '../utils/myBar';
+import { barResults, keyFrequency, showBarStarter, shownTicks } from '../utils/myBar';
 import { itemAmount, itemName, shoppingListText } from '../utils/shoppingList';
 import { Recipe } from '../data/mockData';
 import { SCREENS } from '../constants/screens';
@@ -105,12 +106,16 @@ export const MyBarScreen = () => {
 
   const have = (
     <>
-      <BarSummaryCard
-        items={shownTicks(ticked, freq).map(key => ({ key, label: label(key) }))}
-        onRemove={key => dispatch(toggleKey(key))}
-        onAdd={() => setSheet(true)}
-        onClear={() => dispatch(clearPantry())}
-      />
+      {showBarStarter(ticked, freq) ? (
+        <BarStarterCard onTick={key => dispatch(toggleKey(key))} onMore={() => setSheet(true)} />
+      ) : (
+        <BarSummaryCard
+          items={shownTicks(ticked, freq).map(key => ({ key, label: label(key) }))}
+          onRemove={key => dispatch(toggleKey(key))}
+          onAdd={() => setSheet(true)}
+          onClear={() => dispatch(clearPantry())}
+        />
+      )}
       <SectionTitle title={`${t('canMake')} (${results.canMake.length})`} />
       {results.canMake.length ? (
         results.canMake.map(r => card(r))

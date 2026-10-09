@@ -1,3 +1,4 @@
+import { STARTER_KEYS } from '../onboarding/logic';
 import type { Recipe } from '../data/mockData';
 import { DRINK_KEYS, INGREDIENT_GROUPS } from '../data/ingredients';
 import { ALWAYS_AVAILABLE, drinkKeys } from './ingredientKeys';
@@ -61,7 +62,16 @@ export function barResults(drinks: readonly Recipe[], ticked: readonly string[])
   return { canMake, missingOne };
 }
 
-/** Ticked keys that still belong to a visible drink, in group order (the "Your bar" chips). */
+/**
+ * Ticked keys that still belong to a visible drink, in group order (the "Your bar" chips).
+ * Starter ingredients always show: they are offered on the starter card, and tonic, for
+ * one, is only in collections, so a tick on it must not vanish.
+ */
 export function shownTicks(ticked: readonly string[], freq: Record<string, number>): string[] {
-  return INGREDIENT_GROUPS.flatMap(g => g.items.filter(k => ticked.includes(k) && freq[k]));
+  return INGREDIENT_GROUPS.flatMap(g => g.items.filter(k => ticked.includes(k) && (freq[k] || STARTER_KEYS.includes(k))));
+}
+
+/** My Bar (Pro): the starter card replaces "Your bar" while no ticked ingredient is shown. */
+export function showBarStarter(ticked: readonly string[], freq: Record<string, number>): boolean {
+  return shownTicks(ticked, freq).length === 0;
 }
