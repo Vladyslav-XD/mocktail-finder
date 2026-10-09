@@ -2,6 +2,14 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-09 · 1.2 task 11.5 — Add Recipe for a first-timer (Claude Code)
+- Placeholders → examples: name `arNamePh`, ingredient `arIngredientPh`, amount `arAmountPh`, step `arStepPh` (every step field; the number stays in the circle). The fields keep their real names for VoiceOver (`accessibilityLabel`: Recipe name, Ingredient, Amount, Step N), so the example is not read as the label.
+- `arHelp` caption: placed after the steps, just above Save (decision: "under the form", read before saving).
+- Text button `arExample` / `arExampleClear` at the top of the form, **new recipe only** (hidden on Edit). Show fills name `exName`, description `exDesc`, ingredients `exIng1–4` split on " · " into amount + name, steps `exStep1–2`. Clear empties those four; photo and character tags are not touched (the example does not set them). Nothing is saved unless the user taps Save; after Save the form resets as before.
+- `src/utils/recipeExample.ts` (`splitExampleLine`, `exampleRecipe`) + tests (4); total 124/124. Old `namePh` ("Tropical Sunrise") is no longer used on the form.
+- New strings (en + uk, verbatim): `arNamePh`, `arAmountPh`, `arIngredientPh`, `arStepPh`, `arHelp`, `arExample`, `arExampleClear`, `exName`, `exDesc`, `exIng1–4`, `exStep1–2`.
+- Files: `src/screens/AddRecipeScreen.tsx`, `src/utils/recipeExample.ts`, `src/utils/__tests__/recipeExample.test.ts`, `src/i18n/en.ts`, `uk.ts`, `TESTING.md` § 5. Verified: `tsc` clean; screenshot with the task-11 set.
+
 ## 2026-10-09 · 1.2 task 11.4 — My Bar starter card (Claude Code)
 - New `BarStarterCard` (My Bar → What I have, Pro, nothing ticked shown): `barStartT`, three numbered lines `barStart1–3` (brand circles like the recipe steps), the 13 `STARTER_KEYS` as tickable `Chip`s, outline button `barStartMore` → the Add ingredients sheet. The first tick shows the normal `BarSummaryCard` with the chip in it; removing the last tick brings the starter back. Free keeps the locked card.
 - `showBarStarter()` in `src/utils/myBar.ts` decides it (= no shown tick).

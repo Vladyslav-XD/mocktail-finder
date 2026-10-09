@@ -15,6 +15,9 @@ import { SCREENS } from '../constants/screens';
 import { ALL_TAGS, DrinkTag, tagsToSubtitle } from '../utils/drinkTags';
 import { pickRecipePhoto, takeRecipePhoto, persistRecipePhoto, deleteRecipePhoto, isRecipePhoto, resolveImageUri } from '../utils/recipePhotos';
 import { splitInstructions } from '../utils/recipeText';
+import { exampleRecipe } from '../utils/recipeExample';
+import { Button } from '../components/Button';
+import { type } from '../theme/typography';
 import { useFavorites } from '../context/FavoritesContext';
 import { Recipe } from '../data/mockData';
 
@@ -67,6 +70,8 @@ export const AddRecipeScreen = () => {
     editing && isRecipePhoto(editing.imageUrl) ? { kind: 'stored', ref: editing.imageUrl } : null
   );
   const [saving, setSaving] = useState(false);
+  // New recipe only: the example fills the form; it is saved only if the user taps Save.
+  const [exampleOn, setExampleOn] = useState(false);
   const [picking, setPicking] = useState(false);
 
   // Hint "Your own recipes" shows until a photo is added.
@@ -144,6 +149,25 @@ export const AddRecipeScreen = () => {
     setIngredients([{ name: '', amount: '' }]);
     setSteps(['']);
     setPhoto(null);
+    setExampleOn(false);
+  };
+
+  /** "Show an example" fills the text fields; "Clear the example" empties them (photo and character stay). */
+  const toggleExample = () => {
+    if (exampleOn) {
+      setTitle('');
+      setSubtitle('');
+      setIngredients([{ name: '', amount: '' }]);
+      setSteps(['']);
+      setExampleOn(false);
+      return;
+    }
+    const ex = exampleRecipe(t);
+    setTitle(ex.title);
+    setSubtitle(ex.subtitle);
+    setIngredients(ex.ingredients);
+    setSteps(ex.steps);
+    setExampleOn(true);
   };
 
   const handleSaveRecipe = async () => {
@@ -228,6 +252,16 @@ export const AddRecipeScreen = () => {
         keyboardDismissMode="on-drag"
       >
 
+        {!editing && (
+          <Button
+            label={exampleOn ? t('arExampleClear') : t('arExample')}
+            variant="text"
+            compact
+            onPress={toggleExample}
+            style={styles.example}
+          />
+        )}
+
         <View style={styles.inputGroup}>
           <Text style={[styles.label, { color: colors.title }]}>{t('photoOpt')}</Text>
           {photoPreviewUri ? (
@@ -268,8 +302,9 @@ export const AddRecipeScreen = () => {
           <Text style={[styles.label, { color: colors.title }]}>{t('recipeName')} *</Text>
           <TextInput
             style={[styles.input, fieldStyle]}
-            placeholder={t('namePh')}
+            placeholder={t('arNamePh')}
             placeholderTextColor={colors.subtitle}
+            accessibilityLabel={t('recipeName')}
             value={title}
             onChangeText={setTitle}
           />
@@ -307,15 +342,17 @@ export const AddRecipeScreen = () => {
             <View key={index} style={styles.ingredientRow}>
               <TextInput
                 style={[styles.input, styles.ingredientNameInput, fieldStyle]}
-                placeholder={t('ingredient')}
+                placeholder={t('arIngredientPh')}
                 placeholderTextColor={colors.subtitle}
+                accessibilityLabel={t('ingredient')}
                 value={ing.name}
                 onChangeText={(val) => handleIngredientChange(index, 'name', val)}
               />
               <TextInput
                 style={[styles.input, styles.ingredientAmountInput, fieldStyle]}
-                placeholder={t('amount')}
+                placeholder={t('arAmountPh')}
                 placeholderTextColor={colors.subtitle}
+                accessibilityLabel={t('amount')}
                 value={ing.amount}
                 onChangeText={(val) => handleIngredientChange(index, 'amount', val)}
               />
@@ -347,8 +384,9 @@ export const AddRecipeScreen = () => {
               </View>
               <TextInput
                 style={[styles.input, styles.stepInput, fieldStyle]}
-                placeholder={`${t('step')} ${index + 1}`}
+                placeholder={t('arStepPh')}
                 placeholderTextColor={colors.subtitle}
+                accessibilityLabel={`${t('step')} ${index + 1}`}
                 value={step}
                 onChangeText={(val) => handleStepChange(index, val)}
                 multiline
@@ -372,6 +410,8 @@ export const AddRecipeScreen = () => {
           </TouchableOpacity>
         </View>
 
+        <Text style={[type.caption, styles.help, { color: colors.subtitle }]}>{t('arHelp')}</Text>
+
         <TouchableOpacity
           style={[styles.saveButton, { backgroundColor: colors.activeBadgeBG, opacity: saving ? 0.6 : 1 }]}
           onPress={handleSaveRecipe}
@@ -392,6 +432,14 @@ export const AddRecipeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  example: {
+    alignSelf: 'flex-start',
+    marginBottom: spacing.s,
+  },
+  help: {
+    marginBottom: spacing.sm,
+    fontWeight: type.body.fontWeight,
   },
   formContainer: {
     flex: 1,
