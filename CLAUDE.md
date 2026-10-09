@@ -53,6 +53,7 @@ npx eas-cli@latest submit --platform ios                       # upload to App S
 
 - **Live on the App Store:** 1.0 (1.0.0, build 4) released 22 Sept 2026; **1.1 (1.1.0, build 5) released 24 Sept 2026**. Release is manual in App Store Connect (Vlad presses Release after approval). https://apps.apple.com/app/id6811610325
 - Git: `main` = `release/1.1` = `54056b7`, tags `v1.0.0-build4` and `v1.1.0`, GitHub Releases v1.0.0 and v1.1.0. The 1.1 queue is closed. **1.2 in progress on `release/1.2`** (branched off `main` at `54056b7` on 7 Oct 2026, `expo.version` 1.2.0); queue in `TASKS.md`, log in `STATUS.md`.
+- **1.2.0 build 6** built 9 Oct 2026 (EAS, commit `7f84eca`) and uploaded to App Store Connect / TestFlight the same day; not submitted for review. `eas.json` → `submit.production.ios.ascAppId` = `6811610325` (needed for `eas submit --non-interactive`).
 - The project folder lives at `~/Projects/mocktail-finder` (moved from Downloads on 24 Sept). Open Claude Code with `cd ~/Projects/mocktail-finder` then `claude`.
 - Case study on vladfilon.com (repo `Vladyslav-XD/portfolio`) is updated for 1.1; privacy and support pages cover the camera, edit/delete and the theme.
 
