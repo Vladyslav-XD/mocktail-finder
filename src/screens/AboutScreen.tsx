@@ -8,7 +8,7 @@ import { AboutGroup, AboutRow } from '../components/AboutRow';
 import { OptionSheet } from '../components/OptionSheet';
 import { Button } from '../components/Button';
 import { TipCard, TipKind } from '../components/TipCard';
-import { GlobeIcon, ThemeIcon } from '../components/icons';
+import { GlobeIcon, MapPinIcon, ThemeIcon } from '../components/icons';
 import { ExternalIcon, RestoreIcon, StarIcon } from '../components/icons/barIcons';
 import { useTheme, ThemeMode } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -115,6 +115,12 @@ export const AboutScreen = () => {
           <AboutGroup>
             <AboutRow icon={c => <GlobeIcon size={sizes.icon.l} color={c} />} label={t('language')} value={languageValue} onPress={() => setSheet('language')} />
             <AboutRow icon={c => <ThemeIcon size={sizes.icon.l} color={c} />} label={t('theme')} value={themeValue} onPress={() => setSheet('theme')} />
+            <AboutRow
+              icon={c => <MapPinIcon size={sizes.icon.l} color={c} />}
+              label={t('aboutTour')}
+              hint={t('aboutTourHint')}
+              onPress={() => onboarding?.startSchool()}
+            />
             <AboutRow icon={c => <RestoreIcon size={sizes.icon.l} color={c} />} label={t('restore')} onPress={restore} muted />
             <AboutRow icon={c => <ExternalIcon size={sizes.icon.l} color={c} />} label={t('privacy')} onPress={() => Linking.openURL(PRIVACY_URL)} />
             <AboutRow icon={c => <ExternalIcon size={sizes.icon.l} color={c} />} label={t('support')} onPress={() => Linking.openURL(SUPPORT_URL)} />

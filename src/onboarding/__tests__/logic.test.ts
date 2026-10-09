@@ -1,4 +1,4 @@
-import { afterHint, detectTourUser, HintContext, hintFor, stepCounter, tourSequence } from '../logic';
+import { afterHint, detectTourUser, HintContext, hintFor, stepCounter, tourFor, tourSequence } from '../logic';
 
 const base: HintContext = {
   screen: 'recipe',
@@ -102,5 +102,21 @@ describe('afterHint', () => {
     expect(afterHint('serv', { seen: {}, proTipSession: false }, false)).toEqual({ seen: { serv: true }, proTipSession: true });
     expect(afterHint('serv', { seen: {}, proTipSession: false }, true)).toEqual({ seen: { serv: true }, proTipSession: false });
     expect(afterHint('coll', { seen: {}, proTipSession: false }, false)).toEqual({ seen: { coll: true }, proTipSession: false });
+  });
+});
+
+describe('Bartender school (About)', () => {
+  it('replays the new-install tour for any user', () => {
+    const fresh = ['welcome', 'coll', 'serv', 'shop', 'card', 'photo', 'bar', 'pro'];
+    expect(tourFor({ user: 'upd', isPro: false, school: true })).toEqual(fresh);
+    expect(tourFor({ user: 'new', isPro: false, school: true })).toEqual(fresh);
+  });
+
+  it('skips the Pro step for Pro users', () => {
+    expect(tourFor({ user: 'upd', isPro: true, school: true })).not.toContain('pro');
+  });
+
+  it('without school it is the saved user’s tour', () => {
+    expect(tourFor({ user: 'upd', isPro: false, school: false })[0]).toBe('whatsnew');
   });
 });

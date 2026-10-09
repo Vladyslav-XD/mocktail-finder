@@ -60,6 +60,14 @@ export function tourSequence(user: TourUser, isPro: boolean): CoachKey[] {
   return isPro ? steps.filter(k => k !== 'pro') : steps;
 }
 
+/**
+ * The tour to run: About → Bartender school always replays the new-install tour
+ * (its first card is "Bartender school" instead of Welcome), whatever the user was.
+ */
+export function tourFor(opts: { user: TourUser; isPro: boolean; school: boolean }): CoachKey[] {
+  return tourSequence(opts.school ? 'new' : opts.user, opts.isPro);
+}
+
 /** "1 of 7": the first card has no counter; the rest count from 1 to length − 1. */
 export function stepCounter(index: number, length: number): { a: number; b: number } | null {
   return index > 0 ? { a: index, b: length - 1 } : null;

@@ -2,6 +2,14 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-09 · 1.2 task 11.3 — "Bartender school" in About (Claude Code)
+- New `AboutRow` between Theme and Restore Purchases: label `aboutTour`, no value, chevron, VoiceOver hint `aboutTourHint`. Visible to everyone, in every build.
+- Tap → `useOnboarding().startSchool()`: the new-install tour from step 0 for any user (`tourFor({ user, isPro, school })` in `logic.ts`), Pro step skipped for Pro users. The first card shows `tourSchoolT` / `tourSchoolS` instead of Welcome (app icon kept). It navigates to Home (closing About) like the DEV replay. Session only: nothing is persisted until it ends, then it ends like the normal tour (steps shown count as seen). The DEV panel keeps its two replay buttons.
+- New strings (en + uk, verbatim from COPY_EN_UK.md): `aboutTour`, `aboutTourHint`, `tourSchoolT`, `tourSchoolS`.
+- **Decision without asking:** row icon = `MapPinIcon` (an existing icon, "tour"); the handoff has none for this row. The martini is a tall logo-shaped icon and would not fit a 50-pt row. **Open question for Cowork:** a dedicated icon if wanted.
+- Components changed: `AboutRow` (`hint`), `CoachState` (`school`). Tests: `tourFor` (3) in `logic.test.ts`; total 116/116.
+- Files: `src/onboarding/logic.ts`, `OnboardingContext.tsx`, `CoachOverlay.tsx`, `src/components/AboutRow.tsx`, `src/screens/AboutScreen.tsx`, `src/i18n/en.ts`, `uk.ts`, `TESTING.md`. Verified: `tsc` clean; screenshot with the task-11 set.
+
 ## 2026-10-09 · 1.2 task 11.2 — Tip jar copy (Claude Code)
 - `tipText` and `tipNote` replaced in `src/i18n/en.ts` and `uk.ts` with the strings from COPY_EN_UK.md → "Build 7 (Cowork, 9 Oct)", verbatim. No layout change.
 - Files: `src/i18n/en.ts`, `src/i18n/uk.ts`, `TESTING.md` § 7. Verified: `tsc` clean, tests 113/113 (the i18n key-parity test included); screenshot of the tip jar with the task-11 set.

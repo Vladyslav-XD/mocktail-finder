@@ -151,7 +151,7 @@ const Bubble = ({ state, rect }: { state: CoachState; rect: Rect | null }) => {
   const upd = state.user === 'upd';
   const key = state.key;
 
-  const copy = content(key, t);
+  const copy = key === 'welcome' && state.school ? { title: t('tourSchoolT'), text: t('tourSchoolS') } : content(key, t);
   const paidPill = !state.isPro ? PRO_PILL : upd ? t('obNew') : '';
   const pill =
     key === 'whatsnew' ? t('obNew') : key === 'coll' || key === 'swipe' ? (upd ? t('obNew') : '') : PAID_FEATURE[key] && key !== 'pro' ? paidPill : '';

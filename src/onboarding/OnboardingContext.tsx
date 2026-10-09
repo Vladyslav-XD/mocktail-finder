@@ -10,7 +10,7 @@ import { usePaywall } from '../purchases/usePaywall';
 import { ALL_PACK_RECIPES } from '../data/packs';
 import { Recipe } from '../data/mockData';
 import { useOverlayCount } from './OverlayContext';
-import { afterHint, CoachKey, CoachScreen, hintFor, HintContext, PAID_FEATURE, tourSequence } from './logic';
+import { afterHint, CoachKey, CoachScreen, hintFor, HintContext, PAID_FEATURE, tourFor } from './logic';
 import { OnboardingSaved, saveOnboarding } from './storage';
 
 /** Facts screens report while focused (README → Hints conditions). */
@@ -33,6 +33,8 @@ export interface CoachState {
   length: number;
   user: 'new' | 'upd';
   isPro: boolean;
+  /** Started from About → Bartender school: the first card has its own title. */
+  school: boolean;
 }
 
 interface OnboardingApi {
@@ -47,6 +49,8 @@ interface OnboardingApi {
   target: (id: string) => View | null;
   /** DEV: start again as a new or an updating user. */
   devReset: (user: 'new' | 'upd') => void;
+  /** About → Bartender school: the new-install tour from the start, for everyone. */
+  startSchool: () => void;
 }
 
 const OnboardingContext = createContext<OnboardingApi | null>(null);
@@ -79,6 +83,8 @@ export const OnboardingProvider = ({ initial, children }: { initial: OnboardingS
   const [saved, setSaved] = useState<OnboardingSaved>(initial);
   const [tourOn, setTourOn] = useState(!initial.tourDone);
   const [step, setStep] = useState(0);
+  // Session only: a replay from About is not saved, so a restart never resumes it.
+  const [school, setSchool] = useState(false);
   // Session only: a new launch is a new session.
   const [navCount, setNavCount] = useState(0);
   const [tourEndNav, setTourEndNav] = useState(0);
@@ -93,7 +99,7 @@ export const OnboardingProvider = ({ initial, children }: { initial: OnboardingS
     saveOnboarding(next);
   }, []);
 
-  const sequence = useMemo(() => tourSequence(saved.user, isPro), [saved.user, isPro]);
+  const sequence = useMemo(() => tourFor({ user: saved.user, isPro, school }), [saved.user, isPro, school]);
 
   /** The recipe the tour shows: Virgin Margarita when Dry January is open, otherwise Afterglow. */
   const tourRecipe = useCallback((): Recipe => {
@@ -130,6 +136,7 @@ export const OnboardingProvider = ({ initial, children }: { initial: OnboardingS
       sequence.slice(0, step + 1).forEach(k => (seen[k] = true));
       persist({ ...saved, tourDone: true, seen });
       setTourOn(false);
+      setSchool(false);
       setTourEndNav(navCount + 1);
       goTo('welcome');
       if (toPaywall) openPaywall('mybar');
@@ -155,9 +162,9 @@ export const OnboardingProvider = ({ initial, children }: { initial: OnboardingS
       });
 
   const current: CoachState | null = tourOn
-    ? { key: sequence[step], mode: 'tour', step, length: sequence.length, user: saved.user, isPro }
+    ? { key: sequence[step], mode: 'tour', step, length: sequence.length, user: school ? 'new' : saved.user, isPro, school }
     : hint
-      ? { key: hint, mode: 'hint', step: 0, length: 0, user: saved.user, isPro }
+      ? { key: hint, mode: 'hint', step: 0, length: 0, user: saved.user, isPro, school: false }
       : null;
 
   const primary = useCallback(() => {
@@ -202,6 +209,7 @@ export const OnboardingProvider = ({ initial, children }: { initial: OnboardingS
   const devReset = useCallback(
     (user: 'new' | 'upd') => {
       persist({ ...saved, tourDone: false, user, seen: {} });
+      setSchool(false);
       setStep(0);
       setTourOn(true);
       setNavCount(0);
@@ -212,6 +220,13 @@ export const OnboardingProvider = ({ initial, children }: { initial: OnboardingS
     },
     [saved, persist, goTo]
   );
+
+  const startSchool = useCallback(() => {
+    setSchool(true);
+    setStep(0);
+    setTourOn(true);
+    goTo('welcome');
+  }, [goTo]);
 
   // Every navigation counts: hints wait for one after the tour, and the route decides the rules.
   useEffect(() => navigationRef.addListener('state', onNavigate), [onNavigate]);
@@ -229,8 +244,8 @@ export const OnboardingProvider = ({ initial, children }: { initial: OnboardingS
   }, [tourOn]);
 
   const api = useMemo<OnboardingApi>(
-    () => ({ current, primary, secondary, setFacts, recipeOpened, register, target, devReset }),
-    [current, primary, secondary, setFacts, recipeOpened, register, target, devReset]
+    () => ({ current, primary, secondary, setFacts, recipeOpened, register, target, devReset, startSchool }),
+    [current, primary, secondary, setFacts, recipeOpened, register, target, devReset, startSchool]
   );
 
   return <OnboardingContext.Provider value={api}>{children}</OnboardingContext.Provider>;
