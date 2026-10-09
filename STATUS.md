@@ -2,6 +2,14 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-09 · 1.2 build 6 — production build done, NOT submitted (Claude Code)
+- Vlad reviewed the release screenshots and gave the ok for the build.
+- Before: `npx tsc --noEmit` clean; Expo account confirmed.
+- `npx eas-cli@latest build --platform ios --profile production --non-interactive` (non-interactive = "n" to the Apple-account login; credentials from Expo's servers: distribution certificate and provisioning profile valid until 15 Sept 2027).
+- Result: **finished**, version **1.2.0**, build number **6** (auto-incremented from 5), distribution store, SDK 54, commit `7f84eca`.
+  - Build: https://expo.dev/accounts/filon-experience-design/projects/mocktail-finder/builds/0a90bb60-ce99-42ea-8895-72c504791c9f
+- Nothing uploaded to App Store Connect. **Next:** `eas submit` only after Vlad's separate ok; the 11 products and a sandbox tester must exist in App Store Connect before testing purchases in TestFlight.
+
 ## 2026-10-08 · 1.2 task 10 — ready for review, STOPPED before the build (Claude Code)
 **Report for Vlad.** Tasks 0–9 are done and pushed (`release/1.2`, last code commit `78fa0fd`). Nothing has been built or uploaded.
 - Checks:
