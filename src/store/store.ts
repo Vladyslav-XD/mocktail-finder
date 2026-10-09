@@ -33,6 +33,15 @@ const LEGACY_CATEGORY_TO_TAG: Record<string, DrinkTag> = {
   Sparkling: 'Sparkling',
 };
 
+/**
+ * Recipes read from storage (own recipes, favourites), with anything that is not a recipe
+ * dropped. One broken entry from an older build must not stop the app from starting.
+ */
+export function savedRecipes(raw: unknown): Recipe[] {
+  if (!Array.isArray(raw)) return [];
+  return raw.filter((r): r is Recipe => !!r && typeof r === 'object' && typeof (r as Recipe).id === 'string');
+}
+
 /** Brings a recipe saved by an older build up to the current shape (tags). */
 export function migrateRecipe(recipe: Recipe): Recipe {
   if (recipe.tags || !recipe.category) return recipe;
@@ -44,11 +53,11 @@ export function migrateRecipe(recipe: Recipe): Recipe {
 /** Reads persisted user recipes, the shopping list and My Bar into the store. Resolves when done (never rejects). */
 export async function hydrateStore(): Promise<void> {
   const [saved, shopping, pantry] = await Promise.all([
-    loadJson<Recipe[]>(STORAGE_KEYS.myRecipes, []),
+    loadJson<unknown>(STORAGE_KEYS.myRecipes, []),
     loadJson<ShoppingItem[]>(STORAGE_KEYS.shoppingList, []),
     loadJson<string[]>(STORAGE_KEYS.pantry, []),
   ]);
-  store.dispatch(hydrateRecipes(Array.isArray(saved) ? saved.map(migrateRecipe) : []));
+  store.dispatch(hydrateRecipes(savedRecipes(saved).map(migrateRecipe)));
   store.dispatch(hydrateShoppingList(Array.isArray(shopping) ? shopping : []));
   store.dispatch(hydratePantry(Array.isArray(pantry) ? pantry.filter(k => typeof k === 'string') : []));
 }

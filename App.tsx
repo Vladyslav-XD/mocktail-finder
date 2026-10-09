@@ -17,6 +17,7 @@ import { OverlayProvider } from './src/onboarding/OverlayContext';
 import { OnboardingProvider } from './src/onboarding/OnboardingContext';
 import { CoachOverlay } from './src/onboarding/CoachOverlay';
 import { loadOnboarding, OnboardingSaved } from './src/onboarding/storage';
+import { ONBOARDING_FALLBACK, orFallback } from './src/utils/startup';
 import { FavoritesProvider } from './src/context/FavoritesContext';
 import { ThemeProvider, ThemeMode, loadThemeMode } from './src/context/ThemeContext';
 import { store, hydrateStore } from './src/store/store';
@@ -45,7 +46,15 @@ export default function App() {
     // Favourites, user recipes, the drink-details cache, the saved theme and the
     // language are all read while the splash plays, so the app opens in its final state.
     // Purchases are cached too; StoreKit is asked later, without holding up the UI.
-    Promise.all([hydrateStore(), loadDetailsCache(), loadThemeMode(), loadLanguageSetting(), loadCachedOwned(), loadOnboarding()])
+    // Each read falls back on its own: one failure must not cost the others (build 6 bug).
+    Promise.all([
+      orFallback(hydrateStore(), undefined),
+      orFallback(loadDetailsCache(), undefined),
+      orFallback(loadThemeMode(), 'system' as ThemeMode),
+      orFallback(loadLanguageSetting(), 'system' as LanguageSetting),
+      orFallback(loadCachedOwned(), [] as string[]),
+      orFallback(loadOnboarding(), ONBOARDING_FALLBACK),
+    ])
       .then(([, , savedMode, savedLanguage, owned, savedOnboarding]) => {
         if (cancelled) return;
         setThemeMode(savedMode);
@@ -80,7 +89,7 @@ export default function App() {
                       <OverlayProvider>
                         <NavigationContainer ref={navigationRef}>
                           <PaywallProvider>
-                            <OnboardingProvider initial={onboarding ?? { tourDone: true, user: 'new', seen: {}, sessions: 1 }}>
+                            <OnboardingProvider initial={onboarding ?? ONBOARDING_FALLBACK}>
                               <RootNavigator />
                               <CoachOverlay />
                             </OnboardingProvider>

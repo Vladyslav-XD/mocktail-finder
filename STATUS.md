@@ -2,6 +2,23 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-09 · Bug: no tour after updating from 1.1 (build 6) — fixed (Claude Code)
+- Vlad's report: build 6 from TestFlight over 1.1.0 (build 5) with his data showed no tour, not at first launch and not later. A clean install did show it. His 1.1 data is gone from the phone, so it was reproduced on the simulator.
+- Ruled out by reading the code: the tour is not behind `__DEV__` or a DEV switch; no persisted "hints off" exists; the 1.1 storage keys (favourites, own recipes, theme) match what 1.2 checks; the first tour card (Welcome / What's new) has no target, so no layout measurement can hide it.
+- Reproduction in Release on "Mocktail SE" (iOS 26.5):
+  - 1.1.0 built from tag `v1.1.0` (`xcodebuild -configuration Release`; `expo run:ios` could not find the Simulator app from this shell, and two old pods needed `IPHONEOS_DEPLOYMENT_TARGET=15.1` with the current Xcode; local build only, nothing in the repo).
+  - 1.1-format data written into its AsyncStorage: a favourite (Afterglow), an own recipe with 1.1 string ingredients, theme "dark"; 1.1 showed them (dark theme).
+  - 1.2 Release (`release/1.2` at `163a9d2`) installed over it. **With clean 1.1 data the update tour did show** ("What's new in 1.2", dark theme kept); `@mocktail-finder/onboarding` = `{tourDone:false,user:"upd"}`.
+  - **With one broken entry (`null`) in the saved recipes: no tour, the saved dark theme ignored, a "Collections" hint instead** — on every launch. That matches Vlad's phone.
+- **Cause:** `App.tsx` read six things during the splash with one `Promise.all`. `hydrateStore` ran `migrateRecipe` on every saved recipe and threw on a broken entry, so the whole `Promise.all` rejected: the onboarding state, theme and language were never set and the onboarding fell back to `tourDone: true` — the tour was skipped silently and permanently. Whether Vlad's data had exactly a `null` entry cannot be checked any more; any failure of any of the six reads had the same effect.
+- **Fix:**
+  - `src/utils/startup.ts` `orFallback`: every startup read falls back on its own, so one failure no longer costs the others.
+  - The onboarding fallback is now `tourDone: false` (`ONBOARDING_FALLBACK`): if the state cannot be read, the tour shows rather than being skipped.
+  - `savedRecipes()` in `src/store/store.ts` drops entries that are not recipes before migration, in `hydrateStore` and in `FavoritesContext`.
+- Tests: `src/onboarding/__tests__/storage.test.ts` (10): clean install → new tour; install over 1.1 (favourites + recipes + theme, and each alone) → update tour; broken entry still an update; second launch keeps the tour pending; `savedRecipes`; `hydrateStore` with a broken entry resolves (fails on the old code); one failed read keeps the others. Total 113/113.
+- Verified: `tsc` clean; the same broken 1.1 data on the simulator in Release now shows "What's new in 1.2" with the dark theme kept. TESTING.md § 8: new item for the update path on the phone.
+- Files: `App.tsx`, `src/utils/startup.ts`, `src/store/store.ts`, `src/context/FavoritesContext.tsx`, `src/onboarding/__tests__/storage.test.ts`, `TESTING.md`.
+
 ## 2026-10-09 · 1.2 build 6 — uploaded to TestFlight, not submitted for review (Claude Code)
 - Vlad reviewed the release screenshots and gave the ok for the build.
 - Before: `npx tsc --noEmit` clean; Expo account confirmed.
