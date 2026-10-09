@@ -343,3 +343,36 @@ Decision: Home keeps all 15 Category chips from 1.1 (free feature, nothing remov
 | Minty | Minty | М'ятні |
 | Spiced | Spiced | Пряні |
 | Savoury | Savoury | Солоні |
+
+## Build 7 (Cowork, 9 Oct) — Vlad's TestFlight feedback
+
+Replaces `tipText` and `tipNote`; everything else is new.
+
+| Key | EN | UA |
+|---|---|---|
+| tipText | All made by one person. If the app saved you a trip to the shop, say thanks with a drink. | Усе зроблено однією людиною. Якщо застосунок зекономив вам похід у магазин — подякуйте напоєм. |
+| tipNote | Tips are optional and don't add features. Paid through the App Store. | Чайові — за бажанням і функцій не додають. Оплата через App Store. |
+| aboutTour | Bartender school | Школа бармена |
+| aboutTourHint | Take the tour again | Пройти тур ще раз |
+| tourSchoolT | Bartender school | Школа бармена |
+| tourSchoolS | A quick tour of what the app can do. | Короткий тур: що вміє застосунок. |
+| barStartT | Start with what's at home | Почніть із того, що є вдома |
+| barStart1 | Tick what you have | Відмітьте, що маєте |
+| barStart2 | See what you can mix right now | Побачите, що можна змішати просто зараз |
+| barStart3 | Missing one thing? We'll say which | Бракує одного — скажемо, чого саме |
+| barStartMore | More ingredients | Більше інгредієнтів |
+| arNamePh | e.g. Mint lemonade | напр., Лимонад з м'ятою |
+| arAmountPh | 50 ml | 50 мл |
+| arIngredientPh | lime juice | сік лайму |
+| arStepPh | Shake with ice, strain into a glass | Збийте з льодом, процідіть у склянку |
+| arHelp | No photo or exact amounts needed. A name, one ingredient and one step are enough. | Фото й точні міри не обов'язкові. Досить назви, одного інгредієнта й одного кроку. |
+| arExample | Show an example | Показати приклад |
+| arExampleClear | Clear the example | Прибрати приклад |
+| exName | Mint lemonade | Лимонад з м'ятою |
+| exDesc | Sharp, sweet and very cold. | Кислий, солодкий і дуже холодний. |
+| exIng1 | 1 · lemon | 1 · лимон |
+| exIng2 | 2 tsp · sugar | 2 ч. л. · цукор |
+| exIng3 | 6 leaves · mint | 6 листочків · м'ята |
+| exIng4 | 200 ml · soda water | 200 мл · содова |
+| exStep1 | Squeeze the lemon into a glass, add the sugar and mint, press gently with a spoon. | Вичавіть лимон у склянку, додайте цукор і м'яту, злегка розімніть ложкою. |
+| exStep2 | Fill with ice, top up with soda water, stir. | Додайте лід, долийте содову, перемішайте. |
