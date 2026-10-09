@@ -8,8 +8,8 @@ import { AboutGroup, AboutRow } from '../components/AboutRow';
 import { OptionSheet } from '../components/OptionSheet';
 import { Button } from '../components/Button';
 import { TipCard, TipKind } from '../components/TipCard';
-import { GlobeIcon, MapPinIcon, ThemeIcon } from '../components/icons';
-import { ExternalIcon, RestoreIcon, StarIcon } from '../components/icons/barIcons';
+import { GlobeIcon, ThemeIcon } from '../components/icons';
+import { ExternalIcon, GraduationCapIcon, RestoreIcon, StarIcon } from '../components/icons/barIcons';
 import { useTheme, ThemeMode } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { usePurchases } from '../purchases/PurchasesContext';
@@ -116,7 +116,7 @@ export const AboutScreen = () => {
             <AboutRow icon={c => <GlobeIcon size={sizes.icon.l} color={c} />} label={t('language')} value={languageValue} onPress={() => setSheet('language')} />
             <AboutRow icon={c => <ThemeIcon size={sizes.icon.l} color={c} />} label={t('theme')} value={themeValue} onPress={() => setSheet('theme')} />
             <AboutRow
-              icon={c => <MapPinIcon size={sizes.icon.l} color={c} />}
+              icon={c => <GraduationCapIcon size={sizes.icon.l} color={c} />}
               label={t('aboutTour')}
               hint={t('aboutTourHint')}
               onPress={() => onboarding?.startSchool()}

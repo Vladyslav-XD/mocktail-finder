@@ -9,14 +9,13 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useToast } from '../components/Toast';
 import { CoachTarget, useCoachFacts } from '../onboarding/OnboardingContext';
-import { spacing } from '../theme/spacing';
+import { opacity, spacing } from '../theme/spacing';
 import { AddRecipeIcon, XIcon } from '../components/icons';
 import { SCREENS } from '../constants/screens';
 import { ALL_TAGS, DrinkTag, tagsToSubtitle } from '../utils/drinkTags';
 import { pickRecipePhoto, takeRecipePhoto, persistRecipePhoto, deleteRecipePhoto, isRecipePhoto, resolveImageUri } from '../utils/recipePhotos';
 import { splitInstructions } from '../utils/recipeText';
 import { exampleRecipe } from '../utils/recipeExample';
-import { Button } from '../components/Button';
 import { type } from '../theme/typography';
 import { useFavorites } from '../context/FavoritesContext';
 import { Recipe } from '../data/mockData';
@@ -253,13 +252,15 @@ export const AddRecipeScreen = () => {
       >
 
         {!editing && (
-          <Button
-            label={exampleOn ? t('arExampleClear') : t('arExample')}
-            variant="text"
-            compact
+          <TouchableOpacity
             onPress={toggleExample}
+            activeOpacity={opacity.pressed}
+            accessibilityRole="button"
+            hitSlop={spacing.s}
             style={styles.example}
-          />
+          >
+            <Text style={[type.button, { color: colors.subtitle }]}>{exampleOn ? t('arExampleClear') : t('arExample')}</Text>
+          </TouchableOpacity>
         )}
 
         <View style={styles.inputGroup}>
@@ -435,7 +436,7 @@ const styles = StyleSheet.create({
   },
   example: {
     alignSelf: 'flex-start',
-    marginBottom: spacing.s,
+    marginBottom: spacing.m,
   },
   help: {
     marginBottom: spacing.sm,

@@ -94,3 +94,10 @@ export const TIP_ICONS = {
   tipMedium: outline(['M6 10h12l-1.5 11h-9Z', 'M5 10a7 3.2 0 0 1 14 0', 'M12 6.8V2.5h3']),
   tipLarge: outline(['M3 11h18a9 7 0 0 1-18 0Z', 'M9 21h6', 'M12 18v3', 'M15 11V5a2 2 0 0 1 4 0']),
 };
+
+/** About → Bartender school (Lucide "graduation-cap", same 24 × 24 outline style). */
+export const GraduationCapIcon = outline([
+  'M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z',
+  'M22 10v6',
+  'M6 12.5V16a6 3 0 0 0 12 0v-3.5',
+]);
