@@ -2,6 +2,12 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-09 · 1.2 build 7 — production build done, NOT submitted (Claude Code)
+- Vlad's ok in the terminal ("ок на збірку 7"). `npx eas-cli@latest build --platform ios --profile production --non-interactive`.
+- Result: **finished**, version **1.2.0**, build **7** (auto-incremented from 6), commit `131b47c`.
+  - Build: https://expo.dev/accounts/filon-experience-design/projects/mocktail-finder/builds/3caf3ad3-8f63-4b5c-bd0c-02bf3582a765
+- Not uploaded. **Next:** `eas submit --id 3caf3ad3-8f63-4b5c-bd0c-02bf3582a765 --non-interactive` only after Vlad's separate ok; then TESTING.md on the phone (especially § 8: install over 1.1 from the App Store).
+
 ## 2026-10-09 · Build 7 fixes from Vlad's review (Claude Code)
 - Answers: Restore stays `subtitle`; Bartender school keeps the graduation cap.
 - **Copy:** `descPh` (uk) → «напр., Освіжний тропічний напій»; every Ukrainian «напр.» placeholder now reads «напр., …» (test). Tag Frozen (uk) «Фрозен» → «Заморожений» (category chips and Add Recipe).
