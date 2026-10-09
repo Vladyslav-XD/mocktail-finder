@@ -91,7 +91,7 @@
 ## 7. About і чайові
 
 - ☐ Іконка 64, «Version 1.2.0 (N) · Free / Pro unlocked», «Get Pro» лише для Free; рядки Language, Theme, Restore Purchases, Privacy Policy, Support, Rate on the App Store відкривають що треба.
-- ☐ Панель «Drinks for the developer» на м'ятному фоні, три однакові картки, іконки «хвилею» 6 с (статично з Reduce Motion), примітка «Nothing unlocks».
+- ☐ Панель «Drinks for the developer» на м'ятному фоні, три однакові картки, іконки «хвилею» 6 с (статично з Reduce Motion), текст «All made by one person. If the app saved you a trip to the shop, say thanks with a drink.» / «Усе зроблено однією людиною. Якщо застосунок зекономив вам похід у магазин — подякуйте напоєм.», примітка «Tips are optional and don't add features. Paid through the App Store.» / «Чайові — за бажанням і функцій не додають. Оплата через App Store.»; на SE нічого не обрізається.
 - ☐ Paywall, відкритий із закритої функції (Порції / Список покупок / Картка / Мій бар), підсвічує саме цю функцію першим рядком.
 - ☐ Купівля Pro з Paywall: після успіху Paywall закривається сам; шіт колекції закривається сам після покупки колекції.
 - ☐ Статус-бар на Paywall видно і в світлій, і в темній темі.

@@ -2,6 +2,10 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-09 · 1.2 task 11.2 — Tip jar copy (Claude Code)
+- `tipText` and `tipNote` replaced in `src/i18n/en.ts` and `uk.ts` with the strings from COPY_EN_UK.md → "Build 7 (Cowork, 9 Oct)", verbatim. No layout change.
+- Files: `src/i18n/en.ts`, `src/i18n/uk.ts`, `TESTING.md` § 7. Verified: `tsc` clean, tests 113/113 (the i18n key-parity test included); screenshot of the tip jar with the task-11 set.
+
 ## 2026-10-09 · 1.2 task 11.1 — Restore Purchases, quieter (Claude Code)
 - Paywall and collection sheet: the Restore text button goes from Button / brand to **Body S / `subtitle`**. About: `AboutRow` gets `muted` (icon and label in `subtitle`, label Body S, row height unchanged), used by the Restore row.
 - **Decision without asking (accessibility):** the task names `textMuted`, but `textMuted` in light is #99A1AF on white = **2.6:1**, below the 4.5:1 text minimum. `subtitle` (#6A7282) = **4.84:1** light, 5.78–6.99:1 dark (in dark both tokens are the same colour). `subtitle` is also exactly what the prices note uses, which the task names as the target look. Cowork/Vlad: say if you want `textMuted` anyway.
