@@ -2,6 +2,17 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-21 · Tip jar copy rewritten by Vlad (Claude Code)
+- `tipTitle`, `tipText`, `tipNote`, `thanks` (the pill on a card after a tip) and `thanksToast` replaced in `src/i18n/en.ts` and `uk.ts`, verbatim from Vlad: "Buy the maker a drink" / «Пригостіть автора»; "I make this app on my own. Every thank-you is motivation for the next update. The bar is open." / «Цей застосунок я роблю сам. Кожна подяка — мотивація на наступне оновлення. Бар відкрито.»; "Tips unlock nothing but my gratitude. Optional, paid through the App Store." / «Чайові не відкривають нічого, крім моєї вдячності. За бажанням, оплата через App Store.»; "Cheers!" / «Будьмо!»; "Cheers! This one's on you — thanks from Dublin." / «Будьмо! Цей за ваш рахунок — дякую з Дубліна.» Card names (Lemonade / Smoothie / Punch) and the layout unchanged: three cards side by side, icon · name · price, no caption under the drink.
+- `COPY_EN_UK.md` → "Build 7": the five rows, and the intro line says which keys it replaces. The handoff's original "About and settings" table, `README.md`, `reference/mf-data.js` and the prototype keep the old wording as history (Build 7 overrides them, as with the 9 Oct `tipText` / `tipNote` change).
+- Grep for the old strings ("Drinks for the developer", «Напої для розробника», "Thank you! Cheers from Dublin", «Дякую! Вітання з Дубліна»): none left in `src/` (tour and hints included) or TESTING.md (§ 3 and § 7 updated). Left on purpose: this log, ticked TASKS.md items 4 and 8, the handoff files above. Code comments that quoted the old copy (`AboutScreen`, `TipCard`, `PurchasesContext`) now name the keys.
+- Test: `i18n.test.ts` → "tip jar copy (rewritten 21 Oct)": the five strings in both languages, card names unchanged, none of the old phrases in either dictionary.
+- Seen in the simulator (Expo Go: no StoreKit, so prices read "—" and the cards are dimmed): the new toast takes two lines on the SE in both languages, not clipped. Typography, not changed: on the SE in English "open." is alone on the last line of `tipText`; on the Pro Max in Ukrainian «За» ends the first line of `tipNote`.
+- Screenshots: `~/Desktop/mocktail-1.2-tips/` — SE en / uk × light / dark, Pro Max en / uk dark, SE en / uk after a tip (pill and toast simulated with a throwaway edit, not committed).
+- Housekeeping: removed the stray worktree `.claude/worktrees/elegant-wilson-4e785d` and branch `claude/elegant-wilson-4e785d` (both at `65dab2f`, no changes, never pushed). No build.
+- Files: `src/i18n/en.ts`, `uk.ts`, `src/i18n/__tests__/i18n.test.ts`, comments in `src/screens/AboutScreen.tsx`, `src/components/TipCard.tsx`, `src/purchases/PurchasesContext.tsx`, `design_handoff_mocktail_1.2/COPY_EN_UK.md`, `TESTING.md`. Verified: `tsc` clean, tests 131/131 in 14 suites.
+- Open question: keep those words together with a non-breaking space ("is open.", «За бажанням»)? Waiting for Vlad.
+
 ## 2026-10-09 · 1.2 build 7 — uploaded to TestFlight, not submitted for review (Claude Code)
 - Vlad's ok in the terminal ("ок на збірку 7"). `npx eas-cli@latest build --platform ios --profile production --non-interactive`.
 - Result: **finished**, version **1.2.0**, build **7** (auto-incremented from 6), commit `131b47c`.

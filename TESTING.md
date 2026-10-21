@@ -41,7 +41,7 @@
 - ☐ Скасувати покупку в шіті Apple → нічого не показується, усе як було.
 - ☐ Купити одну колекцію → тост «<назва> unlocked», її напої з'явились у списку, пошуку, фільтрах, My Bar.
 - ☐ Купити Everything (другий sandbox-акаунт або після Clear Purchase History) → Pro і всі 6 колекцій відкриті; кнопка Everything зникла, на Paywall «You have Pro».
-- ☐ Чайові: кожна з трьох карток → шіт Apple → «Thanks!» на картці, тост «Thank you! Cheers from Dublin»; можна дати ще раз; нічого не відкрилось.
+- ☐ Чайові: кожна з трьох карток → шіт Apple → на картці плашка «Cheers!» / «Будьмо!», тост «Cheers! This one's on you — thanks from Dublin.» / «Будьмо! Цей за ваш рахунок — дякую з Дубліна.» (на SE у два рядки, не обрізаний); можна дати ще раз; нічого не відкрилось.
 - ☐ Restore: видалити застосунок, встановити знову, About → Restore Purchases → «Purchases restored», усе куплене повернулось. На чистому акаунті — «Nothing to restore».
 - ☐ Ask to Buy: покупка з акаунта з Ask to Buy → тост «Waiting for approval…», функція лишається закритою; після схвалення (або відмови) застосунок реагує на наступному запуску.
 - ☐ Повернення коштів (у sandbox: ASC → Sandbox → тестер → Refund purchases, або через Clear Purchase History): після перезапуску функція тихо закрита, без повідомлень.
@@ -99,7 +99,7 @@
 ## 7. About і чайові
 
 - ☐ Іконка 64, «Version 1.2.0 (N) · Free / Pro unlocked», «Get Pro» лише для Free; рядки Language, Theme, Restore Purchases, Privacy Policy, Support, Rate on the App Store відкривають що треба.
-- ☐ Панель «Drinks for the developer» на м'ятному фоні, три однакові картки, іконки «хвилею» 6 с (статично з Reduce Motion), текст «All made by one person. If the app saved you a trip to the shop, say thanks with a drink.» / «Усе зроблено однією людиною. Якщо застосунок зекономив вам похід у магазин — подякуйте напоєм.», примітка «Tips are optional and don't add features. Paid through the App Store.» / «Чайові — за бажанням і функцій не додають. Оплата через App Store.»; на SE нічого не обрізається.
+- ☐ Панель «Buy the maker a drink» / «Пригостіть автора» на м'ятному фоні, три однакові картки поруч (іконка, назва Lemonade / Smoothie / Punch — «Лимонад» / «Смузі» / «Пунш», ціна; підписів під напоями немає), іконки «хвилею» 6 с (статично з Reduce Motion), текст «I make this app on my own. Every thank-you is motivation for the next update. The bar is open.» / «Цей застосунок я роблю сам. Кожна подяка — мотивація на наступне оновлення. Бар відкрито.», примітка «Tips unlock nothing but my gratitude. Optional, paid through the App Store.» / «Чайові не відкривають нічого, крім моєї вдячності. За бажанням, оплата через App Store.»; на SE нічого не обрізається.
 - ☐ Paywall, відкритий із закритої функції (Порції / Список покупок / Картка / Мій бар), підсвічує саме цю функцію першим рядком.
 - ☐ Купівля Pro з Paywall: після успіху Paywall закривається сам; шіт колекції закривається сам після покупки колекції.
 - ☐ Статус-бар на Paywall видно і в світлій, і в темній темі.

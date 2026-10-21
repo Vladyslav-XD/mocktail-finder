@@ -35,8 +35,8 @@ const TIPS: Array<{ kind: TipKind; id: string; label: 'tipSmall' | 'tipMedium' |
 
 /**
  * About (README → Screens → About): icon, name, version line, Get Pro (Free only),
- * Language / Theme / Restore / Privacy / Support / Rate, and the tip jar "Drinks for
- * the developer". A long-press on the version line shows the DEV switches in debug builds.
+ * Language / Theme / Restore / Privacy / Support / Rate, and the tip jar (`tipTitle`, copy in
+ * COPY_EN_UK.md → Build 7). A long-press on the version line shows the DEV switches in debug builds.
  */
 export const AboutScreen = () => {
   const navigation = useNavigation();

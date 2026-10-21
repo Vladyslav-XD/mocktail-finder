@@ -101,3 +101,37 @@ describe('Ukrainian "e.g." placeholders', () => {
     values.forEach(v => expect(v.startsWith('напр., ')).toBe(true));
   });
 });
+
+describe('tip jar copy (rewritten 21 Oct)', () => {
+  const TIP_COPY = ['tipTitle', 'tipText', 'tipNote', 'thanks', 'thanksToast'] as const;
+
+  it('matches COPY_EN_UK.md → Build 7 in both languages', () => {
+    expect(TIP_COPY.map(k => translate('en', k))).toEqual([
+      'Buy the maker a drink',
+      'I make this app on my own. Every thank-you is motivation for the next update. The bar is open.',
+      'Tips unlock nothing but my gratitude. Optional, paid through the App Store.',
+      'Cheers!',
+      "Cheers! This one's on you — thanks from Dublin.",
+    ]);
+    expect(TIP_COPY.map(k => translate('uk', k))).toEqual([
+      'Пригостіть автора',
+      'Цей застосунок я роблю сам. Кожна подяка — мотивація на наступне оновлення. Бар відкрито.',
+      'Чайові не відкривають нічого, крім моєї вдячності. За бажанням, оплата через App Store.',
+      'Будьмо!',
+      'Будьмо! Цей за ваш рахунок — дякую з Дубліна.',
+    ]);
+  });
+
+  it('keeps the card names', () => {
+    const cards = ['tipSmall', 'tipMedium', 'tipLarge'] as const;
+    expect(cards.map(k => translate('en', k))).toEqual(['Lemonade', 'Smoothie', 'Punch']);
+    expect(cards.map(k => translate('uk', k))).toEqual(['Лимонад', 'Смузі', 'Пунш']);
+  });
+
+  it('the old wording is gone from every string, the tour and hints included', () => {
+    const all = JSON.stringify([en, uk]);
+    ['Drinks for the developer', 'Напої для розробника', 'Cheers from Dublin', 'Вітання з Дубліна'].forEach(old =>
+      expect(all).not.toContain(old)
+    );
+  });
+});

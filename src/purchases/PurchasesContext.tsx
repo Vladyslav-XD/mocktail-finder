@@ -37,7 +37,7 @@ interface PurchasesContextType {
   unlockedPacks: string[];
   /** Product whose Apple sheet is open, if any. */
   purchasing: string | null;
-  /** Tips bought this session: their card shows "Thanks!". */
+  /** Tips bought this session: their card shows the `thanks` pill. */
   thankedTips: string[];
   buy: (productId: string) => Promise<void>;
   restore: () => Promise<void>;

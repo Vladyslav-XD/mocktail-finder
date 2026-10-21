@@ -346,12 +346,15 @@ Decision: Home keeps all 15 Category chips from 1.1 (free feature, nothing remov
 
 ## Build 7 (Cowork, 9 Oct) — Vlad's TestFlight feedback
 
-Replaces `tipText` and `tipNote`; everything else is new.
+Replaces `tipTitle`, `tipText`, `tipNote`, `thanks` and `thanksToast` (the tip jar rows were rewritten by Vlad on 21 Oct); everything else is new. The card names `tipSmall` / `tipMedium` / `tipLarge` (Lemonade / Smoothie / Punch) stay as in About and settings; the cards have no caption under the drink.
 
 | Key | EN | UA |
 |---|---|---|
-| tipText | All made by one person. If the app saved you a trip to the shop, say thanks with a drink. | Усе зроблено однією людиною. Якщо застосунок зекономив вам похід у магазин — подякуйте напоєм. |
-| tipNote | Tips are optional and don't add features. Paid through the App Store. | Чайові — за бажанням і функцій не додають. Оплата через App Store. |
+| tipTitle | Buy the maker a drink | Пригостіть автора |
+| tipText | I make this app on my own. Every thank-you is motivation for the next update. The bar is open. | Цей застосунок я роблю сам. Кожна подяка — мотивація на наступне оновлення. Бар відкрито. |
+| tipNote | Tips unlock nothing but my gratitude. Optional, paid through the App Store. | Чайові не відкривають нічого, крім моєї вдячності. За бажанням, оплата через App Store. |
+| thanks | Cheers! | Будьмо! |
+| thanksToast | Cheers! This one's on you — thanks from Dublin. | Будьмо! Цей за ваш рахунок — дякую з Дубліна. |
 | aboutTour | Bartender school | Школа бармена |
 | aboutTourHint | Take the tour again | Пройти тур ще раз |
 | tourSchoolT | Bartender school | Школа бармена |

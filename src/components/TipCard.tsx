@@ -23,7 +23,7 @@ interface TipCardProps {
 const WAVE_OFFSET: Record<TipKind, number> = { tipSmall: 0, tipMedium: 350, tipLarge: 700 };
 const HOP = { rise: -3, scale: 1.07 };
 
-/** Tip jar card (README → Screens → About): icon, name, price; "Thanks!" after a tip. Unlocks nothing. */
+/** Tip jar card (README → Screens → About): icon, name, price; the `thanks` pill after a tip. Unlocks nothing. */
 export const TipCard = ({ kind, label, price, busy, thanked, thanksLabel, onPress }: TipCardProps) => {
   const { colors } = useTheme();
   const reduceMotion = useReduceMotion();
