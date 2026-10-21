@@ -108,7 +108,7 @@ describe('tip jar copy (rewritten 21 Oct)', () => {
   it('matches COPY_EN_UK.md → Build 7 in both languages', () => {
     expect(TIP_COPY.map(k => translate('en', k))).toEqual([
       'Buy the maker a drink',
-      'I make this app on my own. Every thank-you is motivation for the next update. The bar is open.',
+      'I make this app on my own. Every thank-you is motivation for the next update. The bar is\u00a0open.',
       'Tips unlock nothing but my gratitude. Optional, paid through the App Store.',
       'Cheers!',
       "Cheers! This one's on you — thanks from Dublin.",
@@ -116,10 +116,15 @@ describe('tip jar copy (rewritten 21 Oct)', () => {
     expect(TIP_COPY.map(k => translate('uk', k))).toEqual([
       'Пригостіть автора',
       'Цей застосунок я роблю сам. Кожна подяка — мотивація на наступне оновлення. Бар відкрито.',
-      'Чайові не відкривають нічого, крім моєї вдячності. За бажанням, оплата через App Store.',
+      'Чайові не відкривають нічого, крім моєї вдячності. За\u00a0бажанням, оплата через App Store.',
       'Будьмо!',
       'Будьмо! Цей за ваш рахунок — дякую з Дубліна.',
     ]);
+  });
+
+  it('keeps "is open." and «За бажанням» on one line with a non-breaking space', () => {
+    expect(translate('en', 'tipText').endsWith('is\u00a0open.')).toBe(true);
+    expect(translate('uk', 'tipNote')).toContain('За\u00a0бажанням');
   });
 
   it('keeps the card names', () => {

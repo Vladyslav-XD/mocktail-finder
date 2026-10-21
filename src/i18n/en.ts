@@ -168,7 +168,7 @@ export const en = {
   support: "Support",
   rate: "Rate on the App Store",
   tipTitle: "Buy the maker a drink",
-  tipText: "I make this app on my own. Every thank-you is motivation for the next update. The bar is open.",
+  tipText: "I make this app on my own. Every thank-you is motivation for the next update. The bar is\u00a0open.",
   tipNote: "Tips unlock nothing but my gratitude. Optional, paid through the App Store.",
   tipSmall: "Lemonade",
   tipMedium: "Smoothie",

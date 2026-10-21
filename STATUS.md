@@ -2,6 +2,14 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-21 · Tip jar copy: non-breaking spaces (Claude Code)
+- Answer to the open question below (Vlad: yes). A non-breaking space keeps "is open." (`tipText`, en) and «За бажанням» (`tipNote`, uk) on one line. Written as the `\u00a0` escape in `en.ts` / `uk.ts` (visible in code, as in `recipeParts.ts`) and as `&nbsp;` in COPY_EN_UK.md → Build 7, with a note there.
+- Result: iPhone SE English "…The bar / is open."; Pro Max Ukrainian "…крім моєї вдячності. / За бажанням, оплата через App Store." Other line breaks unchanged.
+- Test: the pinned strings carry `\u00a0`, plus a test that both pairs stay joined. TESTING.md § 7: the words stay on one line on any iPhone.
+- Screenshots in `~/Desktop/mocktail-1.2-tips/` retaken, the same 10 frames (after-tip pill and toast again simulated with a throwaway edit, not committed).
+- Open question (seen, not changed): on the SE the toast's second line is a single word — «Дубліна.» after a one-letter «з» left at the end of the first line in Ukrainian, "Dublin." in English. A non-breaking space («з\u00a0Дубліна», "from\u00a0Dublin.") would keep them together. Waiting for Vlad.
+- Files: `src/i18n/en.ts`, `uk.ts`, `src/i18n/__tests__/i18n.test.ts`, `design_handoff_mocktail_1.2/COPY_EN_UK.md`, `TESTING.md`. Verified: `tsc` clean, tests 132/132 in 14 suites. No build.
+
 ## 2026-10-21 · Tip jar copy rewritten by Vlad (Claude Code)
 - `tipTitle`, `tipText`, `tipNote`, `thanks` (the pill on a card after a tip) and `thanksToast` replaced in `src/i18n/en.ts` and `uk.ts`, verbatim from Vlad: "Buy the maker a drink" / «Пригостіть автора»; "I make this app on my own. Every thank-you is motivation for the next update. The bar is open." / «Цей застосунок я роблю сам. Кожна подяка — мотивація на наступне оновлення. Бар відкрито.»; "Tips unlock nothing but my gratitude. Optional, paid through the App Store." / «Чайові не відкривають нічого, крім моєї вдячності. За бажанням, оплата через App Store.»; "Cheers!" / «Будьмо!»; "Cheers! This one's on you — thanks from Dublin." / «Будьмо! Цей за ваш рахунок — дякую з Дубліна.» Card names (Lemonade / Smoothie / Punch) and the layout unchanged: three cards side by side, icon · name · price, no caption under the drink.
 - `COPY_EN_UK.md` → "Build 7": the five rows, and the intro line says which keys it replaces. The handoff's original "About and settings" table, `README.md`, `reference/mf-data.js` and the prototype keep the old wording as history (Build 7 overrides them, as with the 9 Oct `tipText` / `tipNote` change).
