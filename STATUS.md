@@ -2,6 +2,16 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-22 · 1.2 task 12.5 — offline tests and TESTING.md (Claude Code)
+- New `src/__tests__/offline.test.ts` (9), with `fetch` replaced by one that fails the test:
+  - a new store holds the 58, each with ingredients, steps, tags and a bundled photo; no fetch;
+  - search by English name, Ukrainian name («афтер» → Afterglow) and ingredient; category tags (Iced, Hot, Citrus, Creamy, Coffee; 12780 keeps Hot) and the Lime chip find drinks; My Bar with lime + mint + soda finds drinks; servings ×2 on Afterglow → "2 parts Grenadine" / «2 частини Гренадин»;
+  - the old details caches (`/v1`, `/v2`) are removed by `removeOldCaches`;
+  - code scan of `src` (tests excluded) and `App.tsx`: no TheCocktailDB or Unsplash domain, no `fetch(` / `XMLHttpRequest` / `WebSocket`, no `uri: 'http…'` image. Checked that the scan fails when an address is planted (reverted).
+- Together with 12.1 (`catalogue.test.ts`, 8: ids, names, ingredients, measures and tags = the API; chips; My Bar keys; every measure scales) and 12.3 (`recipeImage.test.ts`) this covers the task's list. 155/155 in 17 suites.
+- TESTING.md § 0: the airplane-mode item (Vlad's wording) + a first launch after install in airplane mode. The catalogue-loading items went in 12.2 (§ 1 offline error line, § 4 Surprise "Try again", § 5 "details load again"). § 3's airplane item is about purchases and stays.
+- Files: `src/__tests__/offline.test.ts`, `TESTING.md`. Verified: `tsc` clean, tests 155/155 in 17 suites.
+
 ## 2026-10-22 · 1.2 task 12.4 — TheCocktailDB credit in About (Claude Code)
 - There was no credit line in the app (the 1.2 handoff had removed the old "credits" row), so nothing to de-duplicate. New key `aboutCredit`: EN "Free catalogue recipes: TheCocktailDB" / UK «Рецепти безкоштовного каталогу: TheCocktailDB», verbatim; COPY_EN_UK.md → new section "Build 9 (Vlad, 22 Oct) — offline catalogue".
 - About: one `Text` right under the version line, in the app-name column, with the version line's style (Body S, `subtitle`, same top gap). Plain text, no link, not pressable (the version line keeps its long-press for DEV).
