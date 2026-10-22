@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect, useRef, useCallback, useMemo, ReactNode } from 'react';
 import { Recipe } from '../data/mockData';
 import { loadJson, saveJson, STORAGE_KEYS } from '../storage/storage';
-import { withDetails } from '../api/recipes';
+import { withDetails } from '../data/catalogue';
 import { migrateRecipe, savedRecipes } from '../store/store';
 
 /** Placeholder subtitle written by builds before tags existed (case varied between builds). */
@@ -30,7 +30,7 @@ export const FavoritesProvider = ({ children }: { children: ReactNode }) => {
     loadJson<unknown>(STORAGE_KEYS.favorites, []).then(saved => {
       if (!mounted.current) return;
       if (Array.isArray(saved)) {
-        // Older favourites carry a placeholder subtitle; fill in tags from the details cache.
+        // Older favourites carry a placeholder subtitle; fill in tags from the bundled catalogue.
         setFavorites(
           savedRecipes(saved).map(recipe =>
             withDetails(migrateRecipe(isLegacySubtitle(recipe.subtitle) ? { ...recipe, subtitle: '' } : recipe))

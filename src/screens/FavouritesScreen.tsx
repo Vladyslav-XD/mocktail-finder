@@ -12,14 +12,14 @@ import { Header } from '../components/Header';
 import { SCREENS } from '../constants/screens';
 import { useFavorites } from '../context/FavoritesContext';
 import { useTheme } from '../context/ThemeContext';
-import { withDetails } from '../api/recipes';
+import { withDetails } from '../data/catalogue';
 import { useLanguage } from '../context/LanguageContext';
 import { localizeRecipe } from '../i18n/localizeRecipe';
 
 export const FavouritesScreen = () => {
   const navigation = useNavigation<StackNavigationProp<any>>();
   const { favorites, toggleFavorite } = useFavorites();
-  // Re-merge cached details so a favourite saved before its details arrived still gets a subtitle.
+  // Re-merge the bundled details so a favourite saved without them still gets a subtitle.
   const savedRecipes = favorites.map(recipe => withDetails(recipe));
   const { colors } = useTheme();
   const { lang, t, plural } = useLanguage();
