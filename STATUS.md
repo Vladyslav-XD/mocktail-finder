@@ -2,6 +2,15 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-22 · 1.2 build 8 — uploaded to TestFlight, not submitted for review (Claude Code)
+- Vlad's answers to the task-12 questions: `.env.example` deleted; CLAUDE.md updated with the proposed text (bundled catalogue, no `src/api`, no key bullet); the placeholder stays as built (`assets/recipe-placeholder.jpg` unchanged, no new file from Cowork); build number 8. Commit `071f02a`.
+- Vlad's ok in the chat ("Ок на збірку 8 … eas submit, ок на нього теж"). `npx eas-cli@latest build --platform ios --profile production --non-interactive`: **finished**, version **1.2.0**, build **8** (incremented from 7), commit `071f02a`.
+  - Build: https://expo.dev/accounts/filon-experience-design/projects/mocktail-finder/builds/2cb664c3-fdd7-4190-8065-f1f17af95dcb
+- `eas submit --platform ios --id 2cb664c3-… --non-interactive`: **uploaded** to App Store Connect. Submission: https://expo.dev/accounts/filon-experience-design/projects/mocktail-finder/submissions/ea0f31af-1381-4e1b-806d-9cc4281f6150
+- Not submitted for review. Build 8 = everything since build 7: tip jar copy (no city), offline catalogue (task 12), credit line, placeholder.
+- The build log shows EAS still loads `EXPO_PUBLIC_COCKTAILDB_API_KEY` from the project's "production" environment; the code does not read it, so it is not in the app. Vlad can delete it on expo.dev.
+- **Next:** Apple processing (email), then TESTING.md on the phone — especially § 0 airplane mode (incl. a first launch in airplane mode), § 3 tips, § 5 own recipe without a photo and catalogue favourites after the update, § 7 the credit line.
+
 ## 2026-10-22 · 1.2 task 12 — STOPPED before build 9 (Claude Code)
 **Report for Vlad.** Task 12 bullets 1–5 are done, one commit each: `a6a4ee2` (12.1 bundled catalogue), `47fbf95` (12.2 API, cache, loading states, key removed), `429e075` (12.3 placeholder), `ba456bb` (12.4 credit line), `1aa93fb` (12.5 offline tests). Bullet 6 checked: no file of collections, purchases, the tour or translations changed (`src/data/packs`, `packPhotos`, `assets/packs`, `src/purchases`, `src/onboarding`, `src/data/uk`, `localizeRecipe`); the dictionaries gained only `aboutCredit`. Nothing built or uploaded.
 - Checks: `npx tsc --noEmit` clean; `npm test` 155/155 in 17 suites; the iOS bundle builds.
