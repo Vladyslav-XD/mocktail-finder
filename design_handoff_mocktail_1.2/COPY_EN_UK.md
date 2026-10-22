@@ -191,7 +191,7 @@ Every visible string. Prices are not here: they always come from StoreKit. `{n}`
 | tipMedium | Smoothie | Смузі |
 | tipLarge | Punch | Пунш |
 | thanks | Thanks! | Дякую! |
-| thanksToast | Thank you! Cheers from Dublin | Дякую! Вітання з Дубліна |
+| thanksToast | Thank you! Cheers […] | Дякую! Вітання […] |
 | langHint | Recipes, buttons and the App Store page follow this choice. System uses your iPhone language. | Рецепти, кнопки й сторінка в App Store відповідають цьому вибору. Системна — мова вашого iPhone. |
 
 ## Toasts

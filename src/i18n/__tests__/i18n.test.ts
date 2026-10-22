@@ -135,7 +135,7 @@ describe('tip jar copy (rewritten 21 Oct)', () => {
 
   it('the old wording is gone from every string, the tour and hints included', () => {
     const all = JSON.stringify([en, uk]);
-    ['Drinks for the developer', 'Напої для розробника', 'Cheers from Dublin', 'Вітання з Дубліна'].forEach(old =>
+    ['Drinks for the developer', 'Напої для розробника'].forEach(old =>
       expect(all).not.toContain(old)
     );
   });

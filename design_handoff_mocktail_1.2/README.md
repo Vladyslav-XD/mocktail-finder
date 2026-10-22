@@ -131,7 +131,7 @@ Store unreachable: no price anywhere; buy buttons read "Not available right now"
 
 `isPro = pro || everything` · `collectionOpen(id) = everything || owns(id)`
 
-**Purchases.** Success → unlock everywhere at once + toast ("Welcome to Pro" / "<collection> unlocked" / "Thank you! Cheers from Dublin"). User cancelled → close silently. Restore (`AppStore.sync()`) → "Purchases restored" if anything is owned, otherwise "Nothing to restore"; Restore is visible on the paywall, the collection sheet and About. The paywall never appears uninvited: only after a tap on a locked thing, "Get Pro", "Everything" or a hint's "Learn more" / "See Pro". On open: a 0.6 s skeleton on the prices while products load. Already Pro: "You have Pro", disabled; Everything is hidden when owned.
+**Purchases.** Success → unlock everywhere at once + toast ("Welcome to Pro" / "<collection> unlocked" / "Thank you! Cheers […]"). User cancelled → close silently. Restore (`AppStore.sync()`) → "Purchases restored" if anything is owned, otherwise "Nothing to restore"; Restore is visible on the paywall, the collection sheet and About. The paywall never appears uninvited: only after a tap on a locked thing, "Get Pro", "Everything" or a hint's "Learn more" / "See Pro". On open: a 0.6 s skeleton on the prices while products load. Already Pro: "You have Pro", disabled; Everything is hidden when owned.
 
 **Visible drinks** = catalogue + own recipes + unlocked collections. Unlocked collection drinks join search, filters, My Bar, Favourites and the shopping list.
 
