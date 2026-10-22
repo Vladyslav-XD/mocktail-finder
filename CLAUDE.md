@@ -19,16 +19,16 @@ Read this first. It describes the project, how it is built and released, what is
 
 ## What the app is
 
-iOS app (Expo SDK 54, React Native 0.81, React 19.1, TypeScript, Redux Toolkit, React Navigation) that helps people discover, save and create alcohol-free drink recipes. Recipes come from TheCocktailDB (58 drinks in the `Non_Alcoholic` filter); favourites, user recipes and their photos are stored on the device only. No accounts, no analytics, no servers of our own. Bundle ID `com.filonexperiencedesign.mocktailfinder`, App Store ID 6811610325, iPhone only (`supportsTablet: false`), age rating 4+.
+iOS app (Expo SDK 54, React Native 0.81, React 19.1, TypeScript, Redux Toolkit, React Navigation) that helps people discover, save and create alcohol-free drink recipes. 58 free drinks from TheCocktailDB's `Non_Alcoholic` list, bundled in the app (`src/data/catalogue`; credit in About); favourites, user recipes and their photos are stored on the device only. No accounts, no analytics, no servers of our own. Bundle ID `com.filonexperiencedesign.mocktailfinder`, App Store ID 6811610325, iPhone only (`supportsTablet: false`), age rating 4+.
 
 ## Code map
 
-- `App.tsx` — providers, splash (`SplashScreen.tsx`, waits for the Sora font), `Promise.all([hydrateStore(), loadDetailsCache()])`.
-- `src/api/api.ts` — `fetchMocktailList()` (list endpoint returns only id/name/thumb) and `fetchMocktailDetails(id)`; `src/api/config.ts` — key/base URL; `src/api/detailsCache.ts` — memory + AsyncStorage cache of details (30-day TTL, prefetch with concurrency 4); `src/api/recipes.ts` — `withDetails`, `fetchMocktails`, `fillInDetails`.
+- `App.tsx` — providers, splash (`SplashScreen.tsx`, waits for the Sora font), `Promise.all([hydrateStore(), …])`; the old TheCocktailDB details caches are removed at start (`removeOldCaches`).
+- `src/data/catalogue/` — the 58 free drinks, bundled (`catalogue.json`, built from the handoff's `recipes.json`; `CATALOGUE`, `withDetails` for favourites saved by older versions). No network at run time except StoreKit; `src/__tests__/offline.test.ts` guards it.
 - `src/utils/drinkTags.ts` — character tags (Iced/Frozen/Hot, Citrus, Tropical, Berry, Fruity, Creamy, Sparkling, Chocolate, Coffee, Tea, Minty, Spiced, Sweet, Savoury) derived from ingredients, measures, instructions and category. Cards show up to 3 (`tagsToSubtitle`). The same tags are the "Category" filters (`src/constants/filters.ts`, without Sweet); ingredient filters are regex-based there too.
 - `src/utils/recipePhotos.ts` — user photos: camera (`takeRecipePhoto`, asks for camera permission, "Open Settings" if declined) or PHPicker via `expo-image-picker` (no library permission prompt), chosen in an action sheet; copied to `documentDirectory/recipe-photos/<id>.jpg`, stored as `recipe-photo:<id>.jpg` (relative on purpose — the container path changes between app updates), resolved with `resolveImageUri`.
 - `src/utils/recipeText.ts` — share text; `APP_STORE_URL = 'https://apps.apple.com/app/id6811610325'`.
-- `src/data/drinkPhotos.ts` + `assets/drinks/<id>.jpg` — 58 bundled drink photos (900×900), `drinkPhoto(id)` with a fallback to the TheCocktailDB image. `src/components/PhotoScrim.tsx` — dark fade under the status bar on recipe photos.
+- `src/data/drinkPhotos.ts` + `assets/drinks/<id>.jpg` — 58 bundled drink photos (900×900), `drinkPhoto(id)`; a recipe without a photo shows `assets/recipe-placeholder.jpg` (`recipeImageSource`). `src/components/PhotoScrim.tsx` — dark fade under the status bar on recipe photos.
 - `src/screens/*` — MocktailFinder (home: search, filters, list), RecipeDetails, Random ("Surprise"), Favourites, AddRecipe. `src/context/FavoritesContext.tsx` (favourites in AsyncStorage), `src/store/myRecipesSlice.ts` + `store.ts` (user recipes, `migrateRecipe` for old shapes, `updateRecipe`, `removeRecipe`; Edit and Delete buttons on a user recipe, Edit opens `EditRecipe` pushed on the stack), `src/context/ThemeContext.tsx` (system / light / dark, saved in AsyncStorage; tap the header toggle = light↔dark, press and hold = follow the system, a dot marks system mode).
 - Hermes: no regex lookbehind. UK spelling in UI ("Favourites").
 
@@ -44,7 +44,6 @@ npx eas-cli@latest submit --platform ios                       # upload to App S
 ```
 
 - If `eas build` asks "Do you want to log in to your Apple account?" answer **n** — signing credentials and the ASC API key live on Expo's servers.
-- `EXPO_PUBLIC_COCKTAILDB_API_KEY` is set in `.env.local` locally and as an Expo project environment variable for EAS; without it the app silently uses TheCocktailDB's test key (dev only).
 - In zsh `#` is not a comment in an interactive shell — never paste commands with trailing `# comments`.
 - To reset the app's data in the simulator: delete Expo Go (`xcrun simctl uninstall booted host.exp.Exponent`), then press `i` again.
 - Simulator can't test the camera; anything camera-related must be checked on a real iPhone through TestFlight.
