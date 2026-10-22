@@ -1,11 +1,9 @@
 /**
  * Which picture to show for a recipe.
  *
- * Drinks from TheCocktailDB ship with our own photo in `assets/drinks/`, collection
- * drinks with theirs in `assets/packs/`, so the
- * app looks the same offline and the styling is consistent. Anything we have no file
- * for — a recipe the user wrote, or a drink id added to the database later — keeps
- * whatever the recipe carries: the user's own photo, or the TheCocktailDB thumbnail.
+ * Catalogue drinks ship with our own photo in `assets/drinks/`, collection drinks with
+ * theirs in `assets/packs/`, so the app looks the same offline and the styling is
+ * consistent. A recipe the user wrote keeps whatever it carries.
  */
 import type { ImageSourcePropType } from 'react-native';
 import { drinkPhoto } from '../data/drinkPhotos';

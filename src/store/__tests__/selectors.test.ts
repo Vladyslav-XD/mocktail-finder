@@ -1,26 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
 import myRecipes, { hydrateRecipes } from '../myRecipesSlice';
-import catalogue, { recipesLoaded } from '../catalogueSlice';
+import catalogue from '../catalogueSlice';
 import packs from '../packsSlice';
 import entitlements, { setOwned } from '../entitlementsSlice';
 import { selectIsPro, selectUnlockedPacks, selectVisibleDrinks } from '../selectors';
 import { PACK_PRODUCT_IDS, PRODUCT_IDS } from '../../purchases/products';
 import { Recipe } from '../../data/mockData';
-import recipes from '../../../design_handoff_mocktail_1.2/data/recipes.json';
-
-const catalogueRecipes: Recipe[] = (recipes as any).catalogue.map((d: any) => ({
-  id: d.id.replace(/^db-/, ''),
-  title: d.name,
-  subtitle: '',
-  imageUrl: '',
-  isFavorite: false,
-}));
 
 const own: Recipe = { id: '1', title: 'Mine', subtitle: '', imageUrl: '', isFavorite: false };
 
+// The catalogue is bundled: a new store already holds the 58, nothing is loaded.
 function makeStore() {
   const store = configureStore({ reducer: { myRecipes, catalogue, packs, entitlements } });
-  store.dispatch(recipesLoaded(catalogueRecipes));
   store.dispatch(hydrateRecipes([own]));
   return store;
 }

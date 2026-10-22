@@ -28,7 +28,6 @@ interface ShareableRecipe {
   instructions?: string | null;
   /** Steps as written (collection drinks); preferred over splitting `instructions`. */
   steps?: string[];
-  imageUrl?: string;
 }
 
 /**
@@ -48,8 +47,7 @@ export function buildShareMessage(recipe: ShareableRecipe, t: Translate): string
     lines.push('', `${t('steps')}:`, ...steps.map((s, i) => `${i + 1}. ${s}`));
   }
 
-  // Only a web address is useful to the recipient; a photo stored on this phone is not.
-  if (recipe.imageUrl && /^https?:\/\//.test(recipe.imageUrl)) lines.push('', recipe.imageUrl);
+  // No photo link: catalogue and collection photos are bundled, own photos stay on the phone.
   if (APP_STORE_URL) lines.push('', t('shareGet', { url: APP_STORE_URL }));
 
   return lines.join('\n');

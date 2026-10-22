@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, Dimensions, ActivityIndicator } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ShuffleIcon, HeartIcon, ShareIcon, ArrowLeftIcon } from '../components/icons';
 import { useNavigation } from '@react-navigation/native';
 import { Badge } from '../components/Badge';
 import { spacing } from '../theme/spacing';
-import { RecipeDetails } from '../api/api';
-import { fetchDetailsCached } from '../api/detailsCache';
 import { Recipe } from '../data/mockData';
 import { tagsToSubtitle } from '../utils/drinkTags';
 import { PhotoScrim } from '../components/PhotoScrim';
@@ -16,139 +14,55 @@ import { shareRecipe, splitInstructions } from '../utils/recipeText';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { localizeRecipe, tagLabels } from '../i18n/localizeRecipe';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../store/store';
-import { loadCatalogue } from '../store/catalogueSlice';
+import { useSelector } from 'react-redux';
 import { selectVisibleDrinks } from '../store/selectors';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
 
+/** A random drink from the list, or null when there is nothing to pick. */
+const pickFrom = (recipes: Recipe[]) => (recipes.length ? recipes[Math.floor(Math.random() * recipes.length)] : null);
+
 export const RandomScreen = () => {
-  const [currentRecipe, setCurrentRecipe] = useState<Recipe | null>(null);
-  const [details, setDetails] = useState<Partial<RecipeDetails> | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  // Catalogue + own recipes + unlocked collections, the same list Home shows. Every drink in
+  // it carries its ingredients and steps (the catalogue is bundled), so a pick shows at once.
+  const allRecipes = useSelector(selectVisibleDrinks);
+  const [currentRecipe, setCurrentRecipe] = useState<Recipe | null>(() => pickFrom(allRecipes));
   const [history, setHistory] = useState<Recipe[]>([]);
   const [headerHeight, setHeaderHeight] = useState(460);
   const navigation = useNavigation<any>();
-  
+
   const { isFavorite, toggleFavorite } = useFavorites();
   const { colors } = useTheme();
   const { lang, t } = useLanguage();
   const insets = useSafeAreaInsets();
-  const dispatch = useDispatch<AppDispatch>();
-  // Catalogue + own recipes + unlocked collections, the same list Home shows.
-  const allRecipes = useSelector(selectVisibleDrinks);
-  const catalogueStatus = useSelector((state: RootState) => state.catalogue.status);
-  const loadError = catalogueStatus === 'error';
-  // Guards against a slow earlier lookup overwriting the details of a newer pick.
-  const requestId = useRef(0);
 
-  const loadInitialData = () => {
-    dispatch(loadCatalogue());
-  };
-
-  const pickRandomRecipe = async (recipesArray = allRecipes) => {
-    if (recipesArray.length === 0) return;
-    setLoading(true);
-    const randomIndex = Math.floor(Math.random() * recipesArray.length);
-    const randomRecipe = recipesArray[randomIndex];
-    
-    if (currentRecipe) {
-      setHistory(prev => [...prev, currentRecipe]);
-    }
-    setCurrentRecipe(randomRecipe);
-    setDetails(null);
-    const myRequest = ++requestId.current;
-    
-    if (randomRecipe.ingredients) {
-      setDetails({
-        ingredients: randomRecipe.ingredients,
-        instructions: randomRecipe.instructions || '',
-        tags: randomRecipe.tags,
-      });
-      setLoading(false);
-      return;
-    }
-
-    try {
-      const recipeDetails = await fetchDetailsCached(randomRecipe.id);
-      if (myRequest !== requestId.current) return; // user already shuffled again
-      setDetails(recipeDetails);
-    } catch {
-      if (myRequest !== requestId.current) return;
-      setDetails({});
-    } finally {
-      if (myRequest === requestId.current) setLoading(false);
-    }
+  const pickRandomRecipe = () => {
+    const next = pickFrom(allRecipes);
+    if (!next) return;
+    if (currentRecipe) setHistory(prev => [...prev, currentRecipe]);
+    setCurrentRecipe(next);
   };
 
   const handleBack = () => {
     if (history.length > 0) {
-      const prevRecipe = history[history.length - 1];
+      setCurrentRecipe(history[history.length - 1]);
       setHistory(prev => prev.slice(0, -1));
-      setCurrentRecipe(prevRecipe);
-      setDetails(null);
-      const myRequest = ++requestId.current;
-      
-      if (prevRecipe.ingredients) {
-        setDetails({
-          ingredients: prevRecipe.ingredients,
-          instructions: prevRecipe.instructions || '',
-          tags: prevRecipe.tags,
-        });
-        setLoading(false);
-      } else {
-        setLoading(true);
-        fetchDetailsCached(prevRecipe.id).then(res => {
-          if (myRequest !== requestId.current) return;
-          setDetails(res);
-          setLoading(false);
-        }).catch(() => {
-          if (myRequest !== requestId.current) return;
-          setDetails({});
-          setLoading(false);
-        });
-      }
     } else {
       navigation.goBack();
     }
   };
 
   useEffect(() => {
-    // Opened from Home the list is already there; otherwise (or after an error) load it.
-    if (catalogueStatus === 'idle') loadInitialData();
-  }, []);
-
-  useEffect(() => {
     // First pick as soon as there is something to pick from.
-    if (!currentRecipe && catalogueStatus === 'ready' && allRecipes.length > 0) pickRandomRecipe(allRecipes);
-  }, [catalogueStatus, allRecipes.length]);
+    if (!currentRecipe && allRecipes.length > 0) setCurrentRecipe(pickFrom(allRecipes));
+  }, [allRecipes.length]);
 
   const parseInstructions = splitInstructions;
-
-  // Waiting for the list or the first pick. An error, or a list with nothing in it,
-  // falls through to the message below.
-  const nothingToPick = catalogueStatus === 'ready' && allRecipes.length === 0;
-  if (loading && !currentRecipe && !loadError && !nothingToPick) {
-    return (
-      <View style={[styles.container, styles.centerContainer, { backgroundColor: colors.background }]}>
-        <ActivityIndicator size="large" color={colors.activeBadgeBG} />
-      </View>
-    );
-  }
 
   if (!currentRecipe) {
     return (
       <View style={[styles.container, styles.centerContainer, { backgroundColor: colors.background, paddingHorizontal: spacing.xl }]}>
-        <Text style={[styles.errorText, { color: colors.title }]}>{t(loadError ? 'loadError' : 'noRecipes')}</Text>
-        <TouchableOpacity
-          style={[styles.retryBtn, { backgroundColor: colors.activeBadgeBG }]}
-          onPress={loadInitialData}
-          activeOpacity={0.8}
-          accessibilityRole="button"
-        >
-          <Text style={styles.retryBtnText}>{t('tryAgain')}</Text>
-        </TouchableOpacity>
+        <Text style={[styles.errorText, { color: colors.title }]}>{t('noRecipes')}</Text>
         <TouchableOpacity style={styles.linkBtn} onPress={() => navigation.goBack()} accessibilityRole="button">
           <Text style={[styles.linkBtnText, { color: colors.subtitle }]}>{t('back')}</Text>
         </TouchableOpacity>
@@ -157,13 +71,9 @@ export const RandomScreen = () => {
   }
 
   const isFav = isFavorite(currentRecipe.id);
-  const tags = details?.tags || currentRecipe.tags || [];
-  // The pick with its details merged in, in the language on screen.
-  const shown = localizeRecipe(
-    { ...currentRecipe, ingredients: details?.ingredients, instructions: details?.instructions, tags },
-    lang,
-    t
-  );
+  const tags = currentRecipe.tags || [];
+  // The pick in the language on screen.
+  const shown = localizeRecipe(currentRecipe, lang, t);
   const ingredientsToDisplay = shown.ingredients || [];
   const stepsToDisplay = shown.steps?.length ? shown.steps : parseInstructions(shown.instructions || '');
   // A user recipe shows its own description; a database drink shows its tags as chips below.
@@ -177,7 +87,6 @@ export const RandomScreen = () => {
         ingredients: ingredientsToDisplay,
         instructions: shown.instructions,
         steps: shown.steps,
-        imageUrl: currentRecipe.imageUrl,
       },
       t
     );
@@ -228,40 +137,32 @@ export const RandomScreen = () => {
         contentContainerStyle={[styles.scrollContent, { paddingTop: headerHeight + spacing.l }]}
       >
         <View style={{ paddingHorizontal: spacing.l }}>
-          {loading ? (
-             <View style={[styles.card, { alignItems: 'center', paddingVertical: spacing.xxl, backgroundColor: colors.surface }]}>
-               <ActivityIndicator size="large" color={colors.activeBadgeBG} />
-             </View>
-          ) : (
-            <>
-              <View style={[styles.card, { backgroundColor: colors.surface }]}>
-                <Text style={[styles.cardSectionTitle, { color: colors.title }]}>{t('ingredients')}</Text>
-                {ingredientsToDisplay.map((item, index) => (
-                  <View key={index} style={styles.listItem}>
-                    <View style={[styles.bulletDot, { backgroundColor: colors.activeBadgeBG }]} />
-                    <Text style={[styles.listText, { color: colors.title }]}>{item}</Text>
-                  </View>
-                ))}
-                {ingredientsToDisplay.length === 0 && (
-                  <Text style={[styles.listText, { color: colors.subtitle }]}>{t('noIngredients')}</Text>
-                )}
+          <View style={[styles.card, { backgroundColor: colors.surface }]}>
+            <Text style={[styles.cardSectionTitle, { color: colors.title }]}>{t('ingredients')}</Text>
+            {ingredientsToDisplay.map((item, index) => (
+              <View key={index} style={styles.listItem}>
+                <View style={[styles.bulletDot, { backgroundColor: colors.activeBadgeBG }]} />
+                <Text style={[styles.listText, { color: colors.title }]}>{item}</Text>
               </View>
-              <View style={[styles.card, { backgroundColor: colors.surface }]}>
-                <Text style={[styles.cardSectionTitle, { color: colors.title }]}>{t('steps')}</Text>
-                {stepsToDisplay.length === 0 && (
-                  <Text style={[styles.listText, { color: colors.subtitle }]}>{t('noSteps')}</Text>
-                )}
-                {stepsToDisplay.map((step, index) => (
-                  <View key={index} style={styles.stepItem}>
-                    <View style={[styles.stepNumberCircle, { backgroundColor: colors.activeBadgeBG }]}>
-                      <Text style={styles.stepNumberText}>{index + 1}</Text>
-                    </View>
-                    <Text style={[styles.listText, { color: colors.title }]}>{step}</Text>
-                  </View>
-                ))}
+            ))}
+            {ingredientsToDisplay.length === 0 && (
+              <Text style={[styles.listText, { color: colors.subtitle }]}>{t('noIngredients')}</Text>
+            )}
+          </View>
+          <View style={[styles.card, { backgroundColor: colors.surface }]}>
+            <Text style={[styles.cardSectionTitle, { color: colors.title }]}>{t('steps')}</Text>
+            {stepsToDisplay.length === 0 && (
+              <Text style={[styles.listText, { color: colors.subtitle }]}>{t('noSteps')}</Text>
+            )}
+            {stepsToDisplay.map((step, index) => (
+              <View key={index} style={styles.stepItem}>
+                <View style={[styles.stepNumberCircle, { backgroundColor: colors.activeBadgeBG }]}>
+                  <Text style={styles.stepNumberText}>{index + 1}</Text>
+                </View>
+                <Text style={[styles.listText, { color: colors.title }]}>{step}</Text>
               </View>
-            </>
-          )}
+            ))}
+          </View>
           
           <View style={styles.actionRow}>
             <TouchableOpacity style={[styles.primaryButton, { backgroundColor: colors.activeBadgeBG }]} activeOpacity={0.8} onPress={() => toggleFavorite(currentRecipe)}>
@@ -294,17 +195,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     lineHeight: 22,
-  },
-  retryBtn: {
-    marginTop: spacing.l,
-    paddingVertical: 12,
-    paddingHorizontal: 28,
-    borderRadius: 12,
-  },
-  retryBtnText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: '600',
   },
   linkBtn: {
     marginTop: spacing.m,

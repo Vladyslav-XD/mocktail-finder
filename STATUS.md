@@ -2,6 +2,17 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-22 · 1.2 task 12.2 — no TheCocktailDB API at run time (Claude Code)
+- Removed `src/api/` (`api.ts` requests, `config.ts` with the key and its test-key warning, `detailsCache.ts` cache + prefetch, `recipes.ts`). Nothing imports it.
+- Catalogue slice: only the 58, no `status` / `fillingIn` / load actions. Home: no loading spinner, no error screen with "Try again", no "loading details" line. Surprise: picks at once (first pick in the initial state), shuffle and back switch drinks without requests, no load-error screen or "Try again" (an empty list still says `noRecipes`). Recipe: no loading / error / "Try again"; a catalogue drink saved by an older version gets its details from the bundle (`withDetails`). My Bar: no load call.
+- The key: `config.ts` is gone; `app.json` and `eas.json` never mentioned it (checked). README's run instructions no longer copy `.env.example` or ask for a key. `.env.local` untouched. Left for Vlad: `.env.example` (holds only this key) — delete? And the `EXPO_PUBLIC_COCKTAILDB_API_KEY` environment variable on expo.dev is no longer read. CLAUDE.md still describes `src/api` and the key; a change is proposed, not made.
+- Old caches: `@mocktail-finder/details/v1` (1.1) and `/v2` (1.2 test builds) are removed at start (`removeOldCaches`, one `multiRemove`; once they are gone it does nothing, which makes it one-off). Their keys left `STORAGE_KEYS`.
+- TheCocktailDB photos: no web fallback is left. The share card no longer takes a web photo; the share text no longer ends with a photo link (an old favourite carried the TheCocktailDB thumbnail, an own recipe without a photo the Unsplash stock image); comments in `drinkPhotos.ts`, `recipeImage.ts` updated. The Unsplash placeholder itself is 12.3.
+- Strings no longer used, kept because translations are not to be touched: `loadError`, `loadingRecipes`, `loadingRecipe`, `loadingDetails`, `recipeLoadError`, `tryAgain`.
+- TESTING.md (same commit as the behaviour): § 1 no offline error line, § 4 Surprise without a spinner, § 5 the "details load again" item → an update-from-1.1 check that catalogue favourites come with ingredients and steps. The airplane-mode item comes with 12.5.
+- Tests: `selectors.test.ts` uses the store as it starts (the bundled 58) instead of loading a fake list; `recipeText.test.ts` without the photo link.
+- Files: `src/api/*` (deleted), `src/store/catalogueSlice.ts`, `src/screens/MocktailFinderScreen.tsx`, `RandomScreen.tsx`, `RecipeDetailsScreen.tsx`, `MyBarScreen.tsx`, `src/storage/storage.ts`, `App.tsx`, `src/utils/recipeText.ts`, `src/utils/recipeImage.ts`, `src/data/drinkPhotos.ts`, tests, `README.md`, `TESTING.md`. Verified: `tsc` clean, tests 141/141 in 15 suites, the iOS bundle builds.
+
 ## 2026-10-22 · 1.2 task 12.1 — bundled catalogue (Claude Code)
 - Task 12 added to TASKS.md (Vlad's decision of 22 Oct: the 58 free drinks are bundled, no TheCocktailDB at run time).
 - New `src/data/catalogue/` (`catalogue.json` + `index.ts`): the 58 drinks, built once from `design_handoff_mocktail_1.2/data/recipes.json`. Ids without the `db-` prefix = TheCocktailDB's idDrink; order = recipes.json = the API list (checked). `catalogueToRecipe` builds the Recipe the API lookup used to: "measure name" lines, parts, instructions, tags from `deriveTags`, the tag subtitle, `imageUrl: ''` (photo from `drinkPhoto`).

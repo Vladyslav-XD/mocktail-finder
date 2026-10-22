@@ -19,7 +19,6 @@ describe('buildShareMessage', () => {
     title: 'Afterglow',
     ingredients: ['1 part Grenadine'],
     instructions: 'Mix. Serve over ice.',
-    imageUrl: 'https://example.com/a.jpg',
   };
 
   it('English', () => {
@@ -33,8 +32,6 @@ describe('buildShareMessage', () => {
         'Preparation Steps:',
         '1. Mix.',
         '2. Serve over ice.',
-        '',
-        'https://example.com/a.jpg',
         '',
         'Get Mocktail Finder: https://apps.apple.com/app/id6811610325',
       ].join('\n')

@@ -21,7 +21,7 @@ import { ONBOARDING_FALLBACK, orFallback } from './src/utils/startup';
 import { FavoritesProvider } from './src/context/FavoritesContext';
 import { ThemeProvider, ThemeMode, loadThemeMode } from './src/context/ThemeContext';
 import { store, hydrateStore } from './src/store/store';
-import { loadDetailsCache } from './src/api/detailsCache';
+import { removeOldCaches } from './src/storage/storage';
 import { SplashScreen } from './src/screens/SplashScreen';
 import { ToastOutlet, ToastProvider } from './src/components/Toast';
 import { LanguageProvider, loadLanguageSetting } from './src/context/LanguageContext';
@@ -43,19 +43,20 @@ export default function App() {
 
   useEffect(() => {
     let cancelled = false;
-    // Favourites, user recipes, the drink-details cache, the saved theme and the
-    // language are all read while the splash plays, so the app opens in its final state.
-    // Purchases are cached too; StoreKit is asked later, without holding up the UI.
+    // The catalogue is bundled; the details cache of older versions is only cleared away.
+    removeOldCaches();
+    // Favourites, user recipes, the saved theme and the language are all read while the
+    // splash plays, so the app opens in its final state. Purchases are cached too;
+    // StoreKit is asked later, without holding up the UI.
     // Each read falls back on its own: one failure must not cost the others (build 6 bug).
     Promise.all([
       orFallback(hydrateStore(), undefined),
-      orFallback(loadDetailsCache(), undefined),
       orFallback(loadThemeMode(), 'system' as ThemeMode),
       orFallback(loadLanguageSetting(), 'system' as LanguageSetting),
       orFallback(loadCachedOwned(), [] as string[]),
       orFallback(loadOnboarding(), ONBOARDING_FALLBACK),
     ])
-      .then(([, , savedMode, savedLanguage, owned, savedOnboarding]) => {
+      .then(([, savedMode, savedLanguage, owned, savedOnboarding]) => {
         if (cancelled) return;
         setThemeMode(savedMode);
         setLanguage(savedLanguage);

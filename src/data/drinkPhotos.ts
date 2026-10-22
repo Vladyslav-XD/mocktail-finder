@@ -1,7 +1,7 @@
 /**
  * Bundled photos for the TheCocktailDB non-alcoholic drinks (900×900 JPEG, ~50 KB each).
  * Generated on 2026-09-17 from the images in `assets/drinks/` — keys are TheCocktailDB drink ids.
- * Use `drinkPhoto(id)`; fall back to the TheCocktailDB thumbnail when it returns undefined.
+ * Use `drinkPhoto(id)`. All 58 catalogue drinks have one; the app loads no photo from the web.
  */
 import type { ImageSourcePropType } from 'react-native';
 

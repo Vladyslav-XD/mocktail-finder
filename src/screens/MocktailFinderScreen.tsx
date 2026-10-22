@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import { View, Text, StyleSheet, ScrollView, FlatList, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Header } from '../components/Header';
 import { Chip } from '../components/Chip';
 import { PackCard } from '../components/PackCard';
@@ -22,8 +22,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { localizeRecipe, matchesSearch } from '../i18n/localizeRecipe';
 import { DrinkTag } from '../utils/drinkTags';
-import { AppDispatch, RootState } from '../store/store';
-import { loadCatalogue } from '../store/catalogueSlice';
+import { RootState } from '../store/store';
 import { selectVisibleDrinks } from '../store/selectors';
 import { usePurchases } from '../purchases/PurchasesContext';
 import { usePaywall } from '../purchases/usePaywall';
@@ -49,26 +48,14 @@ export const MocktailFinderScreen = () => {
   const [displayLimit, setDisplayLimit] = useState(PAGE);
 
   const navigation = useNavigation<StackNavigationProp<any>>();
-  const dispatch = useDispatch<AppDispatch>();
   const { isFavorite, toggleFavorite } = useFavorites();
   const { colors } = useTheme();
   const { lang, t, plural } = useLanguage();
   const { price, unlockedPacks, ownsEverything } = usePurchases();
   const { openPaywall, openCollection } = usePaywall();
   const customRecipes = useSelector((state: RootState) => state.myRecipes.recipes);
+  // The bundled catalogue, own recipes and unlocked collections: there from the first frame.
   const visibleDrinks = useSelector(selectVisibleDrinks);
-  const { status, fillingIn } = useSelector((state: RootState) => state.catalogue);
-  const loading = status === 'idle' || status === 'loading';
-  const error = status === 'error';
-
-  const loadRecipes = useCallback(() => {
-    dispatch(loadCatalogue());
-  }, [dispatch]);
-
-  useEffect(() => {
-    // Once per app run; Surprise and My Bar read the same list from the store.
-    if (status === 'idle') loadRecipes();
-  }, [status, loadRecipes]);
 
   useEffect(() => {
     setDisplayLimit(PAGE);
@@ -123,8 +110,7 @@ export const MocktailFinderScreen = () => {
       if (activeCategory === 'my') {
         if (!customRecipes.some(cr => cr.id === recipe.id)) return false;
       } else if (activeCategory !== 'all') {
-        // Real tags only. A drink whose details have not arrived yet has no tags
-        // and is simply not shown until they do.
+        // Real tags only; an own recipe without tags matches no category.
         if (!recipe.tags || !recipe.tags.includes(activeCategory)) return false;
       }
 
@@ -221,10 +207,8 @@ export const MocktailFinderScreen = () => {
             </CoachTarget>
           </View>
         )}
-        {filteredRecipes.length === 0 && !loading && !error && (
-          <Text style={[type.body, styles.emptyText, { color: colors.subtitle }]}>
-            {fillingIn ? t('loadingDetails') : t('noMatch')}
-          </Text>
+        {filteredRecipes.length === 0 && (
+          <Text style={[type.body, styles.emptyText, { color: colors.subtitle }]}>{t('noMatch')}</Text>
         )}
       </View>
     </>
@@ -267,35 +251,16 @@ export const MocktailFinderScreen = () => {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <Header title="Mocktail Finder" />
 
-      {loading ? (
-        <View style={styles.center}>
-          <ActivityIndicator size="large" color={colors.brand} />
-          <Text style={[type.body, styles.loadingText, { color: colors.title }]}>{t('loadingRecipes')}</Text>
-        </View>
-      ) : error ? (
-        <View style={styles.center}>
-          <Text style={[type.body, styles.errorText, { color: colors.title }]}>{t('loadError')}</Text>
-          <TouchableOpacity
-            style={[styles.retry, { backgroundColor: colors.brand }]}
-            onPress={loadRecipes}
-            activeOpacity={opacity.pressed}
-            accessibilityRole="button"
-          >
-            <Text style={[type.button, { color: colors.onBrand }]}>{t('tryAgain')}</Text>
-          </TouchableOpacity>
-        </View>
-      ) : (
-        <FlatList
-          data={filteredRecipes.slice(0, displayLimit)}
-          keyExtractor={item => item.id}
-          renderItem={renderItem}
-          ListHeaderComponent={renderHeader()}
-          ListFooterComponent={renderFooter()}
-          contentContainerStyle={styles.listContent}
-          keyboardShouldPersistTaps="handled"
-          showsVerticalScrollIndicator={false}
-        />
-      )}
+      <FlatList
+        data={filteredRecipes.slice(0, displayLimit)}
+        keyExtractor={item => item.id}
+        renderItem={renderItem}
+        ListHeaderComponent={renderHeader()}
+        ListFooterComponent={renderFooter()}
+        contentContainerStyle={styles.listContent}
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   );
 };
@@ -337,25 +302,6 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     marginBottom: spacing.m,
-  },
-  center: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: spacing.screen,
-  },
-  loadingText: {
-    marginTop: spacing.m,
-  },
-  errorText: {
-    textAlign: 'center',
-  },
-  retry: {
-    marginTop: spacing.l,
-    height: sizes.button,
-    paddingHorizontal: spacing.xl,
-    borderRadius: radius.control,
-    justifyContent: 'center',
   },
   footer: {
     paddingHorizontal: spacing.screen,

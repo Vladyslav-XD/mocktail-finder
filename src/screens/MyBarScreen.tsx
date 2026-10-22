@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ScrollView, Share, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
@@ -28,7 +28,6 @@ import { Recipe } from '../data/mockData';
 import { SCREENS } from '../constants/screens';
 import { RootState } from '../store/store';
 import { selectVisibleDrinks } from '../store/selectors';
-import { loadCatalogue } from '../store/catalogueSlice';
 import type { AppDispatch } from '../store/store';
 import { toggleKey, clearPantry } from '../store/pantrySlice';
 import { clearTicked, removeItem, toggleItem } from '../store/shoppingListSlice';
@@ -56,14 +55,8 @@ export const MyBarScreen = () => {
   const drinks = useSelector(selectVisibleDrinks);
   const ticked = useSelector((state: RootState) => state.pantry.ticked);
   const items = useSelector((state: RootState) => state.shoppingList.items);
-  const catalogueStatus = useSelector((state: RootState) => state.catalogue.status);
   const [segment, setSegment] = useState<Segment>('have');
   const [sheet, setSheet] = useState(false);
-
-  // My Bar may be opened before Home has loaded the catalogue.
-  useEffect(() => {
-    if (catalogueStatus === 'idle') dispatch(loadCatalogue());
-  }, [catalogueStatus, dispatch]);
 
   useCoachFacts({ myBarSegment: segment, shopHasItems: items.length > 0 });
 

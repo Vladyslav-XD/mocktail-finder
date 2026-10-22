@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useCallback, useMemo, useRef } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ActivityIndicator, Alert, Image, useWindowDimensions } from 'react-native';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert, Image, useWindowDimensions } from 'react-native';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -15,8 +15,7 @@ import { ShareCardSheet } from '../components/ShareCardSheet';
 import { useToast } from '../components/Toast';
 import { recipeImageSource } from '../utils/recipeImage';
 import { useFavorites } from '../context/FavoritesContext';
-import { RecipeDetails } from '../api/api';
-import { fetchDetailsCached, getCachedDetails } from '../api/detailsCache';
+import { withDetails } from '../data/catalogue';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import { localizeRecipe, tagLabels } from '../i18n/localizeRecipe';
@@ -59,7 +58,8 @@ export const RecipeDetailsScreen = () => {
   const ownRecipe = useSelector((state: RootState) => state.myRecipes.recipes.find(own => own.id === routeRecipe.id));
   const shoppingItems = useSelector((state: RootState) => state.shoppingList.items);
   const isOwnRecipe = !!ownRecipe;
-  const recipe = ownRecipe ?? routeRecipe;
+  // A catalogue drink saved by an older version (favourites) gets its details from the bundle.
+  const recipe = ownRecipe ?? withDetails(routeRecipe);
   const { isFavorite, toggleFavorite } = useFavorites();
   const isFav = isFavorite(recipe.id);
 
@@ -70,10 +70,6 @@ export const RecipeDetailsScreen = () => {
   const { isPro } = usePurchases();
   const { openPaywall } = usePaywall();
 
-  const [details, setDetails] = useState<RecipeDetails | null>(null);
-  // A recipe that already carries ingredients renders at once, no spinner frame.
-  const [loading, setLoading] = useState<boolean>(!recipe.ingredients);
-  const [error, setError] = useState(false);
   const [servings, setServings] = useState(() => baseServings(recipe));
   const [cardOpen, setCardOpen] = useState(false);
   const onboarding = useOnboarding();
@@ -100,49 +96,13 @@ export const RecipeDetailsScreen = () => {
       });
     }, 400);
     return () => clearTimeout(id);
-  }, [tourKey, onboarding, windowHeight, loading]);
+  }, [tourKey, onboarding, windowHeight]);
 
   // Another recipe in the same screen instance starts at its own servings.
   useEffect(() => setServings(baseServings(recipe)), [recipe.id]);
 
-  const loadDetails = useCallback(() => {
-    setDetails(null);
-    setError(false);
-    // A catalogue drink whose cached copy predates the measure/name split (1.1) is
-    // shown at once and upgraded quietly in the background.
-    const needsParts = !isOwnRecipe && !recipe.packId && !recipe.parts && !getCachedDetails(recipe.id)?.parts;
-    if (recipe.ingredients && !needsParts) {
-      setLoading(false);
-      return () => {};
-    }
-    let cancelled = false;
-    setLoading(!recipe.ingredients);
-    fetchDetailsCached(recipe.id)
-      .then(data => {
-        if (cancelled) return;
-        setDetails(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        if (cancelled) return;
-        if (!recipe.ingredients) setError(true);
-        setLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [recipe.id, recipe.ingredients, recipe.parts, recipe.packId, isOwnRecipe]);
-
-  useEffect(() => loadDetails(), [loadDetails]);
-
-  const tags = details?.tags || recipe.tags || [];
-  const merged: Recipe = {
-    ...recipe,
-    ingredients: details?.ingredients || recipe.ingredients,
-    parts: details?.parts || recipe.parts || (isOwnRecipe ? undefined : getCachedDetails(recipe.id)?.parts),
-    instructions: details?.instructions || recipe.instructions,
-    tags,
-  };
+  const tags = recipe.tags || [];
+  const merged: Recipe = { ...recipe, tags };
   // In the language on screen.
   const shown = localizeRecipe(merged, lang, t);
   const parts = useMemo(() => bilingualParts(merged), [merged.id, merged.parts, merged.ingredients]);
@@ -155,7 +115,7 @@ export const RecipeDetailsScreen = () => {
 
   const handleShare = () =>
     shareRecipe(
-      { title: shown.title, ingredients: lines, instructions: shown.instructions, steps: shown.steps, imageUrl: recipe.imageUrl },
+      { title: shown.title, ingredients: lines, instructions: shown.instructions, steps: shown.steps },
       t
     );
 
@@ -187,9 +147,7 @@ export const RecipeDetailsScreen = () => {
     ]);
 
   const cardPhoto =
-    drinkPhoto(recipe.id) ?? packPhoto(recipe.id) ?? (isRecipePhoto(recipe.imageUrl) || /^https?:/.test(recipe.imageUrl)
-      ? { uri: resolveImageUri(recipe.imageUrl) }
-      : null);
+    drinkPhoto(recipe.id) ?? packPhoto(recipe.id) ?? (isRecipePhoto(recipe.imageUrl) ? { uri: resolveImageUri(recipe.imageUrl) } : null);
 
   const lockIcon = (color: string) => <LockIcon size={sizes.icon.s} color={color} />;
 
@@ -247,18 +205,7 @@ export const RecipeDetailsScreen = () => {
             {!!description && <Text style={[type.bodyS, styles.description, { color: colors.subtitle }]}>{description}</Text>}
           </View>
 
-          {loading ? (
-            <View style={styles.center}>
-              <ActivityIndicator size="large" color={colors.brand} />
-              <Text style={[type.body, styles.centerText, { color: colors.title }]}>{t('loadingRecipe')}</Text>
-            </View>
-          ) : error ? (
-            <View style={styles.center}>
-              <Text style={[type.body, styles.centerText, { color: colors.title }]}>{t('recipeLoadError')}</Text>
-              <Button label={t('tryAgain')} onPress={() => loadDetails()} style={styles.retry} />
-            </View>
-          ) : (
-            <>
+          <>
               <View style={[styles.card, { borderColor: colors.border, backgroundColor: colors.surface }]}>
                 <Text accessibilityRole="header" style={[type.titleS, { color: colors.categoryTitle }]}>
                   {t('ingredients')}
@@ -364,8 +311,7 @@ export const RecipeDetailsScreen = () => {
                   </View>
                 )}
               </View>
-            </>
-          )}
+          </>
         </View>
       </ScrollView>
 
@@ -493,17 +439,5 @@ const styles = StyleSheet.create({
   },
   ownButton: {
     flex: 1,
-  },
-  center: {
-    alignItems: 'center',
-    paddingVertical: spacing.xl,
-  },
-  centerText: {
-    marginTop: spacing.m,
-    textAlign: 'center',
-  },
-  retry: {
-    marginTop: spacing.l,
-    alignSelf: 'stretch',
   },
 });

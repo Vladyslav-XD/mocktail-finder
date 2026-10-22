@@ -47,13 +47,12 @@ React Native · Expo · TypeScript · Redux Toolkit · React Navigation · React
 
 ```bash
 npm install
-cp .env.example .env.local   # add your TheCocktailDB key (optional in development)
 npm start
 ```
 
 Expo can then open the project on iOS, Android or the web.
 
-Recipes come from [TheCocktailDB](https://www.thecocktaildb.com/api.php). The public test key works for development; a published build needs a Premium key, passed as `EXPO_PUBLIC_COCKTAILDB_API_KEY` (in `.env.local` locally, or as an environment variable in the Expo project for EAS builds).
+The 58 free recipes are the non-alcoholic list of [TheCocktailDB](https://www.thecocktaildb.com), bundled in the app (`src/data/catalogue`), so it needs no key and no network; the credit is in About.
 
 ## Build and release (iOS)
 
