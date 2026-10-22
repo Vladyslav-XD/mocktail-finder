@@ -1,17 +1,17 @@
 import React, { useRef, useCallback } from 'react';
-import { View, Text, StyleSheet, Animated, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Animated, TouchableOpacity, Dimensions, ImageSourcePropType } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { HeartIcon } from './icons';
 import { spacing } from '../theme/spacing';
 import { useTheme } from '../context/ThemeContext';
-import { resolveImageUri } from '../utils/recipePhotos';
 
 interface RecipeCardProps {
   title: string;
   subtitle: string;
   /** My Bar "Missing: …" is drawn in the error colour. */
   subtitleColor?: string;
-  imageUrl: string | any;
+  /** From `recipeImageSource`: a bundled photo, the user's own, or the placeholder. */
+  imageUrl: ImageSourcePropType;
   isFavorite: boolean;
   onFavoritePress: () => void;
   onPress?: () => void;
@@ -55,7 +55,7 @@ const RecipeCardComponent = ({ title, subtitle, subtitleColor, imageUrl, isFavor
   return (
     <TouchableOpacity style={[styles.container, { backgroundColor: colors.surface, borderColor: colors.badgeBorder }]} onPress={onPress} activeOpacity={0.9}>
       <Animated.Image 
-        source={typeof imageUrl === 'string' ? { uri: resolveImageUri(imageUrl) } : imageUrl}
+        source={imageUrl}
         style={[styles.image, { opacity }]} 
       />
       <Animated.View style={[styles.favoriteButton, { backgroundColor: colors.badgeBG, transform: [{ scale: favScale }] }]}>

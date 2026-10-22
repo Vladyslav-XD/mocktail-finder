@@ -21,8 +21,6 @@ import { type } from '../theme/typography';
 import { useFavorites } from '../context/FavoritesContext';
 import { Recipe } from '../data/mockData';
 
-/** Shown when the user adds no photo of their own. */
-const DEFAULT_IMAGE_URL = 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=600&auto=format&fit=crop';
 const MAX_TAGS = 3;
 
 interface Ingredient {
@@ -183,7 +181,8 @@ export const AddRecipeScreen = () => {
     const id = editing ? editing.id : Date.now().toString();
 
     setSaving(true);
-    let imageUrl = DEFAULT_IMAGE_URL;
+    // No photo of their own: no address at all; the screens show the bundled placeholder.
+    let imageUrl = '';
     if (photo?.kind === 'stored') {
       imageUrl = photo.ref;
     } else if (photo?.kind === 'new') {
@@ -195,7 +194,7 @@ export const AddRecipeScreen = () => {
         return;
       }
     } else if (editing && isRecipePhoto(editing.imageUrl)) {
-      // The photo was removed in the form: drop the file, fall back to the stock image.
+      // The photo was removed in the form: drop the file, show the placeholder.
       await deleteRecipePhoto(editing.imageUrl);
     }
 

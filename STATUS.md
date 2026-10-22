@@ -2,6 +2,16 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-22 · 1.2 task 12.3 — bundled placeholder instead of Unsplash (Claude Code)
+- New `assets/recipe-placeholder.jpg` (900 × 900, 43 KB, the size of our drink photos): an empty set — light backdrop and table edge — built by a script from the glass-free edges of 12 of our catalogue photos (averaged per row, blended left to right, light grain). No new artwork, no stock image; same light, colours and horizon as the photos around it. Decision without asking; Cowork can replace the file with a designed one (same name, same size).
+- `recipeImageSource` (`src/utils/recipeImage.ts`): bundled catalogue photo → collection photo → the user's own photo (`recipe-photo:`) → the placeholder. Any web address now gets the placeholder, which also covers own recipes saved by 1.0 / 1.1 with the Unsplash address (no migration). `RecipeCard` takes the resolved image only.
+- Add Recipe saves `imageUrl: ''` when there is no photo (was the Unsplash address); removing the photo on Edit gives the placeholder too.
+- Network: with 12.2 and this, `src` has no address the app loads by itself. What is left is user-tapped links (privacy, support, rate, App Store link in the share text) and StoreKit. The test that guards this comes with 12.5.
+- Checked in the simulator (SE, Expo Go): "Show an example" → Save, no photo → the card on Home and the recipe page show the placeholder. Screenshot: `~/Desktop/mocktail-1.2-offline/SE-en-dark-own-recipe-placeholder.png`. The test recipe was deleted afterwards.
+- Test `src/utils/__tests__/recipeImage.test.ts` (3): catalogue photo whatever was saved; own photo from the phone; no photo or a web address → placeholder. 144/144.
+- TESTING.md § 5: own recipe without a photo, new or from 1.0 / 1.1.
+- Files: `assets/recipe-placeholder.jpg`, `src/utils/recipeImage.ts`, `src/utils/__tests__/recipeImage.test.ts`, `src/components/RecipeCard.tsx`, `src/screens/AddRecipeScreen.tsx`, `TESTING.md`. Verified: `tsc` clean, tests 144/144 in 16 suites, the iOS bundle builds.
+
 ## 2026-10-22 · 1.2 task 12.2 — no TheCocktailDB API at run time (Claude Code)
 - Removed `src/api/` (`api.ts` requests, `config.ts` with the key and its test-key warning, `detailsCache.ts` cache + prefetch, `recipes.ts`). Nothing imports it.
 - Catalogue slice: only the 58, no `status` / `fillingIn` / load actions. Home: no loading spinner, no error screen with "Try again", no "loading details" line. Surprise: picks at once (first pick in the initial state), shuffle and back switch drinks without requests, no load-error screen or "Try again" (an empty list still says `noRecipes`). Recipe: no loading / error / "Try again"; a catalogue drink saved by an older version gets its details from the bundle (`withDetails`). My Bar: no load call.
