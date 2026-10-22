@@ -2,6 +2,19 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-22 · 1.2 task 12 — STOPPED before build 9 (Claude Code)
+**Report for Vlad.** Task 12 bullets 1–5 are done, one commit each: `a6a4ee2` (12.1 bundled catalogue), `47fbf95` (12.2 API, cache, loading states, key removed), `429e075` (12.3 placeholder), `ba456bb` (12.4 credit line), `1aa93fb` (12.5 offline tests). Bullet 6 checked: no file of collections, purchases, the tour or translations changed (`src/data/packs`, `packPhotos`, `assets/packs`, `src/purchases`, `src/onboarding`, `src/data/uk`, `localizeRecipe`); the dictionaries gained only `aboutCredit`. Nothing built or uploaded.
+- Checks: `npx tsc --noEmit` clean; `npm test` 155/155 in 17 suites; the iOS bundle builds.
+- **Screenshots: `~/Desktop/mocktail-1.2-offline/`** — SE, light, English and Ukrainian: `1-home` (top), `1b-home-catalogue` (the bundled drinks), `2-recipe` (Afterglow: ingredients and steps at once), `3-about-credit`, `4-store-unreachable` (the paywall's "App Store is not reachable" — the only offline message left). Plus `SE-en-dark-own-recipe-placeholder.png` (12.3). Expo Go, so purchases always show the unreachable state.
+- **Airplane mode itself is not in the screenshots:** the simulator uses the Mac's network, and switching that off is a system setting I do not change. Evidence instead: the offline tests run with `fetch` failing on any call; the code scan finds no web address the app loads; on the simulator the app's process holds one connection to Google, and Expo Go holds the same one with no project open (Expo Go's own, not ours). The real check is TESTING.md § 0 on the phone (TestFlight), including a first launch in airplane mode.
+- Open questions:
+  1. `.env.example` now documents only the removed key. Delete it? (`.env.local` untouched, as asked.) The `EXPO_PUBLIC_COCKTAILDB_API_KEY` variable on expo.dev is no longer read; Vlad can remove it there.
+  2. CLAUDE.md still describes `src/api` (code map, start-up `Promise.all`, the key bullet in Commands). A text change is proposed in the chat; not edited without Vlad's yes.
+  3. The placeholder is built from our photos (12.3); keep it, or should Cowork draw one?
+  4. **Build number:** EAS's last iOS build is 1.2.0 (7) (`eas build:list`, read-only). The next build auto-increments to **8**, not 9. If it must be 9, the remote counter has to be set first (`eas build:version:set`) — Vlad's call; numbers are never reused either way.
+- **Next, only after Vlad's ok:** `npx eas-cli@latest build --platform ios --profile production --non-interactive` → the next build (8 by default, see 4). Then TESTING.md on the phone, then `eas submit` with a separate ok.
+- Local only: Metro runs in the background for the simulator (stopping it gives the red "No script URL" screen in Expo Go).
+
 ## 2026-10-22 · 1.2 task 12.5 — offline tests and TESTING.md (Claude Code)
 - New `src/__tests__/offline.test.ts` (9), with `fetch` replaced by one that fails the test:
   - a new store holds the 58, each with ingredients, steps, tags and a bundled photo; no fetch;
