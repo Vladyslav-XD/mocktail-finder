@@ -176,7 +176,7 @@ export const uk: Dictionary = {
   tipMedium: "Смузі",
   tipLarge: "Пунш",
   thanks: "Будьмо!",
-  thanksToast: "Будьмо! Цей за ваш рахунок — дякую з Дубліна.",
+  thanksToast: "Будьмо! Цей за ваш рахунок — дякую з\u00a0Дубліна.",
   langHint: "Рецепти, кнопки й сторінка в App Store відповідають цьому вибору. Системна — мова вашого iPhone.",
   // Toasts
   restored: "Покупки відновлено",

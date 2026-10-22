@@ -2,6 +2,14 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-22 · Tip jar toast: non-breaking spaces (Claude Code)
+- Answer to the open question below (Vlad: yes). `thanksToast` keeps "from Dublin." (en) and «з Дубліна» (uk) on one line with a non-breaking space: the same escape as `tipText` / `tipNote` in `en.ts` / `uk.ts`, `&nbsp;` in COPY_EN_UK.md → Build 7 (note updated).
+- Result on the iPhone SE: "Cheers! This one's on you — thanks / from Dublin." and «Будьмо! Цей за ваш рахунок — дякую / з Дубліна.» No single word on the second line, no one-letter «з» at the end of the first.
+- Test: the pinned toasts carry the escape; the "on one line" test now covers both toasts (132/132). TESTING.md § 3 updated.
+- Screenshots: the two toast frames in `~/Desktop/mocktail-1.2-tips/` retaken (`SE-en-dark-after-tip-simulated.png`, `SE-uk-dark-after-tip-simulated.png`; toast simulated with a throwaway edit, not committed). The other eight frames show no toast and are still current.
+- How: the escapes were written by a script, not the editor; the editor turns a typed escape into the invisible character (seen in the previous round).
+- Files: `src/i18n/en.ts`, `uk.ts`, `src/i18n/__tests__/i18n.test.ts`, `design_handoff_mocktail_1.2/COPY_EN_UK.md`, `TESTING.md`. Verified: `tsc` clean, tests 132/132 in 14 suites. No build.
+
 ## 2026-10-21 · Tip jar copy: non-breaking spaces (Claude Code)
 - Answer to the open question below (Vlad: yes). A non-breaking space keeps "is open." (`tipText`, en) and «За бажанням» (`tipNote`, uk) on one line. Written as the `\u00a0` escape in `en.ts` / `uk.ts` (visible in code, as in `recipeParts.ts`) and as `&nbsp;` in COPY_EN_UK.md → Build 7, with a note there.
 - Result: iPhone SE English "…The bar / is open."; Pro Max Ukrainian "…крім моєї вдячності. / За бажанням, оплата через App Store." Other line breaks unchanged.
