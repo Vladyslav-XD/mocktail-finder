@@ -174,7 +174,7 @@ export const en = {
   tipMedium: "Smoothie",
   tipLarge: "Punch",
   thanks: "Cheers!",
-  thanksToast: "Cheers! This one's on you — thanks from\u00a0Dublin.",
+  thanksToast: "Cheers! This one's on you — thanks.",
   langHint: "Recipes, buttons and the App Store page follow this choice. System uses your iPhone language.",
   // Toasts
   restored: "Purchases restored",

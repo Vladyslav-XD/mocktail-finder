@@ -2,6 +2,15 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-22 · Tip jar toast: no city (Claude Code)
+- Vlad: the app should not say where he is from. `thanksToast` is now "Cheers! This one's on you — thanks." / «Будьмо! Цей за ваш рахунок — дякую.»: his text minus the two words naming the city, nothing else reworded (decision without asking). The non-breaking space added to the toast earlier today went with them.
+- On the iPhone SE the toast now fits on one line in both languages (the toast design is "one short line").
+- Test: pinned toasts updated; new test "never says where the maker lives" fails if any string in either dictionary names the city. 133/133.
+- COPY_EN_UK.md → Build 7: toast row and note. TESTING.md § 3: the new toast, one line on the SE.
+- Screenshots: the two toast frames in `~/Desktop/mocktail-1.2-tips/` retaken (throwaway edit, not committed). The other eight frames show no toast.
+- Not changed (history): earlier entries of this log and the handoff's original files (README, `reference/mf-data.js`, the first COPY table) still quote the old toast; git history keeps every old version anyway (rewriting it would need a force push, which is not allowed). Open question: scrub the city from those docs too? Waiting for Vlad.
+- Files: `src/i18n/en.ts`, `uk.ts`, `src/i18n/__tests__/i18n.test.ts`, `design_handoff_mocktail_1.2/COPY_EN_UK.md`, `TESTING.md`. Verified: `tsc` clean, tests 133/133 in 14 suites. No build.
+
 ## 2026-10-22 · Tip jar toast: non-breaking spaces (Claude Code)
 - Answer to the open question below (Vlad: yes). `thanksToast` keeps "from Dublin." (en) and «з Дубліна» (uk) on one line with a non-breaking space: the same escape as `tipText` / `tipNote` in `en.ts` / `uk.ts`, `&nbsp;` in COPY_EN_UK.md → Build 7 (note updated).
 - Result on the iPhone SE: "Cheers! This one's on you — thanks / from Dublin." and «Будьмо! Цей за ваш рахунок — дякую / з Дубліна.» No single word on the second line, no one-letter «з» at the end of the first.
