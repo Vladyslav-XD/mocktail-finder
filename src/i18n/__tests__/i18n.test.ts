@@ -144,3 +144,16 @@ describe('tip jar copy (rewritten 21 Oct)', () => {
     expect(JSON.stringify([en, uk])).not.toMatch(/Dublin|Дублін/);
   });
 });
+
+describe('TheCocktailDB credit (Build 9)', () => {
+  it('matches COPY_EN_UK.md in both languages', () => {
+    expect(translate('en', 'aboutCredit')).toBe('Free catalogue recipes: TheCocktailDB');
+    expect(translate('uk', 'aboutCredit')).toBe('Рецепти безкоштовного каталогу: TheCocktailDB');
+  });
+
+  it('is the only string that names the source, so the line is not shown twice', () => {
+    const naming = (dict: Record<string, unknown>) =>
+      Object.entries(dict).filter(([, v]) => typeof v === 'string' && v.includes('TheCocktailDB')).map(([k]) => k);
+    expect([naming(en), naming(uk)]).toEqual([['aboutCredit'], ['aboutCredit']]);
+  });
+});

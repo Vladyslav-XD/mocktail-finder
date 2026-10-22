@@ -76,6 +76,8 @@ export const AboutScreen = () => {
             >
               <Text style={[type.bodyS, styles.version, { color: colors.subtitle }]}>{versionLine}</Text>
             </Pressable>
+            {/* TheCocktailDB's condition for using its recipes: credit the source. */}
+            <Text style={[type.bodyS, styles.version, { color: colors.subtitle }]}>{t('aboutCredit')}</Text>
           </View>
         </View>
 

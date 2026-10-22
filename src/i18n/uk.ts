@@ -154,6 +154,7 @@ export const uk: Dictionary = {
   version: "Версія",
   proUnlocked: "Pro відкрито",
   free: "Безкоштовна",
+  aboutCredit: "Рецепти безкоштовного каталогу: TheCocktailDB",
   language: "Мова",
   theme: "Тема",
   aboutTour: "Школа бармена",

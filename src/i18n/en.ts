@@ -152,6 +152,7 @@ export const en = {
   version: "Version",
   proUnlocked: "Pro unlocked",
   free: "Free",
+  aboutCredit: "Free catalogue recipes: TheCocktailDB",
   language: "Language",
   theme: "Theme",
   aboutTour: "Bartender school",

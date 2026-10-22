@@ -2,6 +2,14 @@
 
 Append one entry per finished task: date · task · what changed · files · how verified.
 
+## 2026-10-22 · 1.2 task 12.4 — TheCocktailDB credit in About (Claude Code)
+- There was no credit line in the app (the 1.2 handoff had removed the old "credits" row), so nothing to de-duplicate. New key `aboutCredit`: EN "Free catalogue recipes: TheCocktailDB" / UK «Рецепти безкоштовного каталогу: TheCocktailDB», verbatim; COPY_EN_UK.md → new section "Build 9 (Vlad, 22 Oct) — offline catalogue".
+- About: one `Text` right under the version line, in the app-name column, with the version line's style (Body S, `subtitle`, same top gap). Plain text, no link, not pressable (the version line keeps its long-press for DEV).
+- Seen on the SE (English): the column next to the 64-pt icon is narrow, so the line wraps after the colon ("Free catalogue recipes: / TheCocktailDB"); nothing is cut, the icon stays centred. Not changed — moving it out of the column would change the layout. Screenshots in 12.7 show both languages.
+- Test (2) in `i18n.test.ts`: both strings verbatim; `aboutCredit` is the only string in either dictionary that names the source, so the line cannot be shown twice by accident. 146/146.
+- TESTING.md § 7: the credit line, once, both languages, SE wrap.
+- Files: `src/screens/AboutScreen.tsx`, `src/i18n/en.ts`, `uk.ts`, `src/i18n/__tests__/i18n.test.ts`, `design_handoff_mocktail_1.2/COPY_EN_UK.md`, `TESTING.md`. Verified: `tsc` clean, tests 146/146 in 16 suites, the iOS bundle builds, the line seen in the simulator.
+
 ## 2026-10-22 · 1.2 task 12.3 — bundled placeholder instead of Unsplash (Claude Code)
 - New `assets/recipe-placeholder.jpg` (900 × 900, 43 KB, the size of our drink photos): an empty set — light backdrop and table edge — built by a script from the glass-free edges of 12 of our catalogue photos (averaged per row, blended left to right, light grain). No new artwork, no stock image; same light, colours and horizon as the photos around it. Decision without asking; Cowork can replace the file with a designed one (same name, same size).
 - `recipeImageSource` (`src/utils/recipeImage.ts`): bundled catalogue photo → collection photo → the user's own photo (`recipe-photo:`) → the placeholder. Any web address now gets the placeholder, which also covers own recipes saved by 1.0 / 1.1 with the Unsplash address (no migration). `RecipeCard` takes the resolved image only.

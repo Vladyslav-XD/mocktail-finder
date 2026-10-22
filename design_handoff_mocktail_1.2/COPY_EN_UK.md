@@ -379,3 +379,11 @@ Replaces `tipTitle`, `tipText`, `tipNote`, `thanks` and `thanksToast` (the tip j
 | exIng4 | 200 ml · soda water | 200 мл · содова |
 | exStep1 | Squeeze the lemon into a glass, add the sugar and mint, press gently with a spoon. | Вичавіть лимон у склянку, додайте цукор і м'яту, злегка розімніть ложкою. |
 | exStep2 | Fill with ice, top up with soda water, stir. | Додайте лід, долийте содову, перемішайте. |
+
+## Build 9 (Vlad, 22 Oct) — offline catalogue
+
+The 58 free drinks are bundled in the app (task 12). TheCocktailDB's condition for using its recipes: credit the source. One quiet line in About, under the version line and styled like it. Not shown anywhere else.
+
+| Key | EN | UA |
+|---|---|---|
+| aboutCredit | Free catalogue recipes: TheCocktailDB | Рецепти безкоштовного каталогу: TheCocktailDB |
